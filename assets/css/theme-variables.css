@@ -1,0 +1,15 @@
+body{
+	--e-global-color-primary					: #000000;
+	--e-global-color-secondary					: #F9F7EA;
+	--e-global-color-text						: #8B8B8B;
+	--e-global-color-accent						: #FDF567;
+	--e-global-color-accentsecondary			: #FCFBF5;
+	--e-global-color-white						: #FFFFFF;
+	--e-global-color-black						: #000000;
+	--e-global-color-divider					: #0000001A;
+	--e-global-color-darkdivider				: #FFFFFF1A;
+	--e-global-typography-primary-font-family	: "Inter Tight", sans-serif;
+	--e-global-typography-secondary-font-family	: "Inter Tight", sans-serif;
+	--e-global-typography-text-font-family		: "Inter Tight", sans-serif;
+	--e-global-typography-accent-font-family    : "Inter Tight", sans-serif;
+}
