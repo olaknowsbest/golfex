@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 168 40" role="img">
+	<path d="M16 9 L28 31 H4 Z" stroke="#33332F" stroke-width="2.2" stroke-linejoin="round" fill="none"/>
+	<circle cx="16" cy="9" r="2" fill="#33332F"/>
+	<text x="42" y="26" font-family="'Inter Tight', Arial, sans-serif" font-size="17" font-weight="700" letter-spacing="1" fill="#33332F">ALTITUDE</text>
+</svg>

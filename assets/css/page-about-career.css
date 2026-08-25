@@ -1,0 +1,398 @@
+/*
+ * About / Career-only stylesheet for the fictional Nazario Kayla profile
+ * page (Prompt 03). Loaded after site-shell.css so it can extend the shared
+ * palette/buttons without needing to fight inherited Elementor/theme CSS —
+ * this page's body no longer contains any Elementor widget markup.
+ */
+
+.about-section__inner {
+	max-width: 1180px;
+	margin: 0 auto;
+	padding: 0 1.5rem;
+}
+.about-eyebrow {
+	text-transform: uppercase;
+	letter-spacing: 0.14em;
+	font-size: 0.8rem;
+	font-weight: 700;
+	margin: 0 0 1rem;
+}
+.about-fine-print {
+	font-size: 0.8rem;
+	color: #6B6B64;
+	margin: 1.5rem 0 0;
+}
+
+/* Selector repeated on purpose: kit-global.css ships .elementor-kit-15
+   h1/h2/h3 { color/font-size/line-height: ... } rules (class+element
+   specificity, 0-1-1) left over from the inherited theme, which would
+   otherwise force black text and the wrong size onto these headings. */
+.about-section__title.about-section__title {
+	font-size: clamp(1.6rem, 1.3rem + 1.2vw, 2.25rem);
+	line-height: 1.2;
+	margin: 0 0 0.75rem;
+	color: var(--nk-ink);
+}
+.about-section__lead {
+	color: #4A4A46;
+	margin: 0;
+	font-size: 1.05rem;
+	line-height: 1.6;
+	max-width: 62ch;
+}
+.about-section__head {
+	max-width: 720px;
+	margin: 0 0 2.5rem;
+}
+
+.btn--outline {
+	background: transparent;
+	color: var(--nk-ink);
+	border: 1.5px solid var(--nk-ink);
+}
+.btn--outline:hover,
+.btn--outline:focus-visible {
+	background: var(--nk-ink);
+	color: var(--nk-cream);
+}
+.btn--ghost-light {
+	background: transparent;
+	color: var(--nk-cream);
+	border: 1.5px solid rgba(252, 251, 245, 0.7);
+}
+.btn--ghost-light:hover,
+.btn--ghost-light:focus-visible {
+	background: rgba(252, 251, 245, 0.12);
+	color: var(--nk-white);
+}
+
+/* ---------- Hero ---------- */
+.about-hero {
+	background: var(--nk-sand);
+	padding: 4.5rem 0 4rem;
+}
+.about-hero__inner {
+	max-width: 1180px;
+	margin: 0 auto;
+	padding: 0 1.5rem;
+	display: grid;
+	grid-template-columns: 1fr;
+	gap: 2.5rem;
+	align-items: center;
+}
+.about-hero__eyebrow {
+	color: #7c6d00;
+}
+.about-hero__title.about-hero__title {
+	color: var(--nk-ink);
+	font-size: clamp(2.1rem, 1.6rem + 2.2vw, 3.25rem);
+	line-height: 1.12;
+	margin: 0 0 1.1rem;
+}
+.about-hero__lead {
+	color: #3f3f3a;
+	font-size: 1.1rem;
+	line-height: 1.6;
+	max-width: 52ch;
+	margin: 0 0 1.25rem;
+}
+.about-hero__badge {
+	display: inline-flex;
+	align-items: center;
+	gap: 0.5rem;
+	background: var(--nk-yellow);
+	color: var(--nk-ink);
+	font-size: 0.8rem;
+	font-weight: 700;
+	padding: 0.45rem 0.9rem;
+	border-radius: 999px;
+}
+.about-hero__badge::before {
+	content: "";
+	width: 6px;
+	height: 6px;
+	border-radius: 50%;
+	background: var(--nk-ink);
+	display: inline-block;
+}
+.about-hero__figure {
+	position: relative;
+	background: var(--nk-ink);
+	border-radius: 24px;
+	overflow: hidden;
+	display: flex;
+	align-items: flex-end;
+	justify-content: center;
+	max-width: 360px;
+	margin: 0 auto;
+	aspect-ratio: 2 / 3;
+}
+.about-hero__figure img {
+	width: 92%;
+	height: auto;
+	display: block;
+	filter: drop-shadow(0 14px 24px rgba(10, 10, 10, 0.35));
+}
+
+@media (min-width: 901px) {
+	.about-hero__inner {
+		grid-template-columns: 1.1fr 0.9fr;
+		gap: 3.5rem;
+	}
+	.about-hero__figure {
+		margin: 0 0 0 auto;
+	}
+}
+
+/* ---------- Athlete profile ---------- */
+.about-profile {
+	padding: 5rem 0;
+}
+.about-profile__grid {
+	display: grid;
+	grid-template-columns: 1fr;
+	gap: 2.5rem;
+	align-items: start;
+}
+.about-profile__copy p {
+	color: #33332f;
+	font-size: 1.05rem;
+	line-height: 1.7;
+	max-width: 62ch;
+	margin: 0 0 1.1rem;
+}
+.about-facts {
+	background: var(--nk-ink);
+	color: var(--nk-cream);
+	border-radius: 20px;
+	padding: 2rem;
+	margin: 0;
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: 1.5rem 1rem;
+}
+.about-facts div {
+	display: flex;
+	flex-direction: column;
+	gap: 0.3rem;
+}
+.about-facts dt {
+	text-transform: uppercase;
+	letter-spacing: 0.08em;
+	font-size: 0.72rem;
+	font-weight: 700;
+	color: var(--nk-yellow);
+}
+.about-facts dd {
+	margin: 0;
+	font-size: 1rem;
+	font-weight: 600;
+	color: var(--nk-white);
+}
+
+@media (min-width: 901px) {
+	.about-profile__grid {
+		grid-template-columns: 1.3fr 1fr;
+		gap: 3rem;
+	}
+}
+
+/* ---------- Career highlights ---------- */
+.about-highlights {
+	padding: 5rem 0;
+	background: var(--nk-sand);
+}
+.about-highlights__grid {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	gap: 1rem;
+	margin: 0 0 2rem;
+}
+.about-highlight {
+	background: var(--nk-ink);
+	color: var(--nk-cream);
+	border-radius: 16px;
+	padding: 1.5rem 1.25rem;
+	text-align: center;
+}
+.about-highlight__value {
+	display: block;
+	font-size: 1.85rem;
+	font-weight: 700;
+	color: var(--nk-white);
+	line-height: 1.15;
+}
+.about-highlight__label {
+	display: block;
+	font-size: 0.8rem;
+	color: rgba(252, 251, 245, 0.75);
+	margin-top: 0.3rem;
+}
+.about-highlights__foot {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	gap: 1.25rem;
+	justify-content: space-between;
+}
+
+@media (min-width: 701px) {
+	.about-highlights__grid {
+		grid-template-columns: repeat(4, 1fr);
+	}
+}
+
+/* ---------- Timeline ---------- */
+.about-timeline-section {
+	padding: 5rem 0;
+}
+.about-timeline {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	display: flex;
+	flex-direction: column;
+	gap: 2rem;
+	position: relative;
+}
+.about-timeline__item {
+	position: relative;
+	padding-left: 2rem;
+	border-left: 2px solid rgba(10, 10, 10, 0.12);
+}
+.about-timeline__item::before {
+	content: "";
+	position: absolute;
+	left: -7px;
+	top: 0.2rem;
+	width: 12px;
+	height: 12px;
+	border-radius: 50%;
+	background: var(--nk-yellow);
+	border: 2px solid var(--nk-ink);
+}
+.about-timeline__year {
+	display: inline-block;
+	font-weight: 700;
+	color: #7c6d00;
+	font-size: 0.85rem;
+	letter-spacing: 0.06em;
+	margin-bottom: 0.35rem;
+}
+.about-timeline__title {
+	margin: 0 0 0.4rem;
+	font-size: 1.15rem;
+	color: var(--nk-ink);
+}
+.about-timeline__desc {
+	margin: 0;
+	color: #4A4A46;
+	line-height: 1.6;
+	max-width: 60ch;
+}
+
+@media (min-width: 701px) {
+	.about-timeline__item {
+		padding-left: 2.5rem;
+	}
+}
+
+/* ---------- Values ---------- */
+.about-values {
+	padding: 5rem 0;
+	background: var(--nk-sand);
+}
+.about-values__grid {
+	display: grid;
+	grid-template-columns: 1fr;
+	gap: 1.5rem;
+}
+.about-value-card {
+	background: var(--nk-white);
+	border-radius: 20px;
+	padding: 2rem 1.75rem;
+	text-align: center;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 0.5rem;
+}
+.about-value-card__icon {
+	width: 48px;
+	height: 48px;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	color: var(--nk-ink);
+	margin-bottom: 0.4rem;
+}
+.about-value-card__icon svg {
+	width: 100%;
+	height: 100%;
+}
+.about-value-card__title.about-value-card__title {
+	margin: 0;
+	font-size: 1.15rem;
+	color: var(--nk-ink);
+}
+.about-value-card__desc {
+	margin: 0;
+	color: #4A4A46;
+	line-height: 1.55;
+}
+
+@media (min-width: 701px) {
+	.about-values__grid {
+		grid-template-columns: repeat(3, 1fr);
+	}
+}
+
+/* ---------- Final CTA ---------- */
+.about-final-cta {
+	padding: 5rem 0 5.5rem;
+	background: var(--nk-ink);
+}
+.about-final-cta__inner {
+	max-width: 640px;
+	text-align: center;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 1rem;
+}
+.about-final-cta__title.about-final-cta__title {
+	color: var(--nk-white);
+	font-size: clamp(1.6rem, 1.3rem + 1.2vw, 2.25rem);
+	margin: 0;
+}
+.about-final-cta__lead {
+	color: rgba(252, 251, 245, 0.82);
+	margin: 0 0 0.5rem;
+	line-height: 1.6;
+}
+.about-final-cta__actions {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 1rem;
+	justify-content: center;
+}
+.about-final-cta :focus-visible {
+	outline-color: var(--nk-yellow);
+}
+/* site-shell.css puts a 4rem top margin on the footer for light-content
+   pages; here it would show as a pale gap between two black sections.
+   This stylesheet only loads on about-us.html, where the section right
+   before the footer is always .about-final-cta, so it's safe to target
+   .site-footer directly. */
+.site-footer {
+	margin-top: 0;
+}
+
+@media (max-width: 480px) {
+	.about-section__title {
+		font-size: 1.5rem;
+	}
+	.about-facts {
+		grid-template-columns: 1fr;
+	}
+}
