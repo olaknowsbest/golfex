@@ -1,0 +1,55 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 220 200" width="220" height="200" role="img" aria-labelledby="nk-loader-title nk-loader-desc">
+	<title id="nk-loader-title">Nazario Kayla Fan Club loading mark</title>
+	<desc id="nk-loader-desc">Cream geometric NK monogram with a yellow golf ball animating along a rising ball-flight arc, on an ink-black surface.</desc>
+	<style>
+		.nk-loader-arc {
+			fill: none;
+			stroke: #FDF567;
+			stroke-width: 5;
+			stroke-linecap: round;
+			opacity: 0.85;
+		}
+		.nk-loader-monogram {
+			transform-box: fill-box;
+			transform-origin: 50% 50%;
+			animation: nk-loader-pulse 1.05s ease-in-out infinite;
+		}
+		.nk-loader-ball {
+			offset-path: path("M30,165 C70,60 150,40 195,50");
+			offset-rotate: 0deg;
+			offset-distance: 0%;
+			animation: nk-loader-fly 1.05s ease-out infinite;
+		}
+		@keyframes nk-loader-pulse {
+			0%, 100% { opacity: 0.85; transform: scale(0.98); }
+			50% { opacity: 1; transform: scale(1); }
+		}
+		@keyframes nk-loader-fly {
+			0%   { offset-distance: 0%;   opacity: 0; }
+			6%   { opacity: 1; }
+			88%  { offset-distance: 100%; opacity: 1; }
+			100% { offset-distance: 100%; opacity: 0; }
+		}
+		@media (prefers-reduced-motion: reduce) {
+			.nk-loader-monogram {
+				animation: none;
+				opacity: 1;
+				transform: scale(1);
+			}
+			.nk-loader-ball {
+				animation: none;
+				offset-distance: 100%;
+				opacity: 1;
+			}
+		}
+	</style>
+
+	<path class="nk-loader-arc" d="M30,165 C70,60 150,40 195,50"/>
+
+	<g class="nk-loader-monogram">
+		<path d="M70,140 V60 M70,60 L104,140 M104,140 V60" fill="none" stroke="#FCFBF5" stroke-width="14" stroke-linecap="round" stroke-linejoin="round"/>
+		<path d="M130,140 V60 M130,100 L162,60 M130,100 L162,140" fill="none" stroke="#FCFBF5" stroke-width="14" stroke-linecap="round" stroke-linejoin="round"/>
+	</g>
+
+	<circle class="nk-loader-ball" cx="0" cy="0" r="9" fill="#FDF567"/>
+</svg>

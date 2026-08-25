@@ -1,0 +1,5 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 152 40" role="img">
+	<path d="M6 12 L18 20 L6 28" stroke="#33332F" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" fill="none"/>
+	<path d="M16 12 L28 20 L16 28" stroke="#33332F" stroke-width="2.4" stroke-linecap="round" stroke-linejoin="round" fill="none" opacity="0.55"/>
+	<text x="42" y="26" font-family="'Inter Tight', Arial, sans-serif" font-size="17" font-weight="700" letter-spacing="1" fill="#33332F">MOTIVE</text>
+</svg>

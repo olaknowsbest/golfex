@@ -1,0 +1,347 @@
+/*
+ * Stats-only stylesheet for the fictional Nazario Kayla public career-stats
+ * page (Prompt 07). Loaded after site-shell.css so it can extend the shared
+ * palette/buttons without needing to fight inherited Elementor/theme CSS —
+ * this page's body no longer contains any Elementor widget markup.
+ */
+
+.stats-section__inner {
+	max-width: 1180px;
+	margin: 0 auto;
+	padding: 0 1.5rem;
+}
+.stats-eyebrow {
+	text-transform: uppercase;
+	letter-spacing: 0.14em;
+	font-size: 0.8rem;
+	font-weight: 700;
+	margin: 0 0 1rem;
+}
+.stats-fine-print {
+	font-size: 0.8rem;
+	color: #6B6B64;
+	margin: 1.5rem 0 0;
+}
+
+/* Selector repeated on purpose: kit-global.css ships .elementor-kit-15
+   h1/h2/h3 { color/font-size/line-height: ... } rules (class+element
+   specificity, 0-1-1) left over from the inherited theme, which would
+   otherwise force black text and the wrong size onto these headings. */
+.stats-section__title.stats-section__title {
+	font-size: clamp(1.6rem, 1.3rem + 1.2vw, 2.25rem);
+	line-height: 1.2;
+	margin: 0 0 0.75rem;
+	color: var(--nk-ink);
+}
+.stats-section__lead {
+	color: #4A4A46;
+	margin: 0;
+	font-size: 1.05rem;
+	line-height: 1.6;
+	max-width: 62ch;
+}
+.stats-section__head {
+	max-width: 720px;
+	margin: 0 0 2.5rem;
+}
+
+.btn--outline {
+	background: transparent;
+	color: var(--nk-ink);
+	border: 1.5px solid var(--nk-ink);
+}
+.btn--outline:hover,
+.btn--outline:focus-visible {
+	background: var(--nk-ink);
+	color: var(--nk-cream);
+}
+.btn--ghost-light {
+	background: transparent;
+	color: var(--nk-cream);
+	border: 1.5px solid rgba(252, 251, 245, 0.7);
+}
+.btn--ghost-light:hover,
+.btn--ghost-light:focus-visible {
+	background: rgba(252, 251, 245, 0.12);
+	color: var(--nk-white);
+}
+
+/* ---------- Hero ---------- */
+.stats-hero {
+	background: var(--nk-sand);
+	padding: 4.5rem 0 4rem;
+}
+.stats-hero__inner {
+	max-width: 780px;
+	margin: 0 auto;
+	padding: 0 1.5rem;
+	text-align: center;
+}
+.stats-hero__eyebrow {
+	color: #7c6d00;
+	justify-content: center;
+	display: flex;
+}
+.stats-hero__title.stats-hero__title {
+	color: var(--nk-ink);
+	font-size: clamp(2.1rem, 1.6rem + 2.2vw, 3.25rem);
+	line-height: 1.12;
+	margin: 0 0 1.1rem;
+}
+.stats-hero__lead {
+	color: #3f3f3a;
+	font-size: 1.1rem;
+	line-height: 1.6;
+	margin: 0 auto 1.5rem;
+	max-width: 58ch;
+}
+.stats-status-badge {
+	display: inline-flex;
+	align-items: center;
+	gap: 0.5rem;
+	background: var(--nk-ink);
+	color: var(--nk-cream);
+	font-size: 0.8rem;
+	font-weight: 700;
+	padding: 0.5rem 1rem;
+	border-radius: 999px;
+	margin: 0 0 1.5rem;
+}
+.stats-status-badge::before {
+	content: "";
+	width: 6px;
+	height: 6px;
+	border-radius: 50%;
+	background: var(--nk-yellow);
+	display: inline-block;
+}
+.stats-hero__back-link {
+	display: block;
+	color: var(--nk-ink);
+	font-weight: 600;
+	font-size: 0.95rem;
+	text-decoration: underline;
+	text-underline-offset: 3px;
+}
+.stats-hero__back-link:hover,
+.stats-hero__back-link:focus-visible {
+	color: #7c6d00;
+}
+
+/* ---------- Career snapshot ---------- */
+.stats-snapshot {
+	padding: 5rem 0;
+}
+.stats-snapshot__grid {
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	gap: 1rem;
+	margin: 0 0 1.5rem;
+}
+.stats-snapshot-card {
+	background: var(--nk-ink);
+	color: var(--nk-cream);
+	border-radius: 16px;
+	padding: 1.5rem 1.25rem;
+	text-align: center;
+}
+.stats-snapshot-card__value {
+	display: block;
+	font-size: 1.85rem;
+	font-weight: 700;
+	color: var(--nk-white);
+	line-height: 1.15;
+}
+.stats-snapshot-card__label {
+	display: block;
+	font-size: 0.8rem;
+	color: rgba(252, 251, 245, 0.75);
+	margin-top: 0.3rem;
+}
+
+@media (min-width: 701px) {
+	.stats-snapshot__grid {
+		grid-template-columns: repeat(4, 1fr);
+	}
+}
+
+/* ---------- Season record table ---------- */
+.stats-record {
+	padding: 5rem 0;
+	background: var(--nk-sand);
+}
+.stats-table__scroll {
+	overflow-x: auto;
+	border: 1px solid rgba(10, 10, 10, 0.1);
+	border-radius: 16px;
+	background: var(--nk-white);
+}
+.stats-table__scroll table {
+	width: 100%;
+	border-collapse: collapse;
+	min-width: 480px;
+}
+.stats-table__scroll caption {
+	text-align: left;
+	padding: 1.1rem 1.25rem 0.5rem;
+	font-size: 0.85rem;
+	color: #6B6B64;
+}
+.stats-table__scroll th,
+.stats-table__scroll td {
+	padding: 0.85rem 1.25rem;
+	text-align: right;
+	border-bottom: 1px solid rgba(10, 10, 10, 0.08);
+	font-size: 0.98rem;
+	color: var(--nk-ink);
+}
+.stats-table__scroll th[scope="col"] {
+	text-align: right;
+	font-weight: 700;
+	color: var(--nk-ink);
+	font-size: 0.78rem;
+	text-transform: uppercase;
+	letter-spacing: 0.05em;
+}
+.stats-table__scroll th[scope="col"]:first-child {
+	text-align: left;
+}
+.stats-table__scroll th[scope="row"] {
+	text-align: left;
+	font-weight: 600;
+	color: var(--nk-ink);
+}
+.stats-table__scroll tbody tr:last-child th,
+.stats-table__scroll tbody tr:last-child td {
+	border-bottom: none;
+	font-weight: 700;
+	background: var(--nk-sand);
+}
+.stats-table__note {
+	margin: 1.25rem 0 0;
+	color: #4A4A46;
+	font-size: 0.95rem;
+	line-height: 1.6;
+	max-width: 68ch;
+}
+
+/* ---------- Performance profile ---------- */
+.stats-profile {
+	padding: 5rem 0;
+}
+.stats-profile__grid {
+	display: grid;
+	grid-template-columns: 1fr;
+	gap: 1.5rem;
+}
+.stats-profile-card {
+	background: var(--nk-white);
+	border: 1px solid rgba(10, 10, 10, 0.08);
+	border-radius: 20px;
+	padding: 2rem 1.75rem;
+	text-align: center;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 0.4rem;
+}
+.stats-profile-card__icon {
+	width: 44px;
+	height: 44px;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	color: var(--nk-ink);
+	margin-bottom: 0.3rem;
+}
+.stats-profile-card__icon svg {
+	width: 100%;
+	height: 100%;
+}
+.stats-profile-card__title.stats-profile-card__title {
+	margin: 0;
+	font-size: 1.1rem;
+	color: var(--nk-ink);
+}
+.stats-profile-card__desc {
+	margin: 0;
+	color: #4A4A46;
+	line-height: 1.55;
+	font-size: 0.9rem;
+	text-transform: uppercase;
+	letter-spacing: 0.04em;
+}
+
+@media (min-width: 701px) {
+	.stats-profile__grid {
+		grid-template-columns: repeat(4, 1fr);
+	}
+}
+
+/* ---------- Data note ---------- */
+.stats-data-note {
+	padding: 5rem 0;
+	background: var(--nk-ink);
+}
+.stats-data-note .stats-section__title.stats-section__title {
+	color: var(--nk-white);
+}
+.stats-data-note__panel {
+	background: rgba(252, 251, 245, 0.05);
+	border: 1px solid rgba(252, 251, 245, 0.14);
+	border-radius: 20px;
+	padding: 2rem 1.75rem;
+	max-width: 780px;
+}
+.stats-data-note__panel p {
+	margin: 0 0 1rem;
+	color: rgba(252, 251, 245, 0.8);
+	line-height: 1.65;
+}
+.stats-data-note__panel p:last-child {
+	margin-bottom: 0;
+}
+.stats-data-note :focus-visible {
+	outline-color: var(--nk-yellow);
+}
+
+/* ---------- Final CTA ---------- */
+.stats-final-cta {
+	padding: 5rem 0 5.5rem;
+	background: var(--nk-sand);
+}
+.stats-final-cta__inner {
+	max-width: 640px;
+	text-align: center;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 1rem;
+}
+.stats-final-cta__title.stats-final-cta__title {
+	color: var(--nk-ink);
+	font-size: clamp(1.6rem, 1.3rem + 1.2vw, 2.25rem);
+	margin: 0;
+}
+.stats-final-cta__lead {
+	color: #4A4A46;
+	margin: 0 0 0.5rem;
+	line-height: 1.6;
+}
+.stats-final-cta__actions {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 1rem;
+	justify-content: center;
+}
+
+/* site-shell.css puts a 4rem top margin on the footer for light-content
+   pages; here that reads correctly since .stats-final-cta is sand, not
+   dark, so no override is needed — unlike the other completed pages whose
+   last section before the footer is always dark. */
+
+@media (max-width: 480px) {
+	.stats-section__title {
+		font-size: 1.5rem;
+	}
+}

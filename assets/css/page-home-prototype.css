@@ -1,0 +1,566 @@
+/*
+ * Homepage-only stylesheet for the fictional Nazario Kayla public homepage
+ * (Prompt 02). Loaded after site-shell.css so it can extend the shared
+ * palette/buttons without needing to fight inherited Elementor/theme CSS —
+ * this page's body no longer contains any Elementor widget markup.
+ */
+
+.home-section__inner {
+	max-width: 1180px;
+	margin: 0 auto;
+	padding: 0 1.5rem;
+}
+.home-section__head {
+	max-width: 640px;
+	margin: 0 0 2.5rem;
+}
+/*
+ * Selector repeated on purpose: kit-global.css ships .elementor-kit-15
+ * h1/h2/h3 { color/font-size/line-height: ... } rules (class+element
+ * specificity, 0-1-1) left over from the inherited theme, which would
+ * otherwise force black text and the wrong size onto these headings
+ * (same issue fixed for the header/footer in the Prompt 01 correction
+ * pass). Repeating the class raises our specificity to 0-2-0 so it wins
+ * regardless of stylesheet order.
+ */
+.home-section__title.home-section__title {
+	font-size: clamp(1.6rem, 1.3rem + 1.2vw, 2.25rem);
+	line-height: 1.2;
+	margin: 0 0 0.75rem;
+	color: var(--nk-ink);
+}
+.home-section__lead {
+	color: #4A4A46;
+	margin: 0;
+	font-size: 1.05rem;
+	line-height: 1.6;
+}
+.home-eyebrow {
+	text-transform: uppercase;
+	letter-spacing: 0.14em;
+	font-size: 0.8rem;
+	font-weight: 700;
+	margin: 0 0 1rem;
+}
+.home-fine-print {
+	font-size: 0.8rem;
+	color: #6B6B64;
+	margin: 1.75rem 0 0;
+	text-align: center;
+}
+
+.btn--ghost-light {
+	background: transparent;
+	color: var(--nk-cream);
+	border: 1.5px solid rgba(252, 251, 245, 0.7);
+}
+.btn--ghost-light:hover,
+.btn--ghost-light:focus-visible {
+	background: rgba(252, 251, 245, 0.12);
+	color: var(--nk-white);
+}
+.btn--outline {
+	background: transparent;
+	color: var(--nk-ink);
+	border: 1.5px solid var(--nk-ink);
+}
+.btn--outline:hover,
+.btn--outline:focus-visible {
+	background: var(--nk-ink);
+	color: var(--nk-cream);
+}
+
+/* ---------- Hero ---------- */
+.home-hero {
+	position: relative;
+	min-height: 78vh;
+	display: flex;
+	align-items: center;
+	overflow: hidden;
+	background-color: var(--nk-ink);
+}
+.home-hero__bg {
+	position: absolute;
+	inset: 0;
+	background-image: url('../images/uploads/hero-bg.jpg');
+	background-size: cover;
+	background-position: center;
+}
+.home-hero__scrim {
+	position: absolute;
+	inset: 0;
+	background: linear-gradient(
+		100deg,
+		rgba(10, 10, 10, 0.92) 0%,
+		rgba(10, 10, 10, 0.78) 42%,
+		rgba(10, 10, 10, 0.42) 75%,
+		rgba(10, 10, 10, 0.25) 100%
+	);
+}
+.home-hero__inner {
+	position: relative;
+	max-width: 1180px;
+	margin: 0 auto;
+	padding: 6rem 1.5rem;
+	width: 100%;
+}
+.home-hero .home-eyebrow {
+	color: var(--nk-yellow);
+}
+.home-hero .home-hero__title {
+	color: var(--nk-white);
+	font-size: clamp(2.1rem, 1.6rem + 2.4vw, 3.5rem);
+	line-height: 1.12;
+	max-width: 18ch;
+	margin: 0 0 1.1rem;
+}
+.home-hero__lead {
+	color: rgba(252, 251, 245, 0.88);
+	max-width: 52ch;
+	font-size: 1.1rem;
+	line-height: 1.6;
+	margin: 0 0 2rem;
+}
+.home-hero__actions {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 1rem;
+}
+.home-hero :focus-visible {
+	outline-color: var(--nk-yellow);
+}
+
+/* ---------- Achievement showcase ---------- */
+.home-achieve {
+	padding: 5rem 0;
+	background: var(--nk-sand);
+}
+.home-achieve__intro {
+	max-width: 640px;
+	margin: 0 auto 3rem;
+	text-align: center;
+}
+.home-achieve__stage {
+	display: grid;
+	grid-template-columns: 1fr;
+	justify-items: center;
+	gap: 2.5rem;
+}
+.home-achieve__figure-wrap {
+	position: relative;
+	width: min(340px, 78vw);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+/* Sized from width + aspect-ratio (not inset) so the rings stay true
+   circles regardless of the portrait image's own proportions. */
+.home-achieve__ring {
+	position: absolute;
+	left: 50%;
+	top: 42%;
+	transform: translate(-50%, -50%);
+	aspect-ratio: 1 / 1;
+	border-radius: 50%;
+	border: 1.5px solid rgba(10, 10, 10, 0.12);
+}
+.home-achieve__ring--1 {
+	width: 122%;
+	background: rgba(253, 245, 103, 0.35);
+	border: none;
+}
+.home-achieve__ring--2 {
+	width: 96%;
+	border-color: rgba(10, 10, 10, 0.18);
+}
+.home-achieve__figure {
+	position: relative;
+	width: 100%;
+	height: auto;
+	display: block;
+	filter: drop-shadow(0 18px 30px rgba(10, 10, 10, 0.25));
+}
+.home-achieve__stats {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	display: grid;
+	grid-template-columns: 1fr 1fr;
+	gap: 1rem;
+	width: 100%;
+	max-width: 420px;
+}
+.home-stat {
+	background: var(--nk-white);
+	border-radius: 16px;
+	padding: 1rem 0.75rem;
+	text-align: center;
+	box-shadow: 0 4px 16px rgba(10, 10, 10, 0.06);
+}
+.home-stat__value {
+	display: block;
+	font-size: 1.5rem;
+	font-weight: 700;
+	color: var(--nk-ink);
+	line-height: 1.15;
+}
+.home-stat__label {
+	display: block;
+	font-size: 0.78rem;
+	color: #57574f;
+	margin-top: 0.25rem;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+	.home-achieve__ring--1 {
+		animation: home-ring-pulse 7s ease-in-out infinite;
+	}
+}
+@keyframes home-ring-pulse {
+	0%, 100% { transform: translate(-50%, -50%) scale(1); }
+	50% { transform: translate(-50%, -50%) scale(1.035); }
+}
+
+@media (min-width: 901px) {
+	.home-achieve__stage {
+		grid-template-columns: 1fr minmax(300px, 380px) 1fr;
+		align-items: center;
+		gap: 2rem;
+		max-width: 980px;
+		margin: 0 auto;
+	}
+	.home-achieve__figure-wrap {
+		grid-column: 2;
+		grid-row: 1 / span 2;
+		width: 100%;
+	}
+	.home-achieve__stats {
+		display: contents;
+	}
+	.home-stat {
+		max-width: 190px;
+	}
+	.home-stat:nth-child(1) { grid-column: 1; grid-row: 1; justify-self: end; }
+	.home-stat:nth-child(2) { grid-column: 3; grid-row: 1; justify-self: start; }
+	.home-stat:nth-child(3) { grid-column: 1; grid-row: 2; justify-self: end; }
+	.home-stat:nth-child(4) { grid-column: 3; grid-row: 2; justify-self: start; }
+}
+
+/* ---------- Fan cards preview ---------- */
+.home-cards {
+	padding: 5rem 0;
+}
+.home-cards__grid {
+	display: grid;
+	grid-template-columns: 1fr;
+	gap: 1.5rem;
+}
+/*
+ * Same three-tier color language as the cards on pricing-plan.html: a plain
+ * white/bordered tier, a yellow "Most Popular" tier, and a black top tier.
+ */
+.home-card {
+	position: relative;
+	border: 1px solid rgba(10, 10, 10, 0.1);
+	border-radius: 16px;
+	padding: 2.5rem 1.75rem 2rem;
+	background: var(--nk-white);
+	color: var(--nk-ink);
+	display: flex;
+	flex-direction: column;
+	gap: 0.6rem;
+}
+.home-card--featured {
+	background: var(--nk-yellow);
+	border-color: var(--nk-yellow);
+}
+.home-card--dark {
+	background: var(--nk-ink);
+	border-color: var(--nk-ink);
+	color: var(--nk-cream);
+}
+.home-card__badge {
+	position: absolute;
+	top: 0;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	margin: 0;
+	background: var(--nk-ink);
+	color: var(--nk-white);
+	font-size: 0.72rem;
+	font-weight: 700;
+	letter-spacing: 0.04em;
+	padding: 0.4rem 1rem;
+	border-radius: 999px;
+	white-space: nowrap;
+}
+.home-card__eyebrow {
+	text-transform: uppercase;
+	letter-spacing: 0.08em;
+	font-size: 0.78rem;
+	font-weight: 700;
+	margin: 0;
+	color: inherit;
+	opacity: 0.75;
+}
+.home-card__price {
+	font-size: 2rem;
+	font-weight: 700;
+	margin: 0;
+	color: inherit;
+}
+.home-card__desc {
+	margin: 0 0 0.75rem;
+	color: inherit;
+	opacity: 0.85;
+	line-height: 1.55;
+}
+.home-card .btn {
+	align-self: flex-start;
+}
+.home-card__cta--dark {
+	background: var(--nk-ink);
+	color: var(--nk-white);
+}
+.home-card__cta--dark:hover,
+.home-card__cta--dark:focus-visible {
+	background: #2a2a26;
+	color: var(--nk-white);
+}
+.home-card--dark :focus-visible {
+	outline-color: var(--nk-yellow);
+}
+
+@media (min-width: 701px) {
+	.home-cards__grid {
+		grid-template-columns: repeat(3, 1fr);
+	}
+}
+
+/* ---------- Fan experiences preview ---------- */
+.home-experiences {
+	padding: 5rem 0;
+	background: var(--nk-sand);
+}
+.home-experiences__grid {
+	display: grid;
+	grid-template-columns: 1fr;
+	gap: 1.5rem;
+}
+.home-exp-card {
+	background: var(--nk-white);
+	border-radius: 20px;
+	padding: 2rem 1.75rem;
+	text-align: center;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 0.5rem;
+}
+.home-exp-card__icon {
+	width: 52px;
+	height: 52px;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	color: var(--nk-ink);
+	margin-bottom: 0.5rem;
+}
+.home-exp-card__icon svg {
+	width: 100%;
+	height: 100%;
+}
+.home-exp-card__title.home-exp-card__title {
+	margin: 0;
+	font-size: 1.15rem;
+	color: var(--nk-ink);
+}
+.home-exp-card__desc {
+	margin: 0 0 0.5rem;
+	color: #4A4A46;
+	line-height: 1.55;
+}
+.home-exp-card__cta {
+	margin: 0.4rem 0 0;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	border-radius: 999px;
+	padding: 0.6rem 1.25rem;
+	font-size: 0.85rem;
+	font-weight: 600;
+	background: rgba(10, 10, 10, 0.06);
+	color: #6B6B64;
+}
+
+@media (min-width: 701px) {
+	.home-experiences__grid {
+		grid-template-columns: repeat(3, 1fr);
+	}
+}
+
+/* ---------- Journey / editorial preview ---------- */
+.home-journey {
+	padding: 5rem 0;
+}
+.home-journey__grid {
+	display: grid;
+	grid-template-columns: 1fr;
+	gap: 1.5rem;
+}
+.home-journey-card {
+	border-radius: 20px;
+	overflow: hidden;
+	background: var(--nk-white);
+	border: 1px solid rgba(10, 10, 10, 0.08);
+}
+.home-journey-card img {
+	width: 100%;
+	height: 200px;
+	object-fit: cover;
+	display: block;
+}
+.home-journey-card__body {
+	padding: 1.5rem;
+}
+.home-journey-card__tag {
+	text-transform: uppercase;
+	letter-spacing: 0.08em;
+	font-size: 0.72rem;
+	font-weight: 700;
+	color: #7c6d00;
+	margin: 0 0 0.6rem;
+}
+.home-journey-card__title.home-journey-card__title {
+	margin: 0 0 0.5rem;
+	font-size: 1.1rem;
+	color: var(--nk-ink);
+}
+.home-journey-card__desc {
+	margin: 0;
+	color: #4A4A46;
+	font-size: 0.92rem;
+	line-height: 1.55;
+}
+
+@media (min-width: 701px) {
+	.home-journey__grid {
+		grid-template-columns: repeat(3, 1fr);
+	}
+}
+
+/* ---------- Concept partners ---------- */
+.home-partners {
+	padding: 4.5rem 0;
+	background: var(--nk-sand);
+}
+.home-partners__intro {
+	max-width: 640px;
+	margin: 0 auto 2.5rem;
+	text-align: center;
+}
+.home-partners__intro .home-eyebrow {
+	color: #7c6d00;
+}
+.home-partners__grid {
+	list-style: none;
+	display: grid;
+	grid-template-columns: repeat(2, 1fr);
+	gap: 1.25rem;
+	max-width: 980px;
+	margin: 0 auto;
+	padding: 0;
+}
+.home-partners__mark {
+	background: var(--nk-white);
+	border: 1px solid rgba(10, 10, 10, 0.08);
+	border-radius: 14px;
+	padding: 1.25rem 1rem;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	min-height: 76px;
+}
+.home-partners__mark img {
+	width: auto;
+	height: auto;
+	max-width: 100%;
+	max-height: 28px;
+	display: block;
+	opacity: 0.82;
+}
+@media (prefers-reduced-motion: no-preference) {
+	.home-partners__mark img {
+		transition: opacity 0.15s ease;
+	}
+}
+.home-partners__mark:hover img {
+	opacity: 1;
+}
+.home-partners__foot {
+	margin-top: 2rem;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 1rem;
+	text-align: center;
+}
+
+@media (min-width: 701px) {
+	.home-partners__grid {
+		grid-template-columns: repeat(3, 1fr);
+	}
+}
+@media (min-width: 1001px) {
+	.home-partners__grid {
+		grid-template-columns: repeat(6, 1fr);
+	}
+	.home-partners__mark {
+		padding: 1.5rem 0.75rem;
+	}
+}
+
+/* ---------- Final CTA ---------- */
+.home-final-cta {
+	padding: 5rem 0 5.5rem;
+	background: var(--nk-ink);
+}
+.home-final-cta__inner {
+	max-width: 640px;
+	text-align: center;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 1rem;
+}
+.home-final-cta__title.home-final-cta__title {
+	color: var(--nk-white);
+	font-size: clamp(1.6rem, 1.3rem + 1.2vw, 2.25rem);
+	margin: 0;
+}
+.home-final-cta__lead {
+	color: rgba(252, 251, 245, 0.82);
+	margin: 0 0 0.5rem;
+	line-height: 1.6;
+}
+.home-final-cta :focus-visible {
+	outline-color: var(--nk-yellow);
+}
+/* site-shell.css puts a 4rem top margin on the footer for light-content
+   pages; here it would show as a pale gap between two black sections.
+   This stylesheet only loads on index.html, where the section right
+   before the footer is always .home-final-cta, so it's safe to target
+   .site-footer directly rather than via an (incorrect — .home-final-cta
+   is inside <main>, not a sibling of <footer>) adjacent-sibling selector. */
+.site-footer {
+	margin-top: 0;
+}
+
+@media (max-width: 480px) {
+	.home-section__title {
+		font-size: 1.5rem;
+	}
+	.home-achieve__stats {
+		max-width: 320px;
+	}
+}

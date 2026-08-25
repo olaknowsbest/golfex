@@ -1,0 +1,6 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 168 40" role="img">
+	<circle cx="16" cy="20" r="13" stroke="#33332F" stroke-width="2.2" fill="none"/>
+	<path d="M16 7c5 4 5 22 0 26M16 7c-5 4-5 22 0 26" stroke="#33332F" stroke-width="1.5" fill="none"/>
+	<line x1="3" y1="20" x2="29" y2="20" stroke="#33332F" stroke-width="1.5"/>
+	<text x="42" y="26" font-family="'Inter Tight', Arial, sans-serif" font-size="17" font-weight="700" letter-spacing="1" fill="#33332F">MERIDIAN</text>
+</svg>

@@ -1,0 +1,210 @@
+/*
+ * Login-holding-only stylesheet for the fictional Nazario Kayla account
+ * access page (Prompt 08). Loaded after site-shell.css so it can extend
+ * the shared palette/buttons without needing to fight inherited
+ * Elementor/theme CSS — this page's body no longer contains any Elementor
+ * widget markup. No form, auth, or storage code lives here or in the
+ * matching HTML; this is a static holding page only.
+ */
+
+.login-section__inner {
+	max-width: 1180px;
+	margin: 0 auto;
+	padding: 0 1.5rem;
+}
+.login-eyebrow {
+	text-transform: uppercase;
+	letter-spacing: 0.14em;
+	font-size: 0.8rem;
+	font-weight: 700;
+	margin: 0 0 1rem;
+}
+
+/* Selector repeated on purpose: kit-global.css ships .elementor-kit-15
+   h1/h2/h3 { color/font-size/line-height: ... } rules (class+element
+   specificity, 0-1-1) left over from the inherited theme, which would
+   otherwise force black text and the wrong size onto these headings. */
+.login-section__title.login-section__title {
+	font-size: clamp(1.6rem, 1.3rem + 1.2vw, 2.25rem);
+	line-height: 1.2;
+	margin: 0 0 0.75rem;
+	color: var(--nk-ink);
+}
+.login-section__lead {
+	color: #4A4A46;
+	margin: 0 0 2rem;
+	font-size: 1.05rem;
+	line-height: 1.6;
+	max-width: 62ch;
+}
+
+.btn--outline {
+	background: transparent;
+	color: var(--nk-ink);
+	border: 1.5px solid var(--nk-ink);
+}
+.btn--outline:hover,
+.btn--outline:focus-visible {
+	background: var(--nk-ink);
+	color: var(--nk-cream);
+}
+
+/* ---------- Main access panel ---------- */
+.login-panel {
+	background: var(--nk-ink);
+	padding: 5rem 0;
+	display: flex;
+	justify-content: center;
+}
+.login-panel__card {
+	max-width: 520px;
+	margin: 0 1.5rem;
+	background: rgba(252, 251, 245, 0.05);
+	border: 1px solid rgba(252, 251, 245, 0.14);
+	border-radius: 24px;
+	padding: 3rem 2.25rem;
+	text-align: center;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+}
+.login-panel__mark {
+	height: 56px;
+	width: auto;
+	display: block;
+	margin: 0 0 1.75rem;
+}
+.login-panel .login-eyebrow {
+	color: var(--nk-yellow);
+}
+.login-panel__title.login-panel__title {
+	color: var(--nk-white);
+	font-size: clamp(1.7rem, 1.4rem + 1.4vw, 2.4rem);
+	line-height: 1.16;
+	margin: 0 0 1rem;
+}
+.login-panel__lead {
+	color: rgba(252, 251, 245, 0.78);
+	font-size: 1.02rem;
+	line-height: 1.6;
+	margin: 0 0 1.5rem;
+}
+.login-status-badge {
+	display: inline-flex;
+	align-items: center;
+	gap: 0.5rem;
+	background: var(--nk-yellow);
+	color: var(--nk-ink);
+	font-size: 0.8rem;
+	font-weight: 700;
+	padding: 0.5rem 1rem;
+	border-radius: 999px;
+	margin: 0;
+}
+.login-status-badge::before {
+	content: "";
+	width: 6px;
+	height: 6px;
+	border-radius: 50%;
+	background: var(--nk-ink);
+	display: inline-block;
+}
+.login-panel :focus-visible {
+	outline-color: var(--nk-yellow);
+}
+
+/* ---------- Security commitments ---------- */
+.login-commitments {
+	padding: 4.5rem 0;
+}
+.login-commitments__head {
+	max-width: 720px;
+	margin: 0 auto 2rem;
+	text-align: center;
+}
+.login-commitments__grid {
+	display: grid;
+	grid-template-columns: 1fr;
+	gap: 1.25rem;
+	max-width: 980px;
+	margin: 0 auto;
+}
+.login-commitment-card {
+	background: var(--nk-sand);
+	border: 1px solid rgba(10, 10, 10, 0.08);
+	border-radius: 18px;
+	padding: 1.75rem 1.5rem;
+	text-align: center;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 0.4rem;
+}
+.login-commitment-card__icon {
+	width: 40px;
+	height: 40px;
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	color: var(--nk-ink);
+	margin-bottom: 0.3rem;
+}
+.login-commitment-card__icon svg {
+	width: 100%;
+	height: 100%;
+}
+.login-commitment-card__title.login-commitment-card__title {
+	margin: 0;
+	font-size: 1.05rem;
+	color: var(--nk-ink);
+}
+.login-commitment-card__desc {
+	margin: 0;
+	color: #4A4A46;
+	line-height: 1.5;
+	font-size: 0.92rem;
+}
+
+@media (min-width: 701px) {
+	.login-commitments__grid {
+		grid-template-columns: repeat(3, 1fr);
+	}
+}
+
+/* ---------- Public-site links ---------- */
+.login-links {
+	padding: 4.5rem 0 5rem;
+	background: var(--nk-sand);
+}
+.login-links__head {
+	max-width: 720px;
+	margin: 0 auto 2rem;
+	text-align: center;
+}
+.login-links__actions {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 1rem;
+	justify-content: center;
+}
+.login-links__note {
+	margin: 1.75rem auto 0;
+	max-width: 60ch;
+	text-align: center;
+	font-size: 0.85rem;
+	color: #6B6B64;
+}
+
+/* site-shell.css puts a 4rem top margin on the footer for light-content
+   pages; the last section here is sand, so that default spacing is the
+   correct choice — no override needed, matching pages elsewhere whose
+   final section is light rather than dark. */
+
+@media (max-width: 480px) {
+	.login-section__title {
+		font-size: 1.5rem;
+	}
+	.login-panel__card {
+		padding: 2.25rem 1.5rem;
+	}
+}
