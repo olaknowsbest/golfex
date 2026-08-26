@@ -50,5 +50,6 @@ Design/accessibility: one H1, semantic headings, Inter Tight, established cream/
 
 Verify over local HTTP near 1280px, 768px, and actual ~390px where possible. Check active Contact nav, NK loader, mobile menu, footer, skip link, focus, local links, overflow, console, one H1, four FAQs, and absence of forms/contact endpoints/real identities. Report exact files and deferrals; do not commit.
 
+
 Before editing, restate the Contact-only scope and expected files. Then implement and verify.
 ```

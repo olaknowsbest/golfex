@@ -27,7 +27,6 @@ Do not copy NK Management branding, wording, user data, proprietary assets, or l
 Before implementation, approve and document:
 
 - authentication provider and backend architecture;
-- Google OAuth/OIDC configuration and redirect origins;
 - password hashing/handling ownership;
 - email verification and account-recovery delivery;
 - secure cookie and session policy;

@@ -246,6 +246,209 @@
 	.home-stat:nth-child(4) { grid-column: 3; grid-row: 2; justify-self: start; }
 }
 
+/* ---------- Athlete story / membership seal ---------- */
+/* Vendor CSS (bootstrap.min.css / elementor-frontend.min.css) sets
+   html { scroll-behavior: smooth } for users with no reduced-motion
+   preference. On this page that animated scroll gets fought and stalled
+   by the legacy assets/js/smooth-scroll.js wheel-hijack library's own
+   rAF loop, so the #story in-page jump never completes. Forcing an
+   instant jump here avoids the conflict; scoped to this page only. */
+:root {
+	scroll-behavior: auto;
+}
+
+.home-story {
+	padding: 5rem 0;
+	scroll-margin-top: 90px;
+}
+.home-story__inner {
+	display: grid;
+	grid-template-columns: 1fr;
+	gap: 3rem;
+	align-items: center;
+}
+.home-story__media {
+	position: relative;
+	width: min(420px, 100%);
+	aspect-ratio: 1 / 1.05;
+	margin: 0 auto;
+}
+.home-story__img-rear,
+.home-story__img-front {
+	position: absolute;
+	border-radius: 24px;
+	overflow: hidden;
+	box-shadow: 0 20px 40px rgba(10, 10, 10, 0.14);
+}
+.home-story__img-rear {
+	top: 0;
+	left: 0;
+	width: 80%;
+	z-index: 1;
+	transform: rotate(-3deg);
+}
+.home-story__img-rear img {
+	width: 100%;
+	height: 100%;
+	object-fit: cover;
+	display: block;
+	aspect-ratio: 403 / 485;
+}
+.home-story__img-front {
+	right: 2%;
+	bottom: -4%;
+	width: 56%;
+	z-index: 2;
+	background: linear-gradient(165deg, var(--nk-sand) 0%, var(--nk-yellow) 145%);
+	padding: 10% 8% 0;
+}
+.home-story__img-front img {
+	width: 100%;
+	height: auto;
+	display: block;
+	filter: drop-shadow(0 12px 18px rgba(10, 10, 10, 0.22));
+}
+
+/* Rotating "Get Membership" seal: the ring (background + circular text)
+   rotates as one symmetric unit so the fill reads identically either way;
+   the center NK mark is a separate, non-animated layer so it stays upright. */
+.home-story__seal {
+	position: absolute;
+	left: -6%;
+	bottom: -7%;
+	width: clamp(112px, 30%, 172px);
+	aspect-ratio: 1 / 1;
+	z-index: 3;
+	display: block;
+	border-radius: 50%;
+	text-decoration: none;
+}
+.home-story__seal:focus-visible {
+	outline-offset: 4px;
+}
+.home-story__seal-ring,
+.home-story__seal-ring-svg {
+	position: absolute;
+	inset: 0;
+	width: 100%;
+	height: 100%;
+	display: block;
+}
+.home-story__seal-bg {
+	fill: var(--nk-yellow);
+}
+.home-story__seal-text {
+	fill: var(--nk-ink);
+	font-family: inherit;
+	font-size: 13px;
+	font-weight: 700;
+	letter-spacing: 0.3px;
+	text-transform: uppercase;
+}
+.home-story__seal-center {
+	position: absolute;
+	inset: 0;
+	margin: auto;
+	width: 46%;
+	aspect-ratio: 1 / 1;
+	border-radius: 50%;
+	background: var(--nk-ink);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	box-shadow: 0 2px 6px rgba(10, 10, 10, 0.25);
+	z-index: 1;
+}
+.home-story__seal-center svg {
+	width: 62%;
+	height: auto;
+	display: block;
+}
+
+@media (prefers-reduced-motion: no-preference) {
+	.home-story__seal-ring-svg {
+		animation: home-seal-rotate 16s linear infinite;
+	}
+}
+@keyframes home-seal-rotate {
+	from { transform: rotate(0deg); }
+	to { transform: rotate(360deg); }
+}
+.home-story__seal:focus-visible .home-story__seal-ring-svg {
+	animation-play-state: paused;
+}
+@media (hover: hover) and (pointer: fine) {
+	.home-story__seal:hover .home-story__seal-ring-svg {
+		animation-play-state: paused;
+	}
+}
+@media (prefers-reduced-motion: no-preference) {
+	.home-story__seal:focus-visible {
+		transition: transform 0.2s ease, box-shadow 0.2s ease;
+		transform: scale(1.06) translateY(-2px);
+		box-shadow: 0 10px 22px rgba(10, 10, 10, 0.28);
+	}
+}
+@media (prefers-reduced-motion: no-preference) and (hover: hover) and (pointer: fine) {
+	.home-story__seal {
+		transition: transform 0.2s ease, box-shadow 0.2s ease;
+	}
+	.home-story__seal:hover {
+		transform: scale(1.06) translateY(-2px);
+		box-shadow: 0 10px 22px rgba(10, 10, 10, 0.28);
+	}
+	.home-story__img-rear,
+	.home-story__img-front {
+		transition: transform 0.25s ease;
+	}
+	.home-story__media:hover .home-story__img-rear {
+		transform: rotate(-3deg) translateY(-4px);
+	}
+	.home-story__media:hover .home-story__img-front {
+		transform: translateY(-6px);
+	}
+}
+
+.home-story__content .home-eyebrow {
+	color: #7c6d00;
+}
+.home-story__features {
+	list-style: none;
+	margin: 1.75rem 0 0;
+	padding: 0;
+	display: grid;
+	gap: 1.25rem;
+}
+.home-story__feature-title.home-story__feature-title {
+	margin: 0 0 0.35rem;
+	font-size: 1.05rem;
+	color: var(--nk-ink);
+}
+.home-story__feature-desc {
+	margin: 0;
+	color: #4A4A46;
+	line-height: 1.6;
+}
+.home-story__actions {
+	margin-top: 1.75rem;
+}
+.home-story__disclosure {
+	text-align: left;
+	margin-top: 1.5rem;
+}
+
+@media (min-width: 901px) {
+	.home-story__inner {
+		grid-template-columns: minmax(320px, 460px) 1fr;
+		gap: 4rem;
+	}
+	.home-story__media {
+		width: 100%;
+		max-width: 460px;
+		margin: 0;
+	}
+}
+
 /* ---------- Fan cards preview ---------- */
 .home-cards {
 	padding: 5rem 0;
