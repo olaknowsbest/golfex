@@ -1,6 +1,10 @@
 # Future Authentication Requirements
 
-Status: deferred until the backend and authentication architecture decision.
+Status: interface design approved; production implementation remains deferred.
+
+## Recorded stack direction
+
+The owner selected PHP Laravel with MySQL as the intended application and database direction. Authentication will be implemented server-side during the Laravel migration; the current static screens are disabled visual specifications only.
 
 The current `login.html` remains an honest prototype holding page. Do not add fake fields, credentials, sessions, or dashboard behavior during the public-site stage.
 

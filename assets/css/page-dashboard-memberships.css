@@ -1,0 +1,72 @@
+/*
+ * My Memberships dashboard screen (static prototype). Loaded after
+ * page-dashboard-shell.css on dashboard-memberships.html only. This
+ * screen is an ownership wallet (what the customer actually holds),
+ * never a plan catalog — the Supporter/Insider/Premier comparison lives
+ * exclusively on dashboard-select-membership.html.
+ */
+
+.dsm-empty {
+	max-width: 460px;
+	margin: 2.5rem 0 0;
+	padding: 3rem 2rem;
+	border: 1px solid rgba(10, 10, 10, 0.1);
+	border-radius: 24px;
+	background: var(--nk-white);
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	text-align: center;
+}
+
+.dsm-empty__visual {
+	margin: 0 0 1.75rem;
+}
+.dsm-empty__badge {
+	width: clamp(108px, 30vw, 132px);
+	aspect-ratio: 1 / 1;
+	border-radius: 50%;
+	border: 1.5px dashed rgba(10, 10, 10, 0.22);
+	background: var(--nk-sand);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+}
+.dsm-empty__logo {
+	width: 38%;
+	height: auto;
+	opacity: 0.45;
+	/* nk-monogram-mark.svg is designed for dark surfaces; invert it here
+	   so the cream/yellow mark reads correctly against the sand
+	   silhouette instead of vanishing at low contrast. */
+	filter: invert(1) brightness(0.55);
+}
+
+.dsm-empty__title.dsm-empty__title {
+	margin: 0 0 0.6rem;
+	font-size: 1.3rem;
+	color: var(--nk-ink);
+}
+.dsm-empty__desc {
+	margin: 0 0 1.5rem;
+	color: #6B6B64;
+	font-size: 0.95rem;
+	line-height: 1.55;
+}
+.dsm-empty__cta {
+	display: inline-flex;
+}
+
+.dsm-fine-print {
+	max-width: 760px;
+	margin: 2rem 0 0;
+	color: #6B6B64;
+	font-size: 0.84rem;
+	line-height: 1.6;
+}
+
+@media (max-width: 480px) {
+	.dsm-empty {
+		padding: 2.25rem 1.5rem;
+	}
+}

@@ -108,12 +108,15 @@ Expected high-level entities:
 - Role/account state
 - Fan-card package
 - Package benefit
+- Membership plan
+- Membership-plan benefit
 - Order
 - Order item
 - Payment attempt
 - Crypto rate snapshot
 - Public receiving-address configuration
-- Membership/fan card
+- Fan card
+- Membership
 - Booking type
 - Booking
 - Admin review/action

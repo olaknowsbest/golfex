@@ -1,0 +1,245 @@
+/*
+ * Profile dashboard screen (static prototype). Loaded after
+ * page-dashboard-shell.css on dashboard-profile.html only. Every field,
+ * toggle, and action on this page is a disabled/read-only visual
+ * placeholder — there is no form submission, storage, or backend of any
+ * kind. The design is intentionally lighter and calmer than the dark
+ * NK Management reference: white rounded panels on a sand page
+ * background, ink borders, restrained shadows, and yellow reserved for
+ * small accents (the active nav item, focus states, the overview badge).
+ */
+
+.dpr-layout {
+	margin-top: 2rem;
+	display: grid;
+	grid-template-columns: 1fr;
+	gap: 1.5rem;
+	align-items: start;
+}
+@media (min-width: 901px) {
+	.dpr-layout {
+		grid-template-columns: minmax(240px, 300px) 1fr;
+	}
+}
+
+/* ---------- Shared panel look ---------- */
+.dpr-overview,
+.dpr-panel {
+	border: 1px solid rgba(10, 10, 10, 0.1);
+	border-radius: 20px;
+	background: var(--nk-white);
+	box-shadow: 0 1px 2px rgba(10, 10, 10, 0.04), 0 10px 24px rgba(10, 10, 10, 0.05);
+}
+
+/* ---------- Profile overview card ---------- */
+.dpr-overview {
+	padding: 2rem 1.5rem;
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	text-align: center;
+	gap: 0.4rem;
+}
+.dpr-overview__avatar {
+	width: 72px;
+	height: 72px;
+	margin-bottom: 0.75rem;
+	border-radius: 50%;
+	border: 1.5px solid rgba(10, 10, 10, 0.15);
+	background: var(--nk-sand);
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	font-size: 1.15rem;
+	font-weight: 800;
+	letter-spacing: 0.02em;
+	color: var(--nk-ink);
+}
+.dpr-overview__name {
+	margin: 0;
+	font-size: 1.05rem;
+	font-weight: 700;
+	color: var(--nk-ink);
+}
+.dpr-overview__email {
+	margin: 0 0 0.5rem;
+	font-size: 0.85rem;
+	color: #6B6B64;
+}
+.dpr-overview__badge {
+	display: inline-flex;
+	padding: 0.25rem 0.7rem;
+	border-radius: 999px;
+	background: var(--nk-yellow);
+	color: var(--nk-ink);
+	font-size: 0.7rem;
+	font-weight: 800;
+	text-transform: uppercase;
+	letter-spacing: 0.08em;
+}
+.dpr-overview__note {
+	margin: 0.9rem 0 0;
+	font-size: 0.78rem;
+	line-height: 1.5;
+	color: #6B6B64;
+}
+
+/* ---------- Panels column ---------- */
+.dpr-panels {
+	display: flex;
+	flex-direction: column;
+	gap: 1.5rem;
+}
+.dpr-panel {
+	padding: 1.5rem 1.75rem;
+}
+.dpr-panel__title {
+	margin: 0 0 1.1rem;
+	font-size: 1rem;
+	color: var(--nk-ink);
+}
+.dpr-panel__desc,
+.dpr-panel__note {
+	margin: 0;
+	font-size: 0.84rem;
+	line-height: 1.6;
+	color: #6B6B64;
+}
+.dpr-panel__note {
+	margin-top: 1.1rem;
+	font-size: 0.78rem;
+}
+
+/* ---------- Fields ---------- */
+.dpr-field {
+	display: flex;
+	flex-direction: column;
+	gap: 0.4rem;
+	margin: 0 0 1.1rem;
+}
+.dpr-field:last-of-type {
+	margin-bottom: 0;
+}
+.dpr-field-row {
+	display: grid;
+	grid-template-columns: 1fr;
+	gap: 1.1rem;
+	margin: 0 0 1.1rem;
+}
+@media (min-width: 560px) {
+	.dpr-field-row {
+		grid-template-columns: 1fr 1fr;
+	}
+}
+.dpr-field-row .dpr-field {
+	margin: 0;
+}
+.dpr-field__label {
+	font-size: 0.82rem;
+	font-weight: 700;
+	color: #6B6B64;
+}
+.dpr-field__input {
+	font-family: inherit;
+	font-size: 0.92rem;
+	padding: 0.7rem 0.9rem;
+	border: 1px solid rgba(10, 10, 10, 0.14);
+	border-radius: 10px;
+	background: var(--nk-sand);
+	color: var(--nk-ink);
+	opacity: 0.75;
+	cursor: not-allowed;
+}
+textarea.dpr-field__input {
+	resize: none;
+}
+.dpr-bio__count {
+	margin: 0.35rem 0 0;
+	font-size: 0.76rem;
+	color: #6B6B64;
+	text-align: right;
+}
+
+/* ---------- Communication toggles ---------- */
+.dpr-toggle-row {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 1rem;
+	padding: 0.7rem 0;
+}
+.dpr-toggle-row + .dpr-toggle-row {
+	border-top: 1px solid rgba(10, 10, 10, 0.06);
+}
+.dpr-toggle-row__label {
+	font-size: 0.92rem;
+	color: var(--nk-ink);
+}
+.dpr-toggle {
+	position: relative;
+	display: inline-flex;
+	flex-shrink: 0;
+	width: 42px;
+	height: 24px;
+	cursor: not-allowed;
+}
+.dpr-toggle input {
+	position: absolute;
+	inset: 0;
+	margin: 0;
+	opacity: 0;
+}
+.dpr-toggle__track {
+	position: absolute;
+	inset: 0;
+	border-radius: 999px;
+	background: rgba(10, 10, 10, 0.12);
+	border: 1px solid rgba(10, 10, 10, 0.12);
+}
+.dpr-toggle__thumb {
+	position: absolute;
+	top: 2px;
+	left: 2px;
+	width: 18px;
+	height: 18px;
+	border-radius: 50%;
+	background: var(--nk-white);
+	box-shadow: 0 1px 2px rgba(10, 10, 10, 0.2);
+}
+.dpr-toggle input:focus-visible ~ .dpr-toggle__track {
+	outline: 3px solid var(--nk-yellow);
+	outline-offset: 2px;
+}
+
+/* ---------- Bottom action ---------- */
+.dpr-save {
+	margin-top: 1.75rem;
+	padding: 1.5rem 1.75rem;
+	border: 1px solid rgba(10, 10, 10, 0.1);
+	border-radius: 20px;
+	background: var(--nk-white);
+	box-shadow: 0 1px 2px rgba(10, 10, 10, 0.04), 0 10px 24px rgba(10, 10, 10, 0.05);
+}
+.dpr-save__btn {
+	background: var(--nk-ink);
+	color: var(--nk-cream);
+	border: 1.5px solid var(--nk-ink);
+}
+.dpr-save__btn:disabled {
+	opacity: 0.55;
+	cursor: not-allowed;
+}
+.dpr-save__note {
+	margin: 0.6rem 0 0;
+	font-size: 0.8rem;
+	line-height: 1.5;
+	color: #6B6B64;
+}
+
+@media (max-width: 480px) {
+	.dpr-overview,
+	.dpr-panel,
+	.dpr-save {
+		padding: 1.25rem;
+	}
+}

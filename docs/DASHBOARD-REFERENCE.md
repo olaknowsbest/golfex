@@ -73,6 +73,8 @@ Profile
 Logout
 ```
 
+`My Fan Cards` and `My Memberships` are intentionally separate. Fan Cards are one-time tiered products; Memberships are recurring monthly or yearly plans. They share order/payment infrastructure but do not automatically grant one another.
+
 Deferred until separately approved:
 
 ```text

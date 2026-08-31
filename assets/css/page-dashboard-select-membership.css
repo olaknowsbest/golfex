@@ -1,0 +1,160 @@
+/*
+ * Choose a Membership dashboard screen (static prototype). Loaded after
+ * page-dashboard-shell.css on dashboard-select-membership.html only.
+ * Plan cards mirror the polished .membership-card styling from
+ * memberships.html (rounded corners, featured badge, brutalist shadow,
+ * dark-card treatment) so this screen and the public Membership page
+ * read as one consistent design language. This page shows only the
+ * three plan choices — order summary and confirmation live on
+ * dashboard-confirm-membership.html, reached via each card's real
+ * "Choose X" link.
+ */
+
+.dsm-back {
+	display: inline-flex;
+	align-items: center;
+	gap: 0.4rem;
+	margin: 0 0 1.25rem;
+	color: #6B6B64;
+	font-size: 0.88rem;
+	font-weight: 600;
+	text-decoration: none;
+}
+.dsm-back:hover,
+.dsm-back:focus-visible {
+	color: var(--nk-ink);
+}
+
+/* ---------- Plan cards ---------- */
+.dsm-grid {
+	display: grid;
+	grid-template-columns: 1fr;
+	gap: 1.25rem;
+	margin-top: 2rem;
+}
+.dsm-plan-card {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	min-width: 0;
+	padding: 2rem;
+	border: 1px solid rgba(10, 10, 10, 0.12);
+	border-radius: 24px;
+	background: var(--nk-white);
+	color: var(--nk-ink);
+}
+.dsm-plan-card--featured {
+	background: var(--nk-yellow);
+	border-color: var(--nk-ink);
+	box-shadow: 8px 8px 0 var(--nk-ink);
+}
+.dsm-plan-card--dark {
+	background: var(--nk-ink);
+	color: var(--nk-cream);
+}
+
+.dsm-plan-card__badge {
+	position: absolute;
+	top: 0;
+	left: 50%;
+	transform: translate(-50%, -50%);
+	margin: 0;
+	background: var(--nk-ink);
+	color: var(--nk-white);
+	font-size: 0.72rem;
+	font-weight: 700;
+	letter-spacing: 0.04em;
+	padding: 0.4rem 1rem;
+	border-radius: 999px;
+	white-space: nowrap;
+}
+.dsm-plan-card__tag {
+	margin: 0 0 1.5rem;
+	font-size: 0.78rem;
+	font-weight: 800;
+	letter-spacing: 0.12em;
+	text-transform: uppercase;
+	color: inherit;
+}
+.dsm-plan-card__name.dsm-plan-card__name {
+	margin: 0 0 1.25rem;
+	color: inherit;
+	font-size: clamp(1.5rem, 3vw, 2.2rem);
+	line-height: 1.08;
+}
+.dsm-plan-card__price {
+	display: grid;
+	padding: 1rem 0;
+	border-top: 1px solid rgba(10, 10, 10, 0.15);
+	border-bottom: 1px solid rgba(10, 10, 10, 0.15);
+}
+.dsm-plan-card--dark .dsm-plan-card__price {
+	border-color: rgba(252, 251, 245, 0.2);
+}
+.dsm-plan-card__price strong {
+	font-size: 1.7rem;
+}
+.dsm-plan-card__price span {
+	font-size: 0.78rem;
+	opacity: 0.68;
+}
+
+.dsm-plan-card__features {
+	margin: 1.4rem 0 2rem;
+	padding-left: 1.2rem;
+	line-height: 1.75;
+	flex-grow: 1;
+}
+
+/* ---------- Choose action (real link) ---------- */
+.dsm-plan-card__cta {
+	margin-top: auto;
+	align-self: stretch;
+	justify-content: center;
+	background: var(--nk-ink);
+	color: var(--nk-cream);
+	border: 1px solid var(--nk-ink);
+}
+.dsm-plan-card--dark .dsm-plan-card__cta {
+	background: var(--nk-yellow);
+	color: var(--nk-ink);
+	border-color: var(--nk-yellow);
+}
+@media (prefers-reduced-motion: no-preference) {
+	.dsm-plan-card__cta {
+		transition: background-color 0.15s ease, color 0.15s ease, border-color 0.15s ease;
+	}
+}
+@media (hover: hover) and (pointer: fine) {
+	.dsm-plan-card__cta:hover {
+		background: var(--nk-white);
+		color: var(--nk-ink);
+		border-color: var(--nk-ink);
+	}
+}
+.dsm-plan-card__cta:focus-visible {
+	background: var(--nk-white);
+	color: var(--nk-ink);
+	border-color: var(--nk-ink);
+}
+.dsm-plan-card--dark :focus-visible {
+	outline-color: var(--nk-yellow);
+}
+
+@media (min-width: 701px) {
+	.dsm-grid {
+		grid-template-columns: repeat(3, 1fr);
+	}
+}
+@media (max-width: 700px) {
+	.dsm-plan-card {
+		max-width: 620px;
+		width: 100%;
+		margin: 0 auto;
+	}
+}
+@media (max-width: 480px) {
+	.dsm-plan-card {
+		padding: 1.5rem;
+	}
+}

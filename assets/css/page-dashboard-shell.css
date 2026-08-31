@@ -597,8 +597,15 @@ body {
 
 /* ---------- Desktop persistent sidebar ---------- */
 @media (min-width: 901px) {
+	/* Pin the shell to the viewport so the sidebar and content column can
+	   scroll independently instead of the document scrolling as a whole. */
+	.dashboard-shell {
+		height: 100dvh;
+	}
 	.dashboard-sidebar {
 		position: sticky;
+		top: 0;
+		height: 100dvh;
 		transform: none;
 		width: 260px;
 	}
@@ -610,6 +617,11 @@ body {
 	}
 	.dashboard-topbar__toggle {
 		display: none;
+	}
+	.dashboard-content {
+		height: 100dvh;
+		min-height: 0;
+		overflow-y: auto;
 	}
 }
 

@@ -1,0 +1,75 @@
+/*
+ * Book an Experience — booking type selection (static prototype). Loaded
+ * after page-dashboard-shell.css on dashboard-book-type.html only. Each
+ * type is a real link out to dashboard-book-slot.html?type=..., never a
+ * form field — there is no free-form date/time entry anywhere in this
+ * flow.
+ */
+
+.dbt-back {
+	display: inline-flex;
+	align-items: center;
+	gap: 0.4rem;
+	margin: 0 0 1.25rem;
+	color: #6B6B64;
+	font-size: 0.88rem;
+	font-weight: 600;
+	text-decoration: none;
+}
+.dbt-back:hover,
+.dbt-back:focus-visible {
+	color: var(--nk-ink);
+}
+
+.dbt-types {
+	margin-top: 2rem;
+	display: grid;
+	grid-template-columns: 1fr;
+	gap: 1.25rem;
+}
+@media (min-width: 701px) {
+	.dbt-types {
+		grid-template-columns: repeat(3, 1fr);
+	}
+}
+
+.dbt-type {
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	gap: 0.75rem;
+	padding: 1.75rem;
+	border: 1px solid rgba(10, 10, 10, 0.08);
+	border-radius: 20px;
+	background: var(--nk-white);
+}
+.dbt-type__title {
+	margin: 0;
+	font-size: 1.1rem;
+	color: var(--nk-ink);
+}
+.dbt-type__desc {
+	margin: 0;
+	flex-grow: 1;
+	color: #6B6B64;
+	font-size: 0.92rem;
+	line-height: 1.55;
+}
+.dbt-type__cta {
+	width: 100%;
+	justify-content: center;
+}
+
+.dbt-fine-print {
+	max-width: 760px;
+	margin: 2rem 0 0;
+	color: #6B6B64;
+	font-size: 0.84rem;
+	line-height: 1.6;
+}
+
+@media (max-width: 480px) {
+	.dbt-type {
+		padding: 1.25rem;
+	}
+}

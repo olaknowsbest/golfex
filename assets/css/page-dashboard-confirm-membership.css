@@ -1,0 +1,149 @@
+/*
+ * Confirm Membership dashboard screen (static prototype). Loaded after
+ * page-dashboard-shell.css on dashboard-confirm-membership.html only.
+ * Visibility of the "select a plan first" state vs. one plan's summary
+ * is driven entirely by a [data-state] attribute on #dcm-confirm, set
+ * once on load by assets/js/page-dashboard-confirm-membership.js from
+ * the incoming ?plan= query parameter — no storage, no network calls,
+ * and no default plan is ever assumed.
+ */
+
+.dcm-back {
+	display: inline-flex;
+	align-items: center;
+	gap: 0.4rem;
+	margin: 0 0 1.25rem;
+	color: #6B6B64;
+	font-size: 0.88rem;
+	font-weight: 600;
+	text-decoration: none;
+}
+.dcm-back:hover,
+.dcm-back:focus-visible {
+	color: var(--nk-ink);
+}
+
+.dcm-confirm {
+	margin-top: 2rem;
+}
+
+/* ---------- "Select a plan first" state ---------- */
+.dcm-missing,
+.dcm-plan {
+	display: none;
+}
+.dcm-confirm[data-state="missing"] .dcm-missing {
+	display: flex;
+}
+.dcm-confirm[data-state="supporter"] .dcm-plan--supporter,
+.dcm-confirm[data-state="insider"] .dcm-plan--insider,
+.dcm-confirm[data-state="premier"] .dcm-plan--premier {
+	display: block;
+}
+
+.dcm-missing {
+	max-width: 460px;
+	padding: 3rem 2rem;
+	border: 1px solid rgba(10, 10, 10, 0.1);
+	border-radius: 24px;
+	background: var(--nk-white);
+	flex-direction: column;
+	align-items: center;
+	text-align: center;
+}
+.dcm-missing__title.dcm-missing__title {
+	margin: 0 0 0.6rem;
+	font-size: 1.3rem;
+	color: var(--nk-ink);
+}
+.dcm-missing__desc {
+	margin: 0 0 1.5rem;
+	color: #6B6B64;
+	font-size: 0.95rem;
+	line-height: 1.55;
+}
+.dcm-missing__cta {
+	display: inline-flex;
+}
+
+/* ---------- Plan summary state ---------- */
+.dcm-plan__lead {
+	margin: 0 0 1.5rem;
+	color: #6B6B64;
+	font-size: 0.92rem;
+	line-height: 1.55;
+	max-width: 62ch;
+}
+
+.dcm-summary {
+	max-width: 460px;
+	border: 1px solid rgba(10, 10, 10, 0.08);
+	border-radius: 20px;
+	padding: 1.5rem 1.75rem;
+	background: var(--nk-sand);
+}
+.dcm-summary__title {
+	margin: 0 0 1rem;
+	font-size: 1rem;
+	color: var(--nk-ink);
+}
+.dcm-summary__list {
+	display: flex;
+	margin: 0;
+	padding: 0;
+	flex-direction: column;
+	gap: 0.6rem;
+}
+.dcm-summary__row {
+	margin: 0;
+	display: flex;
+	align-items: baseline;
+	justify-content: space-between;
+	gap: 1rem;
+}
+.dcm-summary__row dt {
+	font-size: 0.85rem;
+	color: #6B6B64;
+}
+.dcm-summary__row dd {
+	margin: 0;
+	font-weight: 700;
+	color: var(--nk-ink);
+}
+.dcm-summary__row--total {
+	padding-top: 0.6rem;
+	border-top: 1px solid rgba(10, 10, 10, 0.12);
+}
+.dcm-summary__row--total dt,
+.dcm-summary__row--total dd {
+	font-size: 1.05rem;
+	font-weight: 800;
+}
+.dcm-summary__disclosure {
+	margin: 1rem 0 0;
+	font-size: 0.78rem;
+	line-height: 1.5;
+	color: #6B6B64;
+}
+
+.dcm-continue {
+	width: 100%;
+	justify-content: center;
+	margin-top: 1.25rem;
+	background: var(--nk-ink);
+	color: var(--nk-cream);
+	border: 1.5px solid var(--nk-ink);
+}
+.dcm-continue__note {
+	margin: 0.6rem 0 0;
+	font-size: 0.8rem;
+	line-height: 1.5;
+	color: #6B6B64;
+}
+
+@media (max-width: 480px) {
+	.dcm-missing,
+	.dcm-summary {
+		padding: 1.5rem;
+	}
+}

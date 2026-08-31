@@ -1,0 +1,72 @@
+/*
+ * My Fan Cards dashboard screen (static prototype). Loaded after
+ * page-dashboard-shell.css on dashboard-fan-cards.html only. This screen
+ * is an ownership wallet (what the customer actually owns), never a
+ * tier catalog — the Standard/Premium/VIP comparison lives exclusively
+ * on dashboard-purchase-fan-card.html.
+ */
+
+.dfc-empty {
+	max-width: 460px;
+	margin: 2.5rem 0 0;
+	padding: 3rem 2rem;
+	border: 1px solid rgba(10, 10, 10, 0.1);
+	border-radius: 24px;
+	background: var(--nk-white);
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	text-align: center;
+}
+
+.dfc-empty__visual {
+	margin: 0 0 1.75rem;
+}
+.dfc-empty__card {
+	width: clamp(140px, 40vw, 176px);
+	aspect-ratio: 1.586 / 1;
+	border: 1.5px dashed rgba(10, 10, 10, 0.22);
+	border-radius: 14px;
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	background: var(--nk-sand);
+}
+.dfc-empty__logo {
+	width: 34%;
+	height: auto;
+	opacity: 0.45;
+	/* nk-monogram-mark.svg is designed for dark surfaces; invert it here
+	   so the cream/yellow mark reads correctly against the sand card
+	   silhouette instead of vanishing at low contrast. */
+	filter: invert(1) brightness(0.55);
+}
+
+.dfc-empty__title.dfc-empty__title {
+	margin: 0 0 0.6rem;
+	font-size: 1.3rem;
+	color: var(--nk-ink);
+}
+.dfc-empty__desc {
+	margin: 0 0 1.5rem;
+	color: #6B6B64;
+	font-size: 0.95rem;
+	line-height: 1.55;
+}
+.dfc-empty__cta {
+	display: inline-flex;
+}
+
+.dfc-fine-print {
+	max-width: 760px;
+	margin: 2rem 0 0;
+	color: #6B6B64;
+	font-size: 0.84rem;
+	line-height: 1.6;
+}
+
+@media (max-width: 480px) {
+	.dfc-empty {
+		padding: 2.25rem 1.5rem;
+	}
+}

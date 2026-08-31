@@ -1,0 +1,308 @@
+/*
+ * Complete Payment dashboard screen (static prototype). Loaded after
+ * page-dashboard-shell.css on dashboard-payment.html only.
+ * assets/js/page-dashboard-payment.js reads and validates a strict
+ * ?source= allowlist plus the minimum per-source display fields (no
+ * storage, no network calls, no crypto amount/rate/wallet/status is
+ * ever read from the URL) and toggles the [data-state] attribute on
+ * #dpay-payment between "missing" and "valid". The HTML defaults to
+ * data-state="missing" so a direct visit with no or invalid query still
+ * renders a neutral state. Currency selection only toggles the
+ * [data-currency] attribute on the quote panel to switch between two
+ * static, pre-written messages — it never computes or displays a real
+ * rate or crypto amount.
+ */
+
+.dpay-back {
+	display: inline-flex;
+	align-items: center;
+	gap: 0.4rem;
+	margin: 0 0 1.25rem;
+	color: #6B6B64;
+	font-size: 0.88rem;
+	font-weight: 600;
+	text-decoration: none;
+}
+.dpay-back:hover,
+.dpay-back:focus-visible {
+	color: var(--nk-ink);
+}
+
+.dpay-payment {
+	margin-top: 2rem;
+}
+
+.dpay-missing,
+.dpay-valid {
+	display: none;
+}
+.dpay-payment[data-state="missing"] .dpay-missing {
+	display: flex;
+}
+.dpay-payment[data-state="valid"] .dpay-valid {
+	display: block;
+}
+
+/* ---------- Missing/neutral state ---------- */
+.dpay-missing {
+	max-width: 460px;
+	padding: 3rem 2rem;
+	border: 1px solid rgba(10, 10, 10, 0.1);
+	border-radius: 24px;
+	background: var(--nk-white);
+	flex-direction: column;
+	align-items: center;
+	text-align: center;
+}
+.dpay-missing__title {
+	margin: 0 0 0.6rem;
+	font-size: 1.3rem;
+	color: var(--nk-ink);
+}
+.dpay-missing__desc {
+	margin: 0 0 1.5rem;
+	color: #6B6B64;
+	font-size: 0.95rem;
+	line-height: 1.55;
+}
+.dpay-missing__cta {
+	display: inline-flex;
+}
+
+/* ---------- Valid state ---------- */
+.dpay-lead {
+	max-width: 640px;
+	margin: 0 0 1.5rem;
+	color: #6B6B64;
+	font-size: 0.95rem;
+	line-height: 1.55;
+}
+
+.dpay-panel {
+	max-width: 640px;
+	margin: 0 0 1.5rem;
+	padding: 1.5rem 1.75rem;
+	border: 1px solid rgba(10, 10, 10, 0.1);
+	border-radius: 20px;
+	background: var(--nk-white);
+	box-shadow: 0 1px 2px rgba(10, 10, 10, 0.04), 0 10px 24px rgba(10, 10, 10, 0.05);
+}
+.dpay-panel__title {
+	margin: 0 0 1rem;
+	font-size: 1rem;
+	color: var(--nk-ink);
+}
+
+/* ---------- Order summary ---------- */
+.dpay-summary__list {
+	margin: 0;
+	padding: 0;
+	display: flex;
+	flex-direction: column;
+	gap: 0.6rem;
+}
+.dpay-summary__row {
+	margin: 0;
+	display: flex;
+	align-items: baseline;
+	justify-content: space-between;
+	gap: 1rem;
+}
+.dpay-summary__row dt {
+	font-size: 0.85rem;
+	color: #6B6B64;
+}
+.dpay-summary__row dd {
+	margin: 0;
+	font-weight: 700;
+	color: var(--nk-ink);
+	text-align: right;
+}
+.dpay-summary__row--total {
+	padding-top: 0.6rem;
+	border-top: 1px solid rgba(10, 10, 10, 0.12);
+}
+.dpay-summary__row--total dt,
+.dpay-summary__row--total dd {
+	font-size: 1.05rem;
+	font-weight: 800;
+}
+.dpay-summary__note {
+	margin: 1rem 0 0;
+	font-size: 0.78rem;
+	line-height: 1.55;
+	color: #6B6B64;
+}
+.dpay-summary__note:first-of-type {
+	margin-top: 1rem;
+}
+
+/* ---------- Currency selector ---------- */
+.dpay-currency-select {
+	border: none;
+	margin: 0;
+	padding: 0;
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.75rem;
+}
+.dpay-currency-select legend {
+	width: 100%;
+	margin: 0 0 0.1rem;
+	padding: 0;
+	font-size: 0.78rem;
+	font-weight: 800;
+	text-transform: uppercase;
+	letter-spacing: 0.1em;
+	color: #6B6B64;
+}
+.dpay-currency-option {
+	position: relative;
+	display: flex;
+	flex-direction: column;
+	gap: 0.15rem;
+	padding: 0.75rem 1.1rem;
+	border: 1.5px solid rgba(10, 10, 10, 0.15);
+	border-radius: 16px;
+	background: var(--nk-white);
+	cursor: pointer;
+	min-width: 160px;
+	flex: 1 1 160px;
+}
+.dpay-currency-option input {
+	position: absolute;
+	inset: 0;
+	margin: 0;
+	opacity: 0;
+	cursor: pointer;
+}
+.dpay-currency-option__name {
+	font-weight: 700;
+	color: var(--nk-ink);
+}
+.dpay-currency-option__meta {
+	font-size: 0.8rem;
+	color: #6B6B64;
+}
+.dpay-currency-option:has(input:checked) {
+	border-color: var(--nk-ink);
+	background: var(--nk-yellow);
+}
+.dpay-currency-option:has(input:checked) .dpay-currency-option__meta {
+	color: var(--nk-ink);
+}
+.dpay-currency-option:has(input:focus-visible) {
+	outline: 3px solid var(--nk-ink);
+	outline-offset: 3px;
+}
+
+/* ---------- Quote panel ---------- */
+.dpay-quote__message {
+	margin: 0 0 1rem;
+	font-size: 0.92rem;
+	color: var(--nk-ink);
+}
+.dpay-quote__message--neutral {
+	display: block;
+	color: #6B6B64;
+}
+.dpay-quote__message--selected {
+	display: none;
+	font-weight: 700;
+}
+.dpay-quote[data-currency=""] .dpay-quote__message--neutral {
+	display: block;
+}
+.dpay-quote[data-currency=""] .dpay-quote__message--selected {
+	display: none;
+}
+.dpay-quote:not([data-currency=""]) .dpay-quote__message--neutral {
+	display: none;
+}
+.dpay-quote:not([data-currency=""]) .dpay-quote__message--selected {
+	display: block;
+}
+.dpay-quote__list {
+	margin: 0;
+	padding: 0;
+	display: flex;
+	flex-direction: column;
+	gap: 0.5rem;
+}
+.dpay-quote__row {
+	margin: 0;
+	display: flex;
+	align-items: baseline;
+	justify-content: space-between;
+	gap: 1rem;
+	padding: 0.5rem 0.75rem;
+	border-radius: 10px;
+	background: var(--nk-sand);
+}
+.dpay-quote__row dt {
+	font-size: 0.85rem;
+	color: #6B6B64;
+}
+.dpay-quote__row dd {
+	margin: 0;
+	font-weight: 700;
+	color: var(--nk-ink);
+}
+
+/* ---------- Wallet panel ---------- */
+.dpay-wallet__address {
+	margin: 0 0 0.75rem;
+	font-size: 0.95rem;
+	font-weight: 700;
+	color: var(--nk-ink);
+	padding: 0.75rem 1rem;
+	border: 1.5px dashed rgba(10, 10, 10, 0.22);
+	border-radius: 12px;
+	background: var(--nk-sand);
+}
+.dpay-wallet__note {
+	margin: 0;
+	font-size: 0.82rem;
+	line-height: 1.55;
+	color: #6B6B64;
+}
+
+/* ---------- Manual review panel ---------- */
+.dpay-review__desc {
+	margin: 0;
+	font-size: 0.88rem;
+	line-height: 1.6;
+	color: #6B6B64;
+}
+
+/* ---------- Disabled action ---------- */
+.dpay-submit {
+	max-width: 640px;
+	width: 100%;
+	justify-content: center;
+	margin-top: 0.5rem;
+	background: var(--nk-ink);
+	color: var(--nk-cream);
+	border: 1.5px solid var(--nk-ink);
+}
+.dpay-submit:disabled {
+	opacity: 0.55;
+	cursor: not-allowed;
+}
+.dpay-submit__note {
+	max-width: 640px;
+	margin: 0.6rem 0 0;
+	font-size: 0.8rem;
+	line-height: 1.5;
+	color: #6B6B64;
+}
+
+@media (max-width: 480px) {
+	.dpay-missing,
+	.dpay-panel {
+		padding: 1.25rem;
+	}
+	.dpay-currency-option {
+		min-width: 0;
+	}
+}

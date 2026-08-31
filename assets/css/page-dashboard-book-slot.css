@@ -1,0 +1,139 @@
+/*
+ * Create a Booking dashboard screen (static prototype). Loaded after
+ * page-dashboard-shell.css on dashboard-book-slot.html only.
+ * assets/js/page-dashboard-book-slot.js reads the shared
+ * window.NK_BOOKING_AVAILABILITY sample-data object (from
+ * assets/js/dashboard-booking-availability.js) to populate the date,
+ * start-time, and end-time selects, and to compute duration/price
+ * locally — no storage, no network calls. There is no slot-card list on
+ * this page; every field is a constrained <select>, never free-form
+ * date/time entry.
+ */
+
+.dbs-back {
+	display: inline-flex;
+	align-items: center;
+	gap: 0.4rem;
+	margin: 0 0 1.25rem;
+	color: #6B6B64;
+	font-size: 0.88rem;
+	font-weight: 600;
+	text-decoration: none;
+}
+.dbs-back:hover,
+.dbs-back:focus-visible {
+	color: var(--nk-ink);
+}
+
+.dbs-sample-note {
+	max-width: 640px;
+	margin: 1.25rem 0 0;
+	padding: 0.85rem 1.1rem;
+	border: 1px solid rgba(10, 10, 10, 0.12);
+	border-radius: 12px;
+	background: var(--nk-yellow);
+	color: var(--nk-ink);
+	font-size: 0.85rem;
+	line-height: 1.55;
+}
+
+.dbs-form {
+	max-width: 640px;
+	margin-top: 1.75rem;
+	display: flex;
+	flex-direction: column;
+	gap: 1.25rem;
+}
+
+.dbs-field-row {
+	display: grid;
+	grid-template-columns: 1fr;
+	gap: 1.25rem;
+}
+@media (min-width: 560px) {
+	.dbs-field-row {
+		grid-template-columns: 1fr 1fr;
+	}
+}
+
+.dbs-field {
+	display: flex;
+	flex-direction: column;
+	gap: 0.4rem;
+}
+.dbs-field__label {
+	font-size: 0.82rem;
+	font-weight: 700;
+	color: #6B6B64;
+}
+.dbs-field__input {
+	font-family: inherit;
+	font-size: 0.92rem;
+	padding: 0.7rem 0.9rem;
+	border: 1px solid rgba(10, 10, 10, 0.18);
+	border-radius: 10px;
+	background: var(--nk-white);
+	color: var(--nk-ink);
+}
+select.dbs-field__input:disabled {
+	opacity: 0.55;
+	cursor: not-allowed;
+	background: var(--nk-sand);
+}
+textarea.dbs-field__input {
+	resize: vertical;
+}
+.dbs-field__note {
+	margin: 0;
+	font-size: 0.78rem;
+	line-height: 1.5;
+	color: #6B6B64;
+}
+
+/* ---------- Read-only duration/price ---------- */
+.dbs-readonly {
+	border: 1px solid rgba(10, 10, 10, 0.08);
+	border-radius: 16px;
+	padding: 1.1rem 1.25rem;
+	background: var(--nk-sand);
+	display: flex;
+	flex-direction: column;
+	gap: 0.5rem;
+}
+.dbs-readonly__row {
+	display: flex;
+	align-items: baseline;
+	justify-content: space-between;
+	gap: 1rem;
+}
+.dbs-readonly__label {
+	font-size: 0.85rem;
+	color: #6B6B64;
+}
+.dbs-readonly__value {
+	font-size: 1.05rem;
+	font-weight: 800;
+	color: var(--nk-ink);
+}
+.dbs-readonly__note {
+	margin: 0.3rem 0 0;
+	font-size: 0.78rem;
+	line-height: 1.5;
+	color: #6B6B64;
+}
+
+/* ---------- Review action ---------- */
+.dbs-review {
+	margin-top: 1.75rem;
+}
+.dbs-review[aria-disabled="true"] {
+	opacity: 0.55;
+	cursor: not-allowed;
+	pointer-events: none;
+}
+.dbs-review__note {
+	margin: 0.6rem 0 0;
+	font-size: 0.8rem;
+	line-height: 1.5;
+	color: #6B6B64;
+}
