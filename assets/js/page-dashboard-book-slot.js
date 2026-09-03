@@ -195,16 +195,58 @@
 	endSelect.addEventListener('change', update);
 	tzSelect.addEventListener('change', update);
 
-	/* No default booking type, date, or time unless a valid ?type= query
-	   is supplied — and even then, only the booking type is preselected. */
+	/* No default booking type, date, or time unless a valid ?type=,
+	   ?date=, ?start=, ?end=, ?timezone= combination is supplied — used
+	   to restore state when returning from "Edit Booking". Each field is
+	   only restored if it is still genuinely available: type must be
+	   known, date must exist for that type, start must be an option
+	   populateStartTimes() actually generated for that date (respecting
+	   the window, the minimum duration, and blocked periods), and end
+	   must likewise be an option populateEndTimes() actually generated
+	   for that start. An invalid, unavailable, or blocked value halts
+	   the cascade at that field rather than silently substituting a
+	   default — later fields are left at their neutral placeholder.
+	   Duration and price are never read from the URL; update() always
+	   recalculates them locally from the restored type/start/end. */
 	resetSelect(dateSelect, 'Choose a booking type first');
 	resetSelect(startSelect, 'Choose a date first');
 	resetSelect(endSelect, 'Choose a start time first');
 
-	var requestedType = new URLSearchParams(location.search).get('type');
+	var restoreParams = new URLSearchParams(location.search);
+	var requestedType = restoreParams.get('type');
+	var requestedDate = restoreParams.get('date');
+	var requestedStart = restoreParams.get('start');
+	var requestedEnd = restoreParams.get('end');
+	var requestedTz = restoreParams.get('timezone');
+	var VALID_TZ = ['PT', 'MT', 'CT', 'ET'];
+
+	if (VALID_TZ.indexOf(requestedTz) !== -1) {
+		tzSelect.value = requestedTz;
+	}
+
 	if (VALID_TYPES.indexOf(requestedType) !== -1) {
 		typeSelect.value = requestedType;
 		populateDates();
+
+		if (requestedDate && DATA[requestedType].dates[requestedDate]) {
+			dateSelect.value = requestedDate;
+			populateStartTimes();
+
+			var startAvailable = Array.prototype.some.call(startSelect.options, function (opt) {
+				return opt.value === requestedStart;
+			});
+			if (requestedStart && startAvailable) {
+				startSelect.value = requestedStart;
+				populateEndTimes();
+
+				var endAvailable = Array.prototype.some.call(endSelect.options, function (opt) {
+					return opt.value === requestedEnd;
+				});
+				if (requestedEnd && endAvailable) {
+					endSelect.value = requestedEnd;
+				}
+			}
+		}
 	}
 
 	update();

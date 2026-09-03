@@ -1,0 +1,378 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Customer Detail &#8211; Nazario Kayla Fan Club Prototype</title>
+	<meta name="description" content="A static, honestly labelled preview of the future admin Customer detail screen for the fictional Nazario Kayla fan-platform prototype. Not a functioning admin system.">
+	<meta name="robots" content="noindex, nofollow">
+	<meta name="theme-color" content="#0A0A0A">
+	<link rel="icon" href="assets/images/uploads/favicon.png" sizes="32x32" />
+	<link rel="icon" href="assets/images/uploads/favicon.png" sizes="192x192" />
+	<link rel="apple-touch-icon" href="assets/images/uploads/favicon.png" />
+	<link rel="stylesheet" href="assets/css/google-fonts-intertight.css">
+	<link rel="stylesheet" href="assets/css/site-shell.css">
+	<link rel="stylesheet" href="assets/css/admin-shell.css">
+	<link rel="stylesheet" href="assets/css/page-admin-entitlements.css">
+	<link rel="stylesheet" href="assets/css/page-admin-customers.css">
+</head>
+
+<body class="admin-body">
+
+	<a class="skip-link" href="#admin-main">Skip to content</a>
+
+	<div class="admin-shell">
+		<div class="admin-backdrop" data-admin-backdrop></div>
+
+		<aside class="admin-sidebar" id="admin-sidebar" aria-label="Admin navigation">
+			<div class="admin-sidebar__top">
+				<div class="admin-sidebar__brand">
+					<img class="admin-sidebar__logo" src="assets/images/brand/nk-monogram-mark.svg" alt="Nazario Kayla Fan Club &#8212; Prototype" width="28" height="29">
+					<span class="admin-sidebar__brand-text">
+						<span class="admin-sidebar__brand-name">NK Admin</span>
+						<span class="admin-sidebar__tag">Admin prototype</span>
+					</span>
+				</div>
+				<button class="admin-sidebar__close" type="button" data-admin-close aria-label="Close menu">
+					<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+						<path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+					</svg>
+				</button>
+			</div>
+
+			<nav class="admin-nav" aria-label="Admin sections">
+				<ul class="admin-nav__list">
+					<li>
+						<a href="admin-dashboard.html" class="admin-nav__link">
+							<span class="admin-nav__icon" aria-hidden="true">
+								<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<rect x="4" y="4" width="7" height="7" rx="1.5" stroke="currentColor" stroke-width="2"/>
+									<rect x="13" y="4" width="7" height="7" rx="1.5" stroke="currentColor" stroke-width="2"/>
+									<rect x="4" y="13" width="7" height="7" rx="1.5" stroke="currentColor" stroke-width="2"/>
+									<rect x="13" y="13" width="7" height="7" rx="1.5" stroke="currentColor" stroke-width="2"/>
+								</svg>
+							</span>
+							Overview
+						</a>
+					</li>
+					<li>
+						<a href="admin-payments.html" class="admin-nav__link">
+							<span class="admin-nav__icon" aria-hidden="true">
+								<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<rect x="5" y="4" width="14" height="17" rx="2" stroke="currentColor" stroke-width="2"/>
+									<path d="M9 4V3a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v1" stroke="currentColor" stroke-width="2"/>
+									<path d="M8.5 13l2 2 4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+								</svg>
+							</span>
+							Payment Reviews
+						</a>
+					</li>
+					<li>
+						<a href="admin-bookings.html" class="admin-nav__link">
+							<span class="admin-nav__icon" aria-hidden="true">
+								<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<rect x="3" y="5" width="18" height="16" rx="2" stroke="currentColor" stroke-width="2"/>
+									<line x1="3" y1="10" x2="21" y2="10" stroke="currentColor" stroke-width="2"/>
+									<line x1="8" y1="3" x2="8" y2="7" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+									<line x1="16" y1="3" x2="16" y2="7" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+								</svg>
+							</span>
+							Bookings
+						</a>
+					</li>
+					<li>
+						<a href="admin-fan-cards.html" class="admin-nav__link">
+							<span class="admin-nav__icon" aria-hidden="true">
+								<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<rect x="3" y="6" width="18" height="12" rx="2" stroke="currentColor" stroke-width="2"/>
+									<line x1="3" y1="10" x2="21" y2="10" stroke="currentColor" stroke-width="2"/>
+								</svg>
+							</span>
+							Fan Cards
+						</a>
+					</li>
+					<li>
+						<a href="admin-memberships.html" class="admin-nav__link">
+							<span class="admin-nav__icon" aria-hidden="true">
+								<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<path d="M12 3l7 4v8l-7 6-7-6V7z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+								</svg>
+							</span>
+							Memberships
+						</a>
+					</li>
+					<li>
+						<a href="admin-donations.html" class="admin-nav__link">
+							<span class="admin-nav__icon" aria-hidden="true">
+								<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+								</svg>
+							</span>
+							Donations
+						</a>
+					</li>
+					<li>
+						<a href="admin-customers.html" class="admin-nav__link" aria-current="page">
+							<span class="admin-nav__icon" aria-hidden="true">
+								<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<circle cx="9" cy="8" r="3" stroke="currentColor" stroke-width="2"/>
+									<path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+									<circle cx="17" cy="7" r="2.3" stroke="currentColor" stroke-width="1.6"/>
+									<path d="M15.5 13.3c2.6.4 4.5 2.4 4.5 5.2" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+								</svg>
+							</span>
+							Customers
+						</a>
+					</li>
+					<li>
+						<a href="admin-settings.html" class="admin-nav__link">
+							<span class="admin-nav__icon" aria-hidden="true">
+								<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="2"/>
+									<path d="M12 3v2M12 19v2M4.2 4.2l1.4 1.4M18.4 18.4l1.4 1.4M3 12h2M19 12h2M4.2 19.8l1.4-1.4M18.4 5.6l1.4-1.4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+								</svg>
+							</span>
+							Settings
+						</a>
+					</li>
+					<li>
+						<span class="admin-nav__link admin-nav__link--placeholder" aria-disabled="true">
+							<span class="admin-nav__icon" aria-hidden="true">
+								<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<path d="M9 4H5a1 1 0 0 0-1 1v14a1 1 0 0 0 1 1h4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+									<path d="M16 16l4-4-4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+									<line x1="20" y1="12" x2="9" y2="12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+								</svg>
+							</span>
+							Logout
+						</span>
+					</li>
+				</ul>
+			</nav>
+		</aside>
+
+		<div class="admin-content">
+			<header class="admin-topbar">
+				<button class="admin-topbar__toggle" type="button" id="admin-menu-toggle" aria-controls="admin-sidebar" aria-expanded="false">
+					<span class="admin-topbar__toggle-bars" aria-hidden="true"><span></span><span></span><span></span></span>
+					<span class="visually-hidden">Menu</span>
+				</button>
+				<img class="admin-topbar__logo" src="assets/images/brand/nk-monogram-mark.svg" alt="" aria-hidden="true">
+				<p class="admin-topbar__title">Customer Detail</p>
+				<span class="admin-topbar__badge">Admin prototype</span>
+			</header>
+
+			<main id="admin-main" class="admin-main">
+				<a class="aent-back" href="admin-customers.html">&larr; Back to Customers</a>
+				<h1 class="admin-main__title">Customer Detail</h1>
+
+				<!--
+					Static prototype only — no real Customer exists here.
+					Production behavior (documented only, never implemented or
+					simulated here): this screen will live at a route such as
+					/admin/customers/{reference}. Laravel loads the authoritative
+					customer record, and every linked Fan Card, Membership,
+					Donation, and Booking, from MySQL by reference — identity and
+					ownership always come from that authenticated backend record,
+					never from a query parameter. Suspension blocks sign-in and
+					new purchases but preserves records and full audit history; it
+					never silently cancels a Membership, invalidates a Fan Card,
+					deletes a Donation, or erases a Booking — any entitlement or
+					booking change requires its own explicit workflow. Email
+					address changes require re-verification, and account
+					restoration is always explicit and audited. Every admin action
+					records the administrator, timestamp, reason, and affected
+					customer. Customer deletion requires a separate privacy and
+					retention workflow and is intentionally absent from this
+					prototype. Query-string values are only ever used to select
+					which fixed sample below to display — identity, status,
+					verification state, ownership, totals, and dates are never
+					read from the URL.
+				-->
+				<div id="acu-detail" class="aent-detail" data-state="missing" data-customer="">
+
+					<section class="admin-panel aent-missing">
+						<h2 class="admin-panel__title">Select a Customer for review.</h2>
+						<p class="admin-panel__desc">This static prototype only has fixed sample records. Return to the list and choose &#8220;View&#8221; on a row to see one.</p>
+						<a class="btn btn--cta aent-missing__cta" href="admin-customers.html">Back to Customers</a>
+					</section>
+
+					<div class="aent-valid">
+
+						<div class="aent-sample-notice">
+							<p><strong>Sample record.</strong> The customer shown is fictional demonstration data. Nothing on this page is a real person, account, or transaction. No password, authentication token, session identifier, wallet detail, or private note is ever shown here.</p>
+						</div>
+
+						<!-- CU-DEMO-001 — Active, verified -->
+						<article class="acud-record" data-ref="CU-DEMO-001" aria-labelledby="acud-001-heading">
+							<h2 id="acud-001-heading" class="visually-hidden">Sample Customer CU-DEMO-001</h2>
+							<div class="aent-record-header">
+								<span class="aent-status aent-status--active">Active</span>
+								<span class="aent-record-header__ref">CU-DEMO-001</span>
+							</div>
+
+							<div class="admin-panel aent-fields">
+								<h3 class="admin-panel__title">Account overview</h3>
+								<dl class="aent-fields__list">
+									<div class="aent-fields__row"><dt>Customer reference</dt><dd>CU-DEMO-001</dd></div>
+									<div class="aent-fields__row"><dt>Display name</dt><dd>Jordan Ellis <span class="aent-fictional">(fictional)</span></dd></div>
+									<div class="aent-fields__row"><dt>Email</dt><dd>jordan.ellis@example.com</dd></div>
+									<div class="aent-fields__row"><dt>Phone</dt><dd>+1 555-0142 <span class="aent-fictional">(fictional)</span></dd></div>
+									<div class="aent-fields__row"><dt>Timezone</dt><dd>Pacific Time (PT)</dd></div>
+									<div class="aent-fields__row"><dt>Account status</dt><dd>Active</dd></div>
+									<div class="aent-fields__row"><dt>Email verification</dt><dd>Verified</dd></div>
+									<div class="aent-fields__row"><dt>Created date</dt><dd>March 3, 2025</dd></div>
+									<div class="aent-fields__row"><dt>Last sign-in</dt><dd>Sign-in activity is not tracked in this static prototype</dd></div>
+									<div class="aent-fields__row"><dt>Authentication method</dt><dd>Google <span class="aent-fictional">(fictional example)</span></dd></div>
+								</dl>
+							</div>
+
+							<div class="admin-panel aent-fields">
+								<h3 class="admin-panel__title">Platform relationships</h3>
+								<dl class="aent-fields__list">
+									<div class="aent-fields__row"><dt>Fan Card</dt><dd>Premium &middot; Active &middot; <a href="admin-fan-card-detail.html?card=FC-DEMO-001">FC-DEMO-001</a></dd></div>
+									<div class="aent-fields__row"><dt>Membership</dt><dd>Insider &middot; Active &middot; <a href="admin-membership-detail.html?membership=MB-DEMO-001">MB-DEMO-001</a> &middot; Expires September 15, 2026</dd></div>
+									<div class="aent-fields__row"><dt>Donations</dt><dd>1 sample donation &middot; $50.00 (Pending review) &middot; <a href="admin-donation-detail.html?donation=DN-DEMO-001">DN-DEMO-001</a> <span class="aent-fictional">(demonstration data)</span></dd></div>
+									<div class="aent-fields__row"><dt>Bookings</dt><dd>1 sample booking &middot; Next: Virtual Meet-and-Greet, September 12, 2026 &middot; <a href="admin-bookings.html">View Bookings</a> <span class="aent-fictional">(demonstration data)</span></dd></div>
+								</dl>
+							</div>
+
+							<div class="admin-panel aent-notes">
+								<h3 class="admin-panel__title">Account notes</h3>
+								<label class="aent-notes__label" for="acu-note-001">Internal note (optional)</label>
+								<textarea class="aent-notes__field" id="acu-note-001" rows="3" disabled placeholder="Internal notes will become available once the Laravel backend is connected."></textarea>
+								<p class="aent-notes__note">Notes require authenticated admin access and are audit logged in production. No note is saved in this static prototype, and notes never appear on any customer-facing page.</p>
+							</div>
+
+							<div class="admin-panel aent-actions-panel">
+								<h3 class="admin-panel__title">Account actions</h3>
+								<div class="aent-actions">
+									<button type="button" class="btn aent-actions__btn" disabled>Suspend Account</button>
+								</div>
+								<p class="aent-actions__note">Only the action appropriate to Active status is shown. It is disabled in this static prototype &mdash; production decisions require authenticated admin access and Laravel server-side validation, and are always recorded with the administrator, timestamp, and reason.</p>
+							</div>
+						</article>
+
+						<!-- CU-DEMO-002 — Pending verification -->
+						<article class="acud-record" data-ref="CU-DEMO-002" aria-labelledby="acud-002-heading">
+							<h2 id="acud-002-heading" class="visually-hidden">Sample Customer CU-DEMO-002</h2>
+							<div class="aent-record-header">
+								<span class="aent-status aent-status--pending">Pending verification</span>
+								<span class="aent-record-header__ref">CU-DEMO-002</span>
+							</div>
+
+							<div class="admin-panel aent-fields">
+								<h3 class="admin-panel__title">Account overview</h3>
+								<dl class="aent-fields__list">
+									<div class="aent-fields__row"><dt>Customer reference</dt><dd>CU-DEMO-002</dd></div>
+									<div class="aent-fields__row"><dt>Display name</dt><dd>Casey Morgan <span class="aent-fictional">(fictional)</span></dd></div>
+									<div class="aent-fields__row"><dt>Email</dt><dd>casey.morgan@example.com</dd></div>
+									<div class="aent-fields__row"><dt>Phone</dt><dd>Not provided</dd></div>
+									<div class="aent-fields__row"><dt>Timezone</dt><dd>Mountain Time (MT)</dd></div>
+									<div class="aent-fields__row"><dt>Account status</dt><dd>Pending verification</dd></div>
+									<div class="aent-fields__row"><dt>Email verification</dt><dd>Unverified</dd></div>
+									<div class="aent-fields__row"><dt>Created date</dt><dd>June 12, 2025</dd></div>
+									<div class="aent-fields__row"><dt>Last sign-in</dt><dd>Sign-in activity is not tracked in this static prototype</dd></div>
+									<div class="aent-fields__row"><dt>Authentication method</dt><dd>Email and password <span class="aent-fictional">(fictional example)</span></dd></div>
+								</dl>
+							</div>
+
+							<div class="admin-panel aent-fields">
+								<h3 class="admin-panel__title">Platform relationships</h3>
+								<dl class="aent-fields__list">
+									<div class="aent-fields__row"><dt>Fan Card</dt><dd>Standard &middot; Pending issuance &middot; <a href="admin-fan-card-detail.html?card=FC-DEMO-002">FC-DEMO-002</a></dd></div>
+									<div class="aent-fields__row"><dt>Membership</dt><dd>None</dd></div>
+									<div class="aent-fields__row"><dt>Donations</dt><dd>1 sample donation &middot; $25.00 (Rejected) &middot; <a href="admin-donation-detail.html?donation=DN-DEMO-003">DN-DEMO-003</a> <span class="aent-fictional">(demonstration data)</span></dd></div>
+									<div class="aent-fields__row"><dt>Bookings</dt><dd>0 sample bookings <span class="aent-fictional">(demonstration data)</span></dd></div>
+								</dl>
+							</div>
+
+							<div class="admin-panel aent-notes">
+								<h3 class="admin-panel__title">Account notes</h3>
+								<label class="aent-notes__label" for="acu-note-002">Internal note (optional)</label>
+								<textarea class="aent-notes__field" id="acu-note-002" rows="3" disabled placeholder="Internal notes will become available once the Laravel backend is connected."></textarea>
+								<p class="aent-notes__note">Notes require authenticated admin access and are audit logged in production. No note is saved in this static prototype, and notes never appear on any customer-facing page.</p>
+							</div>
+
+							<div class="admin-panel aent-actions-panel">
+								<h3 class="admin-panel__title">Account actions</h3>
+								<div class="aent-actions">
+									<button type="button" class="btn aent-actions__btn" disabled>Resend Verification Email</button>
+								</div>
+								<p class="aent-actions__note">Only the action appropriate to Pending verification status is shown. It is disabled in this static prototype &mdash; production decisions require authenticated admin access and Laravel server-side validation, and are always recorded with the administrator, timestamp, and reason.</p>
+							</div>
+						</article>
+
+						<!-- CU-DEMO-003 — Suspended -->
+						<article class="acud-record" data-ref="CU-DEMO-003" aria-labelledby="acud-003-heading">
+							<h2 id="acud-003-heading" class="visually-hidden">Sample Customer CU-DEMO-003</h2>
+							<div class="aent-record-header">
+								<span class="aent-status aent-status--suspended">Suspended</span>
+								<span class="aent-record-header__ref">CU-DEMO-003</span>
+							</div>
+
+							<div class="admin-panel aent-fields">
+								<h3 class="admin-panel__title">Account overview</h3>
+								<dl class="aent-fields__list">
+									<div class="aent-fields__row"><dt>Customer reference</dt><dd>CU-DEMO-003</dd></div>
+									<div class="aent-fields__row"><dt>Display name</dt><dd>Riley Chen <span class="aent-fictional">(fictional)</span></dd></div>
+									<div class="aent-fields__row"><dt>Email</dt><dd>riley.chen@example.com</dd></div>
+									<div class="aent-fields__row"><dt>Phone</dt><dd>Not provided</dd></div>
+									<div class="aent-fields__row"><dt>Timezone</dt><dd>Eastern Time (ET)</dd></div>
+									<div class="aent-fields__row"><dt>Account status</dt><dd>Suspended</dd></div>
+									<div class="aent-fields__row"><dt>Email verification</dt><dd>Verified</dd></div>
+									<div class="aent-fields__row"><dt>Created date</dt><dd>August 20, 2025</dd></div>
+									<div class="aent-fields__row"><dt>Last sign-in</dt><dd>Sign-in activity is not tracked in this static prototype</dd></div>
+									<div class="aent-fields__row"><dt>Authentication method</dt><dd>Email and password <span class="aent-fictional">(fictional example)</span></dd></div>
+								</dl>
+							</div>
+
+							<div class="admin-panel aent-fields">
+								<h3 class="admin-panel__title">Platform relationships</h3>
+								<dl class="aent-fields__list">
+									<div class="aent-fields__row"><dt>Fan Card</dt><dd>VIP &middot; Suspended &middot; <a href="admin-fan-card-detail.html?card=FC-DEMO-003">FC-DEMO-003</a></dd></div>
+									<div class="aent-fields__row"><dt>Membership</dt><dd>Premier &middot; Suspended &middot; <a href="admin-membership-detail.html?membership=MB-DEMO-003">MB-DEMO-003</a> &middot; Expires November 1, 2026</dd></div>
+									<div class="aent-fields__row"><dt>Donations</dt><dd>0 sample donations <span class="aent-fictional">(demonstration data)</span></dd></div>
+									<div class="aent-fields__row"><dt>Bookings</dt><dd>0 sample bookings <span class="aent-fictional">(demonstration data)</span></dd></div>
+								</dl>
+								<p class="acud-relationships-note">Suspension preserves these records and their full audit history. It does not cancel the Membership, invalidate the Fan Card, delete a Donation, or erase a Booking &mdash; any entitlement or booking change requires its own explicit workflow.</p>
+							</div>
+
+							<div class="admin-panel aent-notes">
+								<h3 class="admin-panel__title">Account notes</h3>
+								<label class="aent-notes__label" for="acu-note-003">Internal note (optional)</label>
+								<textarea class="aent-notes__field" id="acu-note-003" rows="3" disabled placeholder="Internal notes will become available once the Laravel backend is connected."></textarea>
+								<p class="aent-notes__note">Notes require authenticated admin access and are audit logged in production. No note is saved in this static prototype, and notes never appear on any customer-facing page.</p>
+							</div>
+
+							<div class="admin-panel aent-actions-panel">
+								<h3 class="admin-panel__title">Account actions</h3>
+								<div class="aent-actions">
+									<button type="button" class="btn aent-actions__btn" disabled>Restore Account</button>
+								</div>
+								<p class="aent-actions__note">Only the action appropriate to Suspended status is shown. It is disabled in this static prototype &mdash; production decisions require authenticated admin access and Laravel server-side validation, and are always recorded with the administrator, timestamp, and reason.</p>
+							</div>
+						</article>
+
+						<section class="admin-panel aent-security" aria-labelledby="acud-security-heading">
+							<h2 id="acud-security-heading" class="admin-panel__title">How account management will work</h2>
+							<ul class="aent-security__list">
+								<li>Customer identity and ownership always come from authenticated backend records, never from a query parameter or anything else the browser supplies.</li>
+								<li>Suspension blocks sign-in and new purchases but preserves records and full audit history. It never silently cancels an active Membership, invalidates a Fan Card, deletes a Donation, or erases a Booking &mdash; any entitlement or booking change requires its own explicit workflow.</li>
+								<li>Email address changes require re-verification. Account restoration is always explicit and audited.</li>
+								<li>Every admin action records the administrator, timestamp, reason, and affected customer.</li>
+								<li>Password hashes, authentication tokens, OAuth tokens, session identifiers, wallet details, private notes, and other sensitive security metadata are never exposed anywhere in this system.</li>
+								<li>Customer deletion requires a separate privacy and retention workflow and is intentionally absent from this prototype. No login-as-customer, impersonation, or password-reset action exists here either.</li>
+							</ul>
+						</section>
+					</div>
+				</div>
+			</main>
+		</div>
+	</div>
+
+	<script src="assets/js/admin-shell.js" defer></script>
+	<script src="assets/js/page-admin-entitlement-detail.js" defer></script>
+</body>
+</html>

@@ -1,0 +1,61 @@
+/*
+ * Donations queue and detail screens (static prototype). Loaded after
+ * admin-shell.css and the shared page-admin-entitlements.css (summary
+ * cards, table, status pills, detail missing/valid states, field rows,
+ * actions panel, internal-review-note textarea) on admin-donations.html
+ * and admin-donation-detail.html only. This file adds the two status
+ * variants entitlements don't use (Completed, Rejected), the
+ * donation-specific record-reveal rules, and the no-action/anonymous-
+ * donor note styling. Anonymous donors are always rendered as
+ * "Anonymous supporter" — no hidden identity exists anywhere in these
+ * files.
+ */
+
+/* ---------- Additional status pills ---------- */
+.aent-status--completed {
+	background: var(--nk-ink);
+	color: var(--nk-cream);
+	border: 1px solid var(--nk-ink);
+}
+.aent-status--rejected {
+	background: var(--nk-sand);
+	color: #6B6B64;
+	border: 1px dashed rgba(10, 10, 10, 0.3);
+}
+
+/* ---------- Per-reference record blocks: hidden unless selected ---------- */
+.adon-record {
+	display: none;
+}
+#adon-detail[data-donation="DN-DEMO-001"] .adon-record[data-ref="DN-DEMO-001"],
+#adon-detail[data-donation="DN-DEMO-002"] .adon-record[data-ref="DN-DEMO-002"],
+#adon-detail[data-donation="DN-DEMO-003"] .adon-record[data-ref="DN-DEMO-003"] {
+	display: block;
+}
+
+/* ---------- No-action state (Completed donations) ---------- */
+.adon-no-action {
+	margin: 0;
+	font-size: 0.86rem;
+	font-weight: 600;
+	color: #6B6B64;
+	padding: 0.75rem 0.9rem;
+	background: var(--nk-sand);
+	border-radius: 8px;
+}
+
+/* ---------- Anonymous-donor note ---------- */
+.adon-anon-note {
+	margin: 0.9rem 0 0;
+	padding-top: 0.9rem;
+	border-top: 1px solid rgba(10, 10, 10, 0.08);
+	font-size: 0.78rem;
+	line-height: 1.5;
+	color: #6B6B64;
+}
+
+@media (max-width: 480px) {
+	.admin-panel {
+		padding: 1rem 1.1rem;
+	}
+}

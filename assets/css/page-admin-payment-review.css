@@ -1,0 +1,355 @@
+/*
+ * Review Payment detail screen (static prototype). Loaded after
+ * admin-shell.css on admin-payment-review.html only.
+ * assets/js/page-admin-payment-review.js reads and validates a single
+ * strict ?payment= value (only the literal "PAY-DEMO-001" is ever
+ * accepted) and toggles the [data-state] attribute on #apr-review
+ * between "missing" and "valid". The HTML defaults to
+ * data-state="missing" so a direct visit with no or invalid query still
+ * renders a neutral state. Every value on this page is hardcoded sample
+ * content — none of it is ever read from the URL.
+ */
+
+.apr-back {
+	display: inline-flex;
+	align-items: center;
+	gap: 0.4rem;
+	margin: 0 0 1.1rem;
+	color: #6B6B64;
+	font-size: 0.82rem;
+	font-weight: 600;
+	text-decoration: none;
+}
+.apr-back:hover,
+.apr-back:focus-visible {
+	color: var(--nk-ink);
+}
+
+.apr-review {
+	max-width: 640px;
+}
+
+.apr-missing,
+.apr-valid {
+	display: none;
+}
+.apr-review[data-state="missing"] .apr-missing {
+	display: block;
+}
+.apr-review[data-state="valid"] .apr-valid {
+	display: block;
+}
+
+.apr-missing__cta {
+	display: inline-flex;
+	margin-top: 0.75rem;
+}
+
+/* ---------- Sample notice ---------- */
+.apr-sample-notice {
+	margin: 0 0 1.4rem;
+	padding: 0.85rem 1rem;
+	border: 1px solid rgba(10, 10, 10, 0.16);
+	border-left: 3px solid var(--nk-yellow);
+	border-radius: 8px;
+	background: var(--nk-white);
+}
+.apr-sample-notice p {
+	margin: 0;
+	font-size: 0.82rem;
+	line-height: 1.55;
+	color: #4A4A46;
+}
+.apr-sample-notice strong {
+	color: var(--nk-ink);
+}
+
+/* ---------- Record status header ---------- */
+.apr-record-header {
+	display: flex;
+	align-items: center;
+	gap: 0.75rem;
+	flex-wrap: wrap;
+	margin: 0 0 1.4rem;
+}
+.apr-status {
+	display: inline-flex;
+	align-items: center;
+	font-size: 0.72rem;
+	font-weight: 800;
+	text-transform: uppercase;
+	letter-spacing: 0.05em;
+	padding: 0.3rem 0.7rem;
+	border-radius: 999px;
+}
+.apr-status--pending {
+	background: rgba(253, 245, 103, 0.22);
+	color: #6B5E00;
+	border: 1px solid var(--nk-yellow);
+}
+.apr-record-header__ref {
+	font-size: 0.78rem;
+	font-weight: 700;
+	color: #6B6B64;
+	font-variant-numeric: tabular-nums;
+}
+
+/* ---------- Proof-of-payment placeholder ---------- */
+.apr-proof {
+	margin-top: 1.1rem;
+	padding-top: 1.1rem;
+	border-top: 1px solid rgba(10, 10, 10, 0.08);
+}
+.apr-proof__label {
+	margin: 0 0 0.5rem;
+	font-size: 0.72rem;
+	font-weight: 700;
+	text-transform: uppercase;
+	letter-spacing: 0.04em;
+	color: #6B6B64;
+}
+.apr-proof__placeholder {
+	display: flex;
+	flex-direction: column;
+	align-items: center;
+	gap: 0.6rem;
+	text-align: center;
+	padding: 1.75rem 1rem;
+	border: 1.5px dashed rgba(10, 10, 10, 0.2);
+	border-radius: 10px;
+	background: var(--nk-sand);
+}
+.apr-proof__icon {
+	width: 28px;
+	height: 28px;
+	color: #9A9A90;
+}
+.apr-proof__placeholder-text {
+	margin: 0;
+	max-width: 32ch;
+	font-size: 0.8rem;
+	line-height: 1.5;
+	color: #6B6B64;
+}
+
+/* ---------- Shared panels ---------- */
+.apr-valid .admin-panel {
+	margin: 0 0 1.4rem;
+}
+
+/* ---------- Dense summary rows (shared: summary + verification) ---------- */
+.apr-summary__list {
+	margin: 0;
+	padding: 0;
+	display: flex;
+	flex-direction: column;
+	gap: 0.5rem;
+}
+.apr-summary__row {
+	margin: 0;
+	display: grid;
+	grid-template-columns: 1fr;
+	gap: 0.1rem;
+	padding: 0.45rem 0;
+	border-bottom: 1px solid rgba(10, 10, 10, 0.08);
+}
+.apr-summary__row:last-of-type {
+	border-bottom: none;
+}
+.apr-summary__row dt {
+	font-size: 0.72rem;
+	font-weight: 700;
+	text-transform: uppercase;
+	letter-spacing: 0.04em;
+	color: #6B6B64;
+}
+.apr-summary__row dd {
+	margin: 0;
+	font-size: 0.86rem;
+	font-weight: 600;
+	color: var(--nk-ink);
+	font-variant-numeric: tabular-nums;
+}
+.apr-fictional {
+	display: block;
+	margin-top: 0.15rem;
+	font-size: 0.72rem;
+	font-weight: 600;
+	text-transform: none;
+	letter-spacing: normal;
+	color: #6B6B64;
+}
+@media (min-width: 560px) {
+	.apr-summary__row {
+		grid-template-columns: 13rem 1fr;
+		align-items: baseline;
+		gap: 0.75rem;
+	}
+}
+
+/* ---------- Verification checklist ---------- */
+.apr-checklist {
+	border: none;
+	margin: 0;
+	padding: 0;
+	display: flex;
+	flex-direction: column;
+	gap: 0.5rem;
+}
+.apr-checklist legend {
+	width: 100%;
+	margin: 0 0 0.5rem;
+	padding: 0;
+	font-size: 0.7rem;
+	font-weight: 800;
+	text-transform: uppercase;
+	letter-spacing: 0.08em;
+	color: #6B6B64;
+}
+.apr-checklist__item {
+	display: flex;
+	align-items: center;
+	gap: 0.6rem;
+	font-size: 0.85rem;
+	color: var(--nk-ink);
+	cursor: not-allowed;
+}
+.apr-checklist__item input {
+	width: 16px;
+	height: 16px;
+	cursor: not-allowed;
+	accent-color: rgba(10, 10, 10, 0.4);
+}
+.apr-checklist__note {
+	margin: 0.75rem 0 0;
+	font-size: 0.78rem;
+	line-height: 1.5;
+	color: #6B6B64;
+}
+
+/* ---------- Product outcome ---------- */
+.apr-outcome__list {
+	margin: 1rem 0 0;
+	padding: 0;
+	display: flex;
+	flex-direction: column;
+	gap: 0;
+}
+.apr-outcome__row {
+	margin: 0;
+	display: grid;
+	grid-template-columns: 1fr;
+	gap: 0.1rem;
+	padding: 0.6rem 0.65rem;
+	border-radius: 8px;
+}
+.apr-outcome__row dt {
+	font-size: 0.78rem;
+	font-weight: 800;
+	color: var(--nk-ink);
+}
+.apr-outcome__row dd {
+	margin: 0;
+	font-size: 0.82rem;
+	color: #6B6B64;
+}
+.apr-outcome__row--current {
+	background: var(--nk-sand);
+}
+.apr-outcome__row--current dt {
+	color: #7c6d00;
+}
+@media (min-width: 560px) {
+	.apr-outcome__row {
+		grid-template-columns: 9rem 1fr;
+		align-items: baseline;
+		gap: 0.75rem;
+	}
+}
+
+/* ---------- Administrator notes ---------- */
+.apr-notes__label {
+	display: block;
+	margin: 0 0 0.4rem;
+	font-size: 0.78rem;
+	font-weight: 700;
+	color: var(--nk-ink);
+}
+.apr-notes__field {
+	width: 100%;
+	font-family: inherit;
+	font-size: 0.88rem;
+	padding: 0.65rem 0.85rem;
+	border: 1.5px solid rgba(10, 10, 10, 0.16);
+	border-radius: 8px;
+	background: var(--nk-sand);
+	color: var(--nk-ink);
+	resize: vertical;
+}
+.apr-notes__field:disabled {
+	opacity: 0.7;
+	cursor: not-allowed;
+}
+.apr-notes__note {
+	margin: 0.6rem 0 0;
+	font-size: 0.78rem;
+	line-height: 1.5;
+	color: #6B6B64;
+}
+
+/* ---------- Actions ---------- */
+.apr-actions {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.75rem;
+	margin: 0 0 0.6rem;
+}
+.apr-actions__approve,
+.apr-actions__reject {
+	flex: 1 1 160px;
+	justify-content: center;
+}
+.apr-actions__approve {
+	background: var(--nk-ink);
+	color: var(--nk-cream);
+	border: 1.5px solid var(--nk-ink);
+}
+.apr-actions__reject {
+	background: var(--nk-white);
+	color: var(--nk-ink);
+	border: 1.5px solid rgba(10, 10, 10, 0.25);
+}
+.apr-actions__approve:disabled,
+.apr-actions__reject:disabled {
+	opacity: 0.5;
+	cursor: not-allowed;
+}
+.apr-actions__note {
+	margin: 0 0 1.4rem;
+	font-size: 0.78rem;
+	line-height: 1.5;
+	color: #6B6B64;
+}
+
+/* ---------- Security list ---------- */
+.apr-security__list {
+	margin: 0;
+	padding: 0 0 0 1.1rem;
+	display: flex;
+	flex-direction: column;
+	gap: 0.5rem;
+}
+.apr-security__list li {
+	font-size: 0.82rem;
+	line-height: 1.55;
+	color: #4A4A46;
+}
+
+@media (max-width: 480px) {
+	.admin-panel {
+		padding: 1rem 1.1rem;
+	}
+	.apr-actions {
+		flex-direction: column;
+	}
+}

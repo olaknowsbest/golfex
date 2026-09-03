@@ -14,6 +14,7 @@
 	var visibilityValid = visibilityRaw === 'public' || visibilityRaw === 'anonymous';
 
 	var continueLink = document.getElementById('dcd-continue-link');
+	var backLink = document.getElementById('dcd-back');
 
 	if (!amountValid || !visibilityValid) {
 		root.setAttribute('data-state', 'missing');
@@ -21,6 +22,13 @@
 	}
 
 	root.setAttribute('data-state', 'valid');
+
+	/* "Edit Donation" carries only the validated amount and visibility
+	   back to the amount-selection screen — the optional message is
+	   intentionally never restored. */
+	if (backLink) {
+		backLink.href = 'dashboard-make-donation.html?amount=' + encodeURIComponent(amountRaw) + '&visibility=' + encodeURIComponent(visibilityRaw);
+	}
 
 	var amountEl = document.getElementById('dcd-amount');
 	var formatted = amount % 1 === 0 ? amount.toFixed(0) : amount.toFixed(2);

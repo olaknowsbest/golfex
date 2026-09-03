@@ -1,0 +1,234 @@
+/*
+ * Add Availability form screen (static prototype). Loaded after
+ * admin-shell.css on admin-booking-availability.html only. The form
+ * represents a recurring date-range schedule, not a single date. Every
+ * field, including the weekday and exception controls, is disabled
+ * and/or readonly — nothing here is ever saved, submitted, or sent
+ * anywhere.
+ */
+
+.aba-back {
+	display: inline-flex;
+	align-items: center;
+	gap: 0.4rem;
+	margin: 0 0 1.1rem;
+	color: #6B6B64;
+	font-size: 0.82rem;
+	font-weight: 600;
+	text-decoration: none;
+}
+.aba-back:hover,
+.aba-back:focus-visible {
+	color: var(--nk-ink);
+}
+
+.aba-form {
+	max-width: 640px;
+}
+
+.aba-panel {
+	margin: 0 0 1.4rem;
+}
+
+.aba-field {
+	display: flex;
+	flex-direction: column;
+	gap: 0.35rem;
+	margin: 0 0 1.1rem;
+}
+.aba-field:last-child {
+	margin-bottom: 0;
+}
+.aba-field-row {
+	display: grid;
+	grid-template-columns: 1fr;
+	gap: 1.1rem;
+	margin: 0 0 1.1rem;
+}
+@media (min-width: 480px) {
+	.aba-field-row {
+		grid-template-columns: 1fr 1fr;
+	}
+}
+.aba-field-row .aba-field {
+	margin-bottom: 0;
+}
+
+.aba-field__label {
+	font-size: 0.78rem;
+	font-weight: 700;
+	color: var(--nk-ink);
+}
+.aba-field__input {
+	width: 100%;
+	font-family: inherit;
+	font-size: 0.88rem;
+	padding: 0.65rem 0.85rem;
+	border: 1.5px solid rgba(10, 10, 10, 0.16);
+	border-radius: 8px;
+	background: var(--nk-sand);
+	color: var(--nk-ink);
+}
+.aba-field__input:disabled {
+	opacity: 0.75;
+	cursor: not-allowed;
+}
+textarea.aba-field__input {
+	resize: vertical;
+}
+.aba-field__note {
+	margin: 0;
+	font-size: 0.76rem;
+	line-height: 1.5;
+	color: #6B6B64;
+}
+
+.aba-checkbox {
+	display: flex;
+	align-items: flex-start;
+	gap: 0.6rem;
+	margin: 0 0 1.1rem;
+	font-size: 0.85rem;
+	color: var(--nk-ink);
+	cursor: not-allowed;
+}
+.aba-checkbox input {
+	margin-top: 0.2rem;
+	width: 16px;
+	height: 16px;
+	cursor: not-allowed;
+	accent-color: rgba(10, 10, 10, 0.4);
+	flex: 0 0 auto;
+}
+
+/* ---------- Date range readout ---------- */
+.aba-range-readout {
+	margin: -0.4rem 0 0.5rem;
+	font-size: 0.82rem;
+	font-weight: 700;
+	color: var(--nk-ink);
+	font-variant-numeric: tabular-nums;
+}
+
+/* ---------- Weekday checkboxes ---------- */
+.aba-weekdays {
+	border: none;
+	margin: 0 0 0.4rem;
+	padding: 0;
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.5rem 1rem;
+}
+.aba-weekdays legend {
+	width: 100%;
+	margin: 0 0 0.5rem;
+	padding: 0;
+}
+.aba-checkbox--inline {
+	margin: 0;
+	flex: 0 0 auto;
+}
+
+/* ---------- Availability preview ---------- */
+.aba-preview {
+	margin: 0 0 0.5rem;
+	font-size: 0.95rem;
+	font-weight: 700;
+	color: var(--nk-ink);
+}
+
+/* ---------- Generated slots preview ---------- */
+.aba-slots {
+	list-style: none;
+	margin: 1rem 0 0;
+	padding: 0;
+	display: flex;
+	flex-direction: column;
+	gap: 0.5rem;
+}
+.aba-slot {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: center;
+	gap: 0.6rem;
+	padding: 0.6rem 0.75rem;
+	border: 1px solid rgba(10, 10, 10, 0.1);
+	border-radius: 8px;
+	background: var(--nk-sand);
+	font-size: 0.82rem;
+}
+.aba-slot__date {
+	font-weight: 700;
+	color: var(--nk-ink);
+	min-width: 10.5rem;
+}
+.aba-slot__time {
+	color: #6B6B64;
+	flex: 1 1 auto;
+}
+
+/* ---------- Slot status pills ---------- */
+.aba-status {
+	display: inline-flex;
+	align-items: center;
+	font-size: 0.68rem;
+	font-weight: 800;
+	text-transform: uppercase;
+	letter-spacing: 0.04em;
+	padding: 0.25rem 0.6rem;
+	border-radius: 999px;
+	white-space: nowrap;
+}
+.aba-status--available {
+	background: rgba(253, 245, 103, 0.22);
+	color: #6B5E00;
+	border: 1px solid var(--nk-yellow);
+}
+.aba-status--blocked {
+	background: var(--nk-white);
+	color: #6B6B64;
+	border: 1px solid rgba(10, 10, 10, 0.16);
+}
+.aba-status--excluded {
+	background: var(--nk-white);
+	color: #6B6B64;
+	border: 1px dashed rgba(10, 10, 10, 0.3);
+}
+
+.aba-actions-panel .aba-save-btn {
+	width: 100%;
+	justify-content: center;
+	margin: 0 0 0.75rem;
+	background: var(--nk-ink);
+	color: var(--nk-cream);
+	border: 1.5px solid var(--nk-ink);
+}
+.aba-actions-panel .aba-save-btn:disabled {
+	opacity: 0.5;
+	cursor: not-allowed;
+}
+.aba-actions__note {
+	margin: 0;
+	font-size: 0.78rem;
+	line-height: 1.5;
+	color: #6B6B64;
+}
+
+.aba-security__list {
+	margin: 0;
+	padding: 0 0 0 1.1rem;
+	display: flex;
+	flex-direction: column;
+	gap: 0.5rem;
+}
+.aba-security__list li {
+	font-size: 0.82rem;
+	line-height: 1.55;
+	color: #4A4A46;
+}
+
+@media (max-width: 480px) {
+	.admin-panel {
+		padding: 1rem 1.1rem;
+	}
+}

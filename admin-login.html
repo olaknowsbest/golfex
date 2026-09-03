@@ -1,0 +1,89 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Secure Administrator Access &#8211; Nazario Kayla Fan Club Prototype</title>
+	<meta name="description" content="A static, honestly labelled preview of the future admin login screen for the fictional Nazario Kayla fan-platform prototype. Not a functioning authentication system.">
+	<meta name="robots" content="noindex, nofollow">
+	<meta name="theme-color" content="#0A0A0A">
+	<link rel="icon" href="assets/images/uploads/favicon.png" sizes="32x32" />
+	<link rel="icon" href="assets/images/uploads/favicon.png" sizes="192x192" />
+	<link rel="apple-touch-icon" href="assets/images/uploads/favicon.png" />
+	<link rel="stylesheet" href="assets/css/google-fonts-intertight.css">
+	<link rel="stylesheet" href="assets/css/site-shell.css">
+	<link rel="stylesheet" href="assets/css/page-admin-auth.css">
+</head>
+
+<body class="admin-auth-body">
+
+	<a class="skip-link" href="#admin-auth-main">Skip to content</a>
+
+	<!--
+		Static prototype only — no authentication exists on this page.
+		Production behavior (documented only, never implemented or
+		simulated here):
+		1. This screen will live at the route /admin/login.
+		2. Laravel must verify an active administrator role before
+		   creating an admin session — a valid password alone is never
+		   sufficient.
+		3. Every /admin route must remain protected server-side, not
+		   only by hiding client-side navigation.
+		4. Admin account recovery will use a controlled internal
+		   process, never a public self-service flow.
+		5. Stronger authentication controls can be added later.
+	-->
+	<header class="admin-auth__topbar">
+		<div class="admin-auth__brand">
+			<img class="admin-auth__logo" src="assets/images/brand/nk-monogram-mark.svg" alt="" width="28" height="29">
+			<span class="admin-auth__brand-name">Administration</span>
+			<span class="admin-auth__tag">Admin prototype</span>
+		</div>
+		<a class="admin-auth__return" href="index.html">Return to public site</a>
+	</header>
+
+	<main id="admin-auth-main" class="admin-auth">
+		<div class="admin-auth__card">
+			<p class="admin-auth__eyebrow">Administration</p>
+			<h1 class="admin-auth__title">Secure administrator access</h1>
+			<p class="admin-auth__lead">Sign in with an authorized administrator account to manage platform operations.</p>
+
+			<div class="admin-auth__fields">
+				<div class="admin-auth__field">
+					<label class="admin-auth__label" for="admin-email">Admin email</label>
+					<input class="admin-auth__input" type="email" id="admin-email" name="admin-email" autocomplete="username" placeholder="you@example.com">
+				</div>
+
+				<div class="admin-auth__field">
+					<label class="admin-auth__label" for="admin-password">Password</label>
+					<div class="admin-auth__password-wrap">
+						<input class="admin-auth__input" type="password" id="admin-password" name="admin-password" autocomplete="current-password">
+						<button type="button" class="admin-auth__password-toggle" id="admin-password-toggle" aria-pressed="false">
+							<svg class="admin-auth__password-icon" id="admin-password-icon-show" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+								<path d="M2 12s3.5-7 10-7 10 7 10 7-3.5 7-10 7-10-7-10-7z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+								<circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="2"/>
+							</svg>
+							<svg class="admin-auth__password-icon" id="admin-password-icon-hide" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true" hidden>
+								<path d="M3 3l18 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+								<path d="M10.6 5.1C11.05 5.03 11.51 5 12 5c6.5 0 10 7 10 7a17.9 17.9 0 0 1-3.2 4.1M6.5 6.6C4 8.3 2 12 2 12s3.5 7 10 7c1.4 0 2.7-.3 3.9-.8" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+								<path d="M9.9 9.9a3 3 0 0 0 4.2 4.2" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+							</svg>
+							<span class="visually-hidden" id="admin-password-toggle-label">Show password</span>
+						</button>
+					</div>
+				</div>
+			</div>
+
+			<button type="button" class="admin-auth__submit" disabled>Sign in</button>
+
+			<div class="admin-auth__security">
+				<p><strong>Authorized administrators only.</strong> Sign-in is disabled in this static preview. Production access will be authenticated by Laravel and all access attempts will be audited.</p>
+				<p class="admin-auth__security-help">Access issues must be handled through the platform owner.</p>
+			</div>
+		</div>
+	</main>
+
+	<script src="assets/js/page-admin-auth.js" defer></script>
+</body>
+</html>

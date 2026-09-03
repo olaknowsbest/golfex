@@ -1,0 +1,326 @@
+/* Branded 404 page. The animated ball follows the same path drawn by the SVG. */
+
+.error-page {
+	background: #0a0a0a;
+	color: #fcfbf5;
+}
+
+.error-hero {
+	position: relative;
+	overflow: hidden;
+	min-height: 720px;
+	display: grid;
+	align-items: center;
+	padding: clamp(5rem, 9vw, 8rem) 1.5rem;
+	isolation: isolate;
+}
+
+.error-hero__glow {
+	position: absolute;
+	inset: 0;
+	z-index: -1;
+	background:
+		radial-gradient(circle at 78% 42%, rgba(255, 244, 86, .13), transparent 28%),
+		radial-gradient(circle at 18% 80%, rgba(255, 244, 86, .06), transparent 24%);
+}
+
+.error-hero__glow::after {
+	content: "";
+	position: absolute;
+	inset: 0;
+	opacity: .22;
+	background-image: radial-gradient(rgba(252, 251, 245, .35) .7px, transparent .7px);
+	background-size: 24px 24px;
+}
+
+.error-hero__inner,
+.error-routes__inner {
+	width: min(1180px, 100%);
+	margin-inline: auto;
+}
+
+.error-hero__inner {
+	display: grid;
+	grid-template-columns: minmax(0, .85fr) minmax(520px, 1.15fr);
+	gap: clamp(2rem, 5vw, 5rem);
+	align-items: center;
+}
+
+.error-hero__eyebrow,
+.error-routes__label {
+	margin: 0 0 1.25rem;
+	color: #fff456;
+	font-size: .8rem;
+	font-weight: 800;
+	letter-spacing: .14em;
+	text-transform: uppercase;
+}
+
+.error-hero h1 {
+	margin: 0;
+	color: #fcfbf5;
+	font-size: clamp(3.6rem, 7vw, 6.7rem);
+	line-height: .9;
+	letter-spacing: -.065em;
+}
+
+.error-hero__lead {
+	max-width: 550px;
+	margin: 1.75rem 0 0;
+	color: rgba(252, 251, 245, .68);
+	font-size: clamp(1rem, 1.5vw, 1.2rem);
+	line-height: 1.65;
+}
+
+.error-hero__actions {
+	display: flex;
+	flex-wrap: wrap;
+	gap: .8rem;
+	margin-top: 2rem;
+}
+
+.error-button {
+	display: inline-flex;
+	align-items: center;
+	justify-content: center;
+	gap: 1.25rem;
+	min-height: 52px;
+	padding: .8rem 1.5rem;
+	border: 1px solid #fff456;
+	border-radius: 999px;
+	font-weight: 800;
+	text-decoration: none;
+	transition: transform .2s ease, background-color .2s ease, color .2s ease;
+}
+
+.error-button--primary {
+	background: #fff456;
+	color: #0a0a0a;
+}
+
+.error-button--secondary {
+	color: #fcfbf5;
+}
+
+.error-flight {
+	position: relative;
+	min-height: 470px;
+	display: grid;
+	place-items: center;
+}
+
+.error-flight__mark {
+	position: absolute;
+	top: 5%;
+	right: 3%;
+	width: 54px;
+	height: auto;
+	opacity: .75;
+}
+
+.error-flight__number {
+	display: flex;
+	align-items: center;
+	justify-content: center;
+	gap: .02em;
+	color: transparent;
+	-webkit-text-stroke: 2px rgba(252, 251, 245, .9);
+	font-size: clamp(10rem, 18vw, 16rem);
+	font-weight: 900;
+	line-height: 1;
+	letter-spacing: -.12em;
+}
+
+.error-flight__target {
+	position: relative;
+	color: #fcfbf5;
+	-webkit-text-stroke: 0;
+}
+
+.error-flight__path {
+	position: absolute;
+	inset: 6% 0 auto;
+	width: 100%;
+	height: auto;
+	overflow: visible;
+}
+
+.error-flight__path path {
+	fill: none;
+	stroke: rgba(255, 244, 86, .58);
+	stroke-width: 3;
+	stroke-linecap: round;
+	stroke-dasharray: 9 12;
+}
+
+.error-flight__path .error-flight__break {
+	stroke: #fff456;
+	stroke-dasharray: none;
+	stroke-width: 4;
+}
+
+.error-flight__ball {
+	position: absolute;
+	left: 0;
+	top: 6%;
+	width: 24px;
+	aspect-ratio: 1;
+	border-radius: 50%;
+	background:
+		radial-gradient(circle at 35% 35%, rgba(10, 10, 10, .18) 1px, transparent 1.5px) 0 0 / 6px 6px,
+		#fff456;
+	box-shadow: 0 0 0 6px rgba(255, 244, 86, .13), 0 0 28px rgba(255, 244, 86, .7);
+	offset-path: path("M34 218 C132 28 284 28 359 129 C408 195 485 201 579 102");
+	offset-rotate: 0deg;
+	animation: error-ball-flight 4.8s cubic-bezier(.45, 0, .3, 1) infinite;
+}
+
+.error-flight__caption {
+	position: absolute;
+	right: 5%;
+	bottom: 5%;
+	margin: 0;
+	color: rgba(252, 251, 245, .52);
+	font-size: .82rem;
+	letter-spacing: .05em;
+}
+
+@keyframes error-ball-flight {
+	0%, 8% { offset-distance: 0%; opacity: 0; transform: scale(.72); }
+	14% { opacity: 1; }
+	70% { offset-distance: 100%; opacity: 1; transform: scale(1); }
+	76%, 86% { offset-distance: 100%; opacity: 1; transform: scale(.82); }
+	100% { offset-distance: 100%; opacity: 0; transform: scale(.45); }
+}
+
+.error-routes {
+	background: #f4f0e3;
+	color: #0a0a0a;
+	padding: 3rem 1.5rem;
+}
+
+.error-routes__inner {
+	display: grid;
+	grid-template-columns: .75fr repeat(3, 1fr);
+	align-items: stretch;
+}
+
+.error-routes__label {
+	align-self: center;
+	margin: 0;
+	color: #766d00;
+}
+
+.error-routes a {
+	display: grid;
+	grid-template-columns: auto 1fr auto;
+	gap: .8rem;
+	align-items: center;
+	min-height: 92px;
+	padding: 1rem 1.35rem;
+	border-left: 1px solid rgba(10, 10, 10, .18);
+	color: #0a0a0a;
+	font-weight: 800;
+	text-decoration: none;
+	transition: background-color .2s ease, transform .2s ease;
+}
+
+.error-routes a span {
+	color: #766d00;
+	font-size: .72rem;
+}
+
+.error-routes a b {
+	font-size: 1.2rem;
+}
+
+@media (hover: hover) and (pointer: fine) {
+	.error-button:hover,
+	.error-routes a:hover {
+		transform: translateY(-3px);
+	}
+
+	.error-button--primary:hover,
+	.error-routes a:hover {
+		background: #fff456;
+		color: #0a0a0a;
+	}
+
+	.error-button--secondary:hover {
+		background: #fcfbf5;
+		color: #0a0a0a;
+		border-color: #fcfbf5;
+	}
+}
+
+@media (max-width: 900px) {
+	.error-hero {
+		min-height: auto;
+	}
+
+	.error-hero__inner {
+		grid-template-columns: 1fr;
+	}
+
+	.error-flight {
+		min-height: 390px;
+	}
+
+	.error-routes__inner {
+		grid-template-columns: 1fr;
+	}
+
+	.error-routes__label {
+		margin-bottom: 1rem;
+	}
+
+	.error-routes a {
+		border-left: 0;
+		border-top: 1px solid rgba(10, 10, 10, .18);
+	}
+}
+
+@media (max-width: 520px) {
+	.error-hero {
+		padding: 4.5rem 1.25rem 3.5rem;
+	}
+
+	.error-hero h1 {
+		font-size: clamp(3.3rem, 17vw, 5rem);
+	}
+
+	.error-flight {
+		min-height: 280px;
+	}
+
+	.error-flight__number {
+		font-size: 9rem;
+	}
+
+	.error-flight__mark,
+	.error-flight__caption {
+		display: none;
+	}
+
+	.error-flight__ball {
+		width: 18px;
+		transform-origin: center;
+		offset-path: path("M15 98 C59 12 128 12 162 69 C184 106 219 109 261 55");
+	}
+
+	.error-button {
+		width: 100%;
+	}
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.error-flight__ball {
+		offset-distance: 100%;
+		animation: none;
+	}
+
+	.error-button,
+	.error-routes a {
+		transition: none;
+	}
+}

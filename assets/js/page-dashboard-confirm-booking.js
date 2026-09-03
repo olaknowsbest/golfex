@@ -56,11 +56,6 @@
 	var tz = params.get('timezone');
 
 	var backLink = document.getElementById('dcb-back');
-	if (backLink) {
-		backLink.href = VALID_TYPES.indexOf(type) !== -1
-			? 'dashboard-book-slot.html?type=' + encodeURIComponent(type)
-			: 'dashboard-book-slot.html';
-	}
 
 	/* Price is never read from the query string — it is always
 	   recalculated here from the validated type and duration. A
@@ -95,10 +90,28 @@
 
 	if (!valid) {
 		root.setAttribute('data-state', 'missing');
+		if (backLink) {
+			backLink.href = VALID_TYPES.indexOf(type) !== -1
+				? 'dashboard-book-slot.html?type=' + encodeURIComponent(type)
+				: 'dashboard-book-slot.html';
+		}
 		return;
 	}
 
 	root.setAttribute('data-state', 'valid');
+
+	/* "Edit Booking" carries the full validated selection back to the
+	   slot-selection screen, which restores type, date, start, end, and
+	   timezone in that dependent order — never just the type. */
+	if (backLink) {
+		var backQs = new URLSearchParams();
+		backQs.set('type', type);
+		backQs.set('date', date);
+		backQs.set('start', start);
+		backQs.set('end', end);
+		backQs.set('timezone', tz);
+		backLink.href = 'dashboard-book-slot.html?' + backQs.toString();
+	}
 
 	document.getElementById('dcb-type').textContent = DATA[type].label;
 	document.getElementById('dcb-date').textContent = formatDateLabel(date);

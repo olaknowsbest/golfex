@@ -421,6 +421,7 @@
 	border: 1px solid rgba(10, 10, 10, 0.1);
 	border-radius: 16px;
 	margin-bottom: 1rem;
+	contain: layout;
 }
 .fc-compare__scroll:focus-visible {
 	outline: 3px solid var(--nk-ink);

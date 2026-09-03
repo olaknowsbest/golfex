@@ -1,0 +1,250 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Booking Availability &#8211; Nazario Kayla Fan Club Prototype</title>
+	<meta name="description" content="A static, honestly labelled preview of the future admin booking-availability screen for the fictional Nazario Kayla fan-platform prototype. Not a functioning admin system.">
+	<meta name="robots" content="noindex, nofollow">
+	<meta name="theme-color" content="#0A0A0A">
+	<link rel="icon" href="assets/images/uploads/favicon.png" sizes="32x32" />
+	<link rel="icon" href="assets/images/uploads/favicon.png" sizes="192x192" />
+	<link rel="apple-touch-icon" href="assets/images/uploads/favicon.png" />
+	<link rel="stylesheet" href="assets/css/google-fonts-intertight.css">
+	<link rel="stylesheet" href="assets/css/site-shell.css">
+	<link rel="stylesheet" href="assets/css/admin-shell.css">
+	<link rel="stylesheet" href="assets/css/page-admin-bookings.css">
+</head>
+
+<body class="admin-body">
+
+	<a class="skip-link" href="#admin-main">Skip to content</a>
+
+	<div class="admin-shell">
+		<div class="admin-backdrop" data-admin-backdrop></div>
+
+		<aside class="admin-sidebar" id="admin-sidebar" aria-label="Admin navigation">
+			<div class="admin-sidebar__top">
+				<div class="admin-sidebar__brand">
+					<img class="admin-sidebar__logo" src="assets/images/brand/nk-monogram-mark.svg" alt="Nazario Kayla Fan Club &#8212; Prototype" width="28" height="29">
+					<span class="admin-sidebar__brand-text">
+						<span class="admin-sidebar__brand-name">NK Admin</span>
+						<span class="admin-sidebar__tag">Admin prototype</span>
+					</span>
+				</div>
+				<button class="admin-sidebar__close" type="button" data-admin-close aria-label="Close menu">
+					<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+						<path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+					</svg>
+				</button>
+			</div>
+
+			<nav class="admin-nav" aria-label="Admin sections">
+				<ul class="admin-nav__list">
+					<li>
+						<a href="admin-dashboard.html" class="admin-nav__link">
+							<span class="admin-nav__icon" aria-hidden="true">
+								<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<rect x="4" y="4" width="7" height="7" rx="1.5" stroke="currentColor" stroke-width="2"/>
+									<rect x="13" y="4" width="7" height="7" rx="1.5" stroke="currentColor" stroke-width="2"/>
+									<rect x="4" y="13" width="7" height="7" rx="1.5" stroke="currentColor" stroke-width="2"/>
+									<rect x="13" y="13" width="7" height="7" rx="1.5" stroke="currentColor" stroke-width="2"/>
+								</svg>
+							</span>
+							Overview
+						</a>
+					</li>
+					<li>
+						<a href="admin-payments.html" class="admin-nav__link">
+							<span class="admin-nav__icon" aria-hidden="true">
+								<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<rect x="5" y="4" width="14" height="17" rx="2" stroke="currentColor" stroke-width="2"/>
+									<path d="M9 4V3a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v1" stroke="currentColor" stroke-width="2"/>
+									<path d="M8.5 13l2 2 4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+								</svg>
+							</span>
+							Payment Reviews
+						</a>
+					</li>
+					<li>
+						<a href="admin-bookings.html" class="admin-nav__link" aria-current="page">
+							<span class="admin-nav__icon" aria-hidden="true">
+								<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<rect x="3" y="5" width="18" height="16" rx="2" stroke="currentColor" stroke-width="2"/>
+									<line x1="3" y1="10" x2="21" y2="10" stroke="currentColor" stroke-width="2"/>
+									<line x1="8" y1="3" x2="8" y2="7" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+									<line x1="16" y1="3" x2="16" y2="7" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+								</svg>
+							</span>
+							Bookings
+						</a>
+					</li>
+					<li>
+						<a href="admin-fan-cards.html" class="admin-nav__link">
+							<span class="admin-nav__icon" aria-hidden="true">
+								<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<rect x="3" y="6" width="18" height="12" rx="2" stroke="currentColor" stroke-width="2"/>
+									<line x1="3" y1="10" x2="21" y2="10" stroke="currentColor" stroke-width="2"/>
+								</svg>
+							</span>
+							Fan Cards
+						</a>
+					</li>
+					<li>
+						<a href="admin-memberships.html" class="admin-nav__link">
+							<span class="admin-nav__icon" aria-hidden="true">
+								<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<path d="M12 3l7 4v8l-7 6-7-6V7z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+								</svg>
+							</span>
+							Memberships
+						</a>
+					</li>
+					<li>
+						<a href="admin-donations.html" class="admin-nav__link">
+							<span class="admin-nav__icon" aria-hidden="true">
+								<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+								</svg>
+							</span>
+							Donations
+						</a>
+					</li>
+					<li>
+						<a href="admin-customers.html" class="admin-nav__link">
+							<span class="admin-nav__icon" aria-hidden="true">
+								<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<circle cx="9" cy="8" r="3" stroke="currentColor" stroke-width="2"/>
+									<path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+									<circle cx="17" cy="7" r="2.3" stroke="currentColor" stroke-width="1.6"/>
+									<path d="M15.5 13.3c2.6.4 4.5 2.4 4.5 5.2" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+								</svg>
+							</span>
+							Customers
+						</a>
+					</li>
+					<li>
+						<a href="admin-settings.html" class="admin-nav__link">
+							<span class="admin-nav__icon" aria-hidden="true">
+								<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="2"/>
+									<path d="M12 3v2M12 19v2M4.2 4.2l1.4 1.4M18.4 18.4l1.4 1.4M3 12h2M19 12h2M4.2 19.8l1.4-1.4M18.4 5.6l1.4-1.4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+								</svg>
+							</span>
+							Settings
+						</a>
+					</li>
+					<li>
+						<span class="admin-nav__link admin-nav__link--placeholder" aria-disabled="true">
+							<span class="admin-nav__icon" aria-hidden="true">
+								<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<path d="M9 4H5a1 1 0 0 0-1 1v14a1 1 0 0 0 1 1h4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+									<path d="M16 16l4-4-4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+									<line x1="20" y1="12" x2="9" y2="12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+								</svg>
+							</span>
+							Logout
+						</span>
+					</li>
+				</ul>
+			</nav>
+		</aside>
+
+		<div class="admin-content">
+			<header class="admin-topbar">
+				<button class="admin-topbar__toggle" type="button" id="admin-menu-toggle" aria-controls="admin-sidebar" aria-expanded="false">
+					<span class="admin-topbar__toggle-bars" aria-hidden="true"><span></span><span></span><span></span></span>
+					<span class="visually-hidden">Menu</span>
+				</button>
+				<img class="admin-topbar__logo" src="assets/images/brand/nk-monogram-mark.svg" alt="" aria-hidden="true">
+				<p class="admin-topbar__title">Booking Availability</p>
+				<span class="admin-topbar__badge">Admin prototype</span>
+			</header>
+
+			<main id="admin-main" class="admin-main">
+				<h1 class="admin-main__title">Booking Availability</h1>
+				<p class="admin-main__lead">This is a static preview of the future booking-availability management screen. Availability windows are administrator-managed &mdash; customers never request a free-form date or time.</p>
+
+				<a class="btn abk-primary-cta" href="admin-booking-availability.html">Add Availability</a>
+
+				<div class="abk-summary-grid">
+					<article class="abk-summary-card">
+						<p class="abk-summary-card__label">Available windows</p>
+						<p class="abk-summary-card__value">1</p>
+						<p class="abk-summary-card__desc">1 sample available window is shown below (sample data, not a live count).</p>
+					</article>
+					<article class="abk-summary-card">
+						<p class="abk-summary-card__label">Blocked periods</p>
+						<p class="abk-summary-card__value">1</p>
+						<p class="abk-summary-card__desc">1 sample blocked period is shown below (sample data, not a live count).</p>
+					</article>
+					<article class="abk-summary-card">
+						<p class="abk-summary-card__label">Booking types</p>
+						<p class="abk-summary-card__value">3</p>
+						<p class="abk-summary-card__desc">Virtual Meet-and-Greet, Public Appearance, Golf Experience.</p>
+					</article>
+				</div>
+
+				<section class="admin-panel abk-table-panel" aria-labelledby="abk-table-heading">
+					<h2 id="abk-table-heading" class="admin-panel__title">Sample availability</h2>
+					<p class="admin-panel__desc">The dates and times below are fictional demonstration data for this static prototype, not live availability. One available window and one blocked period are shown for illustration.</p>
+
+					<div class="abk-table__scroll" role="region" aria-label="Sample availability windows, scroll horizontally to see all columns" tabindex="0">
+						<table>
+							<thead>
+								<tr>
+									<th scope="col">Booking type</th>
+									<th scope="col">Date</th>
+									<th scope="col">Available window</th>
+									<th scope="col">Timezone</th>
+									<th scope="col">Rate</th>
+									<th scope="col">Minimum duration</th>
+									<th scope="col">Status</th>
+									<th scope="col"><span class="visually-hidden">Actions</span></th>
+								</tr>
+							</thead>
+							<tbody>
+								<tr>
+									<th scope="row">Virtual Meet-and-Greet</th>
+									<td>September 12, 2026</td>
+									<td>10:00 AM &ndash; 12:00 PM</td>
+									<td>PT</td>
+									<td>$150/hr</td>
+									<td>30 min</td>
+									<td><span class="abk-status abk-status--available">Available</span></td>
+									<td><button type="button" class="btn abk-edit-btn" disabled>Edit</button></td>
+								</tr>
+								<tr>
+									<th scope="row">Golf Experience</th>
+									<td>September 20, 2026</td>
+									<td>9:00 AM &ndash; 5:00 PM</td>
+									<td>PT</td>
+									<td>$300/hr</td>
+									<td>1 hr</td>
+									<td><span class="abk-status abk-status--blocked">Blocked</span></td>
+									<td><button type="button" class="btn abk-edit-btn" disabled>Edit</button></td>
+								</tr>
+							</tbody>
+						</table>
+					</div>
+					<p class="abk-table__note">Edit is disabled in this static prototype. No availability window can be created, changed, or removed here.</p>
+				</section>
+
+				<section class="admin-panel abk-security" aria-labelledby="abk-security-heading">
+					<h2 id="abk-security-heading" class="admin-panel__title">How availability will work</h2>
+					<ul class="abk-security__list">
+						<li>Production availability comes from Laravel and MySQL. Customer booking times are generated only from windows an administrator has actively published here &mdash; never from a free-form request.</li>
+						<li>A blocked period, or a period already reserved by another customer, is never selectable at checkout.</li>
+						<li>Checkout atomically holds the selected slot. A successful, manually verified payment confirms the booking; an expired or rejected payment releases the hold back to availability.</li>
+					</ul>
+				</section>
+
+				<p class="abk-fine-print">This screen manages availability windows only. No customer bookings, payments, or personal information appear anywhere on this page.</p>
+			</main>
+		</div>
+	</div>
+
+	<script src="assets/js/admin-shell.js" defer></script>
+</body>
+</html>

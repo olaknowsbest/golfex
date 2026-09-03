@@ -1,0 +1,437 @@
+/*
+ * Shared styles for the static admin Fan Card, Membership, Donation,
+ * and Customer prototype screens (admin-fan-cards.html through
+ * admin-customer-detail.html). Loaded after admin-shell.css, alongside
+ * each page family's own dedicated stylesheet for its status variants
+ * and record-reveal rules. Every summary value, table row, and detail
+ * field is clearly labelled fictional sample data — production data
+ * always comes from Laravel and MySQL. Status colour is never the only
+ * signal (pill fill and border style differ per status too), and
+ * yellow is reserved for active navigation, pending states, and focus
+ * — "Active"/"Completed" status uses a solid ink fill, not yellow.
+ */
+
+/* ---------- Summary cards ---------- */
+.aent-summary-grid {
+	display: grid;
+	grid-template-columns: 1fr;
+	gap: 0.85rem;
+	margin: 0 0 1.75rem;
+}
+@media (min-width: 601px) {
+	.aent-summary-grid {
+		grid-template-columns: repeat(3, 1fr);
+	}
+}
+.aent-summary-card {
+	background: var(--nk-white);
+	border: 1px solid rgba(10, 10, 10, 0.14);
+	border-radius: 10px;
+	padding: 1rem 1.1rem;
+	display: flex;
+	flex-direction: column;
+	gap: 0.3rem;
+}
+.aent-summary-card__label {
+	margin: 0;
+	font-size: 0.68rem;
+	font-weight: 800;
+	text-transform: uppercase;
+	letter-spacing: 0.06em;
+	color: #6B6B64;
+}
+.aent-summary-card__value {
+	margin: 0;
+	font-size: 1.6rem;
+	font-weight: 800;
+	color: var(--nk-ink);
+	line-height: 1;
+}
+.aent-summary-card__desc {
+	margin: 0.15rem 0 0;
+	font-size: 0.78rem;
+	line-height: 1.5;
+	color: #6B6B64;
+}
+
+/* ---------- List table ---------- */
+.aent-table-panel {
+	margin: 0 0 1.4rem;
+}
+.aent-table__scroll {
+	overflow-x: auto;
+	margin-top: 1rem;
+	border: 1px solid rgba(10, 10, 10, 0.12);
+	border-radius: 10px;
+	contain: layout;
+}
+.aent-table__scroll table {
+	width: 100%;
+	min-width: 820px;
+	border-collapse: collapse;
+}
+.aent-table__scroll th,
+.aent-table__scroll td {
+	padding: 0.7rem 0.9rem;
+	text-align: left;
+	border-bottom: 1px solid rgba(10, 10, 10, 0.08);
+	font-size: 0.82rem;
+	color: var(--nk-ink);
+	white-space: nowrap;
+}
+.aent-table__scroll thead th {
+	font-size: 0.68rem;
+	font-weight: 800;
+	text-transform: uppercase;
+	letter-spacing: 0.05em;
+	color: #6B6B64;
+	background: var(--nk-sand);
+}
+.aent-table__scroll th[scope="row"] {
+	font-weight: 700;
+}
+.aent-table__scroll tbody tr:last-child th,
+.aent-table__scroll tbody tr:last-child td {
+	border-bottom: none;
+}
+.aent-table__note {
+	margin: 0.85rem 0 0;
+	font-size: 0.78rem;
+	line-height: 1.5;
+	color: #6B6B64;
+}
+.aent-row-cta {
+	padding: 0.4rem 0.9rem;
+	font-size: 0.78rem;
+	background: var(--nk-white);
+	color: var(--nk-ink);
+	border: 1.5px solid rgba(10, 10, 10, 0.18);
+}
+
+.aent-fictional {
+	font-size: 0.72rem;
+	font-weight: 600;
+	color: #6B6B64;
+}
+
+/* ---------- Status pills (fill differs per status, not colour alone) ---------- */
+.aent-status {
+	display: inline-flex;
+	align-items: center;
+	font-size: 0.68rem;
+	font-weight: 800;
+	text-transform: uppercase;
+	letter-spacing: 0.04em;
+	padding: 0.28rem 0.65rem;
+	border-radius: 999px;
+	white-space: nowrap;
+}
+.aent-status--pending {
+	background: rgba(253, 245, 103, 0.22);
+	color: #6B5E00;
+	border: 1px solid var(--nk-yellow);
+}
+.aent-status--active {
+	background: var(--nk-ink);
+	color: var(--nk-cream);
+	border: 1px solid var(--nk-ink);
+}
+.aent-status--suspended {
+	background: var(--nk-sand);
+	color: #6B6B64;
+	border: 1px dashed rgba(10, 10, 10, 0.3);
+}
+
+/* ---------- Security / business-rule panels ---------- */
+.aent-security__list {
+	margin: 0;
+	padding: 0 0 0 1.1rem;
+	display: flex;
+	flex-direction: column;
+	gap: 0.5rem;
+}
+.aent-security__list li {
+	font-size: 0.82rem;
+	line-height: 1.55;
+	color: #4A4A46;
+}
+
+/* ---------- Detail screens: back link, missing/valid states ---------- */
+.aent-back {
+	display: inline-flex;
+	align-items: center;
+	gap: 0.4rem;
+	margin: 0 0 1.1rem;
+	color: #6B6B64;
+	font-size: 0.82rem;
+	font-weight: 600;
+	text-decoration: none;
+}
+.aent-back:hover,
+.aent-back:focus-visible {
+	color: var(--nk-ink);
+}
+.aent-detail {
+	max-width: 760px;
+}
+.aent-missing,
+.aent-valid {
+	display: none;
+}
+.aent-detail[data-state="missing"] .aent-missing {
+	display: block;
+}
+.aent-detail[data-state="valid"] .aent-valid {
+	display: block;
+}
+.aent-missing__cta {
+	display: inline-flex;
+	margin-top: 0.75rem;
+}
+
+.aent-sample-notice {
+	margin: 0 0 1.4rem;
+	padding: 0.85rem 1rem;
+	border: 1px solid rgba(10, 10, 10, 0.16);
+	border-left: 3px solid var(--nk-yellow);
+	border-radius: 8px;
+	background: var(--nk-white);
+}
+.aent-sample-notice p {
+	margin: 0;
+	font-size: 0.82rem;
+	line-height: 1.55;
+	color: #4A4A46;
+}
+.aent-sample-notice strong {
+	color: var(--nk-ink);
+}
+
+/* ---------- Per-reference record blocks: hidden unless selected ---------- */
+.afcd-record,
+.ambd-record {
+	display: none;
+}
+#afc-detail[data-card="FC-DEMO-001"] .afcd-record[data-ref="FC-DEMO-001"],
+#afc-detail[data-card="FC-DEMO-002"] .afcd-record[data-ref="FC-DEMO-002"],
+#afc-detail[data-card="FC-DEMO-003"] .afcd-record[data-ref="FC-DEMO-003"] {
+	display: block;
+}
+#amb-detail[data-membership="MB-DEMO-001"] .ambd-record[data-ref="MB-DEMO-001"],
+#amb-detail[data-membership="MB-DEMO-002"] .ambd-record[data-ref="MB-DEMO-002"],
+#amb-detail[data-membership="MB-DEMO-003"] .ambd-record[data-ref="MB-DEMO-003"] {
+	display: block;
+}
+
+.aent-record-header {
+	display: flex;
+	align-items: center;
+	gap: 0.75rem;
+	flex-wrap: wrap;
+	margin: 0 0 1.4rem;
+}
+.aent-record-header__ref {
+	font-size: 0.78rem;
+	font-weight: 700;
+	color: #6B6B64;
+	font-variant-numeric: tabular-nums;
+}
+
+/* ---------- Dense detail field rows ---------- */
+.aent-fields {
+	margin: 0 0 1.4rem;
+}
+.aent-fields__list {
+	margin: 0;
+	padding: 0;
+	display: flex;
+	flex-direction: column;
+	gap: 0.5rem;
+}
+.aent-fields__row {
+	margin: 0;
+	display: grid;
+	grid-template-columns: 1fr;
+	gap: 0.1rem;
+	padding: 0.45rem 0;
+	border-bottom: 1px solid rgba(10, 10, 10, 0.08);
+}
+.aent-fields__row:last-of-type {
+	border-bottom: none;
+}
+.aent-fields__row dt {
+	font-size: 0.72rem;
+	font-weight: 700;
+	text-transform: uppercase;
+	letter-spacing: 0.04em;
+	color: #6B6B64;
+}
+.aent-fields__row dd {
+	margin: 0;
+	font-size: 0.86rem;
+	font-weight: 600;
+	color: var(--nk-ink);
+}
+@media (min-width: 480px) {
+	.aent-fields__row {
+		grid-template-columns: 12rem 1fr;
+		align-items: baseline;
+		gap: 0.75rem;
+	}
+}
+
+/* ---------- Actions panel ---------- */
+.aent-actions-panel {
+	margin: 0 0 1.4rem;
+}
+.aent-actions {
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.75rem;
+	margin: 0 0 0.75rem;
+}
+.aent-actions__btn {
+	flex: 1 1 200px;
+	justify-content: center;
+	background: var(--nk-ink);
+	color: var(--nk-cream);
+	border: 1.5px solid var(--nk-ink);
+}
+.aent-actions__btn:disabled {
+	opacity: 0.5;
+	cursor: not-allowed;
+}
+.aent-actions__note {
+	margin: 0;
+	font-size: 0.78rem;
+	line-height: 1.5;
+	color: #6B6B64;
+}
+
+/* ---------- Internal note textarea (shared by Donations, Customers) ---------- */
+.aent-notes {
+	margin: 0 0 1.4rem;
+}
+.aent-notes__label {
+	display: block;
+	margin: 0 0 0.4rem;
+	font-size: 0.78rem;
+	font-weight: 700;
+	color: var(--nk-ink);
+}
+.aent-notes__field {
+	display: block;
+	width: 100%;
+	font-family: inherit;
+	font-size: 0.88rem;
+	padding: 0.65rem 0.85rem;
+	border: 1.5px solid rgba(10, 10, 10, 0.16);
+	border-radius: 8px;
+	background: var(--nk-sand);
+	color: var(--nk-ink);
+	resize: vertical;
+}
+.aent-notes__field:disabled {
+	opacity: 0.7;
+	cursor: not-allowed;
+}
+.aent-notes__note {
+	margin: 0.6rem 0 0;
+	font-size: 0.78rem;
+	line-height: 1.5;
+	color: #6B6B64;
+}
+
+/* ---------- Fan Card compact preview (mirrors .dpf-card-mock) ---------- */
+.afcd-layout {
+	display: grid;
+	grid-template-columns: 1fr;
+	gap: 1.4rem;
+	margin: 0 0 1.4rem;
+	align-items: start;
+}
+@media (min-width: 640px) {
+	.afcd-layout {
+		grid-template-columns: 260px 1fr;
+	}
+}
+.afcd-card-mock {
+	position: relative;
+	background: var(--nk-ink);
+	border-radius: 16px;
+	aspect-ratio: 1.586 / 1;
+	width: 100%;
+	overflow: hidden;
+	padding: 1.1rem 1.25rem;
+	display: flex;
+	flex-direction: column;
+	justify-content: space-between;
+}
+.afcd-card-mock--vip {
+	border: 2px solid var(--nk-yellow);
+}
+.afcd-card-mock__arc {
+	position: absolute;
+	inset: 0;
+	width: 100%;
+	height: 100%;
+}
+.afcd-card-mock__top {
+	position: relative;
+	display: flex;
+	align-items: flex-start;
+	justify-content: space-between;
+	z-index: 1;
+}
+.afcd-card-mock__logo {
+	height: 26px;
+	width: auto;
+	display: block;
+}
+.afcd-card-mock__tag {
+	font-size: 0.6rem;
+	font-weight: 700;
+	text-transform: uppercase;
+	letter-spacing: 0.06em;
+	color: rgba(252, 251, 245, 0.7);
+	border: 1px solid rgba(252, 251, 245, 0.3);
+	border-radius: 999px;
+	padding: 0.2rem 0.55rem;
+}
+.afcd-card-mock__bottom {
+	position: relative;
+	z-index: 1;
+}
+.afcd-card-mock__tier {
+	margin: 0 0 0.2rem;
+	font-size: 0.65rem;
+	font-weight: 700;
+	text-transform: uppercase;
+	letter-spacing: 0.08em;
+	color: var(--nk-yellow);
+}
+.afcd-card-mock__name {
+	margin: 0;
+	font-size: 1.1rem;
+	font-weight: 700;
+	color: var(--nk-cream);
+}
+.afcd-card-mock__format {
+	margin: 0.15rem 0 0;
+	font-size: 0.72rem;
+	color: rgba(252, 251, 245, 0.7);
+}
+
+@media (max-width: 480px) {
+	.admin-panel {
+		padding: 1rem 1.1rem;
+	}
+	.aent-actions {
+		flex-direction: column;
+	}
+	.aent-actions__btn {
+		flex: 0 0 auto;
+		width: 100%;
+		min-height: 44px;
+	}
+}

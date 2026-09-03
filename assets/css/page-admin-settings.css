@@ -1,0 +1,254 @@
+/*
+ * Settings screen (static prototype). Loaded after admin-shell.css on
+ * admin-settings.html only. Every field is a disabled prototype control
+ * except the three wallet-address inputs, which may be edited locally
+ * for interface review — nothing on this page ever saves, submits, or
+ * sends anything anywhere. No private key, recovery phrase, or seed
+ * phrase field exists anywhere on this page.
+ */
+
+.aset-panel {
+	margin: 0 0 1.4rem;
+}
+
+/* ---------- Form fields (shared field/select/input pattern) ---------- */
+.aset-field {
+	display: flex;
+	flex-direction: column;
+	gap: 0.35rem;
+	margin: 0 0 1.1rem;
+}
+.aset-field:last-child {
+	margin-bottom: 0;
+}
+.aset-field-row {
+	display: grid;
+	grid-template-columns: 1fr;
+	gap: 1.1rem;
+	margin: 0 0 1.1rem;
+}
+@media (min-width: 480px) {
+	.aset-field-row {
+		grid-template-columns: 1fr 1fr;
+	}
+}
+.aset-field-row .aset-field {
+	margin-bottom: 0;
+}
+.aset-field__label {
+	font-size: 0.78rem;
+	font-weight: 700;
+	color: var(--nk-ink);
+}
+.aset-field__input {
+	width: 100%;
+	min-width: 0;
+	display: block;
+	font-family: inherit;
+	font-size: 0.88rem;
+	padding: 0.65rem 0.85rem;
+	border: 1.5px solid rgba(10, 10, 10, 0.16);
+	border-radius: 8px;
+	background: var(--nk-sand);
+	color: var(--nk-ink);
+}
+.aset-field__input:disabled {
+	opacity: 0.75;
+	cursor: not-allowed;
+}
+.aset-field__note {
+	margin: 0;
+	font-size: 0.76rem;
+	line-height: 1.5;
+	color: #6B6B64;
+}
+
+/* ---------- Wallet address panels ---------- */
+.aset-wallet-panel {
+	margin: 0 0 1.1rem;
+}
+.aset-wallet-panel__header {
+	display: flex;
+	align-items: center;
+	flex-wrap: wrap;
+	gap: 0.75rem;
+	margin: 0 0 1.1rem;
+}
+.aset-wallet-panel__title {
+	margin: 0;
+	font-size: 0.95rem;
+	font-weight: 800;
+	color: var(--nk-ink);
+	display: inline-flex;
+	align-items: baseline;
+	gap: 0.4rem;
+}
+.aset-wallet-panel__symbol {
+	font-size: 0.7rem;
+	font-weight: 700;
+	letter-spacing: 0.04em;
+	color: #6B6B64;
+}
+
+.aset-status {
+	display: inline-flex;
+	align-items: center;
+	font-size: 0.68rem;
+	font-weight: 800;
+	text-transform: uppercase;
+	letter-spacing: 0.04em;
+	padding: 0.28rem 0.65rem;
+	border-radius: 999px;
+	white-space: nowrap;
+}
+.aset-status--unconfigured {
+	background: var(--nk-sand);
+	color: #6B6B64;
+	border: 1px dashed rgba(10, 10, 10, 0.3);
+}
+
+/* Address input + copy button: input absorbs available width and wraps
+   its own overflow via ellipsis rather than forcing the row wider than
+   the viewport; the button keeps its natural size and never stretches
+   or shrinks — on narrow screens the row stacks instead of squeezing
+   the button down. */
+.aset-address-row {
+	display: flex;
+	flex-wrap: wrap;
+	align-items: stretch;
+	gap: 0.6rem;
+}
+.aset-address-input {
+	flex: 1 1 220px;
+	min-width: 0;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	font-variant-numeric: tabular-nums;
+}
+.aset-copy-btn {
+	flex: 0 0 auto;
+	align-self: flex-start;
+	background: var(--nk-white);
+	color: var(--nk-ink);
+	border: 1.5px solid rgba(10, 10, 10, 0.18);
+	white-space: nowrap;
+}
+.aset-copy-btn:hover,
+.aset-copy-btn:focus-visible {
+	background: var(--nk-sand);
+}
+.aset-copy-btn.is-copied {
+	background: var(--nk-ink);
+	color: var(--nk-cream);
+	border-color: var(--nk-ink);
+}
+
+@media (max-width: 480px) {
+	.aset-address-row {
+		flex-direction: column;
+		align-items: stretch;
+	}
+	.aset-copy-btn {
+		align-self: stretch;
+		justify-content: center;
+	}
+}
+
+/* ---------- Security / production-notes lists ---------- */
+.aset-security__list {
+	margin: 0;
+	padding: 0 0 0 1.1rem;
+	display: flex;
+	flex-direction: column;
+	gap: 0.5rem;
+}
+.aset-security__list li {
+	font-size: 0.82rem;
+	line-height: 1.55;
+	color: #4A4A46;
+	overflow-wrap: break-word;
+}
+
+/* ---------- Notification toggles (visually disabled) ---------- */
+.aset-toggle-row {
+	display: flex;
+	align-items: center;
+	justify-content: space-between;
+	gap: 1rem;
+	padding: 0.7rem 0;
+}
+.aset-toggle-row + .aset-toggle-row {
+	border-top: 1px solid rgba(10, 10, 10, 0.08);
+}
+.aset-toggle-row__label {
+	font-size: 0.88rem;
+	color: var(--nk-ink);
+}
+.aset-toggle {
+	position: relative;
+	display: inline-flex;
+	flex-shrink: 0;
+	width: 42px;
+	height: 24px;
+	cursor: not-allowed;
+}
+.aset-toggle input {
+	position: absolute;
+	inset: 0;
+	margin: 0;
+	opacity: 0;
+}
+.aset-toggle__track {
+	position: absolute;
+	inset: 0;
+	border-radius: 999px;
+	background: rgba(10, 10, 10, 0.12);
+	border: 1px solid rgba(10, 10, 10, 0.12);
+}
+.aset-toggle__thumb {
+	position: absolute;
+	top: 2px;
+	left: 2px;
+	width: 18px;
+	height: 18px;
+	border-radius: 50%;
+	background: var(--nk-white);
+	box-shadow: 0 1px 2px rgba(10, 10, 10, 0.2);
+}
+.aset-toggle input:focus-visible ~ .aset-toggle__track {
+	outline: 3px solid var(--nk-yellow);
+	outline-offset: 2px;
+}
+
+/* ---------- Save action ---------- */
+.aset-save {
+	margin-top: 0.5rem;
+	padding: 1.25rem 1.4rem;
+	border: 1px solid rgba(10, 10, 10, 0.14);
+	border-radius: 12px;
+	background: var(--nk-white);
+}
+.aset-save-btn {
+	width: 100%;
+	justify-content: center;
+	background: var(--nk-ink);
+	color: var(--nk-cream);
+	border: 1.5px solid var(--nk-ink);
+}
+.aset-save-btn:disabled {
+	opacity: 0.5;
+	cursor: not-allowed;
+}
+.aset-save__note {
+	margin: 0.6rem 0 0;
+	font-size: 0.78rem;
+	line-height: 1.5;
+	color: #6B6B64;
+	text-align: center;
+}
+
+@media (max-width: 480px) {
+	.admin-panel {
+		padding: 1rem 1.1rem;
+	}
+}

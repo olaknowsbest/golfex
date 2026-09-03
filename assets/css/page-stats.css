@@ -175,6 +175,7 @@
 	border: 1px solid rgba(10, 10, 10, 0.1);
 	border-radius: 16px;
 	background: var(--nk-white);
+	contain: layout;
 }
 .stats-table__scroll table {
 	width: 100%;

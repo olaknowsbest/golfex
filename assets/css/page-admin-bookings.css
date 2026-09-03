@@ -1,0 +1,173 @@
+/*
+ * Booking Availability queue screen (static prototype). Loaded after
+ * admin-shell.css on admin-bookings.html only. The summary card values
+ * and table rows are clearly labelled fictional sample data, never
+ * invented live metrics — production availability comes from Laravel
+ * and MySQL.
+ */
+
+.abk-primary-cta {
+	display: inline-flex;
+	margin: 0 0 1.75rem;
+	background: var(--nk-ink);
+	color: var(--nk-cream);
+	border: 1.5px solid var(--nk-ink);
+}
+.abk-primary-cta:hover,
+.abk-primary-cta:focus-visible {
+	background: #232320;
+	color: var(--nk-cream);
+}
+
+/* ---------- Summary cards ---------- */
+.abk-summary-grid {
+	display: grid;
+	grid-template-columns: 1fr;
+	gap: 0.85rem;
+	margin: 0 0 1.75rem;
+}
+@media (min-width: 601px) {
+	.abk-summary-grid {
+		grid-template-columns: repeat(3, 1fr);
+	}
+}
+.abk-summary-card {
+	background: var(--nk-white);
+	border: 1px solid rgba(10, 10, 10, 0.14);
+	border-radius: 10px;
+	padding: 1rem 1.1rem;
+	display: flex;
+	flex-direction: column;
+	gap: 0.3rem;
+}
+.abk-summary-card__label {
+	margin: 0;
+	font-size: 0.68rem;
+	font-weight: 800;
+	text-transform: uppercase;
+	letter-spacing: 0.06em;
+	color: #6B6B64;
+}
+.abk-summary-card__value {
+	margin: 0;
+	font-size: 1.6rem;
+	font-weight: 800;
+	color: var(--nk-ink);
+	line-height: 1;
+}
+.abk-summary-card__desc {
+	margin: 0.15rem 0 0;
+	font-size: 0.78rem;
+	line-height: 1.5;
+	color: #6B6B64;
+}
+
+/* ---------- Availability table ---------- */
+.abk-table-panel {
+	margin: 0 0 1.4rem;
+}
+.abk-table__scroll {
+	overflow-x: auto;
+	margin-top: 1rem;
+	border: 1px solid rgba(10, 10, 10, 0.12);
+	border-radius: 10px;
+	contain: layout;
+}
+.abk-table__scroll table {
+	width: 100%;
+	min-width: 760px;
+	border-collapse: collapse;
+}
+.abk-table__scroll th,
+.abk-table__scroll td {
+	padding: 0.7rem 0.9rem;
+	text-align: left;
+	border-bottom: 1px solid rgba(10, 10, 10, 0.08);
+	font-size: 0.82rem;
+	color: var(--nk-ink);
+	white-space: nowrap;
+}
+.abk-table__scroll thead th {
+	font-size: 0.68rem;
+	font-weight: 800;
+	text-transform: uppercase;
+	letter-spacing: 0.05em;
+	color: #6B6B64;
+	background: var(--nk-sand);
+}
+.abk-table__scroll th[scope="row"] {
+	font-weight: 700;
+}
+.abk-table__scroll tbody tr:last-child th,
+.abk-table__scroll tbody tr:last-child td {
+	border-bottom: none;
+}
+.abk-table__note {
+	margin: 0.85rem 0 0;
+	font-size: 0.78rem;
+	line-height: 1.5;
+	color: #6B6B64;
+}
+
+/* ---------- Status pills ---------- */
+.abk-status {
+	display: inline-flex;
+	align-items: center;
+	font-size: 0.7rem;
+	font-weight: 800;
+	text-transform: uppercase;
+	letter-spacing: 0.04em;
+	padding: 0.25rem 0.6rem;
+	border-radius: 999px;
+	white-space: nowrap;
+}
+.abk-status--available {
+	background: rgba(253, 245, 103, 0.22);
+	color: #6B5E00;
+	border: 1px solid var(--nk-yellow);
+}
+.abk-status--blocked {
+	background: var(--nk-sand);
+	color: #6B6B64;
+	border: 1px solid rgba(10, 10, 10, 0.16);
+}
+
+.abk-edit-btn {
+	padding: 0.4rem 0.9rem;
+	font-size: 0.78rem;
+	background: var(--nk-white);
+	color: var(--nk-ink);
+	border: 1.5px solid rgba(10, 10, 10, 0.18);
+}
+.abk-edit-btn:disabled {
+	opacity: 0.55;
+	cursor: not-allowed;
+}
+
+/* ---------- Explanatory panel ---------- */
+.abk-security__list {
+	margin: 0;
+	padding: 0 0 0 1.1rem;
+	display: flex;
+	flex-direction: column;
+	gap: 0.5rem;
+}
+.abk-security__list li {
+	font-size: 0.82rem;
+	line-height: 1.55;
+	color: #4A4A46;
+}
+
+.abk-fine-print {
+	max-width: 760px;
+	margin: 0;
+	font-size: 0.78rem;
+	line-height: 1.55;
+	color: #6B6B64;
+}
+
+@media (max-width: 480px) {
+	.admin-panel {
+		padding: 1rem 1.1rem;
+	}
+}

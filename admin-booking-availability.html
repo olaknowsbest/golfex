@@ -1,0 +1,386 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Add Availability &#8211; Nazario Kayla Fan Club Prototype</title>
+	<meta name="description" content="A static, honestly labelled preview of the future admin add-availability screen for the fictional Nazario Kayla fan-platform prototype. Not a functioning admin system.">
+	<meta name="robots" content="noindex, nofollow">
+	<meta name="theme-color" content="#0A0A0A">
+	<link rel="icon" href="assets/images/uploads/favicon.png" sizes="32x32" />
+	<link rel="icon" href="assets/images/uploads/favicon.png" sizes="192x192" />
+	<link rel="apple-touch-icon" href="assets/images/uploads/favicon.png" />
+	<link rel="stylesheet" href="assets/css/google-fonts-intertight.css">
+	<link rel="stylesheet" href="assets/css/site-shell.css">
+	<link rel="stylesheet" href="assets/css/admin-shell.css">
+	<link rel="stylesheet" href="assets/css/page-admin-booking-availability.css">
+</head>
+
+<body class="admin-body">
+
+	<a class="skip-link" href="#admin-main">Skip to content</a>
+
+	<div class="admin-shell">
+		<div class="admin-backdrop" data-admin-backdrop></div>
+
+		<aside class="admin-sidebar" id="admin-sidebar" aria-label="Admin navigation">
+			<div class="admin-sidebar__top">
+				<div class="admin-sidebar__brand">
+					<img class="admin-sidebar__logo" src="assets/images/brand/nk-monogram-mark.svg" alt="Nazario Kayla Fan Club &#8212; Prototype" width="28" height="29">
+					<span class="admin-sidebar__brand-text">
+						<span class="admin-sidebar__brand-name">NK Admin</span>
+						<span class="admin-sidebar__tag">Admin prototype</span>
+					</span>
+				</div>
+				<button class="admin-sidebar__close" type="button" data-admin-close aria-label="Close menu">
+					<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+						<path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+					</svg>
+				</button>
+			</div>
+
+			<nav class="admin-nav" aria-label="Admin sections">
+				<ul class="admin-nav__list">
+					<li>
+						<a href="admin-dashboard.html" class="admin-nav__link">
+							<span class="admin-nav__icon" aria-hidden="true">
+								<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<rect x="4" y="4" width="7" height="7" rx="1.5" stroke="currentColor" stroke-width="2"/>
+									<rect x="13" y="4" width="7" height="7" rx="1.5" stroke="currentColor" stroke-width="2"/>
+									<rect x="4" y="13" width="7" height="7" rx="1.5" stroke="currentColor" stroke-width="2"/>
+									<rect x="13" y="13" width="7" height="7" rx="1.5" stroke="currentColor" stroke-width="2"/>
+								</svg>
+							</span>
+							Overview
+						</a>
+					</li>
+					<li>
+						<a href="admin-payments.html" class="admin-nav__link">
+							<span class="admin-nav__icon" aria-hidden="true">
+								<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<rect x="5" y="4" width="14" height="17" rx="2" stroke="currentColor" stroke-width="2"/>
+									<path d="M9 4V3a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v1" stroke="currentColor" stroke-width="2"/>
+									<path d="M8.5 13l2 2 4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+								</svg>
+							</span>
+							Payment Reviews
+						</a>
+					</li>
+					<li>
+						<a href="admin-bookings.html" class="admin-nav__link" aria-current="page">
+							<span class="admin-nav__icon" aria-hidden="true">
+								<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<rect x="3" y="5" width="18" height="16" rx="2" stroke="currentColor" stroke-width="2"/>
+									<line x1="3" y1="10" x2="21" y2="10" stroke="currentColor" stroke-width="2"/>
+									<line x1="8" y1="3" x2="8" y2="7" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+									<line x1="16" y1="3" x2="16" y2="7" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+								</svg>
+							</span>
+							Bookings
+						</a>
+					</li>
+					<li>
+						<a href="admin-fan-cards.html" class="admin-nav__link">
+							<span class="admin-nav__icon" aria-hidden="true">
+								<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<rect x="3" y="6" width="18" height="12" rx="2" stroke="currentColor" stroke-width="2"/>
+									<line x1="3" y1="10" x2="21" y2="10" stroke="currentColor" stroke-width="2"/>
+								</svg>
+							</span>
+							Fan Cards
+						</a>
+					</li>
+					<li>
+						<a href="admin-memberships.html" class="admin-nav__link">
+							<span class="admin-nav__icon" aria-hidden="true">
+								<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<path d="M12 3l7 4v8l-7 6-7-6V7z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+								</svg>
+							</span>
+							Memberships
+						</a>
+					</li>
+					<li>
+						<a href="admin-donations.html" class="admin-nav__link">
+							<span class="admin-nav__icon" aria-hidden="true">
+								<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+								</svg>
+							</span>
+							Donations
+						</a>
+					</li>
+					<li>
+						<a href="admin-customers.html" class="admin-nav__link">
+							<span class="admin-nav__icon" aria-hidden="true">
+								<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<circle cx="9" cy="8" r="3" stroke="currentColor" stroke-width="2"/>
+									<path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+									<circle cx="17" cy="7" r="2.3" stroke="currentColor" stroke-width="1.6"/>
+									<path d="M15.5 13.3c2.6.4 4.5 2.4 4.5 5.2" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+								</svg>
+							</span>
+							Customers
+						</a>
+					</li>
+					<li>
+						<a href="admin-settings.html" class="admin-nav__link">
+							<span class="admin-nav__icon" aria-hidden="true">
+								<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="2"/>
+									<path d="M12 3v2M12 19v2M4.2 4.2l1.4 1.4M18.4 18.4l1.4 1.4M3 12h2M19 12h2M4.2 19.8l1.4-1.4M18.4 5.6l1.4-1.4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+								</svg>
+							</span>
+							Settings
+						</a>
+					</li>
+					<li>
+						<span class="admin-nav__link admin-nav__link--placeholder" aria-disabled="true">
+							<span class="admin-nav__icon" aria-hidden="true">
+								<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<path d="M9 4H5a1 1 0 0 0-1 1v14a1 1 0 0 0 1 1h4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+									<path d="M16 16l4-4-4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+									<line x1="20" y1="12" x2="9" y2="12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+								</svg>
+							</span>
+							Logout
+						</span>
+					</li>
+				</ul>
+			</nav>
+		</aside>
+
+		<div class="admin-content">
+			<header class="admin-topbar">
+				<button class="admin-topbar__toggle" type="button" id="admin-menu-toggle" aria-controls="admin-sidebar" aria-expanded="false">
+					<span class="admin-topbar__toggle-bars" aria-hidden="true"><span></span><span></span><span></span></span>
+					<span class="visually-hidden">Menu</span>
+				</button>
+				<img class="admin-topbar__logo" src="assets/images/brand/nk-monogram-mark.svg" alt="" aria-hidden="true">
+				<p class="admin-topbar__title">Add Availability</p>
+				<span class="admin-topbar__badge">Admin prototype</span>
+			</header>
+
+			<main id="admin-main" class="admin-main">
+				<a class="aba-back" href="admin-bookings.html">&larr; Back to Booking Availability</a>
+				<h1 class="admin-main__title">Add Availability</h1>
+				<p class="admin-main__lead">This is a static preview of the future add-availability form. Availability is created as a recurring date-range schedule, not a single date. No schedule, exception, or note is created, changed, or saved anywhere in this prototype.</p>
+
+				<!--
+					Static prototype only — every field below is disabled or
+					read-only. Production behavior (documented only, never
+					implemented or simulated here): this screen will live at a
+					route such as /admin/availability/create. Saving requires an
+					authenticated administrator session and server-side
+					validation before Laravel expands this date-range schedule
+					into individual bookable slots and writes them to MySQL as
+					one atomic transaction. Excluded dates and blocked windows
+					are stored as overrides and are never offered to customers.
+					Overlapping schedules are detected and rejected before
+					saving, and existing customer reservations are never
+					overwritten.
+				-->
+				<form class="aba-form" novalidate>
+					<div class="admin-panel aba-panel">
+						<h2 class="admin-panel__title">Schedule details</h2>
+						<p class="admin-panel__desc">Availability is created as a recurring date-range schedule, not a single date. Production expands this into individual bookable slots for the selected weekdays only.</p>
+
+						<div class="aba-field">
+							<label class="aba-field__label" for="aba-type">Booking type</label>
+							<select class="aba-field__input" id="aba-type" disabled>
+								<option>Virtual Meet-and-Greet</option>
+								<option>Public Appearance</option>
+								<option>Golf Experience</option>
+							</select>
+						</div>
+
+						<div class="aba-field-row">
+							<div class="aba-field">
+								<label class="aba-field__label" for="aba-start-date">Start date</label>
+								<input class="aba-field__input" type="date" id="aba-start-date" value="2026-08-24" disabled>
+							</div>
+							<div class="aba-field">
+								<label class="aba-field__label" for="aba-end-date">End date</label>
+								<input class="aba-field__input" type="date" id="aba-end-date" value="2026-09-03" disabled>
+							</div>
+						</div>
+						<p class="aba-range-readout">Range: 24-08-2026 to 03-09-2026</p>
+						<p class="aba-field__note">The end date can never precede the start date. This is validated server-side in production; nothing is validated live in this static prototype.</p>
+
+						<fieldset class="aba-weekdays">
+							<legend class="aba-field__label">Available days within range</legend>
+							<label class="aba-checkbox aba-checkbox--inline">
+								<input type="checkbox" checked disabled>
+								<span>Monday</span>
+							</label>
+							<label class="aba-checkbox aba-checkbox--inline">
+								<input type="checkbox" checked disabled>
+								<span>Tuesday</span>
+							</label>
+							<label class="aba-checkbox aba-checkbox--inline">
+								<input type="checkbox" checked disabled>
+								<span>Wednesday</span>
+							</label>
+							<label class="aba-checkbox aba-checkbox--inline">
+								<input type="checkbox" checked disabled>
+								<span>Thursday</span>
+							</label>
+							<label class="aba-checkbox aba-checkbox--inline">
+								<input type="checkbox" checked disabled>
+								<span>Friday</span>
+							</label>
+							<label class="aba-checkbox aba-checkbox--inline">
+								<input type="checkbox" disabled>
+								<span>Saturday</span>
+							</label>
+							<label class="aba-checkbox aba-checkbox--inline">
+								<input type="checkbox" disabled>
+								<span>Sunday</span>
+							</label>
+						</fieldset>
+						<p class="aba-field__note">Use these to exclude days such as weekends from an otherwise recurring schedule.</p>
+
+						<div class="aba-field-row">
+							<div class="aba-field">
+								<label class="aba-field__label" for="aba-daily-start">Daily start time</label>
+								<input class="aba-field__input" type="time" id="aba-daily-start" value="10:00" disabled>
+							</div>
+							<div class="aba-field">
+								<label class="aba-field__label" for="aba-daily-end">Daily end time</label>
+								<input class="aba-field__input" type="time" id="aba-daily-end" value="16:00" disabled>
+							</div>
+						</div>
+
+						<div class="aba-field-row">
+							<div class="aba-field">
+								<label class="aba-field__label" for="aba-timezone">Timezone</label>
+								<select class="aba-field__input" id="aba-timezone" disabled>
+									<option value="PT" selected>Pacific Time (PT)</option>
+									<option value="MT">Mountain Time (MT)</option>
+									<option value="CT">Central Time (CT)</option>
+									<option value="ET">Eastern Time (ET)</option>
+								</select>
+							</div>
+							<div class="aba-field">
+								<label class="aba-field__label" for="aba-interval">Slot interval</label>
+								<select class="aba-field__input" id="aba-interval" disabled>
+									<option value="15">15 minutes</option>
+									<option value="30" selected>30 minutes</option>
+									<option value="60">60 minutes</option>
+								</select>
+							</div>
+						</div>
+						<p class="aba-field__note">Production stores every timestamp in UTC and displays it in the timezone selected here.</p>
+					</div>
+
+					<div class="admin-panel aba-panel">
+						<h2 class="admin-panel__title">Pricing and duration</h2>
+
+						<div class="aba-field-row">
+							<div class="aba-field">
+								<label class="aba-field__label" for="aba-rate">Hourly rate (USD)</label>
+								<input class="aba-field__input" type="text" id="aba-rate" value="150" inputmode="decimal" disabled readonly>
+							</div>
+							<div class="aba-field">
+								<label class="aba-field__label" for="aba-min-duration">Minimum duration (minutes)</label>
+								<input class="aba-field__input" type="text" id="aba-min-duration" value="30" inputmode="numeric" disabled readonly>
+							</div>
+						</div>
+						<p class="aba-field__note">Price is calculated as duration &times; hourly rate, subject to this minimum duration. Nothing here is calculated live in this static prototype.</p>
+
+						<div class="aba-field">
+							<label class="aba-field__label" for="aba-capacity">Capacity per slot</label>
+							<input class="aba-field__input" type="text" id="aba-capacity" value="1" inputmode="numeric" disabled readonly>
+							<p class="aba-field__note">Capacity is conceptually 1 &mdash; each generated slot represents a single booking in this prototype.</p>
+						</div>
+					</div>
+
+					<div class="admin-panel aba-panel">
+						<h2 class="admin-panel__title">Schedule exceptions (optional)</h2>
+						<p class="admin-panel__desc">Exceptions override the recurring schedule above for one specific date. Both controls below are disabled in this static prototype.</p>
+
+						<div class="aba-field">
+							<label class="aba-field__label" for="aba-excluded-date">Excluded date (optional)</label>
+							<input class="aba-field__input" type="date" id="aba-excluded-date" value="2026-08-31" disabled>
+							<p class="aba-field__note">Removes one date from the recurring schedule entirely, even if it falls on an included weekday.</p>
+						</div>
+
+						<div class="aba-field-row">
+							<div class="aba-field">
+								<label class="aba-field__label" for="aba-blocked-date">Blocked date</label>
+								<input class="aba-field__input" type="date" id="aba-blocked-date" value="2026-08-26" disabled>
+							</div>
+							<div class="aba-field">
+								<label class="aba-field__label" for="aba-blocked-start">Blocked from</label>
+								<input class="aba-field__input" type="time" id="aba-blocked-start" value="13:00" disabled>
+							</div>
+							<div class="aba-field">
+								<label class="aba-field__label" for="aba-blocked-end">Blocked until</label>
+								<input class="aba-field__input" type="time" id="aba-blocked-end" value="14:00" disabled>
+							</div>
+						</div>
+						<p class="aba-field__note">Blocks part of one day &mdash; for example, an existing commitment &mdash; without removing the whole date from the schedule.</p>
+					</div>
+
+					<div class="admin-panel aba-panel">
+						<h2 class="admin-panel__title">Availability preview</h2>
+						<p class="aba-preview">24 Aug&ndash;3 Sep 2026 &middot; Monday&ndash;Friday &middot; 10:00 AM&ndash;4:00 PM PT</p>
+						<p class="aba-field__note">This preview summarizes the schedule fields above. It is static sample text in this prototype, not a live calculation.</p>
+					</div>
+
+					<div class="admin-panel aba-panel">
+						<h2 class="admin-panel__title">Generated slots preview</h2>
+						<p class="admin-panel__desc">A small illustrative sample of what this schedule would generate &mdash; not the full range. Production never generates or stores every slot in advance; a large slot dataset is never created or persisted in this static prototype.</p>
+						<ul class="aba-slots">
+							<li class="aba-slot">
+								<span class="aba-slot__date">Mon, Aug 24, 2026</span>
+								<span class="aba-slot__time">10:00&ndash;10:30 AM PT</span>
+								<span class="aba-status aba-status--available">Available</span>
+							</li>
+							<li class="aba-slot">
+								<span class="aba-slot__date">Wed, Aug 26, 2026</span>
+								<span class="aba-slot__time">1:00&ndash;2:00 PM PT</span>
+								<span class="aba-status aba-status--blocked">Blocked</span>
+							</li>
+							<li class="aba-slot">
+								<span class="aba-slot__date">Mon, Aug 31, 2026</span>
+								<span class="aba-slot__time">&mdash;</span>
+								<span class="aba-status aba-status--excluded">Excluded date</span>
+							</li>
+						</ul>
+					</div>
+
+					<div class="admin-panel aba-panel">
+						<h2 class="admin-panel__title">Internal note</h2>
+						<label class="aba-field__label" for="aba-note">Internal note (optional)</label>
+						<textarea class="aba-field__input" id="aba-note" rows="3" placeholder="Internal notes will become available once the Laravel backend is connected." disabled readonly></textarea>
+						<p class="aba-field__note">No note is saved in this static prototype.</p>
+					</div>
+
+					<div class="admin-panel aba-actions-panel">
+						<h2 class="admin-panel__title">Save</h2>
+						<button type="button" class="btn aba-save-btn" disabled>Save Availability</button>
+						<p class="aba-actions__note">Saving requires authenticated admin access and server-side backend validation. No window, block, or note is created, changed, or persisted anywhere in this static prototype.</p>
+					</div>
+				</form>
+
+				<section class="admin-panel aba-security" aria-labelledby="aba-security-heading">
+					<h2 id="aba-security-heading" class="admin-panel__title">How saved availability will work</h2>
+					<ul class="aba-security__list">
+						<li>Only an administrator can create or update availability. The backend expands a saved date range into individual bookable slots only for the selected weekdays &mdash; never from a free-form customer request.</li>
+						<li>Excluded dates and blocked time windows override the recurring schedule and are never offered or selectable to customers.</li>
+						<li>Existing customer reservations are never overwritten when availability is edited.</li>
+						<li>Overlapping availability rules are detected and rejected before saving.</li>
+						<li>Price is calculated as duration &times; hourly rate, subject to the minimum duration set here.</li>
+						<li>All timestamps are stored in UTC and displayed in the timezone selected above.</li>
+						<li>Saving a complete date-range schedule is one atomic server-side transaction.</li>
+					</ul>
+				</section>
+			</main>
+		</div>
+	</div>
+
+	<script src="assets/js/admin-shell.js" defer></script>
+</body>
+</html>

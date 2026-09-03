@@ -1,0 +1,337 @@
+<!DOCTYPE html>
+<html lang="en-US">
+
+<head>
+	<meta charset="UTF-8">
+	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
+	<title>Settings &#8211; Nazario Kayla Fan Club Prototype</title>
+	<meta name="description" content="A static, honestly labelled preview of the future admin Settings screen for the fictional Nazario Kayla fan-platform prototype. Not a functioning admin system.">
+	<meta name="robots" content="noindex, nofollow">
+	<meta name="theme-color" content="#0A0A0A">
+	<link rel="icon" href="assets/images/uploads/favicon.png" sizes="32x32" />
+	<link rel="icon" href="assets/images/uploads/favicon.png" sizes="192x192" />
+	<link rel="apple-touch-icon" href="assets/images/uploads/favicon.png" />
+	<link rel="stylesheet" href="assets/css/google-fonts-intertight.css">
+	<link rel="stylesheet" href="assets/css/site-shell.css">
+	<link rel="stylesheet" href="assets/css/admin-shell.css">
+	<link rel="stylesheet" href="assets/css/page-admin-settings.css">
+</head>
+
+<body class="admin-body">
+
+	<a class="skip-link" href="#admin-main">Skip to content</a>
+
+	<div class="admin-shell">
+		<div class="admin-backdrop" data-admin-backdrop></div>
+
+		<aside class="admin-sidebar" id="admin-sidebar" aria-label="Admin navigation">
+			<div class="admin-sidebar__top">
+				<div class="admin-sidebar__brand">
+					<img class="admin-sidebar__logo" src="assets/images/brand/nk-monogram-mark.svg" alt="Nazario Kayla Fan Club &#8212; Prototype" width="28" height="29">
+					<span class="admin-sidebar__brand-text">
+						<span class="admin-sidebar__brand-name">NK Admin</span>
+						<span class="admin-sidebar__tag">Admin prototype</span>
+					</span>
+				</div>
+				<button class="admin-sidebar__close" type="button" data-admin-close aria-label="Close menu">
+					<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+						<path d="M6 6l12 12M18 6L6 18" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+					</svg>
+				</button>
+			</div>
+
+			<nav class="admin-nav" aria-label="Admin sections">
+				<ul class="admin-nav__list">
+					<li>
+						<a href="admin-dashboard.html" class="admin-nav__link">
+							<span class="admin-nav__icon" aria-hidden="true">
+								<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<rect x="4" y="4" width="7" height="7" rx="1.5" stroke="currentColor" stroke-width="2"/>
+									<rect x="13" y="4" width="7" height="7" rx="1.5" stroke="currentColor" stroke-width="2"/>
+									<rect x="4" y="13" width="7" height="7" rx="1.5" stroke="currentColor" stroke-width="2"/>
+									<rect x="13" y="13" width="7" height="7" rx="1.5" stroke="currentColor" stroke-width="2"/>
+								</svg>
+							</span>
+							Overview
+						</a>
+					</li>
+					<li>
+						<a href="admin-payments.html" class="admin-nav__link">
+							<span class="admin-nav__icon" aria-hidden="true">
+								<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<rect x="5" y="4" width="14" height="17" rx="2" stroke="currentColor" stroke-width="2"/>
+									<path d="M9 4V3a1 1 0 0 1 1-1h4a1 1 0 0 1 1 1v1" stroke="currentColor" stroke-width="2"/>
+									<path d="M8.5 13l2 2 4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+								</svg>
+							</span>
+							Payment Reviews
+						</a>
+					</li>
+					<li>
+						<a href="admin-bookings.html" class="admin-nav__link">
+							<span class="admin-nav__icon" aria-hidden="true">
+								<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<rect x="3" y="5" width="18" height="16" rx="2" stroke="currentColor" stroke-width="2"/>
+									<line x1="3" y1="10" x2="21" y2="10" stroke="currentColor" stroke-width="2"/>
+									<line x1="8" y1="3" x2="8" y2="7" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+									<line x1="16" y1="3" x2="16" y2="7" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+								</svg>
+							</span>
+							Bookings
+						</a>
+					</li>
+					<li>
+						<a href="admin-fan-cards.html" class="admin-nav__link">
+							<span class="admin-nav__icon" aria-hidden="true">
+								<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<rect x="3" y="6" width="18" height="12" rx="2" stroke="currentColor" stroke-width="2"/>
+									<line x1="3" y1="10" x2="21" y2="10" stroke="currentColor" stroke-width="2"/>
+								</svg>
+							</span>
+							Fan Cards
+						</a>
+					</li>
+					<li>
+						<a href="admin-memberships.html" class="admin-nav__link">
+							<span class="admin-nav__icon" aria-hidden="true">
+								<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<path d="M12 3l7 4v8l-7 6-7-6V7z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+								</svg>
+							</span>
+							Memberships
+						</a>
+					</li>
+					<li>
+						<a href="admin-donations.html" class="admin-nav__link">
+							<span class="admin-nav__icon" aria-hidden="true">
+								<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<path d="M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+								</svg>
+							</span>
+							Donations
+						</a>
+					</li>
+					<li>
+						<a href="admin-customers.html" class="admin-nav__link">
+							<span class="admin-nav__icon" aria-hidden="true">
+								<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<circle cx="9" cy="8" r="3" stroke="currentColor" stroke-width="2"/>
+									<path d="M3 20c0-3.3 2.7-6 6-6s6 2.7 6 6" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+									<circle cx="17" cy="7" r="2.3" stroke="currentColor" stroke-width="1.6"/>
+									<path d="M15.5 13.3c2.6.4 4.5 2.4 4.5 5.2" stroke="currentColor" stroke-width="1.6" stroke-linecap="round"/>
+								</svg>
+							</span>
+							Customers
+						</a>
+					</li>
+					<li>
+						<a href="admin-settings.html" class="admin-nav__link" aria-current="page">
+							<span class="admin-nav__icon" aria-hidden="true">
+								<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<circle cx="12" cy="12" r="3" stroke="currentColor" stroke-width="2"/>
+									<path d="M12 3v2M12 19v2M4.2 4.2l1.4 1.4M18.4 18.4l1.4 1.4M3 12h2M19 12h2M4.2 19.8l1.4-1.4M18.4 5.6l1.4-1.4" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+								</svg>
+							</span>
+							Settings
+						</a>
+					</li>
+					<li>
+						<span class="admin-nav__link admin-nav__link--placeholder" aria-disabled="true">
+							<span class="admin-nav__icon" aria-hidden="true">
+								<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+									<path d="M9 4H5a1 1 0 0 0-1 1v14a1 1 0 0 0 1 1h4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+									<path d="M16 16l4-4-4-4" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
+									<line x1="20" y1="12" x2="9" y2="12" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+								</svg>
+							</span>
+							Logout
+						</span>
+					</li>
+				</ul>
+			</nav>
+		</aside>
+
+		<div class="admin-content">
+			<header class="admin-topbar">
+				<button class="admin-topbar__toggle" type="button" id="admin-menu-toggle" aria-controls="admin-sidebar" aria-expanded="false">
+					<span class="admin-topbar__toggle-bars" aria-hidden="true"><span></span><span></span><span></span></span>
+					<span class="visually-hidden">Menu</span>
+				</button>
+				<img class="admin-topbar__logo" src="assets/images/brand/nk-monogram-mark.svg" alt="" aria-hidden="true">
+				<p class="admin-topbar__title">Settings</p>
+				<span class="admin-topbar__badge">Admin prototype</span>
+			</header>
+
+			<main id="admin-main" class="admin-main">
+				<h1 class="admin-main__title">Settings</h1>
+				<p class="admin-main__lead">This is a static preview of the future platform settings screen. Every field below is a prototype control &mdash; nothing here saves, submits, or changes any real configuration.</p>
+
+				<section class="admin-panel aset-panel" aria-labelledby="aset-identity-heading">
+					<h2 id="aset-identity-heading" class="admin-panel__title">Platform identity</h2>
+					<p class="admin-panel__desc">These fields are shown for design review only. Nothing here is persisted or submitted in this static prototype.</p>
+
+					<div class="aset-field">
+						<label class="aset-field__label" for="aset-platform-name">Platform name</label>
+						<input class="aset-field__input" type="text" id="aset-platform-name" value="Nazario Kayla" disabled readonly>
+					</div>
+
+					<div class="aset-field-row">
+						<div class="aset-field">
+							<label class="aset-field__label" for="aset-support-email">Support email</label>
+							<input class="aset-field__input" type="text" id="aset-support-email" value="support@example.com" disabled readonly>
+						</div>
+						<div class="aset-field">
+							<label class="aset-field__label" for="aset-default-timezone">Default timezone</label>
+							<select class="aset-field__input" id="aset-default-timezone" disabled>
+								<option value="PT" selected>Pacific Time (PT)</option>
+								<option value="MT">Mountain Time (MT)</option>
+								<option value="CT">Central Time (CT)</option>
+								<option value="ET">Eastern Time (ET)</option>
+							</select>
+						</div>
+					</div>
+				</section>
+
+				<section class="admin-panel aset-panel" aria-labelledby="aset-payments-heading">
+					<h2 id="aset-payments-heading" class="admin-panel__title">Payment receiving addresses</h2>
+					<p class="admin-panel__desc">Only public receiving addresses are managed here &mdash; never a private key, recovery phrase, or seed phrase. The address fields below may be edited locally to review the interface; nothing is ever saved, submitted, or sent anywhere in this static prototype.</p>
+				</section>
+
+				<section class="admin-panel aset-wallet-panel" aria-labelledby="aset-btc-heading">
+					<div class="aset-wallet-panel__header">
+						<h3 id="aset-btc-heading" class="aset-wallet-panel__title">Bitcoin <span class="aset-wallet-panel__symbol">BTC</span></h3>
+						<span class="aset-status aset-status--unconfigured">Not configured</span>
+					</div>
+					<div class="aset-field">
+						<label class="aset-field__label" for="aset-btc-address">Public receiving address</label>
+						<div class="aset-address-row">
+							<input class="aset-field__input aset-address-input" type="text" id="aset-btc-address" value="EXAMPLE-BITCOIN-ADDRESS-NOT-CONFIGURED">
+							<button type="button" class="btn aset-copy-btn" data-copy-target="aset-btc-address">
+								<span class="aset-copy-btn__label">Copy address</span>
+							</button>
+						</div>
+						<p class="aset-field__note">Bitcoin mainnet address &mdash; bech32 (&#8220;bc1&#8230;&#8221;) or legacy (&#8220;1&#8230;&#8221; / &#8220;3&#8230;&#8221;) format.</p>
+					</div>
+				</section>
+
+				<section class="admin-panel aset-wallet-panel" aria-labelledby="aset-eth-heading">
+					<div class="aset-wallet-panel__header">
+						<h3 id="aset-eth-heading" class="aset-wallet-panel__title">Ethereum <span class="aset-wallet-panel__symbol">ETH</span></h3>
+						<span class="aset-status aset-status--unconfigured">Not configured</span>
+					</div>
+					<div class="aset-field">
+						<label class="aset-field__label" for="aset-eth-address">Public receiving address</label>
+						<div class="aset-address-row">
+							<input class="aset-field__input aset-address-input" type="text" id="aset-eth-address" value="EXAMPLE-ETHEREUM-ADDRESS-NOT-CONFIGURED">
+							<button type="button" class="btn aset-copy-btn" data-copy-target="aset-eth-address">
+								<span class="aset-copy-btn__label">Copy address</span>
+							</button>
+						</div>
+						<p class="aset-field__note">Ethereum mainnet address &mdash; 42-character &#8220;0x&#8230;&#8221; hexadecimal format.</p>
+					</div>
+				</section>
+
+				<section class="admin-panel aset-wallet-panel" aria-labelledby="aset-sol-heading">
+					<div class="aset-wallet-panel__header">
+						<h3 id="aset-sol-heading" class="aset-wallet-panel__title">Solana <span class="aset-wallet-panel__symbol">SOL</span></h3>
+						<span class="aset-status aset-status--unconfigured">Not configured</span>
+					</div>
+					<div class="aset-field">
+						<label class="aset-field__label" for="aset-sol-address">Public receiving address</label>
+						<div class="aset-address-row">
+							<input class="aset-field__input aset-address-input" type="text" id="aset-sol-address" value="EXAMPLE-SOLANA-ADDRESS-NOT-CONFIGURED">
+							<button type="button" class="btn aset-copy-btn" data-copy-target="aset-sol-address">
+								<span class="aset-copy-btn__label">Copy address</span>
+							</button>
+						</div>
+						<p class="aset-field__note">Solana address &mdash; base58-encoded public key format.</p>
+					</div>
+				</section>
+
+				<p class="visually-hidden" id="aset-copy-status" role="status" aria-live="polite"></p>
+
+				<section class="admin-panel aset-panel" aria-labelledby="aset-address-security-heading">
+					<h2 id="aset-address-security-heading" class="admin-panel__title">How address changes will work</h2>
+					<ul class="aset-security__list">
+						<li>Only public receiving addresses are managed here. Private keys, recovery phrases, and seed phrases are never requested, displayed, or stored anywhere in this system.</li>
+						<li>Address format is validated for its selected network before a change can be activated.</li>
+						<li>An administrator must reauthenticate before activating a change.</li>
+						<li>Every change is audit-logged with the administrator, timestamp, old address, and new address.</li>
+						<li>Existing payment records retain the receiving address that was captured when their payment request was created. A new address applies only to new payment requests.</li>
+					</ul>
+				</section>
+
+				<section class="admin-panel aset-panel" aria-labelledby="aset-booking-heading">
+					<h2 id="aset-booking-heading" class="admin-panel__title">Booking defaults</h2>
+					<p class="admin-panel__desc">These are prototype controls only. Nothing here changes any real availability default.</p>
+
+					<div class="aset-field-row">
+						<div class="aset-field">
+							<label class="aset-field__label" for="aset-booking-timezone">Default timezone</label>
+							<select class="aset-field__input" id="aset-booking-timezone" disabled>
+								<option value="PT" selected>Pacific Time (PT)</option>
+								<option value="MT">Mountain Time (MT)</option>
+								<option value="CT">Central Time (CT)</option>
+								<option value="ET">Eastern Time (ET)</option>
+							</select>
+						</div>
+						<div class="aset-field">
+							<label class="aset-field__label" for="aset-booking-interval">Default slot interval</label>
+							<select class="aset-field__input" id="aset-booking-interval" disabled>
+								<option value="15">15 minutes</option>
+								<option value="30" selected>30 minutes</option>
+								<option value="60">60 minutes</option>
+							</select>
+						</div>
+					</div>
+					<div class="aset-field">
+						<label class="aset-field__label" for="aset-booking-capacity">Default capacity</label>
+						<input class="aset-field__input" type="text" id="aset-booking-capacity" value="1" inputmode="numeric" disabled readonly>
+						<p class="aset-field__note">Capacity is conceptually 1 &mdash; each generated slot represents a single booking in this prototype.</p>
+					</div>
+				</section>
+
+				<section class="admin-panel aset-panel" aria-labelledby="aset-notifications-heading">
+					<h2 id="aset-notifications-heading" class="admin-panel__title">Notifications</h2>
+					<p class="admin-panel__desc">These switches are visually disabled prototype controls. No notification is ever sent in this static prototype.</p>
+
+					<div class="aset-toggle-row">
+						<span class="aset-toggle-row__label">Payment submitted</span>
+						<span class="aset-toggle">
+							<input type="checkbox" disabled aria-label="Notify on payment submitted (not yet available)">
+							<span class="aset-toggle__track" aria-hidden="true"><span class="aset-toggle__thumb"></span></span>
+						</span>
+					</div>
+					<div class="aset-toggle-row">
+						<span class="aset-toggle-row__label">Payment awaiting review</span>
+						<span class="aset-toggle">
+							<input type="checkbox" disabled aria-label="Notify on payment awaiting review (not yet available)">
+							<span class="aset-toggle__track" aria-hidden="true"><span class="aset-toggle__thumb"></span></span>
+						</span>
+					</div>
+					<div class="aset-toggle-row">
+						<span class="aset-toggle-row__label">Booking created</span>
+						<span class="aset-toggle">
+							<input type="checkbox" disabled aria-label="Notify on booking created (not yet available)">
+							<span class="aset-toggle__track" aria-hidden="true"><span class="aset-toggle__thumb"></span></span>
+						</span>
+					</div>
+				</section>
+
+				<section class="admin-panel aset-panel" aria-labelledby="aset-security-heading">
+					<h2 id="aset-security-heading" class="admin-panel__title">Security</h2>
+					<p class="admin-panel__desc">Production changes on this screen will require authenticated administrator access and Laravel server-side validation. Multi-factor authentication is deferred and not yet part of this prototype &mdash; no MFA controls exist here. No API key, password, token, session, or other secret-management field exists anywhere on this page.</p>
+				</section>
+
+				<div class="aset-save">
+					<button type="button" class="btn aset-save-btn" disabled>Save Settings</button>
+					<p class="aset-save__note">Saving requires authenticated admin access and server-side validation. No setting is saved in this static prototype.</p>
+				</div>
+			</main>
+		</div>
+	</div>
+
+	<script src="assets/js/admin-shell.js" defer></script>
+	<script src="assets/js/page-admin-settings.js" defer></script>
+</body>
+</html>

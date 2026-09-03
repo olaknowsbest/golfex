@@ -231,14 +231,30 @@ body {
 	background: currentColor;
 	border-radius: 2px;
 }
+.dashboard-topbar__logo {
+	height: 24px;
+	width: auto;
+	display: block;
+	flex: 0 0 auto;
+	/* nk-monogram-mark.svg is designed for dark surfaces; invert it here
+	   so it reads correctly against the white topbar instead of vanishing
+	   at low contrast (mirrors the same fix used elsewhere in the
+	   dashboard, e.g. page-dashboard-fan-cards.css). */
+	filter: invert(1) brightness(0.55);
+}
 .dashboard-topbar__title {
 	margin: 0;
 	font-weight: 700;
 	font-size: 1rem;
 	color: var(--nk-ink);
+	flex: 1 1 auto;
+	min-width: 0;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
 }
 .dashboard-topbar__account {
-	margin-left: auto;
+	flex: 0 0 auto;
 	font-size: 0.8rem;
 	color: #6B6B64;
 	background: var(--nk-sand);
@@ -615,7 +631,8 @@ body {
 	.dashboard-backdrop {
 		display: none;
 	}
-	.dashboard-topbar__toggle {
+	.dashboard-topbar__toggle,
+	.dashboard-topbar__logo {
 		display: none;
 	}
 	.dashboard-content {
@@ -645,5 +662,13 @@ body {
 	}
 	.dashboard-topbar {
 		padding: 0.75rem 1.25rem;
+	}
+}
+
+/* Hide the "Account preview" pill first at very narrow widths — the
+   menu toggle, NK monogram, and title always stay visible. */
+@media (max-width: 400px) {
+	.dashboard-topbar__account {
+		display: none;
 	}
 }

@@ -1,0 +1,191 @@
+/*
+ * Payment Reviews queue screen (static prototype). Loaded after
+ * admin-shell.css on admin-payments.html only. The status filters are
+ * plain checkboxes styled with :has() for local visual state — they are
+ * never wired to any list, storage, or backend, because there is no real
+ * queue to filter in this prototype (only the empty state and one
+ * clearly labelled fictional sample record below).
+ */
+
+/* ---------- Filters ---------- */
+.pap-filters {
+	border: none;
+	margin: 0 0 0.6rem;
+	padding: 0;
+	display: flex;
+	flex-wrap: wrap;
+	gap: 0.6rem;
+}
+.pap-filters legend {
+	width: 100%;
+	margin: 0 0 0.6rem;
+	padding: 0;
+	font-size: 0.7rem;
+	font-weight: 800;
+	text-transform: uppercase;
+	letter-spacing: 0.08em;
+	color: #6B6B64;
+}
+.pap-filter {
+	position: relative;
+	display: inline-flex;
+	align-items: center;
+	padding: 0.4rem 0.85rem;
+	border: 1.5px solid rgba(10, 10, 10, 0.16);
+	border-radius: 999px;
+	background: var(--nk-white);
+	cursor: pointer;
+	font-size: 0.8rem;
+	font-weight: 600;
+}
+.pap-filter input {
+	position: absolute;
+	inset: 0;
+	margin: 0;
+	opacity: 0;
+	cursor: pointer;
+}
+.pap-filter:has(input:checked) {
+	border-color: var(--nk-ink);
+	background: var(--nk-yellow);
+}
+.pap-filter:has(input:focus-visible) {
+	outline: 2px solid var(--nk-ink);
+	outline-offset: 2px;
+}
+.pap-filters__note {
+	margin: 0 0 1.75rem;
+	font-size: 0.78rem;
+	line-height: 1.5;
+	color: #6B6B64;
+}
+
+/* ---------- Empty state ---------- */
+.pap-empty {
+	max-width: 640px;
+	margin: 0 0 1.75rem;
+}
+
+/* ---------- Sample record layout ---------- */
+.pap-sample {
+	max-width: 640px;
+	margin: 0 0 1.75rem;
+}
+.pap-sample__label {
+	display: flex;
+	align-items: center;
+	flex-wrap: wrap;
+	gap: 0.6rem;
+	margin: 0 0 0.4rem;
+}
+.pap-sample__label h2 {
+	margin: 0;
+	font-size: 0.98rem;
+	font-weight: 800;
+	color: var(--nk-ink);
+}
+.pap-sample__badge {
+	font-size: 0.65rem;
+	font-weight: 800;
+	text-transform: uppercase;
+	letter-spacing: 0.06em;
+	color: var(--nk-ink);
+	background: var(--nk-yellow);
+	border-radius: 999px;
+	padding: 0.2rem 0.6rem;
+}
+.pap-sample__desc {
+	margin: 0 0 1rem;
+	font-size: 0.82rem;
+	line-height: 1.55;
+	color: #6B6B64;
+}
+
+.pap-record__list {
+	margin: 0 0 1.1rem;
+	padding: 0;
+	display: flex;
+	flex-direction: column;
+	gap: 0.5rem;
+}
+.pap-record__row {
+	margin: 0;
+	display: grid;
+	grid-template-columns: 1fr;
+	gap: 0.1rem;
+	padding: 0.45rem 0;
+	border-bottom: 1px solid rgba(10, 10, 10, 0.08);
+}
+.pap-record__row:last-of-type {
+	border-bottom: none;
+}
+.pap-record__row dt {
+	font-size: 0.72rem;
+	font-weight: 700;
+	text-transform: uppercase;
+	letter-spacing: 0.04em;
+	color: #6B6B64;
+}
+.pap-record__row dd {
+	margin: 0;
+	font-size: 0.86rem;
+	font-weight: 600;
+	color: var(--nk-ink);
+	font-variant-numeric: tabular-nums;
+}
+.pap-record__row--status dd {
+	color: #7c6d00;
+}
+.pap-record__fictional {
+	display: block;
+	margin-top: 0.15rem;
+	font-size: 0.72rem;
+	font-weight: 600;
+	text-transform: none;
+	letter-spacing: normal;
+	color: #6B6B64;
+}
+@media (min-width: 560px) {
+	.pap-record__row {
+		grid-template-columns: 13rem 1fr;
+		align-items: baseline;
+		gap: 0.75rem;
+	}
+}
+
+.pap-record__cta {
+	width: 100%;
+	justify-content: center;
+	background: var(--nk-ink);
+	color: var(--nk-cream);
+	border: 1.5px solid var(--nk-ink);
+}
+.pap-record__note {
+	margin: 0.6rem 0 0;
+	font-size: 0.78rem;
+	line-height: 1.5;
+	color: #6B6B64;
+}
+
+/* ---------- Security / verification panel ---------- */
+.pap-security {
+	max-width: 640px;
+}
+.pap-security__list {
+	margin: 0;
+	padding: 0 0 0 1.1rem;
+	display: flex;
+	flex-direction: column;
+	gap: 0.5rem;
+}
+.pap-security__list li {
+	font-size: 0.82rem;
+	line-height: 1.55;
+	color: #4A4A46;
+}
+
+@media (max-width: 480px) {
+	.admin-panel {
+		padding: 1rem 1.1rem;
+	}
+}

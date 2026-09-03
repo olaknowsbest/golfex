@@ -1,0 +1,357 @@
+/*
+ * Standalone stylesheet for the NK admin shell (staff/operator interface,
+ * fictional static prototype only). Deliberately distinct from the
+ * customer dashboard shell (page-dashboard-shell.css) — a light bordered
+ * sidebar instead of solid ink, denser spacing, uppercase tracked
+ * labels, sharper corners, and yellow reserved for a thin active-item
+ * accent rather than a filled pill — while staying inside the same
+ * ink/cream/yellow token system defined in site-shell.css. No auth, no
+ * admin session, no stored data, no application state.
+ */
+
+* {
+	box-sizing: border-box;
+}
+html {
+	-webkit-text-size-adjust: 100%;
+}
+body {
+	margin: 0;
+	font-family: 'Inter Tight', Arial, sans-serif;
+	background: var(--nk-cream);
+	color: var(--nk-ink);
+	line-height: 1.5;
+	font-size: 0.92rem;
+	overflow-x: hidden;
+}
+.admin-body.admin-scroll-lock {
+	overflow: hidden;
+}
+
+/* ---------- Shell layout ---------- */
+.admin-shell {
+	display: flex;
+	min-height: 100vh;
+}
+
+.admin-backdrop {
+	position: fixed;
+	inset: 0;
+	background: rgba(10, 10, 10, 0.5);
+	opacity: 0;
+	pointer-events: none;
+	transition: opacity 0.2s ease;
+	z-index: 490;
+}
+.admin-backdrop.is-visible {
+	opacity: 1;
+	pointer-events: auto;
+}
+
+/* ---------- Sidebar ---------- */
+.admin-sidebar {
+	background: var(--nk-ink);
+	color: var(--nk-cream);
+	width: min(280px, 85vw);
+	flex: 0 0 auto;
+	position: fixed;
+	top: 0;
+	left: 0;
+	bottom: 0;
+	display: flex;
+	flex-direction: column;
+	padding: 1.25rem 1rem 1.5rem;
+	transform: translateX(-100%);
+	transition: transform 0.2s ease;
+	overflow-y: auto;
+	z-index: 495;
+}
+.admin-sidebar.is-open {
+	transform: translateX(0);
+}
+.admin-sidebar :focus-visible {
+	outline-color: var(--nk-yellow);
+	outline-offset: 2px;
+}
+
+.admin-sidebar__top {
+	display: flex;
+	align-items: flex-start;
+	justify-content: space-between;
+	gap: 0.75rem;
+	margin-bottom: 1.5rem;
+	padding-bottom: 1.15rem;
+	border-bottom: 1px solid rgba(252, 251, 245, 0.14);
+}
+.admin-sidebar__brand {
+	display: flex;
+	align-items: center;
+	gap: 0.6rem;
+}
+.admin-sidebar__logo {
+	height: 28px;
+	width: auto;
+	display: block;
+}
+.admin-sidebar__brand-text {
+	display: flex;
+	flex-direction: column;
+	gap: 0.25rem;
+}
+.admin-sidebar__brand-name {
+	font-weight: 800;
+	font-size: 0.86rem;
+	letter-spacing: -0.01em;
+	color: var(--nk-white);
+}
+.admin-sidebar__tag {
+	align-self: flex-start;
+	text-transform: uppercase;
+	letter-spacing: 0.08em;
+	font-size: 0.6rem;
+	font-weight: 800;
+	color: var(--nk-yellow);
+	border: 1px solid var(--nk-yellow);
+	padding: 0.1rem 0.4rem;
+	border-radius: 4px;
+}
+.admin-sidebar__close {
+	display: none;
+	align-items: center;
+	justify-content: center;
+	width: 32px;
+	height: 32px;
+	background: transparent;
+	border: 1px solid rgba(252, 251, 245, 0.25);
+	border-radius: 6px;
+	color: var(--nk-cream);
+	cursor: pointer;
+	flex: 0 0 auto;
+}
+.admin-sidebar__close svg {
+	width: 16px;
+	height: 16px;
+}
+
+.admin-nav__list {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	display: flex;
+	flex-direction: column;
+	gap: 0.1rem;
+}
+.admin-nav__link {
+	display: flex;
+	align-items: center;
+	gap: 0.6rem;
+	padding: 0.55rem 0.6rem;
+	border-radius: 6px;
+	text-decoration: none;
+	color: var(--nk-cream);
+	font-weight: 600;
+	font-size: 0.82rem;
+	border-left: 3px solid transparent;
+}
+.admin-nav__link:hover,
+.admin-nav__link:focus-visible {
+	background: rgba(252, 251, 245, 0.08);
+}
+.admin-nav__link[aria-current="page"] {
+	background: rgba(252, 251, 245, 0.08);
+	border-left-color: var(--nk-yellow);
+	font-weight: 800;
+}
+.admin-nav__link--placeholder {
+	color: rgba(252, 251, 245, 0.4);
+	cursor: default;
+}
+.admin-nav__icon {
+	width: 18px;
+	height: 18px;
+	flex: 0 0 auto;
+	display: inline-flex;
+}
+.admin-nav__icon svg {
+	width: 100%;
+	height: 100%;
+}
+
+/* ---------- Content column ---------- */
+.admin-content {
+	flex: 1 1 auto;
+	min-width: 0;
+	display: flex;
+	flex-direction: column;
+}
+
+.admin-topbar {
+	background: var(--nk-white);
+	border-bottom: 1px solid rgba(10, 10, 10, 0.1);
+	padding: 0.7rem 1.25rem;
+	display: flex;
+	align-items: center;
+	gap: 0.85rem;
+	position: sticky;
+	top: 0;
+	z-index: 100;
+}
+.admin-topbar__toggle {
+	display: inline-flex;
+	align-items: center;
+	gap: 0.4rem;
+	background: var(--nk-ink);
+	color: var(--nk-cream);
+	border: none;
+	border-radius: 6px;
+	padding: 0.4rem 0.6rem;
+	cursor: pointer;
+	flex: 0 0 auto;
+}
+.admin-topbar__toggle-bars {
+	display: inline-flex;
+	flex-direction: column;
+	gap: 3px;
+	width: 16px;
+}
+.admin-topbar__toggle-bars span {
+	display: block;
+	height: 2px;
+	background: currentColor;
+	border-radius: 2px;
+}
+.admin-topbar__logo {
+	height: 22px;
+	width: auto;
+	display: block;
+	flex: 0 0 auto;
+	/* nk-monogram-mark.svg is designed for dark surfaces; invert it here
+	   so it reads correctly against the white topbar instead of vanishing
+	   at low contrast (mirrors the same fix used on the customer
+	   dashboard's mobile topbar). */
+	filter: invert(1) brightness(0.55);
+}
+.admin-topbar__title {
+	margin: 0;
+	font-weight: 800;
+	font-size: 0.92rem;
+	color: var(--nk-ink);
+	flex: 1 1 auto;
+	min-width: 0;
+	overflow: hidden;
+	text-overflow: ellipsis;
+	white-space: nowrap;
+}
+.admin-topbar__badge {
+	flex: 0 0 auto;
+	font-size: 0.66rem;
+	font-weight: 800;
+	text-transform: uppercase;
+	letter-spacing: 0.06em;
+	color: var(--nk-ink);
+	border: 1px solid var(--nk-ink);
+	border-radius: 999px;
+	padding: 0.25rem 0.7rem;
+	white-space: nowrap;
+}
+
+.admin-main {
+	padding: 1.75rem 1.5rem 3rem;
+	max-width: 1200px;
+	width: 100%;
+	min-width: 0;
+	margin: 0 auto;
+}
+.admin-main__title.admin-main__title {
+	font-size: clamp(1.3rem, 1.1rem + 0.8vw, 1.7rem);
+	line-height: 1.2;
+	margin: 0 0 0.5rem;
+	color: var(--nk-ink);
+	font-weight: 800;
+}
+.admin-main__lead {
+	margin: 0 0 1.75rem;
+	color: #4A4A46;
+	font-size: 0.88rem;
+	line-height: 1.55;
+	max-width: 70ch;
+}
+
+/* ---------- Shared dense panel look ---------- */
+.admin-panel {
+	background: var(--nk-white);
+	border: 1px solid rgba(10, 10, 10, 0.14);
+	border-radius: 12px;
+	padding: 1.25rem 1.4rem;
+}
+.admin-panel__title.admin-panel__title {
+	margin: 0 0 0.75rem;
+	font-size: 0.88rem;
+	font-weight: 800;
+	color: var(--nk-ink);
+}
+.admin-panel__desc {
+	margin: 0;
+	color: #6B6B64;
+	font-size: 0.82rem;
+	line-height: 1.55;
+}
+
+/* ---------- Desktop persistent sidebar, independent scrolling ---------- */
+@media (min-width: 901px) {
+	.admin-shell {
+		height: 100dvh;
+	}
+	.admin-sidebar {
+		position: sticky;
+		top: 0;
+		height: 100dvh;
+		transform: none;
+		width: 260px;
+	}
+	.admin-sidebar__close {
+		display: none !important;
+	}
+	.admin-backdrop {
+		display: none;
+	}
+	.admin-topbar__toggle,
+	.admin-topbar__logo {
+		display: none;
+	}
+	.admin-content {
+		height: 100dvh;
+		min-height: 0;
+		overflow-y: auto;
+	}
+}
+
+@media (max-width: 900px) {
+	.admin-sidebar__close {
+		display: inline-flex;
+	}
+}
+
+@media (prefers-reduced-motion: reduce) {
+	.admin-sidebar,
+	.admin-backdrop {
+		transition: none;
+	}
+}
+
+@media (max-width: 480px) {
+	.admin-main {
+		padding: 1.5rem 1.15rem 2.5rem;
+	}
+	.admin-topbar {
+		padding: 0.6rem 1rem;
+	}
+}
+
+/* Hide the "Admin prototype" badge first at very narrow widths — the
+   menu toggle, NK monogram, and title always stay visible. */
+@media (max-width: 400px) {
+	.admin-topbar__badge {
+		display: none;
+	}
+}
