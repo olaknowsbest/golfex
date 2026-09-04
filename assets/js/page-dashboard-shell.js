@@ -16,6 +16,15 @@
 		return;
 	}
 
+	function getFocusable() {
+		var nodes = sidebar.querySelectorAll(
+			'a[href], button:not([disabled]), input:not([disabled]), select:not([disabled]), [tabindex]:not([tabindex="-1"])'
+		);
+		return Array.prototype.filter.call(nodes, function (el) {
+			return el.offsetParent !== null;
+		});
+	}
+
 	function closeDrawer() {
 		sidebar.classList.remove('is-open');
 		toggle.setAttribute('aria-expanded', 'false');
@@ -32,6 +41,15 @@
 			backdrop.classList.add('is-visible');
 		}
 		body.classList.add('dashboard-scroll-lock');
+		if (closeBtn) {
+			/* Deferred: a real mouse click focuses the clicked toggle button
+			   as part of the browser's own default handling, which runs
+			   after this listener and would otherwise override an
+			   immediate focus() call here. */
+			window.setTimeout(function () {
+				closeBtn.focus();
+			}, 0);
+		}
 	}
 
 	toggle.addEventListener('click', function () {
@@ -57,9 +75,31 @@
 	}
 
 	document.addEventListener('keydown', function (event) {
-		if (event.key === 'Escape' && sidebar.classList.contains('is-open')) {
+		if (!sidebar.classList.contains('is-open')) {
+			return;
+		}
+
+		if (event.key === 'Escape') {
 			closeDrawer();
 			toggle.focus();
+			return;
+		}
+
+		if (event.key === 'Tab') {
+			var focusable = getFocusable();
+			if (!focusable.length) {
+				return;
+			}
+			var first = focusable[0];
+			var last = focusable[focusable.length - 1];
+
+			if (event.shiftKey && document.activeElement === first) {
+				event.preventDefault();
+				last.focus();
+			} else if (!event.shiftKey && document.activeElement === last) {
+				event.preventDefault();
+				first.focus();
+			}
 		}
 	});
 
