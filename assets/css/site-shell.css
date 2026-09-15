@@ -1,7 +1,7 @@
 /*
  * Public-shell stylesheet: identity, header, navigation, footer, buttons,
  * focus states, and responsive behavior for the Nazario Kayla Fan Club
- * prototype. Loaded after the inherited Golfex/Elementor stylesheets so it
+ * site. Loaded after the inherited Golfex/Elementor stylesheets so it
  * can cleanly own the new .site-header / .site-nav / .site-footer markup
  * without fighting their ID-scoped rules.
  */
@@ -196,6 +196,24 @@
 	background: var(--nk-white);
 	color: var(--nk-ink);
 }
+/* Background scroll lock, applied by site-shell.js while the mobile
+   drawer is open. overflow:hidden on both html and body removes the
+   scrollable range on the document's scrolling element outright — the
+   most robust way to stop wheel/touch/keyboard scroll input regardless of
+   which drawer element has focus. The position:fixed + stored negative
+   offset on body is additional defense against iOS Safari's rubber-band
+   touch-scroll, which can otherwise bleed through overflow:hidden alone. */
+html.nav-scroll-lock,
+body.nav-scroll-lock {
+	overflow: hidden;
+}
+body.nav-scroll-lock {
+	position: fixed;
+	left: 0;
+	right: 0;
+	width: 100%;
+}
+
 .nav-backdrop {
 	position: fixed;
 	inset: 0;

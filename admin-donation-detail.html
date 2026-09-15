@@ -4,8 +4,8 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<title>Donation Detail &#8211; Nazario Kayla Fan Club Prototype</title>
-	<meta name="description" content="A static, honestly labelled preview of the future admin Donation detail screen for the fictional Nazario Kayla fan-platform prototype. Not a functioning admin system.">
+	<title>Donation Detail &#8211; Nazario Kayla Administration</title>
+	<meta name="description" content="Donation detail for the Nazario Kayla Fan Club admin team.">
 	<meta name="robots" content="noindex, nofollow">
 	<meta name="theme-color" content="#0A0A0A">
 	<link rel="icon" href="assets/images/uploads/favicon.png" sizes="32x32" />
@@ -28,10 +28,9 @@
 		<aside class="admin-sidebar" id="admin-sidebar" aria-label="Admin navigation">
 			<div class="admin-sidebar__top">
 				<div class="admin-sidebar__brand">
-					<img class="admin-sidebar__logo" src="assets/images/brand/nk-monogram-mark.svg" alt="Nazario Kayla Fan Club &#8212; Prototype" width="28" height="29">
+					<img class="admin-sidebar__logo" src="assets/images/brand/nk-monogram-mark.svg" alt="Nazario Kayla Administration" width="28" height="29">
 					<span class="admin-sidebar__brand-text">
 						<span class="admin-sidebar__brand-name">NK Admin</span>
-						<span class="admin-sidebar__tag">Admin prototype</span>
 					</span>
 				</div>
 				<button class="admin-sidebar__close" type="button" data-admin-close aria-label="Close menu">
@@ -160,20 +159,20 @@
 				</button>
 				<img class="admin-topbar__logo" src="assets/images/brand/nk-monogram-mark.svg" alt="" aria-hidden="true">
 				<p class="admin-topbar__title">Donation Detail</p>
-				<span class="admin-topbar__badge">Admin prototype</span>
 			</header>
 
 			<main id="admin-main" class="admin-main">
 				<a class="aent-back" href="admin-donations.html">&larr; Back to Donations</a>
 				<h1 class="admin-main__title">Donation Detail</h1>
+				<p class="admin-main__lead">Review the selected Donation record.</p>
 
 				<!--
 					Static prototype only — no real Donation exists here.
 					Production behavior (documented only, never implemented or
 					simulated here): this screen will live at a route such as
-					/admin/donations/{reference}. Laravel loads the authoritative
-					donation and payment records from MySQL by reference. A
-					donation becomes Completed only after its matching payment is
+					/admin/donations/{reference}. The authoritative donation and
+					payment records are loaded by reference. A donation becomes
+					Completed only after its matching payment is
 					manually verified by an administrator; review is one atomic,
 					idempotent operation — reprocessing an already-approved
 					payment never creates a duplicate donation record. A rejected
@@ -192,21 +191,17 @@
 
 					<section class="admin-panel aent-missing">
 						<h2 class="admin-panel__title">Select a Donation for review.</h2>
-						<p class="admin-panel__desc">This static prototype only has fixed sample records. Return to the list and choose &#8220;View&#8221; on a row to see one.</p>
+						<p class="admin-panel__desc">Return to the list and choose &#8220;View&#8221; on a row to see one.</p>
 						<a class="btn btn--cta aent-missing__cta" href="admin-donations.html">Back to Donations</a>
 					</section>
 
 					<div class="aent-valid">
 
-						<div class="aent-sample-notice">
-							<p><strong>Sample record.</strong> The Donation and payment reference shown are fictional demonstration data. Nothing on this page is a real donor or transaction.</p>
-						</div>
-
-						<!-- DN-DEMO-001 — Pending review -->
+						<!-- DN-DEMO-001 — Awaiting payment -->
 						<article class="adon-record" data-ref="DN-DEMO-001" aria-labelledby="adon-001-heading">
-							<h2 id="adon-001-heading" class="visually-hidden">Sample Donation DN-DEMO-001</h2>
+							<h2 id="adon-001-heading" class="visually-hidden">Donation DN-DEMO-001</h2>
 							<div class="aent-record-header">
-								<span class="aent-status aent-status--pending">Pending review</span>
+								<span class="aent-status aent-status--pending">Awaiting payment</span>
 								<span class="aent-record-header__ref">DN-DEMO-001</span>
 							</div>
 
@@ -214,13 +209,13 @@
 								<h3 class="admin-panel__title">Donation details</h3>
 								<dl class="aent-fields__list">
 									<div class="aent-fields__row"><dt>Donation reference</dt><dd>DN-DEMO-001</dd></div>
-									<div class="aent-fields__row"><dt>Donor display</dt><dd>Jordan Ellis <span class="aent-fictional">(fictional)</span></dd></div>
+									<div class="aent-fields__row"><dt>Donor display</dt><dd>Jordan Ellis</dd></div>
 									<div class="aent-fields__row"><dt>Amount</dt><dd>$50.00</dd></div>
 									<div class="aent-fields__row"><dt>Visibility</dt><dd>Display my name</dd></div>
 									<div class="aent-fields__row"><dt>Donor message</dt><dd>&#8220;Excited to support the next tournament!&#8221;</dd></div>
 									<div class="aent-fields__row"><dt>Linked payment reference</dt><dd>PAY-DEMO-008</dd></div>
-									<div class="aent-fields__row"><dt>Payment status</dt><dd>Submitted for review</dd></div>
-									<div class="aent-fields__row"><dt>Donation status</dt><dd>Pending review</dd></div>
+									<div class="aent-fields__row"><dt>Payment status</dt><dd>Awaiting payment</dd></div>
+									<div class="aent-fields__row"><dt>Donation status</dt><dd>Awaiting payment</dd></div>
 									<div class="aent-fields__row"><dt>Submitted date</dt><dd>August 20, 2026</dd></div>
 									<div class="aent-fields__row"><dt>Reviewed date</dt><dd>Not yet reviewed</dd></div>
 								</dl>
@@ -232,20 +227,18 @@
 									<button type="button" class="btn aent-actions__btn" disabled>Mark completed</button>
 									<button type="button" class="btn aent-actions__btn" disabled>Reject Donation</button>
 								</div>
-								<p class="aent-actions__note">Only actions appropriate to Pending review status are shown. Both are disabled in this static prototype &mdash; production decisions require authenticated admin access and Laravel server-side validation.</p>
 							</div>
 
 							<div class="admin-panel aent-notes">
 								<h3 class="admin-panel__title">Internal review note</h3>
 								<label class="aent-notes__label" for="adon-note-001">Internal note (optional)</label>
-								<textarea class="aent-notes__field" id="adon-note-001" rows="3" disabled placeholder="Internal review notes will become available once the Laravel backend is connected."></textarea>
-								<p class="aent-notes__note">No note is saved in this static prototype. Production records every decision with the administrator, timestamp, reason, and linked payment reference.</p>
-							</div>
+								<textarea class="aent-notes__field" id="adon-note-001" rows="3" disabled placeholder="Add an internal note"></textarea>
+															</div>
 						</article>
 
 						<!-- DN-DEMO-002 — Completed, anonymous -->
 						<article class="adon-record" data-ref="DN-DEMO-002" aria-labelledby="adon-002-heading">
-							<h2 id="adon-002-heading" class="visually-hidden">Sample Donation DN-DEMO-002</h2>
+							<h2 id="adon-002-heading" class="visually-hidden">Donation DN-DEMO-002</h2>
 							<div class="aent-record-header">
 								<span class="aent-status aent-status--completed">Completed</span>
 								<span class="aent-record-header__ref">DN-DEMO-002</span>
@@ -265,25 +258,24 @@
 									<div class="aent-fields__row"><dt>Submitted date</dt><dd>August 12, 2026</dd></div>
 									<div class="aent-fields__row"><dt>Reviewed date</dt><dd>August 13, 2026</dd></div>
 								</dl>
-								<p class="adon-anon-note">This donor chose anonymous visibility. Only &#8220;Anonymous supporter&#8221; is ever shown here &mdash; no hidden identity is exposed anywhere in this static prototype.</p>
+								<p class="adon-anon-note">This donor chose anonymous visibility. Only &#8220;Anonymous supporter&#8221; is ever shown here.</p>
 							</div>
 
 							<div class="admin-panel aent-actions-panel">
 								<h3 class="admin-panel__title">Actions</h3>
-								<p class="adon-no-action">No action available. This donation has already been marked completed in this static prototype.</p>
+								<p class="adon-no-action">No action available. This donation has already been marked completed.</p>
 							</div>
 
 							<div class="admin-panel aent-notes">
 								<h3 class="admin-panel__title">Internal review note</h3>
 								<label class="aent-notes__label" for="adon-note-002">Internal note (optional)</label>
-								<textarea class="aent-notes__field" id="adon-note-002" rows="3" disabled placeholder="Internal review notes will become available once the Laravel backend is connected."></textarea>
-								<p class="aent-notes__note">No note is saved in this static prototype. Production records every decision with the administrator, timestamp, reason, and linked payment reference.</p>
-							</div>
+								<textarea class="aent-notes__field" id="adon-note-002" rows="3" disabled placeholder="Add an internal note"></textarea>
+															</div>
 						</article>
 
 						<!-- DN-DEMO-003 — Rejected -->
 						<article class="adon-record" data-ref="DN-DEMO-003" aria-labelledby="adon-003-heading">
-							<h2 id="adon-003-heading" class="visually-hidden">Sample Donation DN-DEMO-003</h2>
+							<h2 id="adon-003-heading" class="visually-hidden">Donation DN-DEMO-003</h2>
 							<div class="aent-record-header">
 								<span class="aent-status aent-status--rejected">Rejected</span>
 								<span class="aent-record-header__ref">DN-DEMO-003</span>
@@ -293,7 +285,7 @@
 								<h3 class="admin-panel__title">Donation details</h3>
 								<dl class="aent-fields__list">
 									<div class="aent-fields__row"><dt>Donation reference</dt><dd>DN-DEMO-003</dd></div>
-									<div class="aent-fields__row"><dt>Donor display</dt><dd>Casey Morgan <span class="aent-fictional">(fictional)</span></dd></div>
+									<div class="aent-fields__row"><dt>Donor display</dt><dd>Casey Morgan</dd></div>
 									<div class="aent-fields__row"><dt>Amount</dt><dd>$25.00</dd></div>
 									<div class="aent-fields__row"><dt>Visibility</dt><dd>Display my name</dd></div>
 									<div class="aent-fields__row"><dt>Donor message</dt><dd>No message provided</dd></div>
@@ -310,26 +302,24 @@
 								<div class="aent-actions">
 									<button type="button" class="btn aent-actions__btn" disabled>Reopen Review</button>
 								</div>
-								<p class="aent-actions__note">Only actions appropriate to Rejected status are shown. Reopening is disabled in this static prototype and preserves the audit trail in production &mdash; nothing here changes any donation state.</p>
+								<p class="aent-actions__note">Reopening a donation preserves its full audit trail.</p>
 							</div>
 
 							<div class="admin-panel aent-notes">
 								<h3 class="admin-panel__title">Internal review note</h3>
 								<label class="aent-notes__label" for="adon-note-003">Internal note (optional)</label>
-								<textarea class="aent-notes__field" id="adon-note-003" rows="3" disabled placeholder="Internal review notes will become available once the Laravel backend is connected."></textarea>
-								<p class="aent-notes__note">No note is saved in this static prototype. Production records every decision with the administrator, timestamp, reason, and linked payment reference.</p>
-							</div>
+								<textarea class="aent-notes__field" id="adon-note-003" rows="3" disabled placeholder="Add an internal note"></textarea>
+															</div>
 						</article>
 
 						<section class="admin-panel aent-security" aria-labelledby="adon-security-heading">
-							<h2 id="adon-security-heading" class="admin-panel__title">How review will work</h2>
+							<h2 id="adon-security-heading" class="admin-panel__title">Review guidance</h2>
 							<ul class="aent-security__list">
 								<li>Donations are voluntary, one-time contributions. They never purchase a Fan Card, Membership, booking, product, or benefit, and are never represented as charitable or tax-deductible.</li>
 								<li>A donation becomes Completed only after its matching payment is manually verified by an administrator.</li>
-								<li>Anonymous visibility affects public display only, never internal accounting. This static prototype never reveals that identity anywhere, including here.</li>
-								<li>Review is atomic and idempotent. Reprocessing an already-approved payment never creates a duplicate donation record. A rejected decision preserves the full audit trail.</li>
+								<li>Anonymous visibility affects public display only, never internal accounting.</li>
+								<li>A rejected decision preserves the full audit trail.</li>
 								<li>Every admin decision records the administrator, timestamp, reason, and linked payment reference.</li>
-								<li>Production never trusts amount, identity, visibility, payment status, or donation status supplied by the browser or a query parameter.</li>
 							</ul>
 						</section>
 					</div>

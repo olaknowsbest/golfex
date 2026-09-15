@@ -4,8 +4,8 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<title>Create a Booking &#8211; Nazario Kayla Fan Club Prototype</title>
-	<meta name="description" content="A static, honestly labelled preview of the future booking creation screen for the fictional Nazario Kayla fan-platform prototype. Availability shown is sample data, not live.">
+	<title>Create a Booking &#8211; Nazario Kayla Fan Club</title>
+	<meta name="description" content="Choose a date and time for your booking on your Nazario Kayla Fan Club account.">
 	<meta name="robots" content="noindex, nofollow">
 	<meta name="theme-color" content="#0A0A0A">
 	<link rel="icon" href="assets/images/uploads/favicon.png" sizes="32x32" />
@@ -27,10 +27,9 @@
 		<aside class="dashboard-sidebar" id="dashboard-sidebar" aria-label="Dashboard navigation">
 			<div class="dashboard-sidebar__top">
 				<div class="dashboard-sidebar__brand">
-					<img class="dashboard-sidebar__logo" src="assets/images/brand/nk-monogram-mark.svg" alt="Nazario Kayla Fan Club &#8212; Prototype" width="36" height="37">
+					<img class="dashboard-sidebar__logo" src="assets/images/brand/nk-monogram-mark.svg" alt="Nazario Kayla Fan Club" width="36" height="37">
 					<span class="dashboard-sidebar__brand-text">
 						<span class="dashboard-sidebar__brand-name">NK Dashboard</span>
-						<span class="dashboard-sidebar__prototype-tag">Prototype</span>
 					</span>
 				</div>
 				<button class="dashboard-sidebar__close" type="button" data-dashboard-close aria-label="Close menu">
@@ -145,7 +144,6 @@
 				</button>
 				<img class="dashboard-topbar__logo" src="assets/images/brand/nk-monogram-mark.svg" alt="" aria-hidden="true">
 				<p class="dashboard-topbar__title">Create a Booking</p>
-				<span class="dashboard-topbar__account">Account preview</span>
 			</header>
 
 			<main id="dashboard-main" class="dashboard-main">
@@ -154,7 +152,10 @@
 				<h1 class="dashboard-main__title">Create a Booking</h1>
 				<p class="dashboard-main__lead">Choose a booking type, date, and time. Duration and price are calculated automatically from your selection.</p>
 
-				<p class="dbs-sample-note"><strong>Sample availability</strong> &mdash; the dates and times below are fictional demonstration data for this static prototype, not live availability. In production, availability comes from administrator-managed records.</p>
+				<div class="dbs-sample-note">
+					<p class="dbs-sample-note__heading">Before you book</p>
+					<p>Availability is confirmed again before payment. Select a booking type, date, and time to continue.</p>
+				</div>
 
 				<!--
 					Future Laravel/MySQL behavior (documented only, not
@@ -206,13 +207,12 @@
 							<option value="CT">Central Time (CT)</option>
 							<option value="ET">Eastern Time (ET)</option>
 						</select>
-						<p class="dbs-field__note">Times are shown in Pacific Time (PT) as authored. This prototype does not convert between timezones &mdash; the timezone above only labels your selection for the review screen.</p>
+						<p class="dbs-field__note">Confirm the displayed timezone before continuing.</p>
 					</div>
 
 					<div class="dbs-field">
 						<label class="dbs-field__label" for="dbs-details">Booking details (optional)</label>
-						<textarea class="dbs-field__input" id="dbs-details" rows="3" placeholder="Add any specific requests or details"></textarea>
-						<p class="dbs-field__note">This is for design review only. It is not sent, saved, or carried forward to the confirmation screen in this static prototype.</p>
+						<textarea class="dbs-field__input" id="dbs-details" rows="3" placeholder="Add any specific requests or details" disabled></textarea>
 					</div>
 
 					<div class="dbs-readonly">

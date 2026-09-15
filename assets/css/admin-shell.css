@@ -104,17 +104,6 @@ body {
 	letter-spacing: -0.01em;
 	color: var(--nk-white);
 }
-.admin-sidebar__tag {
-	align-self: flex-start;
-	text-transform: uppercase;
-	letter-spacing: 0.08em;
-	font-size: 0.6rem;
-	font-weight: 800;
-	color: var(--nk-yellow);
-	border: 1px solid var(--nk-yellow);
-	padding: 0.1rem 0.4rem;
-	border-radius: 4px;
-}
 .admin-sidebar__close {
 	display: none;
 	align-items: center;
@@ -242,19 +231,6 @@ body {
 	text-overflow: ellipsis;
 	white-space: nowrap;
 }
-.admin-topbar__badge {
-	flex: 0 0 auto;
-	font-size: 0.66rem;
-	font-weight: 800;
-	text-transform: uppercase;
-	letter-spacing: 0.06em;
-	color: var(--nk-ink);
-	border: 1px solid var(--nk-ink);
-	border-radius: 999px;
-	padding: 0.25rem 0.7rem;
-	white-space: nowrap;
-}
-
 .admin-main {
 	padding: 1.75rem 1.5rem 3rem;
 	max-width: 1200px;
@@ -295,6 +271,17 @@ body {
 	color: #6B6B64;
 	font-size: 0.82rem;
 	line-height: 1.55;
+}
+
+.btn--outline {
+	background: transparent;
+	color: var(--nk-ink);
+	border: 1.5px solid var(--nk-ink);
+}
+.btn--outline:hover,
+.btn--outline:focus-visible {
+	background: var(--nk-ink);
+	color: var(--nk-cream);
 }
 
 /* ---------- Desktop persistent sidebar, independent scrolling ---------- */
@@ -345,13 +332,5 @@ body {
 	}
 	.admin-topbar {
 		padding: 0.6rem 1rem;
-	}
-}
-
-/* Hide the "Admin prototype" badge first at very narrow widths — the
-   menu toggle, NK monogram, and title always stay visible. */
-@media (max-width: 400px) {
-	.admin-topbar__badge {
-		display: none;
 	}
 }

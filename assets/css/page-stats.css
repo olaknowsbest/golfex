@@ -1,6 +1,6 @@
 /*
- * Stats-only stylesheet for the fictional Nazario Kayla public career-stats
- * page (Prompt 07). Loaded after site-shell.css so it can extend the shared
+ * Stats-only stylesheet for the Nazario Kayla public career-stats page.
+ * Loaded after site-shell.css so it can extend the shared
  * palette/buttons without needing to fight inherited Elementor/theme CSS —
  * this page's body no longer contains any Elementor widget markup.
  */
@@ -16,11 +16,6 @@
 	font-size: 0.8rem;
 	font-weight: 700;
 	margin: 0 0 1rem;
-}
-.stats-fine-print {
-	font-size: 0.8rem;
-	color: #6B6B64;
-	margin: 1.5rem 0 0;
 }
 
 /* Selector repeated on purpose: kit-global.css ships .elementor-kit-15
@@ -72,15 +67,19 @@
 	padding: 4.5rem 0 4rem;
 }
 .stats-hero__inner {
-	max-width: 780px;
+	max-width: 1180px;
 	margin: 0 auto;
 	padding: 0 1.5rem;
-	text-align: center;
+	display: grid;
+	grid-template-columns: 1fr;
+	gap: 2.5rem;
+	align-items: center;
+}
+.stats-hero__content {
+	max-width: 640px;
 }
 .stats-hero__eyebrow {
 	color: #7c6d00;
-	justify-content: center;
-	display: flex;
 }
 .stats-hero__title.stats-hero__title {
 	color: var(--nk-ink);
@@ -92,31 +91,11 @@
 	color: #3f3f3a;
 	font-size: 1.1rem;
 	line-height: 1.6;
-	margin: 0 auto 1.5rem;
+	margin: 0 0 1.5rem;
 	max-width: 58ch;
 }
-.stats-status-badge {
-	display: inline-flex;
-	align-items: center;
-	gap: 0.5rem;
-	background: var(--nk-ink);
-	color: var(--nk-cream);
-	font-size: 0.8rem;
-	font-weight: 700;
-	padding: 0.5rem 1rem;
-	border-radius: 999px;
-	margin: 0 0 1.5rem;
-}
-.stats-status-badge::before {
-	content: "";
-	width: 6px;
-	height: 6px;
-	border-radius: 50%;
-	background: var(--nk-yellow);
-	display: inline-block;
-}
 .stats-hero__back-link {
-	display: block;
+	display: inline-block;
 	color: var(--nk-ink);
 	font-weight: 600;
 	font-size: 0.95rem;
@@ -126,6 +105,45 @@
 .stats-hero__back-link:hover,
 .stats-hero__back-link:focus-visible {
 	color: #7c6d00;
+}
+
+/*
+ * Reuses the site's one approved Nazario cutout image (also used, uncropped,
+ * on the Homepage and About hero) but frames it distinctly for this page: a
+ * tighter, cover-cropped "player card" rather than the full-body float/card
+ * treatment used elsewhere. object-position keeps the crop anchored to the
+ * top of the source image, where her face and the club are, rather than
+ * centering — centering this particular photo would crop through her face.
+ * The mobile aspect-ratio is taller (a looser crop, more of the swing
+ * visible) since there's no second column competing for space there.
+ */
+.stats-hero__figure {
+	position: relative;
+	background: var(--nk-ink);
+	border-radius: 20px;
+	overflow: hidden;
+	max-width: 420px;
+	margin: 0 auto;
+	aspect-ratio: 4 / 5;
+}
+.stats-hero__figure img {
+	width: 100%;
+	height: 100%;
+	display: block;
+	object-fit: cover;
+	object-position: 50% 0%;
+}
+
+@media (min-width: 901px) {
+	.stats-hero__inner {
+		grid-template-columns: 1.1fr 0.9fr;
+		gap: 3.5rem;
+	}
+	.stats-hero__figure {
+		aspect-ratio: 4 / 3;
+		max-width: 480px;
+		margin: 0 0 0 auto;
+	}
 }
 
 /* ---------- Career snapshot ---------- */
@@ -158,75 +176,120 @@
 	color: rgba(252, 251, 245, 0.75);
 	margin-top: 0.3rem;
 }
+.stats-snapshot-card__note {
+	display: block;
+	font-size: 0.7rem;
+	color: rgba(252, 251, 245, 0.55);
+	margin-top: 0.2rem;
+}
 
 @media (min-width: 701px) {
 	.stats-snapshot__grid {
-		grid-template-columns: repeat(4, 1fr);
+		grid-template-columns: repeat(3, 1fr);
+	}
+}
+@media (min-width: 1001px) {
+	.stats-snapshot__grid {
+		grid-template-columns: repeat(5, 1fr);
 	}
 }
 
-/* ---------- Season record table ---------- */
-.stats-record {
+/* ---------- Current-season performance ---------- */
+.stats-performance {
 	padding: 5rem 0;
 	background: var(--nk-sand);
 }
-.stats-table__scroll {
-	overflow-x: auto;
-	border: 1px solid rgba(10, 10, 10, 0.1);
-	border-radius: 16px;
-	background: var(--nk-white);
-	contain: layout;
+.stats-performance__list {
+	margin: 0;
+	display: flex;
+	flex-direction: column;
 }
-.stats-table__scroll table {
-	width: 100%;
-	border-collapse: collapse;
-	min-width: 480px;
+.stats-performance__row {
+	display: flex;
+	align-items: baseline;
+	justify-content: space-between;
+	gap: 1.5rem;
+	padding: 1.1rem 0;
+	border-bottom: 1px solid rgba(10, 10, 10, 0.1);
 }
-.stats-table__scroll caption {
-	text-align: left;
-	padding: 1.1rem 1.25rem 0.5rem;
-	font-size: 0.85rem;
-	color: #6B6B64;
+.stats-performance__row:first-child {
+	border-top: 1px solid rgba(10, 10, 10, 0.1);
 }
-.stats-table__scroll th,
-.stats-table__scroll td {
-	padding: 0.85rem 1.25rem;
-	text-align: right;
-	border-bottom: 1px solid rgba(10, 10, 10, 0.08);
-	font-size: 0.98rem;
-	color: var(--nk-ink);
-}
-.stats-table__scroll th[scope="col"] {
-	text-align: right;
-	font-weight: 700;
-	color: var(--nk-ink);
-	font-size: 0.78rem;
-	text-transform: uppercase;
-	letter-spacing: 0.05em;
-}
-.stats-table__scroll th[scope="col"]:first-child {
-	text-align: left;
-}
-.stats-table__scroll th[scope="row"] {
-	text-align: left;
+.stats-performance__label {
+	margin: 0;
+	font-size: 1rem;
 	font-weight: 600;
 	color: var(--nk-ink);
 }
-.stats-table__scroll tbody tr:last-child th,
-.stats-table__scroll tbody tr:last-child td {
-	border-bottom: none;
+.stats-performance__value {
+	margin: 0;
+	display: flex;
+	align-items: center;
+	gap: 1rem;
+	font-size: 1.3rem;
 	font-weight: 700;
-	background: var(--nk-sand);
+	color: var(--nk-ink);
+	font-variant-numeric: tabular-nums;
 }
-.stats-table__note {
-	margin: 1.25rem 0 0;
-	color: #4A4A46;
-	font-size: 0.95rem;
-	line-height: 1.6;
-	max-width: 68ch;
+.stats-performance__bar {
+	display: inline-block;
+	width: 120px;
+	height: 6px;
+	border-radius: 999px;
+	background: rgba(10, 10, 10, 0.1);
+	overflow: hidden;
+}
+.stats-performance__bar-fill {
+	display: block;
+	height: 100%;
+	background: var(--nk-yellow);
+	border-radius: 999px;
 }
 
-/* ---------- Performance profile ---------- */
+@media (max-width: 480px) {
+	.stats-performance__row {
+		flex-direction: column;
+		align-items: flex-start;
+		gap: 0.4rem;
+	}
+	.stats-performance__bar {
+		width: 100px;
+	}
+}
+
+/* ---------- Canonical player facts ---------- */
+.stats-facts {
+	display: grid;
+	grid-template-columns: 1fr;
+	gap: 1.25rem 2rem;
+	margin: 0 0 3rem;
+	padding: 1.75rem 0;
+	border-top: 1px solid rgba(10, 10, 10, 0.12);
+	border-bottom: 1px solid rgba(10, 10, 10, 0.12);
+}
+.stats-facts__item dt {
+	text-transform: uppercase;
+	letter-spacing: 0.06em;
+	font-size: 0.72rem;
+	font-weight: 700;
+	color: #7c6d00;
+	margin: 0 0 0.25rem;
+}
+.stats-facts__item dd {
+	margin: 0;
+	font-size: 1rem;
+	font-weight: 600;
+	color: var(--nk-ink);
+	line-height: 1.4;
+}
+
+@media (min-width: 701px) {
+	.stats-facts {
+		grid-template-columns: repeat(3, 1fr);
+	}
+}
+
+/* ---------- Playing profile ---------- */
 .stats-profile {
 	padding: 5rem 0;
 }
@@ -279,37 +342,78 @@
 	}
 }
 
-/* ---------- Data note ---------- */
-.stats-data-note {
+/* ---------- Performance interpretation ---------- */
+.stats-interpretation {
 	padding: 5rem 0;
 	background: var(--nk-ink);
 }
-.stats-data-note .stats-section__title.stats-section__title {
+.stats-interpretation .stats-section__title.stats-section__title {
 	color: var(--nk-white);
 }
-.stats-data-note__panel {
+.stats-interpretation__panel {
 	background: rgba(252, 251, 245, 0.05);
 	border: 1px solid rgba(252, 251, 245, 0.14);
 	border-radius: 20px;
 	padding: 2rem 1.75rem;
 	max-width: 780px;
 }
-.stats-data-note__panel p {
+.stats-interpretation__panel p {
 	margin: 0 0 1rem;
 	color: rgba(252, 251, 245, 0.8);
 	line-height: 1.65;
 }
-.stats-data-note__panel p:last-child {
+.stats-interpretation__panel p:last-child {
 	margin-bottom: 0;
 }
-.stats-data-note :focus-visible {
-	outline-color: var(--nk-yellow);
+
+/* ---------- Career progression ---------- */
+.stats-timeline-section {
+	padding: 5rem 0;
+}
+.stats-timeline {
+	list-style: none;
+	margin: 0;
+	padding: 0;
+	display: flex;
+	flex-direction: column;
+	gap: 2rem;
+}
+.stats-timeline__item {
+	position: relative;
+	padding-left: 2rem;
+	border-left: 2px solid rgba(10, 10, 10, 0.12);
+}
+.stats-timeline__item::before {
+	content: "";
+	position: absolute;
+	left: -7px;
+	top: 0.2rem;
+	width: 12px;
+	height: 12px;
+	border-radius: 50%;
+	background: var(--nk-yellow);
+	border: 2px solid var(--nk-ink);
+}
+.stats-timeline__period {
+	display: block;
+	font-weight: 700;
+	color: #7c6d00;
+	font-size: 0.85rem;
+	letter-spacing: 0.04em;
+	text-transform: uppercase;
+	margin-bottom: 0.35rem;
+}
+.stats-timeline__desc {
+	margin: 0;
+	color: #4A4A46;
+	line-height: 1.6;
+	max-width: 60ch;
 }
 
 /* ---------- Final CTA ---------- */
 .stats-final-cta {
 	padding: 5rem 0 5.5rem;
-	background: var(--nk-sand);
+	background: var(--nk-ink);
 }
 .stats-final-cta__inner {
 	max-width: 640px;
@@ -320,12 +424,12 @@
 	gap: 1rem;
 }
 .stats-final-cta__title.stats-final-cta__title {
-	color: var(--nk-ink);
+	color: var(--nk-white);
 	font-size: clamp(1.6rem, 1.3rem + 1.2vw, 2.25rem);
 	margin: 0;
 }
 .stats-final-cta__lead {
-	color: #4A4A46;
+	color: rgba(252, 251, 245, 0.82);
 	margin: 0 0 0.5rem;
 	line-height: 1.6;
 }
@@ -335,11 +439,18 @@
 	gap: 1rem;
 	justify-content: center;
 }
+.stats-final-cta :focus-visible {
+	outline-color: var(--nk-yellow);
+}
 
 /* site-shell.css puts a 4rem top margin on the footer for light-content
-   pages; here that reads correctly since .stats-final-cta is sand, not
-   dark, so no override is needed — unlike the other completed pages whose
-   last section before the footer is always dark. */
+   pages; here it would show as a pale gap between two black sections.
+   This stylesheet only loads on stats.html, where the section right
+   before the footer is always .stats-final-cta, so it's safe to target
+   .site-footer directly. */
+.site-footer {
+	margin-top: 0;
+}
 
 @media (max-width: 480px) {
 	.stats-section__title {

@@ -36,6 +36,15 @@
 	font-size: 0.85rem;
 	line-height: 1.55;
 }
+.dbs-sample-note p {
+	margin: 0;
+}
+.dbs-sample-note p + p {
+	margin-top: 0.3rem;
+}
+.dbs-sample-note__heading {
+	font-weight: 700;
+}
 
 .dbs-form {
 	max-width: 640px;
@@ -82,6 +91,12 @@ select.dbs-field__input:disabled {
 }
 textarea.dbs-field__input {
 	resize: vertical;
+}
+textarea.dbs-field__input:disabled {
+	opacity: 0.55;
+	cursor: not-allowed;
+	background: var(--nk-sand);
+	resize: none;
 }
 .dbs-field__note {
 	margin: 0;

@@ -1,6 +1,6 @@
 /*
- * Contact-only stylesheet for the fictional Nazario Kayla enquiry-routes
- * concept page (Prompt 06). Loaded after site-shell.css so it can extend
+ * Contact-only stylesheet for the Nazario Kayla enquiry-routes page. Loaded
+ * after site-shell.css so it can extend
  * the shared palette/buttons without needing to fight inherited
  * Elementor/theme CSS — this page's body no longer contains any Elementor
  * widget markup.
@@ -18,12 +18,6 @@
 	font-weight: 700;
 	margin: 0 0 1rem;
 }
-.contact-fine-print {
-	font-size: 0.8rem;
-	color: #6B6B64;
-	margin: 1.5rem 0 0;
-}
-
 /* Selector repeated on purpose: kit-global.css ships .elementor-kit-15
    h1/h2/h3 { color/font-size/line-height: ... } rules (class+element
    specificity, 0-1-1) left over from the inherited theme, which would
@@ -235,11 +229,6 @@
 	flex-wrap: wrap;
 	gap: 1rem;
 	justify-content: center;
-}
-.contact-final-cta__note {
-	margin: 0.5rem 0 0;
-	font-size: 0.85rem;
-	color: rgba(252, 251, 245, 0.65);
 }
 .contact-final-cta :focus-visible {
 	outline-color: var(--nk-yellow);

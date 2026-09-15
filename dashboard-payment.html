@@ -4,8 +4,8 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<title>Complete Payment &#8211; Nazario Kayla Fan Club Prototype</title>
-	<meta name="description" content="A static, honestly labelled preview of the future manual-crypto payment screen for the fictional Nazario Kayla fan-platform prototype. Not a functioning payment system.">
+	<title>Complete Payment &#8211; Nazario Kayla Fan Club</title>
+	<meta name="description" content="Complete payment for your Nazario Kayla Fan Club purchase.">
 	<meta name="robots" content="noindex, nofollow">
 	<meta name="theme-color" content="#0A0A0A">
 	<link rel="icon" href="assets/images/uploads/favicon.png" sizes="32x32" />
@@ -27,10 +27,9 @@
 		<aside class="dashboard-sidebar" id="dashboard-sidebar" aria-label="Dashboard navigation">
 			<div class="dashboard-sidebar__top">
 				<div class="dashboard-sidebar__brand">
-					<img class="dashboard-sidebar__logo" src="assets/images/brand/nk-monogram-mark.svg" alt="Nazario Kayla Fan Club &#8212; Prototype" width="36" height="37">
+					<img class="dashboard-sidebar__logo" src="assets/images/brand/nk-monogram-mark.svg" alt="Nazario Kayla Fan Club" width="36" height="37">
 					<span class="dashboard-sidebar__brand-text">
 						<span class="dashboard-sidebar__brand-name">NK Dashboard</span>
-						<span class="dashboard-sidebar__prototype-tag">Prototype</span>
 					</span>
 				</div>
 				<button class="dashboard-sidebar__close" type="button" data-dashboard-close aria-label="Close menu">
@@ -145,7 +144,6 @@
 				</button>
 				<img class="dashboard-topbar__logo" src="assets/images/brand/nk-monogram-mark.svg" alt="" aria-hidden="true">
 				<p class="dashboard-topbar__title">Complete Payment</p>
-				<span class="dashboard-topbar__account">Account preview</span>
 			</header>
 
 			<main id="dashboard-main" class="dashboard-main">
@@ -157,14 +155,19 @@
 					Query handling: a strict ?source= allowlist
 					(fan-card|membership|donation|booking) plus the minimum
 					per-source display fields already validated by that
-					product's own confirmation page (tier, plan, amount +
-					visibility, or type/date/start/end/timezone). No crypto
-					amount, exchange rate, wallet address, or payment/approval
-					status is ever read from the URL — those do not exist as
-					query parameters here. Every value shown is prototype
-					display data only; production Laravel rebuilds the
-					authoritative order, total, and quote from MySQL records
-					rather than trusting anything the browser supplies.
+					product's own confirmation page (tier, plan+billing,
+					amount + visibility, or type/date/start/end/timezone). No
+					crypto amount, exchange rate, wallet address, or
+					payment/approval status is ever read from the URL — those
+					do not exist as query parameters here. Membership price is
+					always derived internally from plan+billing (never from a
+					?price= or ?amount= parameter, which do not exist here
+					either); a tampered plan or billing value simply fails the
+					allowlist check below and the page falls back to its
+					missing state. Every value shown is prototype display data
+					only; production Laravel rebuilds the authoritative order,
+					total, and quote from MySQL records rather than trusting
+					anything the browser supplies.
 
 					Supported future statuses (documented only, never
 					implemented or simulated here):
@@ -180,7 +183,7 @@
 					</section>
 
 					<section class="dpay-valid" aria-labelledby="dpay-summary-title">
-						<p class="dpay-lead">This is a static preview of the future manual-crypto payment screen. No payment method, wallet, or transaction exists in this prototype.</p>
+						<p class="dpay-lead">No payment method, wallet, or transaction exists on this screen.</p>
 
 						<div class="dpay-panel dpay-summary">
 							<h2 id="dpay-summary-title" class="dpay-panel__title">Order summary</h2>
@@ -189,8 +192,9 @@
 								<div class="dpay-summary__row"><dt>Selected item</dt><dd id="dpay-item">&mdash;</dd></div>
 								<div class="dpay-summary__row dpay-summary__row--total"><dt>USD total</dt><dd id="dpay-total">&mdash;</dd></div>
 							</dl>
-							<p class="dpay-summary__note">This is a prototype summary built from a strict allowlist of already-validated values. In production, Laravel loads the authoritative order and total from MySQL &mdash; it never trusts a browser-supplied price.</p>
-							<p id="dpay-booking-note" class="dpay-summary__note" hidden>Production will place a temporary hold on this time slot when checkout begins. The hold stays active through the quote window and through manual review after a transaction is submitted. An expired or rejected payment releases the slot back to availability. No hold or availability change happens in this static prototype.</p>
+							<p class="dpay-summary__note">This total is calculated from your validated selection and cannot be changed here.</p>
+							<p id="dpay-booking-note" class="dpay-summary__note" hidden>Your selected time is held through payment review. If payment expires or is rejected, the time becomes available again.</p>
+							<p id="dpay-membership-note" class="dpay-summary__note" hidden>Membership renewal is always manual. There is no automatic renewal, recurring charge, or saved payment method &mdash; each initial purchase and each renewal is its own new crypto payment submitted for admin review. Access begins, or extends, only after that payment is approved; letting a Membership expire never charges you.</p>
 						</div>
 
 						<div class="dpay-panel dpay-currency">
@@ -218,7 +222,6 @@
 						<div id="dpay-quote-panel" class="dpay-panel dpay-quote" data-currency="">
 							<h2 class="dpay-panel__title">Quote</h2>
 							<p class="dpay-quote__message dpay-quote__message--neutral">Select a payment currency.</p>
-							<p class="dpay-quote__message dpay-quote__message--selected">Live quotes will be generated securely by the Laravel backend.</p>
 							<dl class="dpay-quote__list">
 								<div class="dpay-quote__row"><dt>Crypto amount</dt><dd id="dpay-crypto-amount">&mdash;</dd></div>
 								<div class="dpay-quote__row"><dt>Exchange rate</dt><dd id="dpay-exchange-rate">&mdash;</dd></div>
@@ -229,7 +232,7 @@
 						<div class="dpay-panel dpay-wallet">
 							<h2 class="dpay-panel__title">Receiving address</h2>
 							<p class="dpay-wallet__address">Available when secure payment services are connected.</p>
-							<p class="dpay-wallet__note">Each network &mdash; Bitcoin, Ethereum, and Solana &mdash; uses its own fixed, administrator-controlled receiving address. No real or sample address, and no QR code, exists anywhere in this static prototype.</p>
+							<p class="dpay-wallet__note">Each network &mdash; Bitcoin, Ethereum, and Solana &mdash; uses its own fixed, administrator-controlled receiving address. No real address or QR code exists here.</p>
 						</div>
 
 						<div class="dpay-panel dpay-review">
@@ -238,7 +241,7 @@
 						</div>
 
 						<button type="button" class="btn dpay-submit" disabled>Quote Unavailable</button>
-						<p class="dpay-submit__note">Live payment quoting is unavailable in this static prototype.</p>
+						<p class="dpay-submit__note">Live payment quoting is unavailable.</p>
 					</section>
 				</div>
 			</main>

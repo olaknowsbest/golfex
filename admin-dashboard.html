@@ -4,8 +4,8 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<title>Administration Overview &#8211; Nazario Kayla Fan Club Prototype</title>
-	<meta name="description" content="A static, honestly labelled preview of the future admin overview screen for the fictional Nazario Kayla fan-platform prototype. Not a functioning admin system.">
+	<title>Overview &#8211; Nazario Kayla Administration</title>
+	<meta name="description" content="Admin overview for the Nazario Kayla Fan Club admin team.">
 	<meta name="robots" content="noindex, nofollow">
 	<meta name="theme-color" content="#0A0A0A">
 	<link rel="icon" href="assets/images/uploads/favicon.png" sizes="32x32" />
@@ -27,10 +27,9 @@
 		<aside class="admin-sidebar" id="admin-sidebar" aria-label="Admin navigation">
 			<div class="admin-sidebar__top">
 				<div class="admin-sidebar__brand">
-					<img class="admin-sidebar__logo" src="assets/images/brand/nk-monogram-mark.svg" alt="Nazario Kayla Fan Club &#8212; Prototype" width="28" height="29">
+					<img class="admin-sidebar__logo" src="assets/images/brand/nk-monogram-mark.svg" alt="Nazario Kayla Administration" width="28" height="29">
 					<span class="admin-sidebar__brand-text">
 						<span class="admin-sidebar__brand-name">NK Admin</span>
-						<span class="admin-sidebar__tag">Admin prototype</span>
 					</span>
 				</div>
 				<button class="admin-sidebar__close" type="button" data-admin-close aria-label="Close menu">
@@ -159,43 +158,72 @@
 				</button>
 				<img class="admin-topbar__logo" src="assets/images/brand/nk-monogram-mark.svg" alt="" aria-hidden="true">
 				<p class="admin-topbar__title">Administration Overview</p>
-				<span class="admin-topbar__badge">Admin prototype</span>
 			</header>
 
 			<main id="admin-main" class="admin-main">
 				<h1 class="admin-main__title">Administration Overview</h1>
-				<p class="admin-main__lead">This is a static preview of the future staff/admin dashboard. Nothing here reflects live data, and no administrator session or identity exists in this prototype.</p>
-
-				<div class="pad-access-notice">
-					<p><strong>Access model:</strong> production access to this dashboard will require an authorized administrator role, strong authentication, and server-side authorization checks on every request. This static prototype has no login, no session, and no permission model of any kind.</p>
-				</div>
+				<p class="admin-main__lead">Manage Fan Cards, Memberships, Donations, Bookings, payments, and customer accounts from one place.</p>
 
 				<div class="pad-summary-grid">
 					<article class="pad-summary-card">
 						<p class="pad-summary-card__label">Payments awaiting review</p>
-						<p class="pad-summary-card__value">&mdash;</p>
-						<p class="pad-summary-card__desc">No payment submissions exist in this static prototype.</p>
+						<p class="pad-summary-card__value">1</p>
+						<p class="pad-summary-card__desc">1 payment is awaiting review.</p>
 					</article>
 					<article class="pad-summary-card">
 						<p class="pad-summary-card__label">Booking slots requiring attention</p>
-						<p class="pad-summary-card__value">&mdash;</p>
-						<p class="pad-summary-card__desc">Booking availability management is not implemented in this prototype.</p>
+						<p class="pad-summary-card__value">0</p>
+						<p class="pad-summary-card__desc">No booking slots currently need attention.</p>
 					</article>
 					<article class="pad-summary-card">
 						<p class="pad-summary-card__label">Pending entitlement actions</p>
-						<p class="pad-summary-card__value">&mdash;</p>
-						<p class="pad-summary-card__desc">Fan Card and Membership activation actions will appear here once payment review exists.</p>
+						<p class="pad-summary-card__value">1</p>
+						<p class="pad-summary-card__desc">1 Fan Card is approved and awaiting issuance.</p>
 					</article>
 					<article class="pad-summary-card">
 						<p class="pad-summary-card__label">Account notices</p>
-						<p class="pad-summary-card__value">&mdash;</p>
-						<p class="pad-summary-card__desc">System and account notices will appear here once secure admin access is implemented.</p>
+						<p class="pad-summary-card__value">2</p>
+						<p class="pad-summary-card__desc">1 account is pending verification and 1 account is suspended.</p>
 					</article>
 				</div>
 
-				<div class="pad-cta">
-					<a class="btn btn--cta" href="admin-payments.html">Go to Payment Reviews</a>
-					<p class="pad-cta__note">Payment Reviews is the only other working page in this prototype.</p>
+				<h2 class="admin-panel__title">Sections</h2>
+				<div class="pad-summary-grid">
+					<article class="pad-summary-card">
+						<p class="pad-summary-card__label">Payments</p>
+						<p class="pad-summary-card__desc">Review submitted payments and decisions.</p>
+						<a class="btn btn--outline" href="admin-payments.html">Open Payments</a>
+					</article>
+					<article class="pad-summary-card">
+						<p class="pad-summary-card__label">Bookings</p>
+						<p class="pad-summary-card__desc">Manage availability and booking operations.</p>
+						<a class="btn btn--outline" href="admin-bookings.html">Open Bookings</a>
+					</article>
+					<article class="pad-summary-card">
+						<p class="pad-summary-card__label">Fan Cards</p>
+						<p class="pad-summary-card__desc">Review ownership and status.</p>
+						<a class="btn btn--outline" href="admin-fan-cards.html">Open Fan Cards</a>
+					</article>
+					<article class="pad-summary-card">
+						<p class="pad-summary-card__label">Memberships</p>
+						<p class="pad-summary-card__desc">Review plans, billing periods, and status.</p>
+						<a class="btn btn--outline" href="admin-memberships.html">Open Memberships</a>
+					</article>
+					<article class="pad-summary-card">
+						<p class="pad-summary-card__label">Donations</p>
+						<p class="pad-summary-card__desc">Review donation and payment status.</p>
+						<a class="btn btn--outline" href="admin-donations.html">Open Donations</a>
+					</article>
+					<article class="pad-summary-card">
+						<p class="pad-summary-card__label">Customers</p>
+						<p class="pad-summary-card__desc">Review account status and product relationships.</p>
+						<a class="btn btn--outline" href="admin-customers.html">Open Customers</a>
+					</article>
+					<article class="pad-summary-card">
+						<p class="pad-summary-card__label">Settings</p>
+						<p class="pad-summary-card__desc">Manage public receiving addresses.</p>
+						<a class="btn btn--outline" href="admin-settings.html">Open Settings</a>
+					</article>
 				</div>
 			</main>
 		</div>

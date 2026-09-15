@@ -4,8 +4,8 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<title>Payment Review &#8211; Nazario Kayla Fan Club Prototype</title>
-	<meta name="description" content="A static, honestly labelled preview of the future admin payment-review detail screen for the fictional Nazario Kayla fan-platform prototype. Not a functioning admin system.">
+	<title>Payment Review &#8211; Nazario Kayla Administration</title>
+	<meta name="description" content="Payment review detail for the Nazario Kayla Fan Club admin team.">
 	<meta name="robots" content="noindex, nofollow">
 	<meta name="theme-color" content="#0A0A0A">
 	<link rel="icon" href="assets/images/uploads/favicon.png" sizes="32x32" />
@@ -27,10 +27,9 @@
 		<aside class="admin-sidebar" id="admin-sidebar" aria-label="Admin navigation">
 			<div class="admin-sidebar__top">
 				<div class="admin-sidebar__brand">
-					<img class="admin-sidebar__logo" src="assets/images/brand/nk-monogram-mark.svg" alt="Nazario Kayla Fan Club &#8212; Prototype" width="28" height="29">
+					<img class="admin-sidebar__logo" src="assets/images/brand/nk-monogram-mark.svg" alt="Nazario Kayla Administration" width="28" height="29">
 					<span class="admin-sidebar__brand-text">
 						<span class="admin-sidebar__brand-name">NK Admin</span>
-						<span class="admin-sidebar__tag">Admin prototype</span>
 					</span>
 				</div>
 				<button class="admin-sidebar__close" type="button" data-admin-close aria-label="Close menu">
@@ -159,7 +158,6 @@
 				</button>
 				<img class="admin-topbar__logo" src="assets/images/brand/nk-monogram-mark.svg" alt="" aria-hidden="true">
 				<p class="admin-topbar__title">Payment Review</p>
-				<span class="admin-topbar__badge">Admin prototype</span>
 			</header>
 
 			<main id="admin-main" class="admin-main">
@@ -170,8 +168,8 @@
 					Static prototype only — no real payment review exists here.
 					Production behavior (documented only, never implemented or
 					simulated here): this screen will live at a route such as
-					/admin/payments/{reference}. Laravel loads the authoritative
-					payment and order record from MySQL by reference; approval
+					/admin/payments/{reference}. The authoritative payment and
+					order record is loaded by reference; approval
 					requires an authorized admin role, server-side status
 					transition validation, a transaction-hash uniqueness check,
 					and runs as one atomic database transaction that updates
@@ -184,16 +182,12 @@
 
 					<section class="admin-panel apr-missing">
 						<h2 class="admin-panel__title">Select a payment for review</h2>
-						<p class="admin-panel__desc">This static prototype only has one sample record. Return to the queue and choose &#8220;Review sample&#8221; to view it.</p>
+						<p class="admin-panel__desc">Return to the queue and choose &#8220;Review&#8221; to view it.</p>
 						<a class="btn btn--cta apr-missing__cta" href="admin-payments.html">Back to Payment Reviews</a>
 					</section>
 
 					<section class="apr-valid" aria-labelledby="apr-valid-heading">
-						<h2 id="apr-valid-heading" class="visually-hidden">Sample payment record</h2>
-
-						<div class="apr-sample-notice">
-							<p><strong>Sample record.</strong> PAY-DEMO-001 is fictional demonstration data. Nothing on this page is a real payment, customer, or transaction.</p>
-						</div>
+						<h2 id="apr-valid-heading" class="visually-hidden">Payment record</h2>
 
 						<div class="apr-record-header">
 							<span class="apr-status apr-status--pending">Pending review</span>
@@ -203,25 +197,25 @@
 						<div class="admin-panel apr-summary">
 							<h2 class="admin-panel__title">Transaction overview</h2>
 							<dl class="apr-summary__list">
-								<div class="apr-summary__row"><dt>Customer</dt><dd>Jordan Ellis <span class="apr-fictional">(fictional prototype customer)</span></dd></div>
+								<div class="apr-summary__row"><dt>Customer</dt><dd>Morgan Reyes</dd></div>
 								<div class="apr-summary__row"><dt>Product type</dt><dd>Fan Card</dd></div>
-								<div class="apr-summary__row"><dt>Item</dt><dd>Premium</dd></div>
+								<div class="apr-summary__row"><dt>Item</dt><dd>Bronze</dd></div>
 								<div class="apr-summary__row"><dt>Network</dt><dd>Ethereum</dd></div>
 								<div class="apr-summary__row"><dt>USD total</dt><dd>$250.00</dd></div>
-								<div class="apr-summary__row"><dt>Quoted crypto amount</dt><dd>&asymp;0.0721 ETH <span class="apr-fictional">(prototype value, not a live quote)</span></dd></div>
-								<div class="apr-summary__row"><dt>Submitted transaction ID</dt><dd>DEMO-TX-ID-REDACTED <span class="apr-fictional">(prototype value, not a usable identifier)</span></dd></div>
-								<div class="apr-summary__row"><dt>Submission timestamp</dt><dd>14:32 UTC <span class="apr-fictional">(prototype value)</span></dd></div>
+								<div class="apr-summary__row"><dt>Quoted crypto amount</dt><dd>&asymp;0.0721 ETH</dd></div>
+								<div class="apr-summary__row"><dt>Submitted transaction ID</dt><dd>DEMO-TX-ID-REDACTED</dd></div>
+								<div class="apr-summary__row"><dt>Submission timestamp</dt><dd>14:32 UTC</dd></div>
 							</dl>
 
 							<div class="apr-proof">
-								<p class="apr-proof__label">Proof-of-payment preview</p>
+								<p class="apr-proof__label">Proof of payment</p>
 								<div class="apr-proof__placeholder">
 									<svg class="apr-proof__icon" viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
 										<rect x="3" y="4" width="18" height="16" rx="2" stroke="currentColor" stroke-width="2"/>
 										<circle cx="8.5" cy="9.5" r="1.5" stroke="currentColor" stroke-width="2"/>
 										<path d="M21 16l-5.5-5.5a2 2 0 0 0-2.8 0L3 20" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-linejoin="round"/>
 									</svg>
-									<p class="apr-proof__placeholder-text">No proof-of-payment file exists in this static prototype. A preview will appear here once uploads are implemented.</p>
+									<p class="apr-proof__placeholder-text">No proof uploaded.</p>
 								</div>
 							</div>
 						</div>
@@ -251,14 +245,12 @@
 									<span>Proof matches the transaction</span>
 								</label>
 							</fieldset>
-							<p class="apr-checklist__note">This checklist is disabled and read-only in this static prototype. Nothing has been verified.</p>
 						</div>
 
 						<div class="admin-panel apr-notes">
 							<h2 class="admin-panel__title">Internal review note</h2>
 							<label class="apr-notes__label" for="apr-notes-field">Internal review note (optional)</label>
-							<textarea class="apr-notes__field" id="apr-notes-field" rows="3" disabled placeholder="Internal review notes will become available once the Laravel backend is connected."></textarea>
-							<p class="apr-notes__note">No note is saved in this static prototype.</p>
+							<textarea class="apr-notes__field" id="apr-notes-field" rows="3" disabled placeholder="Add an internal note"></textarea>
 						</div>
 
 						<div class="admin-panel apr-actions-panel">
@@ -267,15 +259,15 @@
 								<button type="button" class="btn apr-actions__approve" disabled>Approve payment</button>
 								<button type="button" class="btn apr-actions__reject" disabled>Reject payment</button>
 							</div>
-							<p class="apr-actions__note">Production approval and rejection require authenticated admin access and server-side validation. No decision is made, simulated, or persisted anywhere in this static prototype.</p>
+							<p class="apr-actions__note">Payment and order details must be verified before a decision is recorded.</p>
 						</div>
 
 						<div class="admin-panel apr-outcome">
 							<h2 class="admin-panel__title">Outcome after approval</h2>
-							<p class="admin-panel__desc">Because this sample is a <strong>Fan Card</strong> payment, approval would issue the selected card. No entitlement is created in this static prototype.</p>
+							<p class="admin-panel__desc">Because this is a <strong>Fan Card</strong> payment, approval would issue the selected card.</p>
 							<dl class="apr-outcome__list">
 								<div class="apr-outcome__row apr-outcome__row--current"><dt>Fan Card</dt><dd>Issue the selected card.</dd></div>
-								<div class="apr-outcome__row"><dt>Membership</dt><dd>Activate annual access.</dd></div>
+								<div class="apr-outcome__row"><dt>Membership</dt><dd>Activate or extend access for the purchased billing period (monthly or yearly).</dd></div>
 								<div class="apr-outcome__row"><dt>Donation</dt><dd>Mark completed.</dd></div>
 								<div class="apr-outcome__row"><dt>Booking</dt><dd>Confirm and lock the selected time slot.</dd></div>
 							</dl>
@@ -285,8 +277,6 @@
 							<h2 class="admin-panel__title">Security</h2>
 							<ul class="apr-security__list">
 								<li>No seed phrase, private key, or other wallet recovery material is ever requested, exposed, or stored anywhere in this system.</li>
-								<li>No real wallet address, QR code, or usable transaction identifier appears anywhere in this static prototype.</li>
-								<li>Production Laravel loads the authoritative payment and order record from MySQL, never from anything the browser supplies &mdash; query-string values are never trusted for price or status.</li>
 							</ul>
 						</div>
 					</section>

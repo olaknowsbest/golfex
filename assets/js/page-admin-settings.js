@@ -1,10 +1,11 @@
 /**
- * Copy-to-clipboard for the three wallet-address fields on the static
- * admin Settings prototype. Each button copies only the text currently
- * shown in its paired input — never a hardcoded value, never anything
- * else on the page. No fetch, no storage, no persistence; the copied
- * text disappears the moment the page is reloaded because nothing is
- * ever saved anywhere.
+ * Copy-to-clipboard for the wallet-address fields on the admin Settings
+ * screen. Each button copies only the text currently shown in its paired
+ * input — never a hardcoded value, never anything else on the page. No
+ * fetch, no storage, no persistence; the copied text disappears the
+ * moment the page is reloaded because nothing is ever saved anywhere.
+ * Every address field starts empty, so each button starts disabled and
+ * only becomes usable once its paired field holds a non-empty value.
  */
 (function () {
 	'use strict';
@@ -25,6 +26,13 @@
 
 		var defaultText = label.textContent;
 		var resetTimer = null;
+
+		function syncDisabled() {
+			button.disabled = input.value.trim() === '';
+		}
+
+		syncDisabled();
+		input.addEventListener('input', syncDisabled);
 
 		button.addEventListener('click', function () {
 			var value = input.value;

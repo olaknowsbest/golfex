@@ -148,13 +148,6 @@
 	opacity: 0.7;
 	cursor: not-allowed;
 }
-.dpf-personalize__note {
-	margin: 0;
-	font-size: 0.8rem;
-	line-height: 1.5;
-	color: #6B6B64;
-}
-
 /* Neutral "nothing selected yet" state: fields stay disabled either way
    (this is a static design-review prototype, never a real form), but
    are visually muted until a tier is chosen. */
@@ -187,20 +180,21 @@
 	border: 1px solid rgba(10, 10, 10, 0.1);
 	background: var(--nk-white);
 }
-.dpf-purchase[data-tier="standard"] .dpf-preview--standard,
-.dpf-purchase[data-tier="premium"] .dpf-preview--premium,
-.dpf-purchase[data-tier="vip"] .dpf-preview--vip {
+.dpf-purchase[data-tier="bronze"] .dpf-preview--bronze,
+.dpf-purchase[data-tier="silver"] .dpf-preview--silver,
+.dpf-purchase[data-tier="gold"] .dpf-preview--gold,
+.dpf-purchase[data-tier="platinum"] .dpf-preview--platinum {
 	display: block;
 }
 .dpf-purchase[data-tier=""] .dpf-preview--empty {
 	display: flex;
 }
-.dpf-preview--premium {
+.dpf-preview--gold {
 	background: var(--nk-yellow);
 	border-color: var(--nk-ink);
 	box-shadow: 6px 6px 0 var(--nk-ink);
 }
-.dpf-preview--vip {
+.dpf-preview--platinum {
 	background: var(--nk-ink);
 	border-color: var(--nk-ink);
 }
@@ -210,10 +204,23 @@
 }
 /* Physical/digital card mockup — mirrors .fancard-mockup so the live
    preview and the dashboard's existing Fan Card feature panel read as
-   one consistent card design regardless of which page they appear on. */
+   one consistent card design regardless of which page they appear on.
+   Tier modifiers below (--bronze/--silver/--gold/--platinum) apply a
+   CSS-only metallic material per tier: a brushed diagonal gradient, a
+   fine repeating-line "brushed metal" overlay, and a dimpled golf-ball
+   silhouette in the corner — no raster images. Every tier-specific color
+   is exposed as --card-fg/--card-fg-muted/--card-border/--card-accent so
+   the child elements below only ever reference those custom properties,
+   never a hardcoded light/dark color, which keeps text contrast correct
+   per tier (Silver and Gold use dark ink; Bronze and Platinum use cream). */
 .dpf-card-mock {
+	--card-fg: var(--nk-cream);
+	--card-fg-muted: rgba(252, 251, 245, 0.72);
+	--card-border: rgba(252, 251, 245, 0.3);
+	--card-accent: var(--nk-yellow);
 	position: relative;
 	background: var(--nk-ink);
+	color: var(--card-fg);
 	border-radius: 16px;
 	aspect-ratio: 1.586 / 1;
 	width: 100%;
@@ -223,8 +230,81 @@
 	flex-direction: column;
 	justify-content: space-between;
 }
-.dpf-card-mock--vip {
-	border: 2px solid var(--nk-yellow);
+.dpf-card-mock--bronze {
+	background:
+		linear-gradient(135deg, rgba(255, 255, 255, 0.16) 0%, transparent 24%),
+		linear-gradient(115deg, #4a2c14 0%, #8a5a34 28%, #c98a52 48%, #8a5a34 68%, #5c3a1e 100%);
+	--card-fg: #fcf3e7;
+	--card-fg-muted: rgba(252, 243, 231, 0.78);
+	--card-border: rgba(252, 243, 231, 0.35);
+	--card-accent: #f0c892;
+}
+.dpf-card-mock--silver {
+	background:
+		linear-gradient(135deg, rgba(255, 255, 255, 0.55) 0%, transparent 26%),
+		linear-gradient(115deg, #9aa0a8 0%, #d7dbe0 30%, #f2f4f6 48%, #c2c7cd 68%, #8e949c 100%);
+	--card-fg: #14161a;
+	--card-fg-muted: rgba(20, 22, 26, 0.68);
+	--card-border: rgba(20, 22, 26, 0.25);
+	--card-accent: #4b4f57;
+}
+.dpf-card-mock--gold {
+	background:
+		linear-gradient(135deg, rgba(255, 255, 255, 0.32) 0%, transparent 24%),
+		linear-gradient(115deg, #6b4e12 0%, #b3872a 26%, #f0cf6e 48%, #caa03c 70%, #7c5c18 100%);
+	--card-fg: #241c08;
+	--card-fg-muted: rgba(36, 28, 8, 0.72);
+	--card-border: rgba(36, 28, 8, 0.28);
+	--card-accent: #6b4e12;
+}
+.dpf-card-mock--platinum {
+	background:
+		linear-gradient(135deg, rgba(212, 175, 55, 0.14) 0%, transparent 32%),
+		linear-gradient(115deg, #050505 0%, #232326 30%, #3a3a3f 50%, #1c1c1f 72%, #070707 100%);
+	border: 1.5px solid rgba(212, 175, 55, 0.55);
+	--card-fg: #f5f3ec;
+	--card-fg-muted: rgba(245, 243, 236, 0.75);
+	--card-border: rgba(212, 175, 55, 0.45);
+	--card-accent: #d4af37;
+}
+/* Brushed-metal texture: a fine repeating diagonal line overlay, blended
+   softly over the gradient so it reads as a sheen rather than a pattern. */
+.dpf-card-mock--bronze::before,
+.dpf-card-mock--silver::before,
+.dpf-card-mock--gold::before,
+.dpf-card-mock--platinum::before {
+	content: "";
+	position: absolute;
+	inset: 0;
+	background-image: repeating-linear-gradient(
+		115deg,
+		rgba(255, 255, 255, 0.09) 0px,
+		rgba(255, 255, 255, 0.09) 1px,
+		transparent 1px,
+		transparent 4px
+	);
+	mix-blend-mode: overlay;
+	pointer-events: none;
+}
+/* Golf-ball silhouette: a dimpled sphere anchored in the bottom-left
+   corner, clipped by the card's own overflow:hidden. Dimple color is
+   drawn from --card-fg so it automatically stays subtle and legible
+   against each tier's own material. */
+.dpf-card-mock__ball {
+	position: absolute;
+	left: -20%;
+	bottom: -24%;
+	width: 58%;
+	aspect-ratio: 1 / 1;
+	border-radius: 50%;
+	background-image:
+		radial-gradient(circle at 32% 30%, rgba(255, 255, 255, 0.3), transparent 45%),
+		radial-gradient(circle, var(--card-fg) 1px, transparent 1.6px),
+		radial-gradient(circle, var(--card-fg) 1px, transparent 1.6px);
+	background-size: auto, 11px 11px, 11px 11px;
+	background-position: center, 0 0, 5.5px 5.5px;
+	opacity: 0.22;
+	pointer-events: none;
 }
 .dpf-card-mock--empty {
 	background: var(--nk-sand);
@@ -252,6 +332,7 @@
 	inset: 0;
 	width: 100%;
 	height: 100%;
+	color: var(--card-accent);
 }
 .dpf-card-mock__top {
 	position: relative;
@@ -265,38 +346,52 @@
 	width: auto;
 	display: block;
 }
-.dpf-card-mock__tag {
-	font-size: 0.6rem;
-	font-weight: 700;
-	text-transform: uppercase;
-	letter-spacing: 0.06em;
-	color: rgba(252, 251, 245, 0.7);
-	border: 1px solid rgba(252, 251, 245, 0.3);
-	border-radius: 999px;
-	padding: 0.2rem 0.55rem;
+/* Silver and Gold are light materials; the monogram asset is drawn cream
+   + yellow for dark surfaces (see its own <desc>), so it needs the same
+   invert treatment already established above for the sand empty-state
+   rather than a redrawn/traced mark. */
+.dpf-card-mock--silver .dpf-card-mock__logo,
+.dpf-card-mock--gold .dpf-card-mock__logo {
+	filter: invert(1) brightness(0.55);
 }
 .dpf-card-mock__bottom {
 	position: relative;
 	z-index: 1;
 }
-.dpf-card-mock__tier {
-	margin: 0 0 0.2rem;
-	font-size: 0.65rem;
+.dpf-card-mock__brand {
+	margin: 0 0 0.3rem;
+	font-size: 0.56rem;
 	font-weight: 700;
 	text-transform: uppercase;
-	letter-spacing: 0.08em;
-	color: var(--nk-yellow);
+	letter-spacing: 0.1em;
+	color: var(--card-fg-muted);
+}
+.dpf-card-mock__tier {
+	margin: 0 0 0.2rem;
+	font-size: 1rem;
+	font-weight: 700;
+	text-transform: uppercase;
+	letter-spacing: 0.06em;
+	color: var(--card-fg);
+}
+.dpf-card-mock__signature {
+	margin: 0 0 0.35rem;
+	font-size: 0.58rem;
+	font-weight: 700;
+	text-transform: uppercase;
+	letter-spacing: 0.12em;
+	color: var(--card-accent);
 }
 .dpf-card-mock__name {
 	margin: 0;
 	font-size: 1.1rem;
 	font-weight: 700;
-	color: var(--nk-cream);
+	color: var(--card-fg);
 }
 .dpf-card-mock__format {
 	margin: 0.15rem 0 0;
 	font-size: 0.72rem;
-	color: rgba(252, 251, 245, 0.7);
+	color: var(--card-fg-muted);
 }
 
 /* ---------- Order summary ---------- */
@@ -318,9 +413,10 @@
 	flex-direction: column;
 	gap: 0.6rem;
 }
-.dpf-purchase[data-tier="standard"] .dpf-summary__list--standard,
-.dpf-purchase[data-tier="premium"] .dpf-summary__list--premium,
-.dpf-purchase[data-tier="vip"] .dpf-summary__list--vip {
+.dpf-purchase[data-tier="bronze"] .dpf-summary__list--bronze,
+.dpf-purchase[data-tier="silver"] .dpf-summary__list--silver,
+.dpf-purchase[data-tier="gold"] .dpf-summary__list--gold,
+.dpf-purchase[data-tier="platinum"] .dpf-summary__list--platinum {
 	display: flex;
 }
 .dpf-purchase[data-tier=""] .dpf-summary__list--empty {

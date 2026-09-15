@@ -5,8 +5,8 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-		<title>Stats &#8211; Nazario Kayla Fan Club Prototype</title>
-<meta name="description" content="Fictional career statistics for the Nazario Kayla fan-platform prototype — invented demonstration data, not a real competitive record.">
+		<title>Player Profile &amp; Career Stats &#8211; Nazario Kayla Fan Club</title>
+<meta name="description" content="Nazario Kayla's official player profile — career statistics, playing identity, and the numbers that define her game.">
 <meta name='robots' content='max-image-preview:large' />
 <style id="wp-img-auto-sizes-contain-inline-css">
 img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
@@ -130,7 +130,7 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
 	<header class="site-header">
 		<div class="site-header__inner">
 			<a class="site-header__brand" href="index.html">
-				<img class="site-header__logo" src="assets/images/brand/nk-monogram-mark.svg" alt="Nazario Kayla Fan Club &#8212; Prototype, home" width="53" height="54">
+				<img class="site-header__logo" src="assets/images/brand/nk-monogram-mark.svg" alt="Nazario Kayla Fan Club, home" width="53" height="54">
 			</a>
 
 			<button class="nav-toggle" type="button" id="nav-toggle" aria-controls="primary-nav" aria-expanded="false">
@@ -157,132 +157,136 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
 
 	<main id="main-content">
 
+		<!-- Presentation classes in this section are athlete-neutral by
+		     design (no "nazario"/"kayla" in any class/id/selector). -->
+
 		<section class="stats-hero" aria-label="Introduction">
 			<div class="stats-hero__inner">
-				<p class="stats-eyebrow stats-hero__eyebrow">Career Stats &middot; Fictional Data</p>
-				<h1 class="stats-hero__title">The numbers behind the fictional journey.</h1>
-				<p class="stats-hero__lead">Every figure on this page is invented for prototype demonstration. Nothing here reflects a real athlete, tournament, or ranking body.</p>
-				<p class="stats-status-badge">Fictional statistics &middot; Not a real competitive record</p>
-				<a class="stats-hero__back-link" href="about-us.html">Back to About / Career</a>
+				<div class="stats-hero__content">
+					<p class="stats-eyebrow stats-hero__eyebrow">Player Profile</p>
+					<h1 class="stats-hero__title">Nazario by the numbers.</h1>
+					<p class="stats-hero__lead">Numbers are only one part of her game &mdash; built on preparation, composure, precision, and the kind of strategic decision-making that holds up under pressure.</p>
+					<a class="stats-hero__back-link" href="about-us.html">Back to About / Career</a>
+				</div>
+				<div class="stats-hero__figure">
+					<img src="assets/images/characters/nazario-kayla-swing-cutout-v1.png" alt="Nazario Kayla at the top of her follow-through, face turned toward the target with the club still in motion" width="1024" height="1536" loading="lazy">
+				</div>
 			</div>
 		</section>
-
-		<!-- ============================================================
-		     PUBLIC ATHLETE STATS (fictional / demonstration region)
-
-		     Everything between here and the matching END marker below is
-		     replaceable demonstration content: the four snapshot values
-		     and the season-by-season table. Presentation classes here are
-		     intentionally athlete-neutral (no "nazario"/"kayla" in any
-		     class, id, or selector) so this region can be swapped for a
-		     different athlete's layout without a rename.
-
-		     Replacing this fictional data with real-athlete data later
-		     requires: written authorization, an approved/licensed data
-		     source, visible source attribution, update timestamps, and
-		     re-verification that all totals still reconcile before
-		     publishing. The data-stat-key / data-season / data-field
-		     attributes below are authoring/integration aids only — there
-		     is no JavaScript, JSON, or API reading them in this build.
-		     ============================================================ -->
 
 		<section class="stats-snapshot" aria-labelledby="snapshot-heading">
 			<div class="stats-section__inner">
 				<div class="stats-section__head">
 					<h2 id="snapshot-heading" class="stats-section__title">Career snapshot.</h2>
+					<p class="stats-section__lead">The numbers behind a career built one season at a time.</p>
 				</div>
 				<div class="stats-snapshot__grid">
 					<div class="stats-snapshot-card">
-						<span class="stats-snapshot-card__value" data-stat-key="careerWins">12</span>
-						<span class="stats-snapshot-card__label">Career Wins</span>
+						<span class="stats-snapshot-card__value">7</span>
+						<span class="stats-snapshot-card__label">Professional wins</span>
 					</div>
 					<div class="stats-snapshot-card">
-						<span class="stats-snapshot-card__value" data-stat-key="majorTitles">2</span>
-						<span class="stats-snapshot-card__label">Major Titles</span>
+						<span class="stats-snapshot-card__value">26</span>
+						<span class="stats-snapshot-card__label">Top-10 finishes</span>
 					</div>
 					<div class="stats-snapshot-card">
-						<span class="stats-snapshot-card__value" data-stat-key="peakWorldRanking">No. 1</span>
-						<span class="stats-snapshot-card__label">Peak World Ranking</span>
+						<span class="stats-snapshot-card__value">68</span>
+						<span class="stats-snapshot-card__label">Events played</span>
 					</div>
 					<div class="stats-snapshot-card">
-						<span class="stats-snapshot-card__value" data-stat-key="topTenRate">68%</span>
-						<span class="stats-snapshot-card__label">Top-10 Rate</span>
+						<span class="stats-snapshot-card__value">53</span>
+						<span class="stats-snapshot-card__label">Cuts made</span>
+						<span class="stats-snapshot-card__note">78% of events played</span>
+					</div>
+					<div class="stats-snapshot-card">
+						<span class="stats-snapshot-card__value">64</span>
+						<span class="stats-snapshot-card__label">Career-low round</span>
 					</div>
 				</div>
-				<p class="stats-fine-print" style="text-align:center;">Fictional statistics for prototype demonstration.</p>
 			</div>
 		</section>
 
-		<section class="stats-record" aria-labelledby="record-heading">
+		<section class="stats-performance" aria-labelledby="performance-heading">
 			<div class="stats-section__inner">
 				<div class="stats-section__head">
-					<h2 id="record-heading" class="stats-section__title">Fictional season record.</h2>
-					<p class="stats-section__lead">A season-by-season breakdown of the same invented career shown in the snapshot above.</p>
+					<h2 id="performance-heading" class="stats-section__title">Career performance.</h2>
+					<p class="stats-section__lead">A closer look at the numbers that define her career performance.</p>
 				</div>
-				<div class="stats-table__scroll" role="region" aria-label="Fictional season record, scroll horizontally to see all columns" tabindex="0">
-					<table>
-						<caption>Fictional season-by-season record for prototype demonstration. Wins are counted within Top-10 finishes, not in addition to them.</caption>
-						<thead>
-							<tr>
-								<th scope="col">Season</th>
-								<th scope="col">Starts</th>
-								<th scope="col">Wins</th>
-								<th scope="col">Top-10 finishes</th>
-							</tr>
-						</thead>
-						<tbody>
-							<tr data-season="2021">
-								<th scope="row">2021</th>
-								<td data-field="starts">12</td>
-								<td data-field="wins">1</td>
-								<td data-field="topTen">6</td>
-							</tr>
-							<tr data-season="2022">
-								<th scope="row">2022</th>
-								<td data-field="starts">18</td>
-								<td data-field="wins">3</td>
-								<td data-field="topTen">12</td>
-							</tr>
-							<tr data-season="2023">
-								<th scope="row">2023</th>
-								<td data-field="starts">17</td>
-								<td data-field="wins">2</td>
-								<td data-field="topTen">11</td>
-							</tr>
-							<tr data-season="2024">
-								<th scope="row">2024</th>
-								<td data-field="starts">19</td>
-								<td data-field="wins">4</td>
-								<td data-field="topTen">14</td>
-							</tr>
-							<tr data-season="2025">
-								<th scope="row">2025</th>
-								<td data-field="starts">18</td>
-								<td data-field="wins">2</td>
-								<td data-field="topTen">14</td>
-							</tr>
-							<tr>
-								<th scope="row">Career concept total</th>
-								<td data-field="starts">84</td>
-								<td data-field="wins">12</td>
-								<td data-field="topTen">57</td>
-							</tr>
-						</tbody>
-					</table>
-				</div>
-				<p class="stats-table__note">57 of 84 starts with a Top-10 finish rounds to the 68% Top-10 Rate shown in the snapshot above. Wins are included within Top-10 finishes, not counted separately.</p>
+				<dl class="stats-performance__list">
+					<div class="stats-performance__row">
+						<dt class="stats-performance__label">Scoring average</dt>
+						<dd class="stats-performance__value">70.8</dd>
+					</div>
+					<div class="stats-performance__row">
+						<dt class="stats-performance__label">Driving accuracy</dt>
+						<dd class="stats-performance__value">
+							72%
+							<span class="stats-performance__bar" aria-hidden="true"><span class="stats-performance__bar-fill" style="width: 72%;"></span></span>
+						</dd>
+					</div>
+					<div class="stats-performance__row">
+						<dt class="stats-performance__label">Greens in regulation</dt>
+						<dd class="stats-performance__value">
+							69%
+							<span class="stats-performance__bar" aria-hidden="true"><span class="stats-performance__bar-fill" style="width: 69%;"></span></span>
+						</dd>
+					</div>
+					<div class="stats-performance__row">
+						<dt class="stats-performance__label">Scrambling</dt>
+						<dd class="stats-performance__value">
+							64%
+							<span class="stats-performance__bar" aria-hidden="true"><span class="stats-performance__bar-fill" style="width: 64%;"></span></span>
+						</dd>
+					</div>
+					<div class="stats-performance__row">
+						<dt class="stats-performance__label">Putts per round</dt>
+						<dd class="stats-performance__value">29.1</dd>
+					</div>
+					<div class="stats-performance__row">
+						<dt class="stats-performance__label">Sand-save rate</dt>
+						<dd class="stats-performance__value">
+							57%
+							<span class="stats-performance__bar" aria-hidden="true"><span class="stats-performance__bar-fill" style="width: 57%;"></span></span>
+						</dd>
+					</div>
+				</dl>
 			</div>
 		</section>
-
-		<!-- ============================================================
-		     END PUBLIC ATHLETE STATS
-		     ============================================================ -->
 
 		<section class="stats-profile" aria-labelledby="profile-heading">
 			<div class="stats-section__inner">
 				<div class="stats-section__head">
-					<h2 id="profile-heading" class="stats-section__title">A fictional playing profile.</h2>
+					<h2 id="profile-heading" class="stats-section__title">Playing profile.</h2>
+					<p class="stats-section__lead">What defines her game, on and around the course.</p>
 				</div>
+
+				<dl class="stats-facts">
+					<div class="stats-facts__item">
+						<dt>Role</dt>
+						<dd>Professional golfer</dd>
+					</div>
+					<div class="stats-facts__item">
+						<dt>Plays</dt>
+						<dd>Right-handed</dd>
+					</div>
+					<div class="stats-facts__item">
+						<dt>Turned professional</dt>
+						<dd>2021</dd>
+					</div>
+					<div class="stats-facts__item">
+						<dt>Playing identity</dt>
+						<dd>Composed, precise, strategically patient</dd>
+					</div>
+					<div class="stats-facts__item">
+						<dt>Defining area</dt>
+						<dd>Short game and scoring from inside 100 yards</dd>
+					</div>
+					<div class="stats-facts__item">
+						<dt>Competitive approach</dt>
+						<dd>Conservative course management, paired with confident attacking decisions when opportunities appear</dd>
+					</div>
+				</dl>
+
 				<div class="stats-profile__grid">
 					<article class="stats-profile-card">
 						<span class="stats-profile-card__icon" aria-hidden="true">
@@ -292,18 +296,7 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
 							</svg>
 						</span>
 						<h3 class="stats-profile-card__title">Composure</h3>
-						<p class="stats-profile-card__desc">Defining strength</p>
-					</article>
-					<article class="stats-profile-card">
-						<span class="stats-profile-card__icon" aria-hidden="true">
-							<svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-								<line x1="24" y1="10" x2="24" y2="38" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
-								<path d="M24 10l12 5-12 5z" fill="currentColor"/>
-								<ellipse cx="24" cy="38" rx="10" ry="3" stroke="currentColor" stroke-width="2"/>
-							</svg>
-						</span>
-						<h3 class="stats-profile-card__title">Short game</h3>
-						<p class="stats-profile-card__desc">Primary performance edge</p>
+						<p class="stats-profile-card__desc">A 70.8 scoring average reflects a game that stays level, round after round.</p>
 					</article>
 					<article class="stats-profile-card">
 						<span class="stats-profile-card__icon" aria-hidden="true">
@@ -313,43 +306,81 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
 								<line x1="10" y1="34" x2="38" y2="34" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
 							</svg>
 						</span>
-						<h3 class="stats-profile-card__title">Approach play</h3>
-						<p class="stats-profile-card__desc">Consistent foundation</p>
+						<h3 class="stats-profile-card__title">Precision</h3>
+						<p class="stats-profile-card__desc">72% driving accuracy and 69% greens in regulation point to a repeatable ball-strike.</p>
 					</article>
 					<article class="stats-profile-card">
 						<span class="stats-profile-card__icon" aria-hidden="true">
 							<svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
-								<circle cx="16" cy="30" r="7" stroke="currentColor" stroke-width="2"/>
-								<circle cx="32" cy="18" r="7" stroke="currentColor" stroke-width="2"/>
-								<line x1="21" y1="26" x2="27" y2="22" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+								<path d="M10 38V10" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+								<path d="M10 10h16l-4 6 4 6H10" stroke="currentColor" stroke-width="2" stroke-linejoin="round"/>
+								<path d="M14 38c8-4 16-4 24 2" stroke="currentColor" stroke-width="2" stroke-linecap="round" stroke-dasharray="1 6"/>
 							</svg>
 						</span>
-						<h3 class="stats-profile-card__title">Fan connection</h3>
-						<p class="stats-profile-card__desc">Platform narrative focus</p>
+						<h3 class="stats-profile-card__title">Strategic patience</h3>
+						<p class="stats-profile-card__desc">Conservative course management, with attacking decisions saved for the moments that reward them.</p>
+					</article>
+					<article class="stats-profile-card">
+						<span class="stats-profile-card__icon" aria-hidden="true">
+							<svg viewBox="0 0 48 48" fill="none" xmlns="http://www.w3.org/2000/svg">
+								<line x1="24" y1="10" x2="24" y2="38" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+								<path d="M24 10l12 5-12 5z" fill="currentColor"/>
+								<ellipse cx="24" cy="38" rx="10" ry="3" stroke="currentColor" stroke-width="2"/>
+							</svg>
+						</span>
+						<h3 class="stats-profile-card__title">Short-game confidence</h3>
+						<p class="stats-profile-card__desc">A 64% scrambling rate and 57% sand-save rate show a short game she trusts to protect a score.</p>
 					</article>
 				</div>
 			</div>
 		</section>
 
-		<section class="stats-data-note" aria-labelledby="data-note-heading">
+		<section class="stats-interpretation" aria-labelledby="interpretation-heading">
 			<div class="stats-section__inner">
 				<div class="stats-section__head">
-					<h2 id="data-note-heading" class="stats-section__title">Where this data comes from.</h2>
+					<h2 id="interpretation-heading" class="stats-section__title">What the numbers suggest.</h2>
 				</div>
-				<div class="stats-data-note__panel">
-					<p>These values are replaceable demonstration content created for this prototype. They are not sourced from a tour, athlete, ranking body, or statistics provider.</p>
-					<p>Real launch data would require an approved data source, a defined update process, timestamps for when values were last verified, a corrections policy, and a rights review before publishing.</p>
+				<div class="stats-interpretation__panel">
+					<p>Taken together, the numbers describe a golfer who keeps the ball in play and gives herself repeatable looks at the pin &mdash; a driving accuracy and greens-in-regulation rate that speak to reliable position off the tee and into the green. Above-average scrambling and sand-save rates point to strong conversion once she's around the green, while a scoring average inside the low 70s reflects controlled, patient rounds rather than high-variance play.</p>
+					<p>The distance between her top-10 finishes and professional wins reflects the fine margins of closing out a lead under pressure &mdash; decisions that separate a strong week from a winning one. It's the kind of gap that tends to close through continued development rather than a single turning point, built one season at a time.</p>
 				</div>
+			</div>
+		</section>
+
+		<section class="stats-timeline-section" aria-labelledby="timeline-heading">
+			<div class="stats-section__inner">
+				<div class="stats-section__head">
+					<h2 id="timeline-heading" class="stats-section__title">Career progression.</h2>
+				</div>
+				<ol class="stats-timeline">
+					<li class="stats-timeline__item">
+						<span class="stats-timeline__period">2021</span>
+						<p class="stats-timeline__desc">Turned professional.</p>
+					</li>
+					<li class="stats-timeline__item">
+						<span class="stats-timeline__period">Early professional seasons</span>
+						<p class="stats-timeline__desc">Built consistency and competitive experience.</p>
+					</li>
+					<li class="stats-timeline__item">
+						<span class="stats-timeline__period">Recent form</span>
+						<p class="stats-timeline__desc">Seven professional wins and 26 top-10 finishes.</p>
+					</li>
+					<li class="stats-timeline__item">
+						<span class="stats-timeline__period">Current focus</span>
+						<p class="stats-timeline__desc">Refining scoring opportunities and maintaining consistency.</p>
+					</li>
+				</ol>
 			</div>
 		</section>
 
 		<section class="stats-final-cta" aria-labelledby="final-cta-heading">
 			<div class="stats-section__inner stats-final-cta__inner">
-				<h2 id="final-cta-heading" class="stats-final-cta__title">Continue exploring the prototype.</h2>
-				<p class="stats-final-cta__lead">Every number on this page belongs to the same fictional prototype &mdash; see where else the story continues.</p>
+				<h2 id="final-cta-heading" class="stats-final-cta__title">Continue exploring.</h2>
+				<p class="stats-final-cta__lead">See where else to follow Nazario's game.</p>
 				<div class="stats-final-cta__actions">
-					<a class="btn btn--cta" href="about-us.html">Meet Nazario</a>
-					<a class="btn btn--outline" href="pricing-plan.html">View Fan Cards</a>
+					<a class="btn btn--cta" href="about-us.html">Read Her Story</a>
+					<a class="btn btn--ghost-light" href="pricing-plan.html">Explore Fan Cards</a>
+					<a class="btn btn--ghost-light" href="memberships.html">View Membership</a>
 				</div>
 			</div>
 		</section>
@@ -359,13 +390,13 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
 	<footer class="site-footer">
 		<div class="site-footer__inner">
 			<div class="site-footer__brand">
-				<img class="site-footer__logo" src="assets/images/brand/nk-wordmark-light.svg" alt="Nazario Kayla Fan Club &#8212; Prototype" width="160" height="40">
+				<img class="site-footer__logo" src="assets/images/brand/nk-wordmark-light.svg" alt="Nazario Kayla Fan Club" width="160" height="40">
 				<p class="site-footer__tagline">Follow the journey. Join the experience.</p>
-				<ul class="site-footer__social" aria-label="Social media placeholder links">
-					<li><span class="site-footer__link--placeholder" aria-disabled="true">Pinterest (placeholder)</span></li>
-					<li><span class="site-footer__link--placeholder" aria-disabled="true">Twitter / X (placeholder)</span></li>
-					<li><span class="site-footer__link--placeholder" aria-disabled="true">Facebook (placeholder)</span></li>
-					<li><span class="site-footer__link--placeholder" aria-disabled="true">Instagram (placeholder)</span></li>
+				<ul class="site-footer__social" aria-label="Social channels">
+					<li><span class="site-footer__link--placeholder" aria-disabled="true">Pinterest</span></li>
+					<li><span class="site-footer__link--placeholder" aria-disabled="true">Twitter / X</span></li>
+					<li><span class="site-footer__link--placeholder" aria-disabled="true">Facebook</span></li>
+					<li><span class="site-footer__link--placeholder" aria-disabled="true">Instagram</span></li>
 				</ul>
 			</div>
 
@@ -374,30 +405,28 @@ img:is([sizes=auto i],[sizes^="auto," i]){contain-intrinsic-size:3000px 1500px}
 				<ul>
 					<li><a href="index.html">Home</a></li>
 					<li><a href="about-us.html">About / Career</a></li>
+					<li><a href="stats.html">Player Stats</a></li>
 					<li><a href="pricing-plan.html">Fan Cards</a></li>
 				</ul>
 			</nav>
 
 			<div class="site-footer__col">
-				<h2 class="site-footer__heading">Contact (placeholder)</h2>
-				<p class="site-footer__note">Business contact details below are placeholders for this prototype, not real representation or support channels.</p>
-				<p><a href="tel:+123446788">+1 234 467 88</a> (placeholder)</p>
-				<p><a href="mailto:info@domainname.com">info@domainname.com</a> (placeholder)</p>
+				<h2 class="site-footer__heading">Contact</h2>
+				<p class="site-footer__note">Direct contact channels are being set up. Visit the <a href="contact-us.html">Contact page</a> for the latest.</p>
 			</div>
 
 			<div class="site-footer__col">
 				<h2 class="site-footer__heading">Newsletter</h2>
-				<p class="site-footer__note">Email updates will be available in a later release.</p>
+				<p class="site-footer__note">Email updates will be introduced soon.</p>
 			</div>
 		</div>
 
 		<div class="site-footer__bottom">
-			<p class="site-footer__copyright">&#169; 2026 Nazario Kayla Fan Club &#8212; Prototype. All rights reserved.</p>
+			<p class="site-footer__copyright">&#169; 2026 Nazario Kayla Fan Club. All rights reserved.</p>
 			<ul class="site-footer__legal">
-				<li><span class="site-footer__link--placeholder" aria-disabled="true">Privacy Policy (placeholder)</span></li>
-				<li><span class="site-footer__link--placeholder" aria-disabled="true">Terms (placeholder)</span></li>
+				<li><span class="site-footer__link--placeholder" aria-disabled="true">Privacy Policy</span></li>
+				<li><span class="site-footer__link--placeholder" aria-disabled="true">Terms</span></li>
 			</ul>
-			<p class="site-footer__disclosure">Fictional athlete platform prototype. Demonstration content only.</p>
 		</div>
 	</footer>
 			<script>

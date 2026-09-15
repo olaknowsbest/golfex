@@ -10,7 +10,7 @@
 (function () {
 	'use strict';
 
-	var VALID_TIERS = ['standard', 'premium', 'vip'];
+	var VALID_TIERS = ['bronze', 'silver', 'gold', 'platinum'];
 	var root = document.getElementById('dpf-purchase');
 	var radios = document.querySelectorAll('input[name="dpf-tier"]');
 	var continueLink = document.getElementById('dpf-continue-link');

@@ -4,8 +4,8 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<title>Confirm Membership &#8211; Nazario Kayla Fan Club Prototype</title>
-	<meta name="description" content="A static, honestly labelled preview of the future membership confirmation screen for the fictional Nazario Kayla fan-platform prototype. Not a functioning checkout.">
+	<title>Confirm Membership &#8211; Nazario Kayla Fan Club</title>
+	<meta name="description" content="Confirm your Membership on your Nazario Kayla Fan Club account.">
 	<meta name="robots" content="noindex, nofollow">
 	<meta name="theme-color" content="#0A0A0A">
 	<link rel="icon" href="assets/images/uploads/favicon.png" sizes="32x32" />
@@ -27,10 +27,9 @@
 		<aside class="dashboard-sidebar" id="dashboard-sidebar" aria-label="Dashboard navigation">
 			<div class="dashboard-sidebar__top">
 				<div class="dashboard-sidebar__brand">
-					<img class="dashboard-sidebar__logo" src="assets/images/brand/nk-monogram-mark.svg" alt="Nazario Kayla Fan Club &#8212; Prototype" width="36" height="37">
+					<img class="dashboard-sidebar__logo" src="assets/images/brand/nk-monogram-mark.svg" alt="Nazario Kayla Fan Club" width="36" height="37">
 					<span class="dashboard-sidebar__brand-text">
 						<span class="dashboard-sidebar__brand-name">NK Dashboard</span>
-						<span class="dashboard-sidebar__prototype-tag">Prototype</span>
 					</span>
 				</div>
 				<button class="dashboard-sidebar__close" type="button" data-dashboard-close aria-label="Close menu">
@@ -145,7 +144,6 @@
 				</button>
 				<img class="dashboard-topbar__logo" src="assets/images/brand/nk-monogram-mark.svg" alt="" aria-hidden="true">
 				<p class="dashboard-topbar__title">Confirm Membership</p>
-				<span class="dashboard-topbar__account">Account preview</span>
 			</header>
 
 			<main id="dashboard-main" class="dashboard-main">
@@ -153,67 +151,97 @@
 				<h1 class="dashboard-main__title">Confirm Membership</h1>
 
 				<!--
-					This screen only ever shows a summary for a plan the customer
-					just chose on dashboard-select-membership.html — it never
-					defaults to Supporter or any other plan. assets/js/
-					page-dashboard-confirm-membership.js reads ?plan= on load and
+					This screen only ever shows a summary for a plan+billing pair the
+					customer just chose on dashboard-select-membership.html — it never
+					defaults to Supporter, Monthly, or any other combination.
+					assets/js/page-dashboard-confirm-membership.js reads ?plan= and
+					?billing= on load, validates both against a fixed allowlist, and
 					sets data-state on #dcm-confirm to one of: "missing" (no valid
-					plan query — the only state rendered without JS, see the
+					plan+billing pair — the only state rendered without JS, see the
 					default attribute below), "supporter", "insider", or "premier".
-					No storage, no order creation, no backend simulation.
+					Price and yearly savings are looked up internally from a fixed
+					plan/billing table; no price is ever read from the URL. No
+					storage, no order creation, no backend simulation.
 				-->
 				<div id="dcm-confirm" class="dcm-confirm" data-state="missing">
 					<section class="dcm-missing">
 						<h2 class="dcm-missing__title">Select a Membership first</h2>
-						<p class="dcm-missing__desc">Choose an annual plan to see its confirmation summary.</p>
+						<p class="dcm-missing__desc">Choose a plan and a billing period to see its confirmation summary.</p>
 						<a class="btn btn--cta dcm-missing__cta" href="dashboard-select-membership.html">Choose a Membership</a>
 					</section>
 
-					<section class="dcm-plan dcm-plan--supporter" aria-labelledby="dcm-summary-title-supporter">
-						<p class="dcm-plan__lead">This is a static prototype of the future membership confirmation screen. No payment, account, or order is created here.</p>
+					<section class="dcm-plan dcm-plan--supporter" data-plan="supporter" aria-labelledby="dcm-summary-title-supporter">
+						<p class="dcm-plan__lead">No payment, account, or order is created on this screen.</p>
 						<div class="dcm-summary">
 							<h2 id="dcm-summary-title-supporter" class="dcm-summary__title">Order summary</h2>
 							<dl class="dcm-summary__list">
 								<div class="dcm-summary__row"><dt>Plan</dt><dd>Supporter</dd></div>
-								<div class="dcm-summary__row"><dt>Billing</dt><dd>Annual</dd></div>
-								<div class="dcm-summary__row"><dt>Quantity</dt><dd>1</dd></div>
-								<div class="dcm-summary__row dcm-summary__row--total"><dt>Annual total</dt><dd>$150</dd></div>
+								<div class="dcm-summary__row"><dt>Billing period</dt><dd class="dcm-field-billing">&mdash;</dd></div>
+								<div class="dcm-summary__row dcm-summary__row--total"><dt>Price</dt><dd class="dcm-field-price">&mdash;</dd></div>
+								<div class="dcm-summary__row dcm-field-savings-row" hidden><dt>Yearly savings</dt><dd class="dcm-field-savings">&mdash;</dd></div>
 							</dl>
-							<p class="dcm-summary__disclosure">Membership is annual access, billed once per year, and is a separate product from one-time Fan Cards.</p>
+							<h3 class="dcm-benefits__title">Included benefits</h3>
+							<ul class="dcm-benefits__list">
+								<li>Member-only platform updates</li>
+								<li>Community access</li>
+								<li>Early public-announcement previews</li>
+							</ul>
+							<p class="dcm-summary__disclosure">Membership is a separate product from one-time Fan Cards.</p>
+							<p class="dcm-summary__policy"><strong>Renewal is always manual.</strong> There is no automatic renewal, recurring charge, or saved payment method. To continue access after this billing period ends, you submit a new crypto payment for admin review &mdash; expiration alone never charges you.</p>
+							<p class="dcm-summary__policy">Access begins, or extends, only after an administrator approves your payment.</p>
+							<a class="btn btn--outline dcm-edit dcm-edit-link" href="dashboard-select-membership.html">Edit Membership</a>
 							<a class="btn dcm-continue" href="dashboard-payment.html?source=membership&amp;plan=supporter">Continue to Payment</a>
-							<p class="dcm-continue__note">Payment is not available in this static prototype. Continuing would not confirm, verify, or process any payment.</p>
+							<p class="dcm-continue__note">Continuing would not confirm, verify, or process any payment.</p>
 						</div>
 					</section>
 
-					<section class="dcm-plan dcm-plan--insider" aria-labelledby="dcm-summary-title-insider">
-						<p class="dcm-plan__lead">This is a static prototype of the future membership confirmation screen. No payment, account, or order is created here.</p>
+					<section class="dcm-plan dcm-plan--insider" data-plan="insider" aria-labelledby="dcm-summary-title-insider">
+						<p class="dcm-plan__lead">No payment, account, or order is created on this screen.</p>
 						<div class="dcm-summary">
 							<h2 id="dcm-summary-title-insider" class="dcm-summary__title">Order summary</h2>
 							<dl class="dcm-summary__list">
 								<div class="dcm-summary__row"><dt>Plan</dt><dd>Insider</dd></div>
-								<div class="dcm-summary__row"><dt>Billing</dt><dd>Annual</dd></div>
-								<div class="dcm-summary__row"><dt>Quantity</dt><dd>1</dd></div>
-								<div class="dcm-summary__row dcm-summary__row--total"><dt>Annual total</dt><dd>$300</dd></div>
+								<div class="dcm-summary__row"><dt>Billing period</dt><dd class="dcm-field-billing">&mdash;</dd></div>
+								<div class="dcm-summary__row dcm-summary__row--total"><dt>Price</dt><dd class="dcm-field-price">&mdash;</dd></div>
+								<div class="dcm-summary__row dcm-field-savings-row" hidden><dt>Yearly savings</dt><dd class="dcm-field-savings">&mdash;</dd></div>
 							</dl>
-							<p class="dcm-summary__disclosure">Membership is annual access, billed once per year, and is a separate product from one-time Fan Cards.</p>
+							<h3 class="dcm-benefits__title">Included benefits</h3>
+							<ul class="dcm-benefits__list">
+								<li>Everything in Supporter</li>
+								<li>Expanded exclusive content</li>
+								<li>Member merchandise previews</li>
+							</ul>
+							<p class="dcm-summary__disclosure">Membership is a separate product from one-time Fan Cards.</p>
+							<p class="dcm-summary__policy"><strong>Renewal is always manual.</strong> There is no automatic renewal, recurring charge, or saved payment method. To continue access after this billing period ends, you submit a new crypto payment for admin review &mdash; expiration alone never charges you.</p>
+							<p class="dcm-summary__policy">Access begins, or extends, only after an administrator approves your payment.</p>
+							<a class="btn btn--outline dcm-edit dcm-edit-link" href="dashboard-select-membership.html">Edit Membership</a>
 							<a class="btn dcm-continue" href="dashboard-payment.html?source=membership&amp;plan=insider">Continue to Payment</a>
-							<p class="dcm-continue__note">Payment is not available in this static prototype. Continuing would not confirm, verify, or process any payment.</p>
+							<p class="dcm-continue__note">Continuing would not confirm, verify, or process any payment.</p>
 						</div>
 					</section>
 
-					<section class="dcm-plan dcm-plan--premier" aria-labelledby="dcm-summary-title-premier">
-						<p class="dcm-plan__lead">This is a static prototype of the future membership confirmation screen. No payment, account, or order is created here.</p>
+					<section class="dcm-plan dcm-plan--premier" data-plan="premier" aria-labelledby="dcm-summary-title-premier">
+						<p class="dcm-plan__lead">No payment, account, or order is created on this screen.</p>
 						<div class="dcm-summary">
 							<h2 id="dcm-summary-title-premier" class="dcm-summary__title">Order summary</h2>
 							<dl class="dcm-summary__list">
 								<div class="dcm-summary__row"><dt>Plan</dt><dd>Premier</dd></div>
-								<div class="dcm-summary__row"><dt>Billing</dt><dd>Annual</dd></div>
-								<div class="dcm-summary__row"><dt>Quantity</dt><dd>1</dd></div>
-								<div class="dcm-summary__row dcm-summary__row--total"><dt>Annual total</dt><dd>$600</dd></div>
+								<div class="dcm-summary__row"><dt>Billing period</dt><dd class="dcm-field-billing">&mdash;</dd></div>
+								<div class="dcm-summary__row dcm-summary__row--total"><dt>Price</dt><dd class="dcm-field-price">&mdash;</dd></div>
+								<div class="dcm-summary__row dcm-field-savings-row" hidden><dt>Yearly savings</dt><dd class="dcm-field-savings">&mdash;</dd></div>
 							</dl>
-							<p class="dcm-summary__disclosure">Membership is annual access, billed once per year, and is a separate product from one-time Fan Cards.</p>
+							<h3 class="dcm-benefits__title">Included benefits</h3>
+							<ul class="dcm-benefits__list">
+								<li>Everything in Insider</li>
+								<li>Priority experience announcements</li>
+								<li>Premier community recognition</li>
+							</ul>
+							<p class="dcm-summary__disclosure">Membership is a separate product from one-time Fan Cards.</p>
+							<p class="dcm-summary__policy"><strong>Renewal is always manual.</strong> There is no automatic renewal, recurring charge, or saved payment method. To continue access after this billing period ends, you submit a new crypto payment for admin review &mdash; expiration alone never charges you.</p>
+							<p class="dcm-summary__policy">Access begins, or extends, only after an administrator approves your payment.</p>
+							<a class="btn btn--outline dcm-edit dcm-edit-link" href="dashboard-select-membership.html">Edit Membership</a>
 							<a class="btn dcm-continue" href="dashboard-payment.html?source=membership&amp;plan=premier">Continue to Payment</a>
-							<p class="dcm-continue__note">Payment is not available in this static prototype. Continuing would not confirm, verify, or process any payment.</p>
+							<p class="dcm-continue__note">Continuing would not confirm, verify, or process any payment.</p>
 						</div>
 					</section>
 				</div>

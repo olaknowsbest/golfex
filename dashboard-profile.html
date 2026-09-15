@@ -4,8 +4,8 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<title>Profile &#8211; Nazario Kayla Fan Club Prototype</title>
-	<meta name="description" content="A static, honestly labelled preview of the future Profile screen for the fictional Nazario Kayla fan-platform prototype. Not a functioning account.">
+	<title>Profile &#8211; Nazario Kayla Fan Club</title>
+	<meta name="description" content="Manage your profile on your Nazario Kayla Fan Club account.">
 	<meta name="robots" content="noindex, nofollow">
 	<meta name="theme-color" content="#0A0A0A">
 	<link rel="icon" href="assets/images/uploads/favicon.png" sizes="32x32" />
@@ -27,10 +27,9 @@
 		<aside class="dashboard-sidebar" id="dashboard-sidebar" aria-label="Dashboard navigation">
 			<div class="dashboard-sidebar__top">
 				<div class="dashboard-sidebar__brand">
-					<img class="dashboard-sidebar__logo" src="assets/images/brand/nk-monogram-mark.svg" alt="Nazario Kayla Fan Club &#8212; Prototype" width="36" height="37">
+					<img class="dashboard-sidebar__logo" src="assets/images/brand/nk-monogram-mark.svg" alt="Nazario Kayla Fan Club" width="36" height="37">
 					<span class="dashboard-sidebar__brand-text">
 						<span class="dashboard-sidebar__brand-name">NK Dashboard</span>
-						<span class="dashboard-sidebar__prototype-tag">Prototype</span>
 					</span>
 				</div>
 				<button class="dashboard-sidebar__close" type="button" data-dashboard-close aria-label="Close menu">
@@ -145,7 +144,6 @@
 				</button>
 				<img class="dashboard-topbar__logo" src="assets/images/brand/nk-monogram-mark.svg" alt="" aria-hidden="true">
 				<p class="dashboard-topbar__title">Profile</p>
-				<span class="dashboard-topbar__account">Account preview</span>
 			</header>
 
 			<main id="dashboard-main" class="dashboard-main">
@@ -153,12 +151,15 @@
 				<p class="dashboard-main__lead">Manage the information connected to your fan account.</p>
 
 				<div class="dpr-layout">
-					<aside class="dpr-overview" aria-label="Profile overview">
-						<div class="dpr-overview__avatar" aria-hidden="true">FA</div>
-						<p class="dpr-overview__name">Fan Account</p>
-						<p class="dpr-overview__email">Email available after sign-in</p>
-						<span class="dpr-overview__badge">Account preview</span>
-						<p class="dpr-overview__note">This is a static prototype placeholder, not a real customer identity.</p>
+					<aside class="dpr-overview" aria-labelledby="dpr-overview-heading">
+						<div class="dpr-overview__avatar" aria-hidden="true">
+							<svg viewBox="0 0 24 24" fill="none" xmlns="http://www.w3.org/2000/svg">
+								<circle cx="12" cy="8" r="4" stroke="currentColor" stroke-width="2"/>
+								<path d="M4 21c0-4.4 3.6-7 8-7s8 2.6 8 7" stroke="currentColor" stroke-width="2" stroke-linecap="round"/>
+							</svg>
+						</div>
+						<h2 id="dpr-overview-heading" class="dpr-overview__title">Your profile</h2>
+						<p class="dpr-overview__desc">Manage the details and preferences connected to your account.</p>
 					</aside>
 
 					<div class="dpr-panels">
@@ -167,33 +168,31 @@
 
 							<div class="dpr-field">
 								<label class="dpr-field__label" for="dpr-name">Display name</label>
-								<input class="dpr-field__input" id="dpr-name" type="text" value="Fan Account" disabled readonly>
+								<input class="dpr-field__input" id="dpr-name" type="text" placeholder="Display name" autocomplete="name" disabled readonly>
 							</div>
 
 							<div class="dpr-field">
 								<label class="dpr-field__label" for="dpr-email">Email address</label>
-								<input class="dpr-field__input" id="dpr-email" type="text" value="Email available after sign-in" disabled readonly>
+								<input class="dpr-field__input" id="dpr-email" type="text" placeholder="Email address" autocomplete="email" disabled readonly>
 							</div>
 
 							<div class="dpr-field-row">
 								<div class="dpr-field">
 									<label class="dpr-field__label" for="dpr-phone">Phone number (optional)</label>
-									<input class="dpr-field__input" id="dpr-phone" type="text" placeholder="Not provided" disabled readonly>
+									<input class="dpr-field__input" id="dpr-phone" type="text" placeholder="Phone number" autocomplete="tel" disabled readonly>
 								</div>
 								<div class="dpr-field">
 									<label class="dpr-field__label" for="dpr-timezone">Timezone</label>
-									<input class="dpr-field__input" id="dpr-timezone" type="text" placeholder="Not set" disabled readonly>
+									<input class="dpr-field__input" id="dpr-timezone" type="text" placeholder="Select timezone." disabled readonly>
 								</div>
 							</div>
-
-							<p class="dpr-panel__note">These fields are shown for design review only. Password management is not included here.</p>
 						</section>
 
 						<section class="dpr-panel" aria-labelledby="dpr-bio-heading">
 							<h2 id="dpr-bio-heading" class="dpr-panel__title">About you</h2>
 							<div class="dpr-field">
 								<label class="dpr-field__label" for="dpr-bio">Bio (optional)</label>
-								<textarea class="dpr-field__input dpr-bio__input" id="dpr-bio" rows="3" placeholder="Share a little about yourself and what connects you to the fan community." disabled readonly></textarea>
+								<textarea class="dpr-field__input dpr-bio__input" id="dpr-bio" rows="3" placeholder="Share a short introduction." disabled readonly></textarea>
 								<p class="dpr-bio__count">0 / 240</p>
 							</div>
 						</section>
@@ -204,38 +203,35 @@
 							<div class="dpr-toggle-row">
 								<span class="dpr-toggle-row__label">Email updates</span>
 								<span class="dpr-toggle">
-									<input type="checkbox" disabled aria-label="Email updates (not yet available)">
+									<input type="checkbox" disabled aria-label="Email updates">
 									<span class="dpr-toggle__track" aria-hidden="true"><span class="dpr-toggle__thumb"></span></span>
 								</span>
 							</div>
 							<div class="dpr-toggle-row">
 								<span class="dpr-toggle-row__label">Booking reminders</span>
 								<span class="dpr-toggle">
-									<input type="checkbox" disabled aria-label="Booking reminders (not yet available)">
+									<input type="checkbox" disabled aria-label="Booking reminders">
 									<span class="dpr-toggle__track" aria-hidden="true"><span class="dpr-toggle__thumb"></span></span>
 								</span>
 							</div>
 							<div class="dpr-toggle-row">
 								<span class="dpr-toggle-row__label">Membership and Fan Card updates</span>
 								<span class="dpr-toggle">
-									<input type="checkbox" disabled aria-label="Membership and Fan Card updates (not yet available)">
+									<input type="checkbox" disabled aria-label="Membership and Fan Card updates">
 									<span class="dpr-toggle__track" aria-hidden="true"><span class="dpr-toggle__thumb"></span></span>
 								</span>
 							</div>
-
-							<p class="dpr-panel__note">These preferences are for design review only. Nothing here is saved or sent in this static prototype.</p>
 						</section>
 
 						<section class="dpr-panel" aria-labelledby="dpr-security-heading">
-							<h2 id="dpr-security-heading" class="dpr-panel__title">Security &amp; account</h2>
-							<p class="dpr-panel__desc">Password management and Google-connected sign-in will be added once secure authentication is connected. No password fields, OAuth behavior, or account forms exist in this static prototype.</p>
+							<h2 id="dpr-security-heading" class="dpr-panel__title">Security and account</h2>
+							<button type="button" class="btn btn--outline dpr-security__btn" disabled>Manage security</button>
 						</section>
 					</div>
 				</div>
 
 				<div class="dpr-save">
 					<button type="button" class="btn dpr-save__btn" disabled>Save Profile</button>
-					<p class="dpr-save__note">Profile editing will become available when secure account services are connected.</p>
 				</div>
 			</main>
 		</div>

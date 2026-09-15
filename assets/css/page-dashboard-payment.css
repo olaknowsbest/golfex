@@ -206,21 +206,11 @@
 	display: block;
 	color: #6B6B64;
 }
-.dpay-quote__message--selected {
-	display: none;
-	font-weight: 700;
-}
 .dpay-quote[data-currency=""] .dpay-quote__message--neutral {
 	display: block;
 }
-.dpay-quote[data-currency=""] .dpay-quote__message--selected {
-	display: none;
-}
 .dpay-quote:not([data-currency=""]) .dpay-quote__message--neutral {
 	display: none;
-}
-.dpay-quote:not([data-currency=""]) .dpay-quote__message--selected {
-	display: block;
 }
 .dpay-quote__list {
 	margin: 0;

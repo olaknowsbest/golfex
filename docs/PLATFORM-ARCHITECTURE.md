@@ -79,7 +79,7 @@ Build a protected queue showing customer, order, fan card, USD/crypto amounts, n
 
 ### 9. Membership activation
 
-Generate member IDs and store tier, originating order, status, activation, expiration, and deactivation reason. Activation follows authorized payment approval; TXID submission alone can never activate membership.
+Generate member IDs and store tier, billing period (monthly or yearly), originating order, status, activation, expiration, and deactivation reason. Activation follows authorized payment approval; TXID submission alone can never activate membership. Renewal is always manual and customer-initiated: there is no automatic renewal, no recurring automatic charge, and no saved payment method. Extending an expiring or expired membership requires a new order, a new crypto payment, and a new TXID review — handled through the same approval flow as the original purchase. Letting a membership expire must never itself trigger a charge.
 
 ### 10. Bookings
 
@@ -108,7 +108,7 @@ Expected high-level entities:
 - Role/account state
 - Fan-card package
 - Package benefit
-- Membership plan
+- Membership plan (tier + monthly/yearly billing period, each with its own price)
 - Membership-plan benefit
 - Order
 - Order item
@@ -138,6 +138,8 @@ Order:
 Membership:
 
 `INACTIVE → ACTIVE → EXPIRED | DEACTIVATED`
+
+A membership record also carries its chosen billing period (monthly or yearly) and price at time of purchase. `EXPIRED` never itself creates a payment or charge; reaching `ACTIVE` again from `EXPIRED` requires a new order and a newly approved payment, exactly like the original purchase.
 
 Booking:
 

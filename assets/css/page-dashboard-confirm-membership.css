@@ -4,8 +4,8 @@
  * Visibility of the "select a plan first" state vs. one plan's summary
  * is driven entirely by a [data-state] attribute on #dcm-confirm, set
  * once on load by assets/js/page-dashboard-confirm-membership.js from
- * the incoming ?plan= query parameter — no storage, no network calls,
- * and no default plan is ever assumed.
+ * the incoming ?plan= and ?billing= query parameters — no storage, no
+ * network calls, and no default plan or billing period is ever assumed.
  */
 
 .dcm-back {
@@ -119,6 +119,12 @@
 	font-size: 1.05rem;
 	font-weight: 800;
 }
+.dcm-summary__row[hidden] {
+	display: none;
+}
+.dcm-field-savings-row dd {
+	color: #766b00;
+}
 .dcm-summary__disclosure {
 	margin: 1rem 0 0;
 	font-size: 0.78rem;
@@ -126,10 +132,41 @@
 	color: #6B6B64;
 }
 
+.dcm-benefits__title {
+	margin: 1.25rem 0 0.6rem;
+	font-size: 0.85rem;
+	font-weight: 800;
+	text-transform: uppercase;
+	letter-spacing: 0.06em;
+	color: var(--nk-ink);
+}
+.dcm-benefits__list {
+	margin: 0;
+	padding-left: 1.2rem;
+	font-size: 0.9rem;
+	line-height: 1.65;
+	color: #4a4a46;
+}
+
+.dcm-summary__policy {
+	margin: 0.9rem 0 0;
+	font-size: 0.82rem;
+	line-height: 1.55;
+	color: #4a4a46;
+}
+.dcm-summary__policy strong {
+	color: var(--nk-ink);
+}
+
+.dcm-edit {
+	width: 100%;
+	justify-content: center;
+	margin-top: 1.5rem;
+}
 .dcm-continue {
 	width: 100%;
 	justify-content: center;
-	margin-top: 1.25rem;
+	margin-top: 0.75rem;
 	background: var(--nk-ink);
 	color: var(--nk-cream);
 	border: 1.5px solid var(--nk-ink);

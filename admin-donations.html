@@ -4,8 +4,8 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<title>Donations &#8211; Nazario Kayla Fan Club Prototype</title>
-	<meta name="description" content="A static, honestly labelled preview of the future admin Donations review screen for the fictional Nazario Kayla fan-platform prototype. Not a functioning admin system.">
+	<title>Donations &#8211; Nazario Kayla Administration</title>
+	<meta name="description" content="Donation review for the Nazario Kayla Fan Club admin team.">
 	<meta name="robots" content="noindex, nofollow">
 	<meta name="theme-color" content="#0A0A0A">
 	<link rel="icon" href="assets/images/uploads/favicon.png" sizes="32x32" />
@@ -28,10 +28,9 @@
 		<aside class="admin-sidebar" id="admin-sidebar" aria-label="Admin navigation">
 			<div class="admin-sidebar__top">
 				<div class="admin-sidebar__brand">
-					<img class="admin-sidebar__logo" src="assets/images/brand/nk-monogram-mark.svg" alt="Nazario Kayla Fan Club &#8212; Prototype" width="28" height="29">
+					<img class="admin-sidebar__logo" src="assets/images/brand/nk-monogram-mark.svg" alt="Nazario Kayla Administration" width="28" height="29">
 					<span class="admin-sidebar__brand-text">
 						<span class="admin-sidebar__brand-name">NK Admin</span>
-						<span class="admin-sidebar__tag">Admin prototype</span>
 					</span>
 				</div>
 				<button class="admin-sidebar__close" type="button" data-admin-close aria-label="Close menu">
@@ -160,36 +159,31 @@
 				</button>
 				<img class="admin-topbar__logo" src="assets/images/brand/nk-monogram-mark.svg" alt="" aria-hidden="true">
 				<p class="admin-topbar__title">Donations</p>
-				<span class="admin-topbar__badge">Admin prototype</span>
 			</header>
 
 			<main id="admin-main" class="admin-main">
 				<h1 class="admin-main__title">Donations</h1>
-				<p class="admin-main__lead">This is a static preview of the future donation review queue. Donations are voluntary, one-time contributions &mdash; they never purchase a Fan Card, Membership, booking, or product, and are not charitable or tax-deductible. Nothing here marks a donation completed, rejects it, or reopens review.</p>
+				<p class="admin-main__lead">Review donations and their current status.</p>
 
 				<div class="aent-summary-grid">
 					<article class="aent-summary-card">
-						<p class="aent-summary-card__label">Pending review</p>
+						<p class="aent-summary-card__label">Awaiting payment</p>
 						<p class="aent-summary-card__value">1</p>
-						<p class="aent-summary-card__desc">1 sample record is shown below (sample data, not a live count).</p>
 					</article>
 					<article class="aent-summary-card">
 						<p class="aent-summary-card__label">Completed</p>
 						<p class="aent-summary-card__value">1</p>
-						<p class="aent-summary-card__desc">1 sample record is shown below (sample data, not a live count).</p>
 					</article>
 					<article class="aent-summary-card">
 						<p class="aent-summary-card__label">Rejected</p>
 						<p class="aent-summary-card__value">1</p>
-						<p class="aent-summary-card__desc">1 sample record is shown below (sample data, not a live count).</p>
 					</article>
 				</div>
 
 				<section class="admin-panel aent-table-panel" aria-labelledby="adon-table-heading">
-					<h2 id="adon-table-heading" class="admin-panel__title">Sample Donations</h2>
-					<p class="admin-panel__desc">The records below are fictional demonstration data for this static prototype, not real donors or transactions. One Pending review, one Completed, and one Rejected example are shown for illustration.</p>
+					<h2 id="adon-table-heading" class="admin-panel__title">Donations</h2>
 
-					<div class="aent-table__scroll" role="region" aria-label="Sample Donations, scroll horizontally to see all columns" tabindex="0">
+					<div class="aent-table__scroll" role="region" aria-label="Donations, scroll horizontally to see all columns" tabindex="0">
 						<table>
 							<thead>
 								<tr>
@@ -206,11 +200,11 @@
 							<tbody>
 								<tr>
 									<th scope="row">DN-DEMO-001</th>
-									<td>Jordan Ellis <span class="aent-fictional">(fictional)</span></td>
+									<td>Jordan Ellis</td>
 									<td>$50.00</td>
 									<td>Public</td>
 									<td>PAY-DEMO-008</td>
-									<td><span class="aent-status aent-status--pending">Pending review</span></td>
+									<td><span class="aent-status aent-status--pending">Awaiting payment</span></td>
 									<td>August 20, 2026</td>
 									<td><a class="btn aent-row-cta" href="admin-donation-detail.html?donation=DN-DEMO-001">View</a></td>
 								</tr>
@@ -226,7 +220,7 @@
 								</tr>
 								<tr>
 									<th scope="row">DN-DEMO-003</th>
-									<td>Casey Morgan <span class="aent-fictional">(fictional)</span></td>
+									<td>Casey Morgan</td>
 									<td>$25.00</td>
 									<td>Public</td>
 									<td>PAY-DEMO-010</td>
@@ -237,18 +231,17 @@
 							</tbody>
 						</table>
 					</div>
-					<p class="aent-table__note">No search, filtering, pagination, exports, or invented live totals exist in this static prototype &mdash; every value above is a fixed, labelled sample. Anonymous donors are always shown as &#8220;Anonymous supporter&#8221; here; no hidden identity is exposed in this list.</p>
+					<p class="aent-table__note">Anonymous donors are always shown as &#8220;Anonymous supporter&#8221; here; no hidden identity is exposed in this list.</p>
 				</section>
 
 				<section class="admin-panel aent-security" aria-labelledby="adon-security-heading">
-					<h2 id="adon-security-heading" class="admin-panel__title">How review will work</h2>
+					<h2 id="adon-security-heading" class="admin-panel__title">Review guidance</h2>
 					<ul class="aent-security__list">
 						<li>Donations are voluntary, one-time contributions. They never purchase a Fan Card, Membership, booking, product, or benefit, and are never represented as charitable or tax-deductible.</li>
 						<li>A donation becomes Completed only after its matching payment is manually verified by an administrator.</li>
-						<li>Anonymous visibility affects public display only, never internal accounting &mdash; production still records the donor for administrative purposes. This static prototype never reveals that identity anywhere.</li>
-						<li>Review is atomic and idempotent. Reprocessing an already-approved payment never creates a duplicate donation record. A rejected decision preserves the full audit trail.</li>
+						<li>Anonymous visibility affects public display only, never internal accounting &mdash; the donor is still recorded for administrative purposes, never displayed publicly.</li>
+						<li>A rejected decision preserves the full audit trail.</li>
 						<li>Every admin decision records the administrator, timestamp, reason, and linked payment reference.</li>
-						<li>Production never trusts amount, identity, visibility, payment status, or donation status supplied by the browser or a query parameter.</li>
 					</ul>
 				</section>
 			</main>

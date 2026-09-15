@@ -4,8 +4,8 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<title>Fan Cards &#8211; Nazario Kayla Fan Club Prototype</title>
-	<meta name="description" content="A static, honestly labelled preview of the future admin Fan Card management screen for the fictional Nazario Kayla fan-platform prototype. Not a functioning admin system.">
+	<title>Fan Cards &#8211; Nazario Kayla Administration</title>
+	<meta name="description" content="Fan Card management for the Nazario Kayla Fan Club admin team.">
 	<meta name="robots" content="noindex, nofollow">
 	<meta name="theme-color" content="#0A0A0A">
 	<link rel="icon" href="assets/images/uploads/favicon.png" sizes="32x32" />
@@ -27,10 +27,9 @@
 		<aside class="admin-sidebar" id="admin-sidebar" aria-label="Admin navigation">
 			<div class="admin-sidebar__top">
 				<div class="admin-sidebar__brand">
-					<img class="admin-sidebar__logo" src="assets/images/brand/nk-monogram-mark.svg" alt="Nazario Kayla Fan Club &#8212; Prototype" width="28" height="29">
+					<img class="admin-sidebar__logo" src="assets/images/brand/nk-monogram-mark.svg" alt="Nazario Kayla Administration" width="28" height="29">
 					<span class="admin-sidebar__brand-text">
 						<span class="admin-sidebar__brand-name">NK Admin</span>
-						<span class="admin-sidebar__tag">Admin prototype</span>
 					</span>
 				</div>
 				<button class="admin-sidebar__close" type="button" data-admin-close aria-label="Close menu">
@@ -159,36 +158,31 @@
 				</button>
 				<img class="admin-topbar__logo" src="assets/images/brand/nk-monogram-mark.svg" alt="" aria-hidden="true">
 				<p class="admin-topbar__title">Fan Cards</p>
-				<span class="admin-topbar__badge">Admin prototype</span>
 			</header>
 
 			<main id="admin-main" class="admin-main">
 				<h1 class="admin-main__title">Fan Cards</h1>
-				<p class="admin-main__lead">This is a static preview of the future Fan Card management screen. Fan Cards are one-time digital purchases &mdash; a customer owns at most one at a time. Nothing here issues, suspends, or restores a real card.</p>
+				<p class="admin-main__lead">Review Fan Card ownership and issuance status.</p>
 
 				<div class="aent-summary-grid">
 					<article class="aent-summary-card">
 						<p class="aent-summary-card__label">Pending issuance</p>
 						<p class="aent-summary-card__value">1</p>
-						<p class="aent-summary-card__desc">1 sample record is shown below (sample data, not a live count).</p>
 					</article>
 					<article class="aent-summary-card">
 						<p class="aent-summary-card__label">Active cards</p>
-						<p class="aent-summary-card__value">1</p>
-						<p class="aent-summary-card__desc">1 sample record is shown below (sample data, not a live count).</p>
+						<p class="aent-summary-card__value">2</p>
 					</article>
 					<article class="aent-summary-card">
 						<p class="aent-summary-card__label">Suspended cards</p>
 						<p class="aent-summary-card__value">1</p>
-						<p class="aent-summary-card__desc">1 sample record is shown below (sample data, not a live count).</p>
 					</article>
 				</div>
 
 				<section class="admin-panel aent-table-panel" aria-labelledby="afc-table-heading">
-					<h2 id="afc-table-heading" class="admin-panel__title">Sample Fan Cards</h2>
-					<p class="admin-panel__desc">The records below are fictional demonstration data for this static prototype, not real customers or cards. One Pending issuance, one Active, and one Suspended example are shown for illustration.</p>
+					<h2 id="afc-table-heading" class="admin-panel__title">Fan Cards</h2>
 
-					<div class="aent-table__scroll" role="region" aria-label="Sample Fan Cards, scroll horizontally to see all columns" tabindex="0">
+					<div class="aent-table__scroll" role="region" aria-label="Fan Cards, scroll horizontally to see all columns" tabindex="0">
 						<table>
 							<thead>
 								<tr>
@@ -204,17 +198,26 @@
 							<tbody>
 								<tr>
 									<th scope="row">FC-DEMO-002</th>
-									<td>Casey Morgan <span class="aent-fictional">(fictional)</span></td>
-									<td>Standard</td>
+									<td>Casey Morgan</td>
+									<td>Bronze</td>
 									<td>PAY-DEMO-003</td>
 									<td><span class="aent-status aent-status--pending">Pending issuance</span></td>
 									<td>&mdash;</td>
 									<td><a class="btn aent-row-cta" href="admin-fan-card-detail.html?card=FC-DEMO-002">View</a></td>
 								</tr>
 								<tr>
+									<th scope="row">FC-DEMO-004</th>
+									<td>Taylor Brooks</td>
+									<td>Silver</td>
+									<td>PAY-DEMO-011</td>
+									<td><span class="aent-status aent-status--active">Active</span></td>
+									<td>September 4, 2026</td>
+									<td><a class="btn aent-row-cta" href="admin-fan-card-detail.html?card=FC-DEMO-004">View</a></td>
+								</tr>
+								<tr>
 									<th scope="row">FC-DEMO-001</th>
-									<td>Jordan Ellis <span class="aent-fictional">(fictional)</span></td>
-									<td>Premium</td>
+									<td>Jordan Ellis</td>
+									<td>Gold</td>
 									<td>PAY-DEMO-002</td>
 									<td><span class="aent-status aent-status--active">Active</span></td>
 									<td>August 10, 2026</td>
@@ -222,8 +225,8 @@
 								</tr>
 								<tr>
 									<th scope="row">FC-DEMO-003</th>
-									<td>Riley Chen <span class="aent-fictional">(fictional)</span></td>
-									<td>VIP</td>
+									<td>Riley Chen</td>
+									<td>Platinum</td>
 									<td>PAY-DEMO-004</td>
 									<td><span class="aent-status aent-status--suspended">Suspended</span></td>
 									<td>July 2, 2026</td>
@@ -232,16 +235,14 @@
 							</tbody>
 						</table>
 					</div>
-					<p class="aent-table__note">No search, filtering, pagination, or invented live totals exist in this static prototype &mdash; every value above is a fixed, labelled sample.</p>
 				</section>
 
 				<section class="admin-panel aent-security" aria-labelledby="afc-security-heading">
-					<h2 id="afc-security-heading" class="admin-panel__title">How issuance will work</h2>
+					<h2 id="afc-security-heading" class="admin-panel__title">Issuance guidance</h2>
 					<ul class="aent-security__list">
 						<li>Fan Cards are one-time purchases. A customer may own at most one Fan Card at a time.</li>
-						<li>Issuance requires an approved, matching payment. Approval and entitlement creation happen as one atomic, idempotent operation &mdash; reprocessing an already-approved payment never creates a duplicate card.</li>
-						<li>Suspending a card preserves its full audit trail. Every admin decision is logged with the administrator, timestamp, and reason.</li>
-						<li>Production never trusts price, status, dates, or customer identity supplied by the browser or a query parameter.</li>
+						<li>Fan Card issuance requires approved payment.</li>
+						<li>Suspending a Fan Card does not delete its history. Internal actions are recorded for audit.</li>
 					</ul>
 				</section>
 			</main>

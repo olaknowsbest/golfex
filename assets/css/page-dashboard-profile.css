@@ -50,36 +50,21 @@
 	display: flex;
 	align-items: center;
 	justify-content: center;
-	font-size: 1.15rem;
-	font-weight: 800;
-	letter-spacing: 0.02em;
 	color: var(--nk-ink);
 }
-.dpr-overview__name {
+.dpr-overview__avatar svg {
+	width: 40px;
+	height: 40px;
+}
+.dpr-overview__title {
 	margin: 0;
 	font-size: 1.05rem;
 	font-weight: 700;
 	color: var(--nk-ink);
 }
-.dpr-overview__email {
-	margin: 0 0 0.5rem;
+.dpr-overview__desc {
+	margin: 0.35rem 0 0;
 	font-size: 0.85rem;
-	color: #6B6B64;
-}
-.dpr-overview__badge {
-	display: inline-flex;
-	padding: 0.25rem 0.7rem;
-	border-radius: 999px;
-	background: var(--nk-yellow);
-	color: var(--nk-ink);
-	font-size: 0.7rem;
-	font-weight: 800;
-	text-transform: uppercase;
-	letter-spacing: 0.08em;
-}
-.dpr-overview__note {
-	margin: 0.9rem 0 0;
-	font-size: 0.78rem;
 	line-height: 1.5;
 	color: #6B6B64;
 }
@@ -98,18 +83,6 @@
 	font-size: 1rem;
 	color: var(--nk-ink);
 }
-.dpr-panel__desc,
-.dpr-panel__note {
-	margin: 0;
-	font-size: 0.84rem;
-	line-height: 1.6;
-	color: #6B6B64;
-}
-.dpr-panel__note {
-	margin-top: 1.1rem;
-	font-size: 0.78rem;
-}
-
 /* ---------- Fields ---------- */
 .dpr-field {
 	display: flex;
@@ -229,11 +202,9 @@ textarea.dpr-field__input {
 	opacity: 0.55;
 	cursor: not-allowed;
 }
-.dpr-save__note {
-	margin: 0.6rem 0 0;
-	font-size: 0.8rem;
-	line-height: 1.5;
-	color: #6B6B64;
+.dpr-security__btn:disabled {
+	opacity: 0.55;
+	cursor: not-allowed;
 }
 
 @media (max-width: 480px) {

@@ -4,8 +4,8 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<title>Payment Reviews &#8211; Nazario Kayla Fan Club Prototype</title>
-	<meta name="description" content="A static, honestly labelled preview of the future admin payment-review queue for the fictional Nazario Kayla fan-platform prototype. Not a functioning admin system.">
+	<title>Payment Reviews &#8211; Nazario Kayla Administration</title>
+	<meta name="description" content="Payment review queue for the Nazario Kayla Fan Club admin team.">
 	<meta name="robots" content="noindex, nofollow">
 	<meta name="theme-color" content="#0A0A0A">
 	<link rel="icon" href="assets/images/uploads/favicon.png" sizes="32x32" />
@@ -27,10 +27,9 @@
 		<aside class="admin-sidebar" id="admin-sidebar" aria-label="Admin navigation">
 			<div class="admin-sidebar__top">
 				<div class="admin-sidebar__brand">
-					<img class="admin-sidebar__logo" src="assets/images/brand/nk-monogram-mark.svg" alt="Nazario Kayla Fan Club &#8212; Prototype" width="28" height="29">
+					<img class="admin-sidebar__logo" src="assets/images/brand/nk-monogram-mark.svg" alt="Nazario Kayla Administration" width="28" height="29">
 					<span class="admin-sidebar__brand-text">
 						<span class="admin-sidebar__brand-name">NK Admin</span>
-						<span class="admin-sidebar__tag">Admin prototype</span>
 					</span>
 				</div>
 				<button class="admin-sidebar__close" type="button" data-admin-close aria-label="Close menu">
@@ -159,75 +158,64 @@
 				</button>
 				<img class="admin-topbar__logo" src="assets/images/brand/nk-monogram-mark.svg" alt="" aria-hidden="true">
 				<p class="admin-topbar__title">Payment Reviews</p>
-				<span class="admin-topbar__badge">Admin prototype</span>
 			</header>
 
 			<main id="admin-main" class="admin-main">
 				<h1 class="admin-main__title">Payment Reviews</h1>
-				<p class="admin-main__lead">This is a static preview of the future manual-crypto payment review queue. No payment data exists in this prototype, and no action here approves, rejects, or verifies anything.</p>
+				<p class="admin-main__lead">This queue lists payments awaiting review.</p>
 
 				<fieldset class="pap-filters">
 					<legend>Filter by status</legend>
 					<label class="pap-filter">
-						<input type="checkbox" name="pap-filter" value="awaiting-payment">
+						<input type="checkbox" name="pap-filter" value="awaiting-payment" disabled>
 						<span>Awaiting payment</span>
 					</label>
 					<label class="pap-filter">
-						<input type="checkbox" name="pap-filter" value="submitted">
+						<input type="checkbox" name="pap-filter" value="submitted" disabled>
 						<span>Submitted for review</span>
 					</label>
 					<label class="pap-filter">
-						<input type="checkbox" name="pap-filter" value="approved">
+						<input type="checkbox" name="pap-filter" value="approved" disabled>
 						<span>Approved</span>
 					</label>
 					<label class="pap-filter">
-						<input type="checkbox" name="pap-filter" value="rejected">
+						<input type="checkbox" name="pap-filter" value="rejected" disabled>
 						<span>Rejected</span>
 					</label>
 					<label class="pap-filter">
-						<input type="checkbox" name="pap-filter" value="expired">
+						<input type="checkbox" name="pap-filter" value="expired" disabled>
 						<span>Expired</span>
 					</label>
 				</fieldset>
-				<p class="pap-filters__note">These filters are visual prototype controls only. They do not filter, save state, or query any backend in this static prototype.</p>
-
-				<section class="admin-panel pap-empty" aria-labelledby="pap-empty-heading">
-					<h2 id="pap-empty-heading" class="admin-panel__title">No payment submissions</h2>
-					<p class="admin-panel__desc">No payment submissions exist in this static prototype. Submitted payments will appear here once secure payment services are connected.</p>
-				</section>
 
 				<section class="pap-sample" aria-labelledby="pap-sample-heading">
 					<div class="pap-sample__label">
-						<h2 id="pap-sample-heading">Sample record layout</h2>
-						<span class="pap-sample__badge">Fictional demo data</span>
+						<h2 id="pap-sample-heading">Payment queue</h2>
 					</div>
-					<p class="pap-sample__desc">This demonstrates the fields an eventual queue row will require. Nothing below is a real payment, customer, or transaction.</p>
 
 					<div class="admin-panel pap-record">
 						<dl class="pap-record__list">
 							<div class="pap-record__row"><dt>Internal payment reference</dt><dd>PAY-DEMO-001</dd></div>
 							<div class="pap-record__row"><dt>Product type</dt><dd>Fan Card</dd></div>
-							<div class="pap-record__row"><dt>Customer reference</dt><dd>CUSTOMER-DEMO</dd></div>
+							<div class="pap-record__row"><dt>Tier</dt><dd>Bronze</dd></div>
+							<div class="pap-record__row"><dt>Customer</dt><dd>Morgan Reyes</dd></div>
 							<div class="pap-record__row"><dt>USD amount</dt><dd>$250.00</dd></div>
-							<div class="pap-record__row"><dt>Selected asset / network</dt><dd>Bitcoin (BTC) &middot; Bitcoin network</dd></div>
-							<div class="pap-record__row"><dt>Expected crypto amount</dt><dd>0.00583 BTC (example only)</dd></div>
-							<div class="pap-record__row"><dt>Quote timestamp / expiry</dt><dd>Quoted 10:00 UTC (example) &middot; Expires 10:15 UTC (example)</dd></div>
-							<div class="pap-record__row"><dt>Submission timestamp</dt><dd>10:12 UTC (example)</dd></div>
-							<div class="pap-record__row"><dt>Transaction hash</dt><dd>DEMO-TX-HASH <span class="pap-record__fictional">(fictional demo value, not a real transaction)</span></dd></div>
-							<div class="pap-record__row pap-record__row--status"><dt>Status</dt><dd>Submitted for review</dd></div>
+							<div class="pap-record__row"><dt>Selected asset / network</dt><dd>Ethereum (ETH) &middot; Ethereum network</dd></div>
+							<div class="pap-record__row"><dt>Expected crypto amount</dt><dd>&asymp;0.0721 ETH</dd></div>
+							<div class="pap-record__row"><dt>Quote timestamp / expiry</dt><dd>Quoted 10:00 UTC &middot; Expires 10:15 UTC</dd></div>
+							<div class="pap-record__row"><dt>Submission timestamp</dt><dd>10:12 UTC</dd></div>
+							<div class="pap-record__row"><dt>Transaction hash</dt><dd>DEMO-TX-HASH</dd></div>
+							<div class="pap-record__row pap-record__row--status"><dt>Status</dt><dd>Pending review</dd></div>
 						</dl>
-						<a class="btn pap-record__cta" href="admin-payment-review.html?payment=PAY-DEMO-001">Review sample</a>
-						<p class="pap-record__note">This opens a static sample review screen for design purposes only. No approve, reject, or real payment review exists anywhere in this prototype.</p>
+						<a class="btn pap-record__cta" href="admin-payment-review.html?payment=PAY-DEMO-001">Review payment</a>
 					</div>
 				</section>
 
 				<section class="admin-panel pap-security">
-					<h2 class="admin-panel__title">How review will work</h2>
+					<h2 class="admin-panel__title">Review guidance</h2>
+					<p class="admin-panel__desc">Payment and order details must be verified before a decision is recorded.</p>
 					<ul class="pap-security__list">
-						<li>The quote and expected crypto amount always come from server records, never from anything the browser supplies.</li>
-						<li>An administrator manually verifies the network, recipient address, amount, transaction success, confirmations, and that the transaction hash has not already been used.</li>
 						<li>Submitting a transaction hash never means the payment is approved.</li>
-						<li>Approval will later require server-side authorization, an audit log entry, and atomic activation of the related Fan Card, Membership, Donation, or Booking.</li>
 						<li>Private keys, seed phrases, and other recovery material are never requested, exposed, or stored anywhere in this system.</li>
 					</ul>
 				</section>

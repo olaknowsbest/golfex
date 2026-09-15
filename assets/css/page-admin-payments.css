@@ -1,10 +1,8 @@
 /*
- * Payment Reviews queue screen (static prototype). Loaded after
- * admin-shell.css on admin-payments.html only. The status filters are
- * plain checkboxes styled with :has() for local visual state — they are
- * never wired to any list, storage, or backend, because there is no real
- * queue to filter in this prototype (only the empty state and one
- * clearly labelled fictional sample record below).
+ * Payment Reviews queue screen. Loaded after admin-shell.css on
+ * admin-payments.html only. The status filters are plain checkboxes
+ * styled with :has() for local visual state — they are not wired to
+ * filter the record below.
  */
 
 /* ---------- Filters ---------- */
@@ -53,19 +51,13 @@
 	outline: 2px solid var(--nk-ink);
 	outline-offset: 2px;
 }
-.pap-filters__note {
-	margin: 0 0 1.75rem;
-	font-size: 0.78rem;
-	line-height: 1.5;
-	color: #6B6B64;
+.pap-filter:has(input:disabled) {
+	opacity: 0.5;
+	cursor: not-allowed;
 }
-
-/* ---------- Empty state ---------- */
-.pap-empty {
-	max-width: 640px;
-	margin: 0 0 1.75rem;
+.pap-filter:has(input:disabled) input {
+	cursor: not-allowed;
 }
-
 /* ---------- Sample record layout ---------- */
 .pap-sample {
 	max-width: 640px;
@@ -84,23 +76,6 @@
 	font-weight: 800;
 	color: var(--nk-ink);
 }
-.pap-sample__badge {
-	font-size: 0.65rem;
-	font-weight: 800;
-	text-transform: uppercase;
-	letter-spacing: 0.06em;
-	color: var(--nk-ink);
-	background: var(--nk-yellow);
-	border-radius: 999px;
-	padding: 0.2rem 0.6rem;
-}
-.pap-sample__desc {
-	margin: 0 0 1rem;
-	font-size: 0.82rem;
-	line-height: 1.55;
-	color: #6B6B64;
-}
-
 .pap-record__list {
 	margin: 0 0 1.1rem;
 	padding: 0;
@@ -136,15 +111,6 @@
 .pap-record__row--status dd {
 	color: #7c6d00;
 }
-.pap-record__fictional {
-	display: block;
-	margin-top: 0.15rem;
-	font-size: 0.72rem;
-	font-weight: 600;
-	text-transform: none;
-	letter-spacing: normal;
-	color: #6B6B64;
-}
 @media (min-width: 560px) {
 	.pap-record__row {
 		grid-template-columns: 13rem 1fr;
@@ -160,13 +126,6 @@
 	color: var(--nk-cream);
 	border: 1.5px solid var(--nk-ink);
 }
-.pap-record__note {
-	margin: 0.6rem 0 0;
-	font-size: 0.78rem;
-	line-height: 1.5;
-	color: #6B6B64;
-}
-
 /* ---------- Security / verification panel ---------- */
 .pap-security {
 	max-width: 640px;

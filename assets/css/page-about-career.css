@@ -1,6 +1,6 @@
 /*
- * About / Career-only stylesheet for the fictional Nazario Kayla profile
- * page (Prompt 03). Loaded after site-shell.css so it can extend the shared
+ * About / Career-only stylesheet for the Nazario Kayla profile page. Loaded
+ * after site-shell.css so it can extend the shared
  * palette/buttons without needing to fight inherited Elementor/theme CSS —
  * this page's body no longer contains any Elementor widget markup.
  */
@@ -17,12 +17,6 @@
 	font-weight: 700;
 	margin: 0 0 1rem;
 }
-.about-fine-print {
-	font-size: 0.8rem;
-	color: #6B6B64;
-	margin: 1.5rem 0 0;
-}
-
 /* Selector repeated on purpose: kit-global.css ships .elementor-kit-15
    h1/h2/h3 { color/font-size/line-height: ... } rules (class+element
    specificity, 0-1-1) left over from the inherited theme, which would
@@ -96,25 +90,6 @@
 	max-width: 52ch;
 	margin: 0 0 1.25rem;
 }
-.about-hero__badge {
-	display: inline-flex;
-	align-items: center;
-	gap: 0.5rem;
-	background: var(--nk-yellow);
-	color: var(--nk-ink);
-	font-size: 0.8rem;
-	font-weight: 700;
-	padding: 0.45rem 0.9rem;
-	border-radius: 999px;
-}
-.about-hero__badge::before {
-	content: "";
-	width: 6px;
-	height: 6px;
-	border-radius: 50%;
-	background: var(--nk-ink);
-	display: inline-block;
-}
 .about-hero__figure {
 	position: relative;
 	background: var(--nk-ink);
@@ -177,17 +152,16 @@
 	gap: 0.3rem;
 }
 .about-facts dt {
-	text-transform: uppercase;
-	letter-spacing: 0.08em;
-	font-size: 0.72rem;
+	font-size: 1.05rem;
 	font-weight: 700;
-	color: var(--nk-yellow);
+	color: var(--nk-white);
 }
 .about-facts dd {
 	margin: 0;
-	font-size: 1rem;
-	font-weight: 600;
-	color: var(--nk-white);
+	font-size: 0.85rem;
+	font-weight: 400;
+	line-height: 1.5;
+	color: rgba(252, 251, 245, 0.75);
 }
 
 @media (min-width: 901px) {
@@ -197,49 +171,10 @@
 	}
 }
 
-/* ---------- Career highlights ---------- */
-.about-highlights {
+/* ---------- Her story ---------- */
+.about-story {
 	padding: 5rem 0;
 	background: var(--nk-sand);
-}
-.about-highlights__grid {
-	display: grid;
-	grid-template-columns: repeat(2, 1fr);
-	gap: 1rem;
-	margin: 0 0 2rem;
-}
-.about-highlight {
-	background: var(--nk-ink);
-	color: var(--nk-cream);
-	border-radius: 16px;
-	padding: 1.5rem 1.25rem;
-	text-align: center;
-}
-.about-highlight__value {
-	display: block;
-	font-size: 1.85rem;
-	font-weight: 700;
-	color: var(--nk-white);
-	line-height: 1.15;
-}
-.about-highlight__label {
-	display: block;
-	font-size: 0.8rem;
-	color: rgba(252, 251, 245, 0.75);
-	margin-top: 0.3rem;
-}
-.about-highlights__foot {
-	display: flex;
-	flex-wrap: wrap;
-	align-items: center;
-	gap: 1.25rem;
-	justify-content: space-between;
-}
-
-@media (min-width: 701px) {
-	.about-highlights__grid {
-		grid-template-columns: repeat(4, 1fr);
-	}
 }
 
 /* ---------- Timeline ---------- */
@@ -271,7 +206,7 @@
 	background: var(--nk-yellow);
 	border: 2px solid var(--nk-ink);
 }
-.about-timeline__year {
+.about-timeline__step {
 	display: inline-block;
 	font-weight: 700;
 	color: #7c6d00;
@@ -340,9 +275,54 @@
 	color: #4A4A46;
 	line-height: 1.55;
 }
+.about-values__cta {
+	margin: 2.5rem 0 0;
+	text-align: center;
+}
 
 @media (min-width: 701px) {
 	.about-values__grid {
+		grid-template-columns: repeat(2, 1fr);
+	}
+}
+@media (min-width: 1001px) {
+	.about-values__grid {
+		grid-template-columns: repeat(4, 1fr);
+	}
+}
+
+/* ---------- Connect with Nazario ---------- */
+.about-connect {
+	padding: 5rem 0;
+}
+.about-connect__grid {
+	display: grid;
+	grid-template-columns: 1fr;
+	gap: 1.5rem;
+}
+.about-connect-card {
+	background: var(--nk-white);
+	border: 1px solid rgba(10, 10, 10, 0.1);
+	border-radius: 20px;
+	padding: 2rem 1.75rem;
+	display: flex;
+	flex-direction: column;
+	align-items: flex-start;
+	gap: 0.6rem;
+}
+.about-connect-card__title.about-connect-card__title {
+	margin: 0;
+	font-size: 1.2rem;
+	color: var(--nk-ink);
+}
+.about-connect-card__desc {
+	margin: 0 0 0.5rem;
+	color: #4A4A46;
+	line-height: 1.55;
+}
+
+@media (min-width: 701px) {
+	.about-connect__grid {
 		grid-template-columns: repeat(3, 1fr);
 	}
 }

@@ -207,13 +207,6 @@ textarea.aba-field__input {
 	opacity: 0.5;
 	cursor: not-allowed;
 }
-.aba-actions__note {
-	margin: 0;
-	font-size: 0.78rem;
-	line-height: 1.5;
-	color: #6B6B64;
-}
-
 .aba-security__list {
 	margin: 0;
 	padding: 0 0 0 1.1rem;

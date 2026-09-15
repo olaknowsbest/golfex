@@ -113,3 +113,99 @@ This site is plain HTML/CSS/JS. There is no WordPress, no PHP, and no server-sid
   the original demo domain. Neither is called by anything on the current homepage
   (they'd only matter for a "Mega Menu" widget or Elementor's admin/AJAX features,
   none of which are used here) — but worth knowing if new widgets are added later.
+
+## Fan Card tier migration — Bronze / Silver / Gold / Platinum
+
+- **Replaced the three-tier Standard/Premium/VIP Fan Card model with the approved
+  four-tier model**: Bronze ($250), Silver ($500), Gold ($1,000), Platinum ($1,500),
+  each a one-time purchase with its own cumulative benefit list. Canonical tier
+  slugs are `bronze`/`silver`/`gold`/`platinum` throughout.
+- Rebuilt `pricing-plan.html`'s tier cards, tier detail panels, and the feature
+  comparison table as four tiers in that order; removed the "Most Popular" badge
+  (Platinum now carries a "Signature Edition" badge instead, matching the
+  treatment already used on the homepage's Fan Card feature); removed the
+  "online purchasing will be available soon" hedge language from the hero,
+  status badge, and FAQ.
+- Updated the dashboard purchase configurator (`dashboard-purchase-fan-card.html`
+  + its JS/CSS) to offer four tiers, starting neutral with no tier preselected;
+  `tier=` now only ever accepts `bronze|silver|gold|platinum` — anything else,
+  including the old `standard|premium|vip` values, falls back to the neutral
+  "no tier selected" state rather than erroring.
+- The shared "Complete Payment" page (`assets/js/page-dashboard-payment.js`)
+  now derives each Fan Card tier's price from its own internal table
+  (bronze 250 / silver 500 / gold 1000 / platinum 1500) — it never trusts a
+  price supplied via the URL, and an unrecognized tier still fails safely to
+  the existing "missing" state.
+- Updated all admin Fan Card sample data (`admin-fan-cards.html`,
+  `admin-fan-card-detail.html`, `admin-customers.html`,
+  `admin-customer-detail.html`, `admin-payment-review.html`) to the new tiers
+  and added a fourth sample customer/card (`CU-DEMO-004` / `FC-DEMO-004`,
+  Taylor Brooks, Silver, Active) so all four tiers have a representative
+  sample record. Existing sample payment references were renumbered where a
+  collision would otherwise have made one reference describe two different
+  transactions.
+- Fan Cards remain one-time purchases only — no gifting, no recurring/renewal
+  language, and no benefit tied to Membership. Membership's own plan names
+  (Supporter/Insider/Premier) and pricing were not touched.
+
+## Membership monthly/yearly billing migration
+
+- **Replaced the old single annual-only Membership price per plan with a
+  monthly/yearly billing choice**: Supporter ($125/mo, $1,450/yr, saves
+  $50/yr), Insider ($250/mo, $2,900/yr, saves $100/yr), Premier ($500/mo,
+  $5,700/yr, saves $300/yr). Canonical plan slugs remain
+  `supporter`/`insider`/`premier`; billing period is a new
+  `billing=monthly|yearly` value alongside `plan=`.
+- Rebuilt the public `memberships.html` as a restrained editorial page: one
+  "Memberships from $125/month" price signal, three benefit-led plan
+  previews with no price/toggle/savings detail, and login-intent CTAs
+  (`login.html?intent=membership`, `signup.html?intent=membership`) — all
+  interactive pricing now lives only in the signed-in dashboard.
+- Rebuilt `dashboard-select-membership.html` as the primary interactive
+  pricing screen: a real Monthly/Yearly radio selector plus Supporter/
+  Insider/Premier plan-card radios (new `assets/js/page-dashboard-select-membership.js`,
+  new `assets/css/page-dashboard-select-membership.css`), with live price,
+  billing-basis label, and yearly-savings text kept in sync by JS. Prices
+  are looked up from a fixed internal table, never invented from the URL;
+  the page starts fully neutral and never defaults a billing period —
+  "Review Membership" only activates once both a plan and a billing period
+  are explicitly chosen, matching the Fan Card configurator's established
+  pattern.
+- Rebuilt `dashboard-confirm-membership.html` (+ its JS/CSS) to show billing
+  period, price, yearly savings (when applicable), included benefits, a
+  fuller manual-renewal explanation, and an access-begins-after-approval
+  note; its "Edit Membership" link now restores both `plan=` and `billing=`.
+  A missing or invalid plan/billing pair still falls back to the existing
+  "Select a Membership first" neutral state — never a default plan or
+  billing period.
+- The shared "Complete Payment" page (`assets/js/page-dashboard-payment.js`)
+  now derives the Membership total from `plan` + `billing` against its own
+  internal table — it never trusts a price or amount supplied via the URL,
+  and a missing/invalid plan or billing value still fails safely to the
+  existing "missing" state. Added a Membership-specific note on
+  `dashboard-payment.html` reiterating that renewal is always manual, with
+  no automatic charge and no saved payment method.
+- Updated `dashboard-memberships.html`'s empty-state copy and documented
+  future states (Pending activation / Active / Suspended / Expired /
+  payment-failed) to describe monthly-or-yearly billing and manual,
+  customer-initiated renewal; no functional renewal control was added,
+  since this static prototype still implements only the empty state.
+- Updated the admin Membership samples for consistency across every
+  surface: `admin-membership-detail.html` and `admin-memberships.html` now
+  show each sample's billing period and price (MB-DEMO-001 Insider,
+  Yearly, $2,900.00; MB-DEMO-002 Supporter, Monthly, $125.00, customer
+  Avery Nguyen, Active September 15, 2026 to October 15, 2026, payment
+  PAY-DEMO-006; MB-DEMO-003 Premier, Yearly, $5,700.00); removed the
+  Active-status "Cancel future renewal" action, which implied an
+  auto-renewing subscription that doesn't exist. `admin-customer-detail.html`
+  now shows billing period alongside plan for its two linked Memberships.
+  References, customers, statuses, and linked payment references were
+  left unchanged.
+- Two approved public-page copy corrections applied to `memberships.html`:
+  "Sign in to Compare Plans" → "Sign in to compare plans"; the product-
+  separation section (its heading, supporting paragraph, and "Explore Fan
+  Cards" CTA) was removed outright per a follow-up simplification request,
+  so the page now flows from the benefits section directly into the final
+  CTA.
+- Memberships and Fan Cards remain separate products throughout; Fan Card
+  files, prices, benefits, visuals, and sample records were not touched.

@@ -1,9 +1,6 @@
 /*
- * Booking Availability queue screen (static prototype). Loaded after
- * admin-shell.css on admin-bookings.html only. The summary card values
- * and table rows are clearly labelled fictional sample data, never
- * invented live metrics — production availability comes from Laravel
- * and MySQL.
+ * Booking Availability queue screen. Loaded after admin-shell.css on
+ * admin-bookings.html only.
  */
 
 .abk-primary-cta {
@@ -102,13 +99,6 @@
 .abk-table__scroll tbody tr:last-child td {
 	border-bottom: none;
 }
-.abk-table__note {
-	margin: 0.85rem 0 0;
-	font-size: 0.78rem;
-	line-height: 1.5;
-	color: #6B6B64;
-}
-
 /* ---------- Status pills ---------- */
 .abk-status {
 	display: inline-flex;

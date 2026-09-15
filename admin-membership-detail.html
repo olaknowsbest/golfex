@@ -4,8 +4,8 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<title>Membership Detail &#8211; Nazario Kayla Fan Club Prototype</title>
-	<meta name="description" content="A static, honestly labelled preview of the future admin Membership detail screen for the fictional Nazario Kayla fan-platform prototype. Not a functioning admin system.">
+	<title>Membership Detail &#8211; Nazario Kayla Administration</title>
+	<meta name="description" content="Membership detail for the Nazario Kayla Fan Club admin team.">
 	<meta name="robots" content="noindex, nofollow">
 	<meta name="theme-color" content="#0A0A0A">
 	<link rel="icon" href="assets/images/uploads/favicon.png" sizes="32x32" />
@@ -27,10 +27,9 @@
 		<aside class="admin-sidebar" id="admin-sidebar" aria-label="Admin navigation">
 			<div class="admin-sidebar__top">
 				<div class="admin-sidebar__brand">
-					<img class="admin-sidebar__logo" src="assets/images/brand/nk-monogram-mark.svg" alt="Nazario Kayla Fan Club &#8212; Prototype" width="28" height="29">
+					<img class="admin-sidebar__logo" src="assets/images/brand/nk-monogram-mark.svg" alt="Nazario Kayla Administration" width="28" height="29">
 					<span class="admin-sidebar__brand-text">
 						<span class="admin-sidebar__brand-name">NK Admin</span>
-						<span class="admin-sidebar__tag">Admin prototype</span>
 					</span>
 				</div>
 				<button class="admin-sidebar__close" type="button" data-admin-close aria-label="Close menu">
@@ -159,48 +158,50 @@
 				</button>
 				<img class="admin-topbar__logo" src="assets/images/brand/nk-monogram-mark.svg" alt="" aria-hidden="true">
 				<p class="admin-topbar__title">Membership Detail</p>
-				<span class="admin-topbar__badge">Admin prototype</span>
 			</header>
 
 			<main id="admin-main" class="admin-main">
 				<a class="aent-back" href="admin-memberships.html">&larr; Back to Memberships</a>
 				<h1 class="admin-main__title">Membership Detail</h1>
+				<p class="admin-main__lead">Review the selected Membership record.</p>
 
 				<!--
 					Static prototype only — no real Membership exists here.
 					Production behavior (documented only, never implemented or
 					simulated here): this screen will live at a route such as
-					/admin/memberships/{reference}. Laravel loads the
-					authoritative membership, customer, and payment records from
-					MySQL by reference. Activation requires an approved, matching
+					/admin/memberships/{reference}. The authoritative
+					membership, customer, and payment records are loaded by
+					reference. Activation requires an approved, matching
 					payment; approval and entitlement creation run as one atomic,
 					idempotent database transaction — reprocessing an
 					already-approved payment never creates a duplicate
 					membership. Start and expiry dates are assigned server-side.
 					Suspension preserves the full audit trail, and every admin
 					decision is logged with the administrator, timestamp, and
-					reason. This prototype never charges, renews, or modifies
-					access. Query-string values are only ever used to select
-					which fixed sample below to display — price, status, dates,
-					and customer identity are never read from the URL.
+					reason. Memberships are monthly or yearly, chosen by the
+					customer; renewal is always manual — there is no automatic
+					renewal or recurring charge, and letting a Membership
+					expire never charges the customer. Each renewal is its own
+					new payment and TXID review event, handled the same way as
+					the original purchase. This prototype never charges,
+					renews, or modifies access. Query-string values are only
+					ever used to select which fixed sample below to display —
+					price, billing period, status, dates, and customer
+					identity are never read from the URL.
 				-->
 				<div id="amb-detail" class="aent-detail" data-state="missing" data-membership="">
 
 					<section class="admin-panel aent-missing">
 						<h2 class="admin-panel__title">Select a Membership to view</h2>
-						<p class="admin-panel__desc">This static prototype only has fixed sample records. Return to the list and choose &#8220;View&#8221; on a row to see one.</p>
+						<p class="admin-panel__desc">Return to the list and choose &#8220;View&#8221; on a row to see one.</p>
 						<a class="btn btn--cta aent-missing__cta" href="admin-memberships.html">Back to Memberships</a>
 					</section>
 
 					<div class="aent-valid">
 
-						<div class="aent-sample-notice">
-							<p><strong>Sample record.</strong> The Membership, customer, and payment reference shown are fictional demonstration data. Nothing on this page is a real membership, customer, or transaction.</p>
-						</div>
-
 						<!-- MB-DEMO-001 — Active -->
 						<article class="ambd-record" data-ref="MB-DEMO-001" aria-labelledby="ambd-001-heading">
-							<h2 id="ambd-001-heading" class="visually-hidden">Sample Membership MB-DEMO-001</h2>
+							<h2 id="ambd-001-heading" class="visually-hidden">Membership MB-DEMO-001</h2>
 							<div class="aent-record-header">
 								<span class="aent-status aent-status--active">Active</span>
 								<span class="aent-record-header__ref">MB-DEMO-001</span>
@@ -209,10 +210,11 @@
 							<div class="admin-panel aent-fields">
 								<h3 class="admin-panel__title">Membership details</h3>
 								<dl class="aent-fields__list">
-									<div class="aent-fields__row"><dt>Customer</dt><dd>Jordan Ellis <span class="aent-fictional">(fictional)</span></dd></div>
+									<div class="aent-fields__row"><dt>Customer</dt><dd>Jordan Ellis</dd></div>
 									<div class="aent-fields__row"><dt>Membership reference</dt><dd>MB-DEMO-001</dd></div>
 									<div class="aent-fields__row"><dt>Plan</dt><dd>Insider</dd></div>
-									<div class="aent-fields__row"><dt>Annual price</dt><dd>$300.00</dd></div>
+									<div class="aent-fields__row"><dt>Billing period</dt><dd>Yearly</dd></div>
+									<div class="aent-fields__row"><dt>Price</dt><dd>$2,900.00</dd></div>
 									<div class="aent-fields__row"><dt>Linked payment reference</dt><dd>PAY-DEMO-005</dd></div>
 									<div class="aent-fields__row"><dt>Payment status</dt><dd>Approved</dd></div>
 									<div class="aent-fields__row"><dt>Membership status</dt><dd>Active</dd></div>
@@ -225,47 +227,47 @@
 								<h3 class="admin-panel__title">Actions</h3>
 								<div class="aent-actions">
 									<button type="button" class="btn aent-actions__btn" disabled>Suspend Membership</button>
-									<button type="button" class="btn aent-actions__btn" disabled>Cancel future renewal</button>
 								</div>
-								<p class="aent-actions__note">Only actions appropriate to Active status are shown. Both actions are disabled in this static prototype &mdash; this prototype never charges, renews, suspends, or modifies access.</p>
+								<p class="aent-actions__note">Membership renewal is manual. Continuing access after expiry requires a new payment submitted for review.</p>
 							</div>
 						</article>
 
-						<!-- MB-DEMO-002 — Pending activation -->
+						<!-- MB-DEMO-002 — Active (Monthly Supporter) -->
 						<article class="ambd-record" data-ref="MB-DEMO-002" aria-labelledby="ambd-002-heading">
-							<h2 id="ambd-002-heading" class="visually-hidden">Sample Membership MB-DEMO-002</h2>
+							<h2 id="ambd-002-heading" class="visually-hidden">Membership MB-DEMO-002</h2>
 							<div class="aent-record-header">
-								<span class="aent-status aent-status--pending">Pending activation</span>
+								<span class="aent-status aent-status--active">Active</span>
 								<span class="aent-record-header__ref">MB-DEMO-002</span>
 							</div>
 
 							<div class="admin-panel aent-fields">
 								<h3 class="admin-panel__title">Membership details</h3>
 								<dl class="aent-fields__list">
-									<div class="aent-fields__row"><dt>Customer</dt><dd>Avery Nguyen <span class="aent-fictional">(fictional)</span></dd></div>
+									<div class="aent-fields__row"><dt>Customer</dt><dd><a class="aent-relationship-link" href="admin-customer-detail.html?customer=CU-DEMO-005">Avery Nguyen</a></dd></div>
 									<div class="aent-fields__row"><dt>Membership reference</dt><dd>MB-DEMO-002</dd></div>
 									<div class="aent-fields__row"><dt>Plan</dt><dd>Supporter</dd></div>
-									<div class="aent-fields__row"><dt>Annual price</dt><dd>$150.00</dd></div>
+									<div class="aent-fields__row"><dt>Billing period</dt><dd>Monthly</dd></div>
+									<div class="aent-fields__row"><dt>Price</dt><dd>$125.00</dd></div>
 									<div class="aent-fields__row"><dt>Linked payment reference</dt><dd>PAY-DEMO-006</dd></div>
 									<div class="aent-fields__row"><dt>Payment status</dt><dd>Approved</dd></div>
-									<div class="aent-fields__row"><dt>Membership status</dt><dd>Pending activation</dd></div>
-									<div class="aent-fields__row"><dt>Start date</dt><dd>Assigned on activation</dd></div>
-									<div class="aent-fields__row"><dt>Expiry date</dt><dd>Assigned on activation</dd></div>
+									<div class="aent-fields__row"><dt>Membership status</dt><dd>Active</dd></div>
+									<div class="aent-fields__row"><dt>Start date</dt><dd>September 15, 2026</dd></div>
+									<div class="aent-fields__row"><dt>Expiry date</dt><dd>October 15, 2026</dd></div>
 								</dl>
 							</div>
 
 							<div class="admin-panel aent-actions-panel">
 								<h3 class="admin-panel__title">Actions</h3>
 								<div class="aent-actions">
-									<button type="button" class="btn aent-actions__btn" disabled>Activate Membership</button>
+									<button type="button" class="btn aent-actions__btn" disabled>Suspend Membership</button>
 								</div>
-								<p class="aent-actions__note">Only actions appropriate to Pending activation status are shown. Activation requires an approved, matching payment in production &mdash; this prototype never charges, renews, or modifies access.</p>
+								<p class="aent-actions__note">Membership renewal is manual. Continuing access after expiry requires a new payment submitted for review.</p>
 							</div>
 						</article>
 
 						<!-- MB-DEMO-003 — Suspended -->
 						<article class="ambd-record" data-ref="MB-DEMO-003" aria-labelledby="ambd-003-heading">
-							<h2 id="ambd-003-heading" class="visually-hidden">Sample Membership MB-DEMO-003</h2>
+							<h2 id="ambd-003-heading" class="visually-hidden">Membership MB-DEMO-003</h2>
 							<div class="aent-record-header">
 								<span class="aent-status aent-status--suspended">Suspended</span>
 								<span class="aent-record-header__ref">MB-DEMO-003</span>
@@ -274,10 +276,11 @@
 							<div class="admin-panel aent-fields">
 								<h3 class="admin-panel__title">Membership details</h3>
 								<dl class="aent-fields__list">
-									<div class="aent-fields__row"><dt>Customer</dt><dd>Riley Chen <span class="aent-fictional">(fictional)</span></dd></div>
+									<div class="aent-fields__row"><dt>Customer</dt><dd>Riley Chen</dd></div>
 									<div class="aent-fields__row"><dt>Membership reference</dt><dd>MB-DEMO-003</dd></div>
 									<div class="aent-fields__row"><dt>Plan</dt><dd>Premier</dd></div>
-									<div class="aent-fields__row"><dt>Annual price</dt><dd>$600.00</dd></div>
+									<div class="aent-fields__row"><dt>Billing period</dt><dd>Yearly</dd></div>
+									<div class="aent-fields__row"><dt>Price</dt><dd>$5,700.00</dd></div>
 									<div class="aent-fields__row"><dt>Linked payment reference</dt><dd>PAY-DEMO-007</dd></div>
 									<div class="aent-fields__row"><dt>Payment status</dt><dd>Approved</dd></div>
 									<div class="aent-fields__row"><dt>Membership status</dt><dd>Suspended</dd></div>
@@ -291,18 +294,17 @@
 								<div class="aent-actions">
 									<button type="button" class="btn aent-actions__btn" disabled>Restore Membership</button>
 								</div>
-								<p class="aent-actions__note">Only actions appropriate to Suspended status are shown. Restoring a membership is disabled in this static prototype and preserves the audit trail in production &mdash; nothing here changes any membership state.</p>
+								<p class="aent-actions__note">Internal actions are recorded for audit.</p>
 							</div>
 						</article>
 
 						<section class="admin-panel aent-security" aria-labelledby="ambd-security-heading">
-							<h2 id="ambd-security-heading" class="admin-panel__title">How activation will work</h2>
+							<h2 id="ambd-security-heading" class="admin-panel__title">Activation guidance</h2>
 							<ul class="aent-security__list">
-								<li>Memberships are annual access products, separate from one-time Fan Cards.</li>
-								<li>Activation requires an approved, matching payment. Approval and entitlement creation happen as one atomic, idempotent operation &mdash; reprocessing an already-approved payment never creates a duplicate membership.</li>
-								<li>Start and expiry dates are assigned server-side, never supplied by the browser.</li>
-								<li>Suspending a membership preserves its full audit trail. Every admin decision is logged with the administrator, timestamp, and reason.</li>
-								<li>This static prototype does not charge, renew, or modify access in any way.</li>
+								<li>Memberships are monthly or yearly access products, chosen by the customer, and separate from one-time Fan Cards.</li>
+								<li>Membership activation requires approved payment.</li>
+								<li>Membership renewal is manual.</li>
+								<li>Internal actions are recorded for audit.</li>
 							</ul>
 						</section>
 					</div>

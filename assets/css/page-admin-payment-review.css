@@ -45,25 +45,6 @@
 	margin-top: 0.75rem;
 }
 
-/* ---------- Sample notice ---------- */
-.apr-sample-notice {
-	margin: 0 0 1.4rem;
-	padding: 0.85rem 1rem;
-	border: 1px solid rgba(10, 10, 10, 0.16);
-	border-left: 3px solid var(--nk-yellow);
-	border-radius: 8px;
-	background: var(--nk-white);
-}
-.apr-sample-notice p {
-	margin: 0;
-	font-size: 0.82rem;
-	line-height: 1.55;
-	color: #4A4A46;
-}
-.apr-sample-notice strong {
-	color: var(--nk-ink);
-}
-
 /* ---------- Record status header ---------- */
 .apr-record-header {
 	display: flex;
@@ -170,15 +151,6 @@
 	color: var(--nk-ink);
 	font-variant-numeric: tabular-nums;
 }
-.apr-fictional {
-	display: block;
-	margin-top: 0.15rem;
-	font-size: 0.72rem;
-	font-weight: 600;
-	text-transform: none;
-	letter-spacing: normal;
-	color: #6B6B64;
-}
 @media (min-width: 560px) {
 	.apr-summary__row {
 		grid-template-columns: 13rem 1fr;
@@ -220,13 +192,6 @@
 	cursor: not-allowed;
 	accent-color: rgba(10, 10, 10, 0.4);
 }
-.apr-checklist__note {
-	margin: 0.75rem 0 0;
-	font-size: 0.78rem;
-	line-height: 1.5;
-	color: #6B6B64;
-}
-
 /* ---------- Product outcome ---------- */
 .apr-outcome__list {
 	margin: 1rem 0 0;
@@ -290,13 +255,6 @@
 	opacity: 0.7;
 	cursor: not-allowed;
 }
-.apr-notes__note {
-	margin: 0.6rem 0 0;
-	font-size: 0.78rem;
-	line-height: 1.5;
-	color: #6B6B64;
-}
-
 /* ---------- Actions ---------- */
 .apr-actions {
 	display: flex;

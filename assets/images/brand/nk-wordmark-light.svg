@@ -1,6 +1,6 @@
 <svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 720 180" role="img" aria-labelledby="nk-wordmark-title nk-wordmark-desc">
-  <title id="nk-wordmark-title">Nazario Kayla Fan Club — Prototype</title>
-  <desc id="nk-wordmark-desc">Horizontal light wordmark for dark surfaces: the NK monogram with a yellow golf ball-flight arc, paired with the Nazario Kayla Fan Club prototype name set in cream and the prototype tagline set in yellow.</desc>
+  <title id="nk-wordmark-title">Nazario Kayla Fan Club</title>
+  <desc id="nk-wordmark-desc">Horizontal light wordmark for dark surfaces: the NK monogram with a yellow golf ball-flight arc, paired with the Nazario Kayla Fan Club name set in cream.</desc>
   <g transform="translate(18 20)">
     <path d="M27 105V35h17l37 45V35h20v70H84L47 60v45z" fill="#FCFBF5"/>
     <path d="M87 105V35h20v27l22-27h24l-29 34 31 36h-25l-23-28v28z" fill="#FCFBF5"/>
@@ -8,7 +8,6 @@
     <circle cx="138" cy="39" r="10" fill="#FDF567"/>
   </g>
   <g font-family="Inter Tight, Arial, sans-serif">
-    <text x="190" y="91" font-size="58" font-weight="700" letter-spacing="3" fill="#FCFBF5">NAZARIO KAYLA</text>
-    <text x="194" y="126" font-size="15" font-weight="700" letter-spacing="7" fill="#FDF567">FAN PLATFORM &#183; PROTOTYPE</text>
+    <text x="190" y="105" font-size="58" font-weight="700" letter-spacing="3" fill="#FCFBF5">NAZARIO KAYLA</text>
   </g>
 </svg>

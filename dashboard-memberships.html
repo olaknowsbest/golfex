@@ -4,8 +4,8 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<title>My Memberships &#8211; Nazario Kayla Fan Club Prototype</title>
-	<meta name="description" content="A static, honestly labelled preview of the future My Memberships screen for the fictional Nazario Kayla fan-platform prototype. Not a functioning account.">
+	<title>My Memberships &#8211; Nazario Kayla Fan Club</title>
+	<meta name="description" content="Manage your Membership on your Nazario Kayla Fan Club account.">
 	<meta name="robots" content="noindex, nofollow">
 	<meta name="theme-color" content="#0A0A0A">
 	<link rel="icon" href="assets/images/uploads/favicon.png" sizes="32x32" />
@@ -27,10 +27,9 @@
 		<aside class="dashboard-sidebar" id="dashboard-sidebar" aria-label="Dashboard navigation">
 			<div class="dashboard-sidebar__top">
 				<div class="dashboard-sidebar__brand">
-					<img class="dashboard-sidebar__logo" src="assets/images/brand/nk-monogram-mark.svg" alt="Nazario Kayla Fan Club &#8212; Prototype" width="36" height="37">
+					<img class="dashboard-sidebar__logo" src="assets/images/brand/nk-monogram-mark.svg" alt="Nazario Kayla Fan Club" width="36" height="37">
 					<span class="dashboard-sidebar__brand-text">
 						<span class="dashboard-sidebar__brand-name">NK Dashboard</span>
-						<span class="dashboard-sidebar__prototype-tag">Prototype</span>
 					</span>
 				</div>
 				<button class="dashboard-sidebar__close" type="button" data-dashboard-close aria-label="Close menu">
@@ -145,29 +144,42 @@
 				</button>
 				<img class="dashboard-topbar__logo" src="assets/images/brand/nk-monogram-mark.svg" alt="" aria-hidden="true">
 				<p class="dashboard-topbar__title">My Memberships</p>
-				<span class="dashboard-topbar__account">Account preview</span>
 			</header>
 
 			<main id="dashboard-main" class="dashboard-main">
 				<h1 class="dashboard-main__title">My Memberships</h1>
-				<p class="dashboard-main__lead">This is a static preview of your membership wallet. My Memberships shows only the membership you actually hold or have requested &mdash; it is not a catalog of plans to compare.</p>
+				<p class="dashboard-main__lead">My Memberships shows only the membership you actually hold or have requested &mdash; it is not a catalog of plans to compare.</p>
 
 				<!--
 					My Memberships is an ownership wallet, not a plan catalog. The
-					Supporter/Insider/Premier comparison and selection live
-					exclusively on dashboard-select-membership.html.
+					Supporter/Insider/Premier comparison, billing-period choice, and
+					selection live exclusively on dashboard-select-membership.html.
 
 					Future states for this screen (none implemented in this static
 					prototype):
 					1. .dsm-empty (this state) — before any membership purchase is
 					   submitted.
-					2. A single membership record, status "Pending approval" —
+					2. A single membership record showing its plan and billing
+					   period (Monthly or Yearly), status "Pending activation" —
 					   shown only after payment submission. Never shows automatic
 					   payment verification.
 					3. That same membership becomes "Active" only after a manual
-					   admin approval step. No other status transition exists.
-					Only one membership may ever be active at a time; this is an
-					annual recurring access product, never a Fan Card.
+					   admin approval step, showing its current billing period and
+					   expiry date. Renewing before or after expiry is always a new,
+					   customer-initiated crypto payment submitted for review — never
+					   an automatic charge, and expiration alone never charges the
+					   customer.
+					4. "Suspended" — an admin-only action; access paused while the
+					   record and its history are preserved.
+					5. "Expired" — the billing period ended without a renewal
+					   payment being approved in time; access ends but no charge
+					   occurs. A new payment is required to reactivate.
+					6. "Payment failed" / rejected — the submitted payment did not
+					   pass manual review; the membership never activates from that
+					   payment and a new payment is required to try again.
+					No other status transition exists. Only one membership may ever
+					be active at a time; this is a monthly-or-yearly access product,
+					renewed manually, and never a Fan Card.
 				-->
 				<section class="dsm-empty" aria-labelledby="dsm-empty-heading">
 					<div class="dsm-empty__visual" aria-hidden="true">
@@ -176,11 +188,11 @@
 						</div>
 					</div>
 					<h2 id="dsm-empty-heading" class="dsm-empty__title">No active membership</h2>
-					<p class="dsm-empty__desc">Choose an annual membership to unlock member access.</p>
+					<p class="dsm-empty__desc">Choose a plan and a billing period to unlock member access.</p>
 					<a class="btn btn--cta dsm-empty__cta" href="dashboard-select-membership.html">Choose Membership</a>
 				</section>
 
-				<p class="dsm-fine-print">Memberships are annual recurring access products, separate from one-time Fan Cards. No account, purchase, or verification is created here.</p>
+				<p class="dsm-fine-print">Memberships are monthly or yearly access products, separate from one-time Fan Cards, and renew only through a new payment you submit for admin review &mdash; never an automatic charge. No account, purchase, or verification is created here.</p>
 			</main>
 		</div>
 	</div>

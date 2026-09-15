@@ -4,8 +4,8 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<title>Memberships &#8211; Nazario Kayla Fan Club Prototype</title>
-	<meta name="description" content="A static, honestly labelled preview of the future admin Membership management screen for the fictional Nazario Kayla fan-platform prototype. Not a functioning admin system.">
+	<title>Memberships &#8211; Nazario Kayla Administration</title>
+	<meta name="description" content="Membership management for the Nazario Kayla Fan Club admin team.">
 	<meta name="robots" content="noindex, nofollow">
 	<meta name="theme-color" content="#0A0A0A">
 	<link rel="icon" href="assets/images/uploads/favicon.png" sizes="32x32" />
@@ -27,10 +27,9 @@
 		<aside class="admin-sidebar" id="admin-sidebar" aria-label="Admin navigation">
 			<div class="admin-sidebar__top">
 				<div class="admin-sidebar__brand">
-					<img class="admin-sidebar__logo" src="assets/images/brand/nk-monogram-mark.svg" alt="Nazario Kayla Fan Club &#8212; Prototype" width="28" height="29">
+					<img class="admin-sidebar__logo" src="assets/images/brand/nk-monogram-mark.svg" alt="Nazario Kayla Administration" width="28" height="29">
 					<span class="admin-sidebar__brand-text">
 						<span class="admin-sidebar__brand-name">NK Admin</span>
-						<span class="admin-sidebar__tag">Admin prototype</span>
 					</span>
 				</div>
 				<button class="admin-sidebar__close" type="button" data-admin-close aria-label="Close menu">
@@ -159,42 +158,41 @@
 				</button>
 				<img class="admin-topbar__logo" src="assets/images/brand/nk-monogram-mark.svg" alt="" aria-hidden="true">
 				<p class="admin-topbar__title">Memberships</p>
-				<span class="admin-topbar__badge">Admin prototype</span>
 			</header>
 
 			<main id="admin-main" class="admin-main">
 				<h1 class="admin-main__title">Memberships</h1>
-				<p class="admin-main__lead">This is a static preview of the future Membership management screen. Memberships are annual access products, separate from one-time Fan Cards. Nothing here activates, suspends, restores, or cancels a real membership.</p>
+				<p class="admin-main__lead">Review Membership access, billing periods, and status.</p>
 
 				<div class="aent-summary-grid">
 					<article class="aent-summary-card">
 						<p class="aent-summary-card__label">Pending activation</p>
-						<p class="aent-summary-card__value">1</p>
-						<p class="aent-summary-card__desc">1 sample record is shown below (sample data, not a live count).</p>
+						<p class="aent-summary-card__value">0</p>
+						<p class="aent-summary-card__desc">No memberships are currently pending activation.</p>
 					</article>
 					<article class="aent-summary-card">
 						<p class="aent-summary-card__label">Active Memberships</p>
-						<p class="aent-summary-card__value">1</p>
-						<p class="aent-summary-card__desc">1 sample record is shown below (sample data, not a live count).</p>
+						<p class="aent-summary-card__value">2</p>
 					</article>
 					<article class="aent-summary-card">
 						<p class="aent-summary-card__label">Expiring soon</p>
-						<p class="aent-summary-card__value">1</p>
-						<p class="aent-summary-card__desc">The Active sample below has an illustrative near-term expiry date (sample data, not a live count).</p>
+						<p class="aent-summary-card__value">2</p>
+						<p class="aent-summary-card__desc">Both active memberships below have near-term expiry dates.</p>
 					</article>
 				</div>
 
 				<section class="admin-panel aent-table-panel" aria-labelledby="amb-table-heading">
-					<h2 id="amb-table-heading" class="admin-panel__title">Sample Memberships</h2>
-					<p class="admin-panel__desc">The records below are fictional demonstration data for this static prototype, not real customers or memberships. One Pending activation, one Active, and one Suspended example are shown for illustration.</p>
+					<h2 id="amb-table-heading" class="admin-panel__title">Memberships</h2>
 
-					<div class="aent-table__scroll" role="region" aria-label="Sample Memberships, scroll horizontally to see all columns" tabindex="0">
+					<div class="aent-table__scroll" role="region" aria-label="Memberships, scroll horizontally to see all columns" tabindex="0">
 						<table>
 							<thead>
 								<tr>
 									<th scope="col">Membership reference</th>
 									<th scope="col">Customer</th>
 									<th scope="col">Plan</th>
+									<th scope="col">Billing</th>
+									<th scope="col">Price</th>
 									<th scope="col">Payment reference</th>
 									<th scope="col">Status</th>
 									<th scope="col">Start date</th>
@@ -205,18 +203,22 @@
 							<tbody>
 								<tr>
 									<th scope="row">MB-DEMO-002</th>
-									<td>Avery Nguyen <span class="aent-fictional">(fictional)</span></td>
+									<td>Avery Nguyen</td>
 									<td>Supporter</td>
+									<td>Monthly</td>
+									<td>$125.00</td>
 									<td>PAY-DEMO-006</td>
-									<td><span class="aent-status aent-status--pending">Pending activation</span></td>
-									<td>&mdash;</td>
-									<td>&mdash;</td>
+									<td><span class="aent-status aent-status--active">Active</span></td>
+									<td>September 15, 2026</td>
+									<td>October 15, 2026</td>
 									<td><a class="btn aent-row-cta" href="admin-membership-detail.html?membership=MB-DEMO-002">View</a></td>
 								</tr>
 								<tr>
 									<th scope="row">MB-DEMO-001</th>
-									<td>Jordan Ellis <span class="aent-fictional">(fictional)</span></td>
+									<td>Jordan Ellis</td>
 									<td>Insider</td>
+									<td>Yearly</td>
+									<td>$2,900.00</td>
 									<td>PAY-DEMO-005</td>
 									<td><span class="aent-status aent-status--active">Active</span></td>
 									<td>September 15, 2025</td>
@@ -225,8 +227,10 @@
 								</tr>
 								<tr>
 									<th scope="row">MB-DEMO-003</th>
-									<td>Riley Chen <span class="aent-fictional">(fictional)</span></td>
+									<td>Riley Chen</td>
 									<td>Premier</td>
+									<td>Yearly</td>
+									<td>$5,700.00</td>
 									<td>PAY-DEMO-007</td>
 									<td><span class="aent-status aent-status--suspended">Suspended</span></td>
 									<td>November 1, 2025</td>
@@ -236,17 +240,15 @@
 							</tbody>
 						</table>
 					</div>
-					<p class="aent-table__note">No search, filtering, pagination, or invented live totals exist in this static prototype &mdash; every value above is a fixed, labelled sample.</p>
 				</section>
 
 				<section class="admin-panel aent-security" aria-labelledby="amb-security-heading">
-					<h2 id="amb-security-heading" class="admin-panel__title">How activation will work</h2>
+					<h2 id="amb-security-heading" class="admin-panel__title">Activation guidance</h2>
 					<ul class="aent-security__list">
-						<li>Memberships are annual access products, separate from one-time Fan Cards.</li>
-						<li>Activation requires an approved, matching payment. Approval and entitlement creation happen as one atomic, idempotent operation &mdash; reprocessing an already-approved payment never creates a duplicate membership.</li>
-						<li>Start and expiry dates are assigned server-side, never supplied by the browser.</li>
-						<li>Suspending a membership preserves its full audit trail. Every admin decision is logged with the administrator, timestamp, and reason.</li>
-						<li>Production never trusts price, status, dates, or customer identity supplied by the browser or a query parameter.</li>
+						<li>Memberships are monthly or yearly access products, chosen by the customer, and separate from one-time Fan Cards.</li>
+						<li>Membership activation requires approved payment.</li>
+						<li>Membership renewal is manual.</li>
+						<li>Internal actions are recorded for audit.</li>
 					</ul>
 				</section>
 			</main>

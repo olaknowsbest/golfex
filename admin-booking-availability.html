@@ -4,8 +4,8 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<title>Add Availability &#8211; Nazario Kayla Fan Club Prototype</title>
-	<meta name="description" content="A static, honestly labelled preview of the future admin add-availability screen for the fictional Nazario Kayla fan-platform prototype. Not a functioning admin system.">
+	<title>Add Availability &#8211; Nazario Kayla Administration</title>
+	<meta name="description" content="Manage booking availability for the Nazario Kayla Fan Club admin team.">
 	<meta name="robots" content="noindex, nofollow">
 	<meta name="theme-color" content="#0A0A0A">
 	<link rel="icon" href="assets/images/uploads/favicon.png" sizes="32x32" />
@@ -27,10 +27,9 @@
 		<aside class="admin-sidebar" id="admin-sidebar" aria-label="Admin navigation">
 			<div class="admin-sidebar__top">
 				<div class="admin-sidebar__brand">
-					<img class="admin-sidebar__logo" src="assets/images/brand/nk-monogram-mark.svg" alt="Nazario Kayla Fan Club &#8212; Prototype" width="28" height="29">
+					<img class="admin-sidebar__logo" src="assets/images/brand/nk-monogram-mark.svg" alt="Nazario Kayla Administration" width="28" height="29">
 					<span class="admin-sidebar__brand-text">
 						<span class="admin-sidebar__brand-name">NK Admin</span>
-						<span class="admin-sidebar__tag">Admin prototype</span>
 					</span>
 				</div>
 				<button class="admin-sidebar__close" type="button" data-admin-close aria-label="Close menu">
@@ -159,13 +158,12 @@
 				</button>
 				<img class="admin-topbar__logo" src="assets/images/brand/nk-monogram-mark.svg" alt="" aria-hidden="true">
 				<p class="admin-topbar__title">Add Availability</p>
-				<span class="admin-topbar__badge">Admin prototype</span>
 			</header>
 
 			<main id="admin-main" class="admin-main">
 				<a class="aba-back" href="admin-bookings.html">&larr; Back to Booking Availability</a>
 				<h1 class="admin-main__title">Add Availability</h1>
-				<p class="admin-main__lead">This is a static preview of the future add-availability form. Availability is created as a recurring date-range schedule, not a single date. No schedule, exception, or note is created, changed, or saved anywhere in this prototype.</p>
+				<p class="admin-main__lead">Create availability across a date range and selected weekdays.</p>
 
 				<!--
 					Static prototype only — every field below is disabled or
@@ -173,9 +171,9 @@
 					implemented or simulated here): this screen will live at a
 					route such as /admin/availability/create. Saving requires an
 					authenticated administrator session and server-side
-					validation before Laravel expands this date-range schedule
-					into individual bookable slots and writes them to MySQL as
-					one atomic transaction. Excluded dates and blocked windows
+					validation before this date-range schedule is expanded
+					into individual bookable slots and written as one atomic
+					transaction. Excluded dates and blocked windows
 					are stored as overrides and are never offered to customers.
 					Overlapping schedules are detected and rejected before
 					saving, and existing customer reservations are never
@@ -184,13 +182,12 @@
 				<form class="aba-form" novalidate>
 					<div class="admin-panel aba-panel">
 						<h2 class="admin-panel__title">Schedule details</h2>
-						<p class="admin-panel__desc">Availability is created as a recurring date-range schedule, not a single date. Production expands this into individual bookable slots for the selected weekdays only.</p>
 
 						<div class="aba-field">
 							<label class="aba-field__label" for="aba-type">Booking type</label>
 							<select class="aba-field__input" id="aba-type" disabled>
 								<option>Virtual Meet-and-Greet</option>
-								<option>Public Appearance</option>
+								<option>Event Appearance</option>
 								<option>Golf Experience</option>
 							</select>
 						</div>
@@ -206,7 +203,7 @@
 							</div>
 						</div>
 						<p class="aba-range-readout">Range: 24-08-2026 to 03-09-2026</p>
-						<p class="aba-field__note">The end date can never precede the start date. This is validated server-side in production; nothing is validated live in this static prototype.</p>
+						<p class="aba-field__note">The end date can never precede the start date.</p>
 
 						<fieldset class="aba-weekdays">
 							<legend class="aba-field__label">Available days within range</legend>
@@ -271,7 +268,7 @@
 								</select>
 							</div>
 						</div>
-						<p class="aba-field__note">Production stores every timestamp in UTC and displays it in the timezone selected here.</p>
+						<p class="aba-field__note">Every timestamp is stored in UTC and displayed in the timezone selected here.</p>
 					</div>
 
 					<div class="admin-panel aba-panel">
@@ -287,18 +284,18 @@
 								<input class="aba-field__input" type="text" id="aba-min-duration" value="30" inputmode="numeric" disabled readonly>
 							</div>
 						</div>
-						<p class="aba-field__note">Price is calculated as duration &times; hourly rate, subject to this minimum duration. Nothing here is calculated live in this static prototype.</p>
+						<p class="aba-field__note">Price is calculated as duration &times; hourly rate, subject to this minimum duration.</p>
 
 						<div class="aba-field">
 							<label class="aba-field__label" for="aba-capacity">Capacity per slot</label>
 							<input class="aba-field__input" type="text" id="aba-capacity" value="1" inputmode="numeric" disabled readonly>
-							<p class="aba-field__note">Capacity is conceptually 1 &mdash; each generated slot represents a single booking in this prototype.</p>
+							<p class="aba-field__note">Capacity is 1 &mdash; each generated slot represents a single booking.</p>
 						</div>
 					</div>
 
 					<div class="admin-panel aba-panel">
 						<h2 class="admin-panel__title">Schedule exceptions (optional)</h2>
-						<p class="admin-panel__desc">Exceptions override the recurring schedule above for one specific date. Both controls below are disabled in this static prototype.</p>
+						<p class="admin-panel__desc">Exceptions override the recurring schedule above for one specific date.</p>
 
 						<div class="aba-field">
 							<label class="aba-field__label" for="aba-excluded-date">Excluded date (optional)</label>
@@ -326,12 +323,12 @@
 					<div class="admin-panel aba-panel">
 						<h2 class="admin-panel__title">Availability preview</h2>
 						<p class="aba-preview">24 Aug&ndash;3 Sep 2026 &middot; Monday&ndash;Friday &middot; 10:00 AM&ndash;4:00 PM PT</p>
-						<p class="aba-field__note">This preview summarizes the schedule fields above. It is static sample text in this prototype, not a live calculation.</p>
+						<p class="aba-field__note">This preview summarizes the schedule fields above.</p>
 					</div>
 
 					<div class="admin-panel aba-panel">
 						<h2 class="admin-panel__title">Generated slots preview</h2>
-						<p class="admin-panel__desc">A small illustrative sample of what this schedule would generate &mdash; not the full range. Production never generates or stores every slot in advance; a large slot dataset is never created or persisted in this static prototype.</p>
+						<p class="admin-panel__desc">The entries below show part of the generated schedule, not the full date range.</p>
 						<ul class="aba-slots">
 							<li class="aba-slot">
 								<span class="aba-slot__date">Mon, Aug 24, 2026</span>
@@ -354,27 +351,25 @@
 					<div class="admin-panel aba-panel">
 						<h2 class="admin-panel__title">Internal note</h2>
 						<label class="aba-field__label" for="aba-note">Internal note (optional)</label>
-						<textarea class="aba-field__input" id="aba-note" rows="3" placeholder="Internal notes will become available once the Laravel backend is connected." disabled readonly></textarea>
-						<p class="aba-field__note">No note is saved in this static prototype.</p>
+						<textarea class="aba-field__input" id="aba-note" rows="3" placeholder="Add an internal note" disabled readonly></textarea>
 					</div>
 
 					<div class="admin-panel aba-actions-panel">
 						<h2 class="admin-panel__title">Save</h2>
 						<button type="button" class="btn aba-save-btn" disabled>Save Availability</button>
-						<p class="aba-actions__note">Saving requires authenticated admin access and server-side backend validation. No window, block, or note is created, changed, or persisted anywhere in this static prototype.</p>
 					</div>
 				</form>
 
 				<section class="admin-panel aba-security" aria-labelledby="aba-security-heading">
-					<h2 id="aba-security-heading" class="admin-panel__title">How saved availability will work</h2>
+					<h2 id="aba-security-heading" class="admin-panel__title">Availability guidance</h2>
 					<ul class="aba-security__list">
-						<li>Only an administrator can create or update availability. The backend expands a saved date range into individual bookable slots only for the selected weekdays &mdash; never from a free-form customer request.</li>
+						<li>Only an administrator can create or update availability. A saved date range expands into individual bookable slots only for the selected weekdays &mdash; never from a free-form customer request.</li>
 						<li>Excluded dates and blocked time windows override the recurring schedule and are never offered or selectable to customers.</li>
 						<li>Existing customer reservations are never overwritten when availability is edited.</li>
 						<li>Overlapping availability rules are detected and rejected before saving.</li>
 						<li>Price is calculated as duration &times; hourly rate, subject to the minimum duration set here.</li>
 						<li>All timestamps are stored in UTC and displayed in the timezone selected above.</li>
-						<li>Saving a complete date-range schedule is one atomic server-side transaction.</li>
+						<li>Saving a complete date-range schedule happens as one atomic transaction.</li>
 					</ul>
 				</section>
 			</main>

@@ -2,8 +2,8 @@
  * My Fan Cards dashboard screen (static prototype). Loaded after
  * page-dashboard-shell.css on dashboard-fan-cards.html only. This screen
  * is an ownership wallet (what the customer actually owns), never a
- * tier catalog — the Standard/Premium/VIP comparison lives exclusively
- * on dashboard-purchase-fan-card.html.
+ * tier catalog — the Bronze/Silver/Gold/Platinum comparison lives
+ * exclusively on dashboard-purchase-fan-card.html.
  */
 
 .dfc-empty {

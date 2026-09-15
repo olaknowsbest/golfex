@@ -93,7 +93,7 @@ The approved direction uses a geometric NK monogram, an upward yellow ball-fligh
 2. Career introduction: clearly labeled fictional placeholder biography.
 3. Career highlights: invented demonstration statistics labeled as placeholders and stored as replaceable content.
 4. Latest news and media: fictional demonstration cards or generic golf editorial placeholders.
-5. Fan-card packages: Standard, Premium, VIP concept cards.
+5. Fan-card packages: Bronze, Silver, Gold, and Platinum one-time tiers.
 6. Fan experiences: request-based experiences with clear availability and approval language.
 7. Partners/sponsors: show only with permission and current verification.
 8. Community/testimonials: use real, consented testimonials only.

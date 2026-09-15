@@ -4,8 +4,8 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<title>Fan Card Detail &#8211; Nazario Kayla Fan Club Prototype</title>
-	<meta name="description" content="A static, honestly labelled preview of the future admin Fan Card detail screen for the fictional Nazario Kayla fan-platform prototype. Not a functioning admin system.">
+	<title>Fan Card Detail &#8211; Nazario Kayla Administration</title>
+	<meta name="description" content="Fan Card detail for the Nazario Kayla Fan Club admin team.">
 	<meta name="robots" content="noindex, nofollow">
 	<meta name="theme-color" content="#0A0A0A">
 	<link rel="icon" href="assets/images/uploads/favicon.png" sizes="32x32" />
@@ -27,10 +27,9 @@
 		<aside class="admin-sidebar" id="admin-sidebar" aria-label="Admin navigation">
 			<div class="admin-sidebar__top">
 				<div class="admin-sidebar__brand">
-					<img class="admin-sidebar__logo" src="assets/images/brand/nk-monogram-mark.svg" alt="Nazario Kayla Fan Club &#8212; Prototype" width="28" height="29">
+					<img class="admin-sidebar__logo" src="assets/images/brand/nk-monogram-mark.svg" alt="Nazario Kayla Administration" width="28" height="29">
 					<span class="admin-sidebar__brand-text">
 						<span class="admin-sidebar__brand-name">NK Admin</span>
-						<span class="admin-sidebar__tag">Admin prototype</span>
 					</span>
 				</div>
 				<button class="admin-sidebar__close" type="button" data-admin-close aria-label="Close menu">
@@ -159,19 +158,19 @@
 				</button>
 				<img class="admin-topbar__logo" src="assets/images/brand/nk-monogram-mark.svg" alt="" aria-hidden="true">
 				<p class="admin-topbar__title">Fan Card Detail</p>
-				<span class="admin-topbar__badge">Admin prototype</span>
 			</header>
 
 			<main id="admin-main" class="admin-main">
 				<a class="aent-back" href="admin-fan-cards.html">&larr; Back to Fan Cards</a>
 				<h1 class="admin-main__title">Fan Card Detail</h1>
+				<p class="admin-main__lead">Review the selected Fan Card record.</p>
 
 				<!--
 					Static prototype only — no real Fan Card exists here.
 					Production behavior (documented only, never implemented or
 					simulated here): this screen will live at a route such as
-					/admin/fan-cards/{reference}. Laravel loads the authoritative
-					card, customer, and payment records from MySQL by reference.
+					/admin/fan-cards/{reference}. The authoritative card,
+					customer, and payment records are loaded by reference.
 					Issuing a card requires an approved, matching payment; approval
 					and entitlement creation run as one atomic, idempotent database
 					transaction — reprocessing an already-approved payment never
@@ -186,36 +185,33 @@
 
 					<section class="admin-panel aent-missing">
 						<h2 class="admin-panel__title">Select a Fan Card to view</h2>
-						<p class="admin-panel__desc">This static prototype only has fixed sample records. Return to the list and choose &#8220;View&#8221; on a row to see one.</p>
+						<p class="admin-panel__desc">Return to the list and choose &#8220;View&#8221; on a row to see one.</p>
 						<a class="btn btn--cta aent-missing__cta" href="admin-fan-cards.html">Back to Fan Cards</a>
 					</section>
 
 					<div class="aent-valid">
 
-						<div class="aent-sample-notice">
-							<p><strong>Sample record.</strong> The Fan Card, customer, and payment reference shown are fictional demonstration data. Nothing on this page is a real card, customer, or transaction.</p>
-						</div>
-
 						<!-- FC-DEMO-001 — Active -->
 						<article class="afcd-record" data-ref="FC-DEMO-001" aria-labelledby="afcd-001-heading">
-							<h2 id="afcd-001-heading" class="visually-hidden">Sample Fan Card FC-DEMO-001</h2>
+							<h2 id="afcd-001-heading" class="visually-hidden">Fan Card FC-DEMO-001</h2>
 							<div class="aent-record-header">
 								<span class="aent-status aent-status--active">Active</span>
 								<span class="aent-record-header__ref">FC-DEMO-001</span>
 							</div>
 
 							<div class="afcd-layout">
-								<div class="afcd-card-mock">
+								<div class="afcd-card-mock afcd-card-mock--gold">
+									<span class="afcd-card-mock__ball" aria-hidden="true"></span>
 									<svg class="afcd-card-mock__arc" viewBox="0 0 320 200" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-										<path d="M20,150 C90,40 220,20 300,50" stroke="#FDF567" stroke-width="3" stroke-linecap="round" opacity="0.5"/>
-										<circle cx="300" cy="50" r="5" fill="#FDF567" opacity="0.8"/>
+										<path d="M20,150 C90,40 220,20 300,50" stroke="currentColor" stroke-width="3" stroke-linecap="round" opacity="0.5"/>
+										<circle cx="300" cy="50" r="5" fill="currentColor" opacity="0.8"/>
 									</svg>
 									<div class="afcd-card-mock__top">
 										<img class="afcd-card-mock__logo" src="assets/images/brand/nk-monogram-mark.svg" alt="Nazario Kayla Fan Club monogram">
-										<span class="afcd-card-mock__tag">Sample</span>
 									</div>
 									<div class="afcd-card-mock__bottom">
-										<p class="afcd-card-mock__tier">Premium Fan Card</p>
+										<p class="afcd-card-mock__brand">Nazario Kayla Fan Card</p>
+										<p class="afcd-card-mock__tier">Gold</p>
 										<p class="afcd-card-mock__name">Jordan Ellis</p>
 										<p class="afcd-card-mock__format">Digital</p>
 									</div>
@@ -224,11 +220,11 @@
 								<div class="admin-panel aent-fields">
 									<h3 class="admin-panel__title">Card details</h3>
 									<dl class="aent-fields__list">
-										<div class="aent-fields__row"><dt>Customer</dt><dd>Jordan Ellis <span class="aent-fictional">(fictional)</span></dd></div>
+										<div class="aent-fields__row"><dt>Customer</dt><dd>Jordan Ellis</dd></div>
 										<div class="aent-fields__row"><dt>Card reference</dt><dd>FC-DEMO-001</dd></div>
-										<div class="aent-fields__row"><dt>Tier</dt><dd>Premium</dd></div>
+										<div class="aent-fields__row"><dt>Tier</dt><dd>Gold</dd></div>
 										<div class="aent-fields__row"><dt>Format</dt><dd>Digital</dd></div>
-										<div class="aent-fields__row"><dt>One-time price</dt><dd>$250.00</dd></div>
+										<div class="aent-fields__row"><dt>One-time price</dt><dd>$1,000.00</dd></div>
 										<div class="aent-fields__row"><dt>Linked payment reference</dt><dd>PAY-DEMO-002</dd></div>
 										<div class="aent-fields__row"><dt>Payment status</dt><dd>Approved</dd></div>
 										<div class="aent-fields__row"><dt>Card status</dt><dd>Active</dd></div>
@@ -242,30 +238,31 @@
 								<div class="aent-actions">
 									<button type="button" class="btn aent-actions__btn" disabled>Suspend Card</button>
 								</div>
-								<p class="aent-actions__note">Only actions appropriate to Active status are shown. Suspension is disabled in this static prototype and preserves the audit trail in production &mdash; nothing here changes any card state.</p>
+								<p class="aent-actions__note">Suspending a Fan Card does not delete its history.</p>
 							</div>
 						</article>
 
 						<!-- FC-DEMO-002 — Pending issuance -->
 						<article class="afcd-record" data-ref="FC-DEMO-002" aria-labelledby="afcd-002-heading">
-							<h2 id="afcd-002-heading" class="visually-hidden">Sample Fan Card FC-DEMO-002</h2>
+							<h2 id="afcd-002-heading" class="visually-hidden">Fan Card FC-DEMO-002</h2>
 							<div class="aent-record-header">
 								<span class="aent-status aent-status--pending">Pending issuance</span>
 								<span class="aent-record-header__ref">FC-DEMO-002</span>
 							</div>
 
 							<div class="afcd-layout">
-								<div class="afcd-card-mock">
+								<div class="afcd-card-mock afcd-card-mock--bronze">
+									<span class="afcd-card-mock__ball" aria-hidden="true"></span>
 									<svg class="afcd-card-mock__arc" viewBox="0 0 320 200" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-										<path d="M20,150 C90,40 220,20 300,50" stroke="#FDF567" stroke-width="3" stroke-linecap="round" opacity="0.5"/>
-										<circle cx="300" cy="50" r="5" fill="#FDF567" opacity="0.8"/>
+										<path d="M20,150 C90,40 220,20 300,50" stroke="currentColor" stroke-width="3" stroke-linecap="round" opacity="0.5"/>
+										<circle cx="300" cy="50" r="5" fill="currentColor" opacity="0.8"/>
 									</svg>
 									<div class="afcd-card-mock__top">
 										<img class="afcd-card-mock__logo" src="assets/images/brand/nk-monogram-mark.svg" alt="Nazario Kayla Fan Club monogram">
-										<span class="afcd-card-mock__tag">Sample</span>
 									</div>
 									<div class="afcd-card-mock__bottom">
-										<p class="afcd-card-mock__tier">Standard Fan Card</p>
+										<p class="afcd-card-mock__brand">Nazario Kayla Fan Card</p>
+										<p class="afcd-card-mock__tier">Bronze</p>
 										<p class="afcd-card-mock__name">Casey Morgan</p>
 										<p class="afcd-card-mock__format">Digital</p>
 									</div>
@@ -274,11 +271,11 @@
 								<div class="admin-panel aent-fields">
 									<h3 class="admin-panel__title">Card details</h3>
 									<dl class="aent-fields__list">
-										<div class="aent-fields__row"><dt>Customer</dt><dd>Casey Morgan <span class="aent-fictional">(fictional)</span></dd></div>
+										<div class="aent-fields__row"><dt>Customer</dt><dd>Casey Morgan</dd></div>
 										<div class="aent-fields__row"><dt>Card reference</dt><dd>FC-DEMO-002</dd></div>
-										<div class="aent-fields__row"><dt>Tier</dt><dd>Standard</dd></div>
+										<div class="aent-fields__row"><dt>Tier</dt><dd>Bronze</dd></div>
 										<div class="aent-fields__row"><dt>Format</dt><dd>Digital</dd></div>
-										<div class="aent-fields__row"><dt>One-time price</dt><dd>$100.00</dd></div>
+										<div class="aent-fields__row"><dt>One-time price</dt><dd>$250.00</dd></div>
 										<div class="aent-fields__row"><dt>Linked payment reference</dt><dd>PAY-DEMO-003</dd></div>
 										<div class="aent-fields__row"><dt>Payment status</dt><dd>Approved</dd></div>
 										<div class="aent-fields__row"><dt>Card status</dt><dd>Pending issuance</dd></div>
@@ -292,30 +289,32 @@
 								<div class="aent-actions">
 									<button type="button" class="btn aent-actions__btn" disabled>Issue Fan Card</button>
 								</div>
-								<p class="aent-actions__note">Only actions appropriate to Pending issuance status are shown. Issuance requires an approved, matching payment and runs as one atomic backend operation in production &mdash; nothing here issues a card.</p>
+								<p class="aent-actions__note">Fan Card issuance requires approved payment.</p>
 							</div>
 						</article>
 
 						<!-- FC-DEMO-003 — Suspended -->
 						<article class="afcd-record" data-ref="FC-DEMO-003" aria-labelledby="afcd-003-heading">
-							<h2 id="afcd-003-heading" class="visually-hidden">Sample Fan Card FC-DEMO-003</h2>
+							<h2 id="afcd-003-heading" class="visually-hidden">Fan Card FC-DEMO-003</h2>
 							<div class="aent-record-header">
 								<span class="aent-status aent-status--suspended">Suspended</span>
 								<span class="aent-record-header__ref">FC-DEMO-003</span>
 							</div>
 
 							<div class="afcd-layout">
-								<div class="afcd-card-mock afcd-card-mock--vip">
+								<div class="afcd-card-mock afcd-card-mock--platinum">
+									<span class="afcd-card-mock__ball" aria-hidden="true"></span>
 									<svg class="afcd-card-mock__arc" viewBox="0 0 320 200" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-										<path d="M20,150 C90,40 220,20 300,50" stroke="#FDF567" stroke-width="3" stroke-linecap="round" opacity="0.5"/>
-										<circle cx="300" cy="50" r="5" fill="#FDF567" opacity="0.8"/>
+										<path d="M20,150 C90,40 220,20 300,50" stroke="currentColor" stroke-width="3" stroke-linecap="round" opacity="0.5"/>
+										<circle cx="300" cy="50" r="5" fill="currentColor" opacity="0.8"/>
 									</svg>
 									<div class="afcd-card-mock__top">
 										<img class="afcd-card-mock__logo" src="assets/images/brand/nk-monogram-mark.svg" alt="Nazario Kayla Fan Club monogram">
-										<span class="afcd-card-mock__tag">Sample</span>
 									</div>
 									<div class="afcd-card-mock__bottom">
-										<p class="afcd-card-mock__tier">VIP Fan Card</p>
+										<p class="afcd-card-mock__brand">Nazario Kayla Fan Card</p>
+										<p class="afcd-card-mock__tier">Platinum</p>
+										<p class="afcd-card-mock__signature">Signature Edition</p>
 										<p class="afcd-card-mock__name">Riley Chen</p>
 										<p class="afcd-card-mock__format">Digital</p>
 									</div>
@@ -324,11 +323,11 @@
 								<div class="admin-panel aent-fields">
 									<h3 class="admin-panel__title">Card details</h3>
 									<dl class="aent-fields__list">
-										<div class="aent-fields__row"><dt>Customer</dt><dd>Riley Chen <span class="aent-fictional">(fictional)</span></dd></div>
+										<div class="aent-fields__row"><dt>Customer</dt><dd>Riley Chen</dd></div>
 										<div class="aent-fields__row"><dt>Card reference</dt><dd>FC-DEMO-003</dd></div>
-										<div class="aent-fields__row"><dt>Tier</dt><dd>VIP</dd></div>
+										<div class="aent-fields__row"><dt>Tier</dt><dd>Platinum</dd></div>
 										<div class="aent-fields__row"><dt>Format</dt><dd>Digital</dd></div>
-										<div class="aent-fields__row"><dt>One-time price</dt><dd>$500.00</dd></div>
+										<div class="aent-fields__row"><dt>One-time price</dt><dd>$1,500.00</dd></div>
 										<div class="aent-fields__row"><dt>Linked payment reference</dt><dd>PAY-DEMO-004</dd></div>
 										<div class="aent-fields__row"><dt>Payment status</dt><dd>Approved</dd></div>
 										<div class="aent-fields__row"><dt>Card status</dt><dd>Suspended</dd></div>
@@ -342,17 +341,67 @@
 								<div class="aent-actions">
 									<button type="button" class="btn aent-actions__btn" disabled>Restore Card</button>
 								</div>
-								<p class="aent-actions__note">Only actions appropriate to Suspended status are shown. Restoring a card is disabled in this static prototype and preserves the audit trail in production &mdash; nothing here changes any card state.</p>
+								<p class="aent-actions__note">Internal actions are recorded for audit.</p>
+							</div>
+						</article>
+
+						<!-- FC-DEMO-004 — Active -->
+						<article class="afcd-record" data-ref="FC-DEMO-004" aria-labelledby="afcd-004-heading">
+							<h2 id="afcd-004-heading" class="visually-hidden">Fan Card FC-DEMO-004</h2>
+							<div class="aent-record-header">
+								<span class="aent-status aent-status--active">Active</span>
+								<span class="aent-record-header__ref">FC-DEMO-004</span>
+							</div>
+
+							<div class="afcd-layout">
+								<div class="afcd-card-mock afcd-card-mock--silver">
+									<span class="afcd-card-mock__ball" aria-hidden="true"></span>
+									<svg class="afcd-card-mock__arc" viewBox="0 0 320 200" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+										<path d="M20,150 C90,40 220,20 300,50" stroke="currentColor" stroke-width="3" stroke-linecap="round" opacity="0.5"/>
+										<circle cx="300" cy="50" r="5" fill="currentColor" opacity="0.8"/>
+									</svg>
+									<div class="afcd-card-mock__top">
+										<img class="afcd-card-mock__logo" src="assets/images/brand/nk-monogram-mark.svg" alt="Nazario Kayla Fan Club monogram">
+									</div>
+									<div class="afcd-card-mock__bottom">
+										<p class="afcd-card-mock__brand">Nazario Kayla Fan Card</p>
+										<p class="afcd-card-mock__tier">Silver</p>
+										<p class="afcd-card-mock__name">Taylor Brooks</p>
+										<p class="afcd-card-mock__format">Digital</p>
+									</div>
+								</div>
+
+								<div class="admin-panel aent-fields">
+									<h3 class="admin-panel__title">Card details</h3>
+									<dl class="aent-fields__list">
+										<div class="aent-fields__row"><dt>Customer</dt><dd>Taylor Brooks</dd></div>
+										<div class="aent-fields__row"><dt>Card reference</dt><dd>FC-DEMO-004</dd></div>
+										<div class="aent-fields__row"><dt>Tier</dt><dd>Silver</dd></div>
+										<div class="aent-fields__row"><dt>Format</dt><dd>Digital</dd></div>
+										<div class="aent-fields__row"><dt>One-time price</dt><dd>$500.00</dd></div>
+										<div class="aent-fields__row"><dt>Linked payment reference</dt><dd>PAY-DEMO-011</dd></div>
+										<div class="aent-fields__row"><dt>Payment status</dt><dd>Approved</dd></div>
+										<div class="aent-fields__row"><dt>Card status</dt><dd>Active</dd></div>
+										<div class="aent-fields__row"><dt>Issued date</dt><dd>September 4, 2026</dd></div>
+									</dl>
+								</div>
+							</div>
+
+							<div class="admin-panel aent-actions-panel">
+								<h3 class="admin-panel__title">Actions</h3>
+								<div class="aent-actions">
+									<button type="button" class="btn aent-actions__btn" disabled>Suspend Card</button>
+								</div>
+								<p class="aent-actions__note">Suspending a Fan Card does not delete its history.</p>
 							</div>
 						</article>
 
 						<section class="admin-panel aent-security" aria-labelledby="afcd-security-heading">
-							<h2 id="afcd-security-heading" class="admin-panel__title">How issuance will work</h2>
+							<h2 id="afcd-security-heading" class="admin-panel__title">Issuance guidance</h2>
 							<ul class="aent-security__list">
 								<li>Fan Cards are one-time purchases. A customer may own at most one Fan Card at a time.</li>
-								<li>Issuance requires an approved, matching payment. Approval and entitlement creation happen as one atomic, idempotent operation &mdash; reprocessing an already-approved payment never creates a duplicate card.</li>
-								<li>Suspending a card preserves its full audit trail. Every admin decision is logged with the administrator, timestamp, and reason.</li>
-								<li>Production never trusts price, status, dates, or customer identity supplied by the browser or a query parameter.</li>
+								<li>Fan Card issuance requires approved payment.</li>
+								<li>Suspending a Fan Card does not delete its history. Internal actions are recorded for audit.</li>
 							</ul>
 						</section>
 					</div>

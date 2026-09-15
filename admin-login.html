@@ -4,8 +4,8 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<title>Secure Administrator Access &#8211; Nazario Kayla Fan Club Prototype</title>
-	<meta name="description" content="A static, honestly labelled preview of the future admin login screen for the fictional Nazario Kayla fan-platform prototype. Not a functioning authentication system.">
+	<title>Secure Administrator Access &#8211; Nazario Kayla Administration</title>
+	<meta name="description" content="Sign in to the Nazario Kayla Fan Club admin team.">
 	<meta name="robots" content="noindex, nofollow">
 	<meta name="theme-color" content="#0A0A0A">
 	<link rel="icon" href="assets/images/uploads/favicon.png" sizes="32x32" />
@@ -21,11 +21,11 @@
 	<a class="skip-link" href="#admin-auth-main">Skip to content</a>
 
 	<!--
-		Static prototype only — no authentication exists on this page.
+		No authentication exists on this page.
 		Production behavior (documented only, never implemented or
 		simulated here):
 		1. This screen will live at the route /admin/login.
-		2. Laravel must verify an active administrator role before
+		2. An active administrator role must be verified before
 		   creating an admin session — a valid password alone is never
 		   sufficient.
 		3. Every /admin route must remain protected server-side, not
@@ -38,7 +38,6 @@
 		<div class="admin-auth__brand">
 			<img class="admin-auth__logo" src="assets/images/brand/nk-monogram-mark.svg" alt="" width="28" height="29">
 			<span class="admin-auth__brand-name">Administration</span>
-			<span class="admin-auth__tag">Admin prototype</span>
 		</div>
 		<a class="admin-auth__return" href="index.html">Return to public site</a>
 	</header>
@@ -78,7 +77,7 @@
 			<button type="button" class="admin-auth__submit" disabled>Sign in</button>
 
 			<div class="admin-auth__security">
-				<p><strong>Authorized administrators only.</strong> Sign-in is disabled in this static preview. Production access will be authenticated by Laravel and all access attempts will be audited.</p>
+				<p><strong>Authorized administrators only.</strong> Sign-in is disabled here. Administrator authentication is required, and every access attempt is audited.</p>
 				<p class="admin-auth__security-help">Access issues must be handled through the platform owner.</p>
 			</div>
 		</div>

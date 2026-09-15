@@ -15,7 +15,9 @@
 }
 #acu-detail[data-customer="CU-DEMO-001"] .acud-record[data-ref="CU-DEMO-001"],
 #acu-detail[data-customer="CU-DEMO-002"] .acud-record[data-ref="CU-DEMO-002"],
-#acu-detail[data-customer="CU-DEMO-003"] .acud-record[data-ref="CU-DEMO-003"] {
+#acu-detail[data-customer="CU-DEMO-003"] .acud-record[data-ref="CU-DEMO-003"],
+#acu-detail[data-customer="CU-DEMO-004"] .acud-record[data-ref="CU-DEMO-004"],
+#acu-detail[data-customer="CU-DEMO-005"] .acud-record[data-ref="CU-DEMO-005"] {
 	display: block;
 }
 
@@ -29,6 +31,16 @@
 .aent-fields__row dd a:hover,
 .aent-fields__row dd a:focus-visible {
 	color: #7c6d00;
+}
+
+.acud-no-action {
+	margin: 0;
+	font-size: 0.86rem;
+	font-weight: 600;
+	color: #6B6B64;
+	padding: 0.75rem 0.9rem;
+	background: var(--nk-sand);
+	border-radius: 8px;
 }
 
 .acud-relationships-note {

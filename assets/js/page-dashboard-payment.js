@@ -15,16 +15,18 @@
 	var VALID_SOURCES = ['fan-card', 'membership', 'donation', 'booking'];
 
 	var FAN_CARD_TIERS = {
-		standard: { label: 'Standard Fan Card', price: 100 },
-		premium: { label: 'Premium Fan Card', price: 250 },
-		vip: { label: 'VIP Fan Card', price: 500 }
+		bronze: { label: 'Bronze Fan Card', price: 250 },
+		silver: { label: 'Silver Fan Card', price: 500 },
+		gold: { label: 'Gold Fan Card', price: 1000 },
+		platinum: { label: 'Platinum Fan Card', price: 1500 }
 	};
 
 	var MEMBERSHIP_PLANS = {
-		supporter: { label: 'Supporter Membership (Annual)', price: 150 },
-		insider: { label: 'Insider Membership (Annual)', price: 300 },
-		premier: { label: 'Premier Membership (Annual)', price: 600 }
+		supporter: { label: 'Supporter Membership', monthly: 125, yearly: 1450 },
+		insider: { label: 'Insider Membership', monthly: 250, yearly: 2900 },
+		premier: { label: 'Premier Membership', monthly: 500, yearly: 5700 }
 	};
+	var VALID_MEMBERSHIP_BILLING = ['monthly', 'yearly'];
 
 	var VALID_TZ = { PT: 'Pacific Time (PT)', MT: 'Mountain Time (MT)', CT: 'Central Time (CT)', ET: 'Eastern Time (ET)' };
 	var VALID_BOOKING_TYPES = ['virtual', 'appearance', 'golf'];
@@ -85,14 +87,17 @@
 		}
 	} else if (source === 'membership') {
 		var plan = params.get('plan');
+		var billing = params.get('billing');
 		var planData = MEMBERSHIP_PLANS[plan];
-		if (planData) {
+		var billingValid = VALID_MEMBERSHIP_BILLING.indexOf(billing) !== -1;
+		if (planData && billingValid) {
 			result = {
 				productType: 'Membership',
-				item: planData.label,
-				total: formatPrice(planData.price),
-				backHref: 'dashboard-confirm-membership.html?plan=' + encodeURIComponent(plan),
-				navId: 'dpay-nav-membership'
+				item: planData.label + ' (' + (billing === 'monthly' ? 'Monthly' : 'Yearly') + ')',
+				total: formatPrice(planData[billing]) + (billing === 'monthly' ? '/month' : '/year'),
+				backHref: 'dashboard-confirm-membership.html?plan=' + encodeURIComponent(plan) + '&billing=' + encodeURIComponent(billing),
+				navId: 'dpay-nav-membership',
+				isMembership: true
 			};
 		}
 	} else if (source === 'donation') {
@@ -162,6 +167,10 @@
 
 	if (result.isBooking) {
 		document.getElementById('dpay-booking-note').hidden = false;
+	}
+	if (result.isMembership) {
+		var membershipNote = document.getElementById('dpay-membership-note');
+		if (membershipNote) { membershipNote.hidden = false; }
 	}
 
 	var navLink = document.getElementById(result.navId);

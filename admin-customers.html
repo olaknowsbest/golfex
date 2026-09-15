@@ -4,8 +4,8 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<title>Customers &#8211; Nazario Kayla Fan Club Prototype</title>
-	<meta name="description" content="A static, honestly labelled preview of the future admin Customers screen for the fictional Nazario Kayla fan-platform prototype. Not a functioning admin system.">
+	<title>Customers &#8211; Nazario Kayla Administration</title>
+	<meta name="description" content="Customer accounts for the Nazario Kayla Fan Club admin team.">
 	<meta name="robots" content="noindex, nofollow">
 	<meta name="theme-color" content="#0A0A0A">
 	<link rel="icon" href="assets/images/uploads/favicon.png" sizes="32x32" />
@@ -28,10 +28,9 @@
 		<aside class="admin-sidebar" id="admin-sidebar" aria-label="Admin navigation">
 			<div class="admin-sidebar__top">
 				<div class="admin-sidebar__brand">
-					<img class="admin-sidebar__logo" src="assets/images/brand/nk-monogram-mark.svg" alt="Nazario Kayla Fan Club &#8212; Prototype" width="28" height="29">
+					<img class="admin-sidebar__logo" src="assets/images/brand/nk-monogram-mark.svg" alt="Nazario Kayla Administration" width="28" height="29">
 					<span class="admin-sidebar__brand-text">
 						<span class="admin-sidebar__brand-name">NK Admin</span>
-						<span class="admin-sidebar__tag">Admin prototype</span>
 					</span>
 				</div>
 				<button class="admin-sidebar__close" type="button" data-admin-close aria-label="Close menu">
@@ -160,36 +159,31 @@
 				</button>
 				<img class="admin-topbar__logo" src="assets/images/brand/nk-monogram-mark.svg" alt="" aria-hidden="true">
 				<p class="admin-topbar__title">Customers</p>
-				<span class="admin-topbar__badge">Admin prototype</span>
 			</header>
 
 			<main id="admin-main" class="admin-main">
 				<h1 class="admin-main__title">Customers</h1>
-				<p class="admin-main__lead">This is a static preview of the future customer account screen. Customer identity and ownership will always come from authenticated backend records, never from anything supplied by the browser. Nothing here suspends, restores, or verifies a real account.</p>
+				<p class="admin-main__lead">Review customer accounts and platform access.</p>
 
 				<div class="aent-summary-grid">
 					<article class="aent-summary-card">
 						<p class="aent-summary-card__label">Active accounts</p>
-						<p class="aent-summary-card__value">1</p>
-						<p class="aent-summary-card__desc">1 sample record is shown below (sample data, not a live count).</p>
+						<p class="aent-summary-card__value">2</p>
 					</article>
 					<article class="aent-summary-card">
 						<p class="aent-summary-card__label">Pending verification</p>
 						<p class="aent-summary-card__value">1</p>
-						<p class="aent-summary-card__desc">1 sample record is shown below (sample data, not a live count).</p>
 					</article>
 					<article class="aent-summary-card">
 						<p class="aent-summary-card__label">Suspended accounts</p>
 						<p class="aent-summary-card__value">1</p>
-						<p class="aent-summary-card__desc">1 sample record is shown below (sample data, not a live count).</p>
 					</article>
 				</div>
 
 				<section class="admin-panel aent-table-panel" aria-labelledby="acu-table-heading">
-					<h2 id="acu-table-heading" class="admin-panel__title">Sample Customers</h2>
-					<p class="admin-panel__desc">The records below are fictional demonstration data for this static prototype, not real customers. One Active and verified, one Pending verification, and one Suspended example are shown for illustration.</p>
+					<h2 id="acu-table-heading" class="admin-panel__title">Customers</h2>
 
-					<div class="aent-table__scroll" role="region" aria-label="Sample Customers, scroll horizontally to see all columns" tabindex="0">
+					<div class="aent-table__scroll" role="region" aria-label="Customers, scroll horizontally to see all columns" tabindex="0">
 						<table>
 							<thead>
 								<tr>
@@ -207,51 +201,71 @@
 							<tbody>
 								<tr>
 									<th scope="row">CU-DEMO-001</th>
-									<td>Jordan Ellis <span class="aent-fictional">(fictional)</span></td>
+									<td>Jordan Ellis</td>
 									<td>jordan.ellis@example.com</td>
 									<td><span class="aent-status aent-status--active">Active</span></td>
 									<td>Verified</td>
-									<td>Premium</td>
+									<td>Gold</td>
 									<td>Insider</td>
 									<td>March 3, 2025</td>
 									<td><a class="btn aent-row-cta" href="admin-customer-detail.html?customer=CU-DEMO-001">View</a></td>
 								</tr>
 								<tr>
 									<th scope="row">CU-DEMO-002</th>
-									<td>Casey Morgan <span class="aent-fictional">(fictional)</span></td>
+									<td>Casey Morgan</td>
 									<td>casey.morgan@example.com</td>
 									<td><span class="aent-status aent-status--pending">Pending verification</span></td>
 									<td>Unverified</td>
-									<td>Standard</td>
+									<td>Bronze</td>
 									<td>None</td>
 									<td>June 12, 2025</td>
 									<td><a class="btn aent-row-cta" href="admin-customer-detail.html?customer=CU-DEMO-002">View</a></td>
 								</tr>
 								<tr>
 									<th scope="row">CU-DEMO-003</th>
-									<td>Riley Chen <span class="aent-fictional">(fictional)</span></td>
+									<td>Riley Chen</td>
 									<td>riley.chen@example.com</td>
 									<td><span class="aent-status aent-status--suspended">Suspended</span></td>
 									<td>Verified</td>
-									<td>VIP</td>
+									<td>Platinum</td>
 									<td>Premier</td>
 									<td>August 20, 2025</td>
 									<td><a class="btn aent-row-cta" href="admin-customer-detail.html?customer=CU-DEMO-003">View</a></td>
 								</tr>
+								<tr>
+									<th scope="row">CU-DEMO-004</th>
+									<td>Taylor Brooks</td>
+									<td>taylor.brooks@example.com</td>
+									<td><span class="aent-status aent-status--active">Active</span></td>
+									<td>Verified</td>
+									<td>Silver</td>
+									<td>None</td>
+									<td>September 1, 2026</td>
+									<td><a class="btn aent-row-cta" href="admin-customer-detail.html?customer=CU-DEMO-004">View</a></td>
+								</tr>
+								<tr>
+									<th scope="row">CU-DEMO-005</th>
+									<td>Avery Nguyen</td>
+									<td>&mdash;</td>
+									<td>Not on record</td>
+									<td>&mdash;</td>
+									<td>&mdash;</td>
+									<td>Supporter</td>
+									<td>&mdash;</td>
+									<td><a class="btn aent-row-cta" href="admin-customer-detail.html?customer=CU-DEMO-005">View</a></td>
+								</tr>
 							</tbody>
 						</table>
 					</div>
-					<p class="aent-table__note">No search, filtering, exports, pagination, bulk actions, or invented live totals exist in this static prototype &mdash; every value above is a fixed, labelled sample.</p>
 				</section>
 
 				<section class="admin-panel aent-security" aria-labelledby="acu-security-heading">
-					<h2 id="acu-security-heading" class="admin-panel__title">How account management will work</h2>
+					<h2 id="acu-security-heading" class="admin-panel__title">Account guidance</h2>
 					<ul class="aent-security__list">
-						<li>Customer identity and ownership always come from authenticated backend records, never from a query parameter or anything else the browser supplies.</li>
 						<li>Suspension blocks sign-in and new purchases but preserves records and full audit history. It never silently cancels an active Membership, invalidates a Fan Card, deletes a Donation, or erases a Booking &mdash; any entitlement or booking change requires its own explicit workflow.</li>
 						<li>Email address changes require re-verification. Account restoration is always explicit and audited.</li>
 						<li>Every admin action records the administrator, timestamp, reason, and affected customer.</li>
-						<li>Customer deletion requires a separate privacy and retention workflow and is intentionally absent from this prototype.</li>
+						<li>Customer deletion requires a separate privacy and retention workflow.</li>
 					</ul>
 				</section>
 			</main>

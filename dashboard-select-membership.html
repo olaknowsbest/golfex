@@ -4,8 +4,8 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<title>Choose a Membership &#8211; Nazario Kayla Fan Club Prototype</title>
-	<meta name="description" content="A static, honestly labelled preview of the future annual membership selection screen for the fictional Nazario Kayla fan-platform prototype. Not a functioning checkout.">
+	<title>Choose a Membership &#8211; Nazario Kayla Fan Club</title>
+	<meta name="description" content="Choose a Membership plan on your Nazario Kayla Fan Club account.">
 	<meta name="robots" content="noindex, nofollow">
 	<meta name="theme-color" content="#0A0A0A">
 	<link rel="icon" href="assets/images/uploads/favicon.png" sizes="32x32" />
@@ -27,10 +27,9 @@
 		<aside class="dashboard-sidebar" id="dashboard-sidebar" aria-label="Dashboard navigation">
 			<div class="dashboard-sidebar__top">
 				<div class="dashboard-sidebar__brand">
-					<img class="dashboard-sidebar__logo" src="assets/images/brand/nk-monogram-mark.svg" alt="Nazario Kayla Fan Club &#8212; Prototype" width="36" height="37">
+					<img class="dashboard-sidebar__logo" src="assets/images/brand/nk-monogram-mark.svg" alt="Nazario Kayla Fan Club" width="36" height="37">
 					<span class="dashboard-sidebar__brand-text">
 						<span class="dashboard-sidebar__brand-name">NK Dashboard</span>
-						<span class="dashboard-sidebar__prototype-tag">Prototype</span>
 					</span>
 				</div>
 				<button class="dashboard-sidebar__close" type="button" data-dashboard-close aria-label="Close menu">
@@ -145,56 +144,100 @@
 				</button>
 				<img class="dashboard-topbar__logo" src="assets/images/brand/nk-monogram-mark.svg" alt="" aria-hidden="true">
 				<p class="dashboard-topbar__title">Choose a Membership</p>
-				<span class="dashboard-topbar__account">Account preview</span>
 			</header>
 
 			<main id="dashboard-main" class="dashboard-main">
 				<a class="dsm-back" href="dashboard-memberships.html">&larr; Back to My Memberships</a>
 				<h1 class="dashboard-main__title">Choose a Membership</h1>
-				<p class="dashboard-main__lead">This is a static prototype of the future membership selection screen. Memberships are annual recurring access products, billed once per year &mdash; never monthly, and never a Fan Card. No payment, account, or order is created here.</p>
+				<p class="dashboard-main__lead">Choose a billing period and a plan to see pricing. No payment or order is created on this screen.</p>
 
-				<div class="dsm-grid">
-					<article class="dsm-plan-card">
-						<p class="dsm-plan-card__tag">Supporter</p>
-						<h2 class="dsm-plan-card__name">Follow the story.</h2>
-						<div class="dsm-plan-card__price"><strong>$150</strong><span>/year</span></div>
-						<ul class="dsm-plan-card__features">
-							<li>Member-only platform updates</li>
-							<li>Community access</li>
-							<li>Early public-announcement previews</li>
-						</ul>
-						<a class="btn dsm-plan-card__cta" href="dashboard-confirm-membership.html?plan=supporter">Choose Supporter</a>
-					</article>
+				<!--
+					Interactive, JS-driven selection: assets/js/page-dashboard-select-membership.js
+					reads ?plan= and ?billing= on load only to restore a previously valid
+					selection (e.g. from "Edit Membership" on the confirmation screen) — it
+					never assumes a billing period when one is missing or invalid, and the
+					customer must explicitly choose both a plan radio and a billing radio
+					before "Review Membership" becomes available. Prices shown are looked up
+					internally from a fixed plan/billing table; no price is ever read from
+					the URL. No storage, no network calls, no backend simulation.
+				-->
+				<div id="dsm-select" class="dsm-select" data-plan="" data-billing="">
 
-					<article class="dsm-plan-card dsm-plan-card--featured">
-						<p class="dsm-plan-card__badge">Most Popular</p>
-						<p class="dsm-plan-card__tag">Insider</p>
-						<h2 class="dsm-plan-card__name">Go behind the scenes.</h2>
-						<div class="dsm-plan-card__price"><strong>$300</strong><span>/year</span></div>
-						<ul class="dsm-plan-card__features">
-							<li>Everything in Supporter</li>
-							<li>Expanded exclusive content</li>
-							<li>Member merchandise previews</li>
-						</ul>
-						<a class="btn dsm-plan-card__cta" href="dashboard-confirm-membership.html?plan=insider">Choose Insider</a>
-					</article>
+					<fieldset class="dsm-billing-select">
+						<legend>Billing period</legend>
+						<label class="dsm-billing-option">
+							<input type="radio" name="dsm-billing" value="monthly">
+							<span class="dsm-billing-option__name">Monthly</span>
+						</label>
+						<label class="dsm-billing-option">
+							<input type="radio" name="dsm-billing" value="yearly">
+							<span class="dsm-billing-option__name">Yearly</span>
+							<span class="dsm-billing-option__badge">Save up to $300/year</span>
+						</label>
+					</fieldset>
 
-					<article class="dsm-plan-card dsm-plan-card--dark">
-						<p class="dsm-plan-card__tag">Premier</p>
-						<h2 class="dsm-plan-card__name">Unlock priority access.</h2>
-						<div class="dsm-plan-card__price"><strong>$600</strong><span>/year</span></div>
-						<ul class="dsm-plan-card__features">
-							<li>Everything in Insider</li>
-							<li>Priority experience announcements</li>
-							<li>Premier community recognition</li>
-						</ul>
-						<a class="btn dsm-plan-card__cta" href="dashboard-confirm-membership.html?plan=premier">Choose Premier</a>
-					</article>
+					<div class="dsm-grid">
+						<label class="dsm-plan-card" data-plan-card="supporter">
+							<input type="radio" name="dsm-plan" value="supporter">
+							<p class="dsm-plan-card__tag">Supporter</p>
+							<h2 class="dsm-plan-card__name">Follow the story.</h2>
+							<div class="dsm-plan-card__price">
+								<strong class="dsm-plan-card__amount" data-plan-amount="supporter">Select billing</strong>
+								<span class="dsm-plan-card__basis" data-plan-basis="supporter"></span>
+							</div>
+							<p class="dsm-plan-card__savings" data-plan-savings="supporter" hidden></p>
+							<ul class="dsm-plan-card__features">
+								<li>Member-only platform updates</li>
+								<li>Community access</li>
+								<li>Early public-announcement previews</li>
+							</ul>
+						</label>
+
+						<label class="dsm-plan-card dsm-plan-card--featured" data-plan-card="insider">
+							<input type="radio" name="dsm-plan" value="insider">
+							<p class="dsm-plan-card__badge">Most Popular</p>
+							<p class="dsm-plan-card__tag">Insider</p>
+							<h2 class="dsm-plan-card__name">Go behind the scenes.</h2>
+							<div class="dsm-plan-card__price">
+								<strong class="dsm-plan-card__amount" data-plan-amount="insider">Select billing</strong>
+								<span class="dsm-plan-card__basis" data-plan-basis="insider"></span>
+							</div>
+							<p class="dsm-plan-card__savings" data-plan-savings="insider" hidden></p>
+							<ul class="dsm-plan-card__features">
+								<li>Everything in Supporter</li>
+								<li>Expanded exclusive content</li>
+								<li>Member merchandise previews</li>
+							</ul>
+						</label>
+
+						<label class="dsm-plan-card dsm-plan-card--dark" data-plan-card="premier">
+							<input type="radio" name="dsm-plan" value="premier">
+							<p class="dsm-plan-card__tag">Premier</p>
+							<h2 class="dsm-plan-card__name">Unlock priority access.</h2>
+							<div class="dsm-plan-card__price">
+								<strong class="dsm-plan-card__amount" data-plan-amount="premier">Select billing</strong>
+								<span class="dsm-plan-card__basis" data-plan-basis="premier"></span>
+							</div>
+							<p class="dsm-plan-card__savings" data-plan-savings="premier" hidden></p>
+							<ul class="dsm-plan-card__features">
+								<li>Everything in Insider</li>
+								<li>Priority experience announcements</li>
+								<li>Premier community recognition</li>
+							</ul>
+						</label>
+					</div>
+
+					<div class="dsm-review">
+						<p class="dsm-review__summary" id="dsm-review-summary">Choose a billing period and a plan to continue.</p>
+						<a id="dsm-review-cta" class="btn dsm-review__cta" aria-disabled="true">Review Membership</a>
+						<p class="dsm-review__note">Continuing would not confirm, verify, or process any payment.</p>
+					</div>
 				</div>
 			</main>
 		</div>
 	</div>
 
 	<script src="assets/js/page-dashboard-shell.js" defer></script>
+	<script src="assets/js/page-dashboard-select-membership.js" defer></script>
 </body>
 </html>

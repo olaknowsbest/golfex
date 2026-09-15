@@ -4,8 +4,8 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<title>Booking Availability &#8211; Nazario Kayla Fan Club Prototype</title>
-	<meta name="description" content="A static, honestly labelled preview of the future admin booking-availability screen for the fictional Nazario Kayla fan-platform prototype. Not a functioning admin system.">
+	<title>Booking Availability &#8211; Nazario Kayla Administration</title>
+	<meta name="description" content="Booking queue for the Nazario Kayla Fan Club admin team.">
 	<meta name="robots" content="noindex, nofollow">
 	<meta name="theme-color" content="#0A0A0A">
 	<link rel="icon" href="assets/images/uploads/favicon.png" sizes="32x32" />
@@ -27,10 +27,9 @@
 		<aside class="admin-sidebar" id="admin-sidebar" aria-label="Admin navigation">
 			<div class="admin-sidebar__top">
 				<div class="admin-sidebar__brand">
-					<img class="admin-sidebar__logo" src="assets/images/brand/nk-monogram-mark.svg" alt="Nazario Kayla Fan Club &#8212; Prototype" width="28" height="29">
+					<img class="admin-sidebar__logo" src="assets/images/brand/nk-monogram-mark.svg" alt="Nazario Kayla Administration" width="28" height="29">
 					<span class="admin-sidebar__brand-text">
 						<span class="admin-sidebar__brand-name">NK Admin</span>
-						<span class="admin-sidebar__tag">Admin prototype</span>
 					</span>
 				</div>
 				<button class="admin-sidebar__close" type="button" data-admin-close aria-label="Close menu">
@@ -159,12 +158,11 @@
 				</button>
 				<img class="admin-topbar__logo" src="assets/images/brand/nk-monogram-mark.svg" alt="" aria-hidden="true">
 				<p class="admin-topbar__title">Booking Availability</p>
-				<span class="admin-topbar__badge">Admin prototype</span>
 			</header>
 
 			<main id="admin-main" class="admin-main">
 				<h1 class="admin-main__title">Booking Availability</h1>
-				<p class="admin-main__lead">This is a static preview of the future booking-availability management screen. Availability windows are administrator-managed &mdash; customers never request a free-form date or time.</p>
+				<p class="admin-main__lead">Manage booking availability and blocked periods.</p>
 
 				<a class="btn abk-primary-cta" href="admin-booking-availability.html">Add Availability</a>
 
@@ -172,25 +170,22 @@
 					<article class="abk-summary-card">
 						<p class="abk-summary-card__label">Available windows</p>
 						<p class="abk-summary-card__value">1</p>
-						<p class="abk-summary-card__desc">1 sample available window is shown below (sample data, not a live count).</p>
 					</article>
 					<article class="abk-summary-card">
 						<p class="abk-summary-card__label">Blocked periods</p>
 						<p class="abk-summary-card__value">1</p>
-						<p class="abk-summary-card__desc">1 sample blocked period is shown below (sample data, not a live count).</p>
 					</article>
 					<article class="abk-summary-card">
 						<p class="abk-summary-card__label">Booking types</p>
 						<p class="abk-summary-card__value">3</p>
-						<p class="abk-summary-card__desc">Virtual Meet-and-Greet, Public Appearance, Golf Experience.</p>
+						<p class="abk-summary-card__desc">Virtual Meet-and-Greet, Event Appearance, Golf Experience.</p>
 					</article>
 				</div>
 
 				<section class="admin-panel abk-table-panel" aria-labelledby="abk-table-heading">
-					<h2 id="abk-table-heading" class="admin-panel__title">Sample availability</h2>
-					<p class="admin-panel__desc">The dates and times below are fictional demonstration data for this static prototype, not live availability. One available window and one blocked period are shown for illustration.</p>
+					<h2 id="abk-table-heading" class="admin-panel__title">Availability</h2>
 
-					<div class="abk-table__scroll" role="region" aria-label="Sample availability windows, scroll horizontally to see all columns" tabindex="0">
+					<div class="abk-table__scroll" role="region" aria-label="Availability windows, scroll horizontally to see all columns" tabindex="0">
 						<table>
 							<thead>
 								<tr>
@@ -206,35 +201,34 @@
 							</thead>
 							<tbody>
 								<tr>
-									<th scope="row">Virtual Meet-and-Greet</th>
-									<td>September 12, 2026</td>
-									<td>10:00 AM &ndash; 12:00 PM</td>
+									<th scope="row">Event Appearance</th>
+									<td>October 2, 2026</td>
+									<td>4:00 PM &ndash; 8:00 PM</td>
 									<td>PT</td>
-									<td>$150/hr</td>
-									<td>30 min</td>
+									<td>$500/hr</td>
+									<td>1 hr</td>
 									<td><span class="abk-status abk-status--available">Available</span></td>
 									<td><button type="button" class="btn abk-edit-btn" disabled>Edit</button></td>
 								</tr>
 								<tr>
-									<th scope="row">Golf Experience</th>
-									<td>September 20, 2026</td>
-									<td>9:00 AM &ndash; 5:00 PM</td>
+									<th scope="row">Virtual Meet-and-Greet</th>
+									<td>September 12, 2026</td>
+									<td>12:00 PM &ndash; 12:30 PM</td>
 									<td>PT</td>
-									<td>$300/hr</td>
-									<td>1 hr</td>
+									<td>$150/hr</td>
+									<td>30 min</td>
 									<td><span class="abk-status abk-status--blocked">Blocked</span></td>
 									<td><button type="button" class="btn abk-edit-btn" disabled>Edit</button></td>
 								</tr>
 							</tbody>
 						</table>
 					</div>
-					<p class="abk-table__note">Edit is disabled in this static prototype. No availability window can be created, changed, or removed here.</p>
 				</section>
 
 				<section class="admin-panel abk-security" aria-labelledby="abk-security-heading">
-					<h2 id="abk-security-heading" class="admin-panel__title">How availability will work</h2>
+					<h2 id="abk-security-heading" class="admin-panel__title">Availability guidance</h2>
 					<ul class="abk-security__list">
-						<li>Production availability comes from Laravel and MySQL. Customer booking times are generated only from windows an administrator has actively published here &mdash; never from a free-form request.</li>
+						<li>Customer booking times are generated only from windows an administrator has actively published here &mdash; never from a free-form request.</li>
 						<li>A blocked period, or a period already reserved by another customer, is never selectable at checkout.</li>
 						<li>Checkout atomically holds the selected slot. A successful, manually verified payment confirms the booking; an expired or rejected payment releases the hold back to availability.</li>
 					</ul>

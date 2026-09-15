@@ -39,7 +39,7 @@ These screenshots are visual and workflow references only. Do not copy source co
 - Do not show donations, subscriptions, personalized messages, or merchandise in the first dashboard release unless their business rules are approved.
 - Reduce oversized empty space and improve information density without making screens crowded.
 - Keep labels and statuses consistent across overview, list, and detail pages.
-- Avoid four competing pricing tiers when the approved concept currently has Standard, Premium, and VIP.
+- The approved Fan Card model is four one-time tiers — Bronze, Silver, Gold, and Platinum — not the earlier three-tier Standard/Premium/VIP concept. Keep tier switching, comparison layouts, and sample data consistent with all four.
 
 ## Critical workflow corrections
 
@@ -73,7 +73,7 @@ Profile
 Logout
 ```
 
-`My Fan Cards` and `My Memberships` are intentionally separate. Fan Cards are one-time tiered products; Memberships are recurring monthly or yearly plans. They share order/payment infrastructure but do not automatically grant one another.
+`My Fan Cards` and `My Memberships` are intentionally separate. Fan Cards are one-time tiered products; Memberships are monthly-or-yearly access plans renewed manually by the customer, never billed automatically. They share order/payment infrastructure but do not automatically grant one another.
 
 Deferred until separately approved:
 

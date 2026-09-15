@@ -4,8 +4,8 @@
 <head>
 	<meta charset="UTF-8">
 	<meta name="viewport" content="width=device-width, initial-scale=1.0" />
-	<title>Purchase Fan Card &#8211; Nazario Kayla Fan Club Prototype</title>
-	<meta name="description" content="A static, honestly labelled preview of the future Fan Card purchase screen for the fictional Nazario Kayla fan-platform prototype. Not a functioning checkout.">
+	<title>Purchase Fan Card &#8211; Nazario Kayla Fan Club</title>
+	<meta name="description" content="Purchase a Fan Card on your Nazario Kayla Fan Club account.">
 	<meta name="robots" content="noindex, nofollow">
 	<meta name="theme-color" content="#0A0A0A">
 	<link rel="icon" href="assets/images/uploads/favicon.png" sizes="32x32" />
@@ -27,10 +27,9 @@
 		<aside class="dashboard-sidebar" id="dashboard-sidebar" aria-label="Dashboard navigation">
 			<div class="dashboard-sidebar__top">
 				<div class="dashboard-sidebar__brand">
-					<img class="dashboard-sidebar__logo" src="assets/images/brand/nk-monogram-mark.svg" alt="Nazario Kayla Fan Club &#8212; Prototype" width="36" height="37">
+					<img class="dashboard-sidebar__logo" src="assets/images/brand/nk-monogram-mark.svg" alt="Nazario Kayla Fan Club" width="36" height="37">
 					<span class="dashboard-sidebar__brand-text">
 						<span class="dashboard-sidebar__brand-name">NK Dashboard</span>
-						<span class="dashboard-sidebar__prototype-tag">Prototype</span>
 					</span>
 				</div>
 				<button class="dashboard-sidebar__close" type="button" data-dashboard-close aria-label="Close menu">
@@ -145,31 +144,35 @@
 				</button>
 				<img class="dashboard-topbar__logo" src="assets/images/brand/nk-monogram-mark.svg" alt="" aria-hidden="true">
 				<p class="dashboard-topbar__title">Purchase Fan Card</p>
-				<span class="dashboard-topbar__account">Account preview</span>
 			</header>
 
 			<main id="dashboard-main" class="dashboard-main">
 				<a class="dpf-back" href="dashboard-fan-cards.html">&larr; Back to My Fan Cards</a>
 				<h1 class="dashboard-main__title">Purchase Fan Card</h1>
-				<p class="dashboard-main__lead">This is a static prototype of the future Fan Card purchase flow. Fan Cards are one-time purchases, never a subscription. No payment, account, or order is created here.</p>
+				<p class="dashboard-main__lead">Fan Cards are one-time purchases, never a subscription. No payment or order is created on this screen.</p>
 
 				<div id="dpf-purchase" class="dpf-purchase" data-tier="">
 					<fieldset class="dpf-tier-select">
 						<legend>Choose a tier</legend>
 						<label class="dpf-tier-option">
-							<input type="radio" name="dpf-tier" value="standard">
-							<span class="dpf-tier-option__name">Standard</span>
-							<span class="dpf-tier-option__price">$100 </span>
-						</label>
-						<label class="dpf-tier-option">
-							<input type="radio" name="dpf-tier" value="premium">
-							<span class="dpf-tier-option__name">Premium</span>
+							<input type="radio" name="dpf-tier" value="bronze">
+							<span class="dpf-tier-option__name">Bronze</span>
 							<span class="dpf-tier-option__price">$250 </span>
 						</label>
 						<label class="dpf-tier-option">
-							<input type="radio" name="dpf-tier" value="vip">
-							<span class="dpf-tier-option__name">VIP</span>
+							<input type="radio" name="dpf-tier" value="silver">
+							<span class="dpf-tier-option__name">Silver</span>
 							<span class="dpf-tier-option__price">$500 </span>
+						</label>
+						<label class="dpf-tier-option">
+							<input type="radio" name="dpf-tier" value="gold">
+							<span class="dpf-tier-option__name">Gold</span>
+							<span class="dpf-tier-option__price">$1,000 </span>
+						</label>
+						<label class="dpf-tier-option">
+							<input type="radio" name="dpf-tier" value="platinum">
+							<span class="dpf-tier-option__name">Platinum</span>
+							<span class="dpf-tier-option__price">$1,500 </span>
 						</label>
 					</fieldset>
 
@@ -189,7 +192,6 @@
 								<span class="dpf-field__label">Format</span>
 								<span class="dpf-field__value">Digital</span>
 							</p>
-							<p class="dpf-personalize__note">Personalization fields are shown for design review only and are not editable in this prototype.</p>
 						</fieldset>
 
 						<div class="dpf-preview-col">
@@ -202,54 +204,77 @@
 								</div>
 							</div>
 
-							<div class="dpf-preview dpf-preview--standard">
-								<div class="dpf-card-mock">
+							<div class="dpf-preview dpf-preview--bronze">
+								<div class="dpf-card-mock dpf-card-mock--bronze">
+									<span class="dpf-card-mock__ball" aria-hidden="true"></span>
 									<svg class="dpf-card-mock__arc" viewBox="0 0 320 200" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-										<path d="M20,150 C90,40 220,20 300,50" stroke="#FDF567" stroke-width="3" stroke-linecap="round" opacity="0.5"/>
-										<circle cx="300" cy="50" r="5" fill="#FDF567" opacity="0.8"/>
+										<path d="M20,150 C90,40 220,20 300,50" stroke="currentColor" stroke-width="3" stroke-linecap="round" opacity="0.5"/>
+										<circle cx="300" cy="50" r="5" fill="currentColor" opacity="0.8"/>
 									</svg>
 									<div class="dpf-card-mock__top">
 										<img class="dpf-card-mock__logo" src="assets/images/brand/nk-monogram-mark.svg" alt="Nazario Kayla Fan Club monogram">
-										<span class="dpf-card-mock__tag">Preview</span>
 									</div>
 									<div class="dpf-card-mock__bottom">
-										<p class="dpf-card-mock__tier">Standard Fan Card</p>
+										<p class="dpf-card-mock__brand">Nazario Kayla Fan Card</p>
+										<p class="dpf-card-mock__tier">Bronze</p>
 										<p class="dpf-card-mock__name">Jordan Ellis</p>
 										<p class="dpf-card-mock__format">Digital</p>
 									</div>
 								</div>
 							</div>
 
-							<div class="dpf-preview dpf-preview--premium">
-								<div class="dpf-card-mock">
+							<div class="dpf-preview dpf-preview--silver">
+								<div class="dpf-card-mock dpf-card-mock--silver">
+									<span class="dpf-card-mock__ball" aria-hidden="true"></span>
 									<svg class="dpf-card-mock__arc" viewBox="0 0 320 200" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-										<path d="M20,150 C90,40 220,20 300,50" stroke="#FDF567" stroke-width="3" stroke-linecap="round" opacity="0.5"/>
-										<circle cx="300" cy="50" r="5" fill="#FDF567" opacity="0.8"/>
+										<path d="M20,150 C90,40 220,20 300,50" stroke="currentColor" stroke-width="3" stroke-linecap="round" opacity="0.5"/>
+										<circle cx="300" cy="50" r="5" fill="currentColor" opacity="0.8"/>
 									</svg>
 									<div class="dpf-card-mock__top">
 										<img class="dpf-card-mock__logo" src="assets/images/brand/nk-monogram-mark.svg" alt="Nazario Kayla Fan Club monogram">
-										<span class="dpf-card-mock__tag">Preview</span>
 									</div>
 									<div class="dpf-card-mock__bottom">
-										<p class="dpf-card-mock__tier">Premium Fan Card</p>
+										<p class="dpf-card-mock__brand">Nazario Kayla Fan Card</p>
+										<p class="dpf-card-mock__tier">Silver</p>
 										<p class="dpf-card-mock__name">Jordan Ellis</p>
 										<p class="dpf-card-mock__format">Digital</p>
 									</div>
 								</div>
 							</div>
 
-							<div class="dpf-preview dpf-preview--vip">
-								<div class="dpf-card-mock dpf-card-mock--vip">
+							<div class="dpf-preview dpf-preview--gold">
+								<div class="dpf-card-mock dpf-card-mock--gold">
+									<span class="dpf-card-mock__ball" aria-hidden="true"></span>
 									<svg class="dpf-card-mock__arc" viewBox="0 0 320 200" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
-										<path d="M20,150 C90,40 220,20 300,50" stroke="#FDF567" stroke-width="3" stroke-linecap="round" opacity="0.5"/>
-										<circle cx="300" cy="50" r="5" fill="#FDF567" opacity="0.8"/>
+										<path d="M20,150 C90,40 220,20 300,50" stroke="currentColor" stroke-width="3" stroke-linecap="round" opacity="0.5"/>
+										<circle cx="300" cy="50" r="5" fill="currentColor" opacity="0.8"/>
 									</svg>
 									<div class="dpf-card-mock__top">
 										<img class="dpf-card-mock__logo" src="assets/images/brand/nk-monogram-mark.svg" alt="Nazario Kayla Fan Club monogram">
-										<span class="dpf-card-mock__tag">Preview</span>
 									</div>
 									<div class="dpf-card-mock__bottom">
-										<p class="dpf-card-mock__tier">VIP Fan Card</p>
+										<p class="dpf-card-mock__brand">Nazario Kayla Fan Card</p>
+										<p class="dpf-card-mock__tier">Gold</p>
+										<p class="dpf-card-mock__name">Jordan Ellis</p>
+										<p class="dpf-card-mock__format">Digital</p>
+									</div>
+								</div>
+							</div>
+
+							<div class="dpf-preview dpf-preview--platinum">
+								<div class="dpf-card-mock dpf-card-mock--platinum">
+									<span class="dpf-card-mock__ball" aria-hidden="true"></span>
+									<svg class="dpf-card-mock__arc" viewBox="0 0 320 200" fill="none" xmlns="http://www.w3.org/2000/svg" aria-hidden="true">
+										<path d="M20,150 C90,40 220,20 300,50" stroke="currentColor" stroke-width="3" stroke-linecap="round" opacity="0.5"/>
+										<circle cx="300" cy="50" r="5" fill="currentColor" opacity="0.8"/>
+									</svg>
+									<div class="dpf-card-mock__top">
+										<img class="dpf-card-mock__logo" src="assets/images/brand/nk-monogram-mark.svg" alt="Nazario Kayla Fan Club monogram">
+									</div>
+									<div class="dpf-card-mock__bottom">
+										<p class="dpf-card-mock__brand">Nazario Kayla Fan Card</p>
+										<p class="dpf-card-mock__tier">Platinum</p>
+										<p class="dpf-card-mock__signature">Signature Edition</p>
 										<p class="dpf-card-mock__name">Jordan Ellis</p>
 										<p class="dpf-card-mock__format">Digital</p>
 									</div>
@@ -264,29 +289,35 @@
 									<div class="dpf-summary__row"><dt>Quantity</dt><dd>1</dd></div>
 									<div class="dpf-summary__row dpf-summary__row--total"><dt>One-time total</dt><dd>&mdash;</dd></div>
 								</dl>
-								<dl class="dpf-summary__list dpf-summary__list--standard">
-									<div class="dpf-summary__row"><dt>Tier</dt><dd>Standard</dd></div>
-									<div class="dpf-summary__row"><dt>Format</dt><dd>Digital</dd></div>
-									<div class="dpf-summary__row"><dt>Quantity</dt><dd>1</dd></div>
-									<div class="dpf-summary__row dpf-summary__row--total"><dt>One-time total</dt><dd>$100</dd></div>
-								</dl>
-								<dl class="dpf-summary__list dpf-summary__list--premium">
-									<div class="dpf-summary__row"><dt>Tier</dt><dd>Premium</dd></div>
+								<dl class="dpf-summary__list dpf-summary__list--bronze">
+									<div class="dpf-summary__row"><dt>Tier</dt><dd>Bronze</dd></div>
 									<div class="dpf-summary__row"><dt>Format</dt><dd>Digital</dd></div>
 									<div class="dpf-summary__row"><dt>Quantity</dt><dd>1</dd></div>
 									<div class="dpf-summary__row dpf-summary__row--total"><dt>One-time total</dt><dd>$250</dd></div>
 								</dl>
-								<dl class="dpf-summary__list dpf-summary__list--vip">
-									<div class="dpf-summary__row"><dt>Tier</dt><dd>VIP</dd></div>
+								<dl class="dpf-summary__list dpf-summary__list--silver">
+									<div class="dpf-summary__row"><dt>Tier</dt><dd>Silver</dd></div>
 									<div class="dpf-summary__row"><dt>Format</dt><dd>Digital</dd></div>
 									<div class="dpf-summary__row"><dt>Quantity</dt><dd>1</dd></div>
 									<div class="dpf-summary__row dpf-summary__row--total"><dt>One-time total</dt><dd>$500</dd></div>
+								</dl>
+								<dl class="dpf-summary__list dpf-summary__list--gold">
+									<div class="dpf-summary__row"><dt>Tier</dt><dd>Gold</dd></div>
+									<div class="dpf-summary__row"><dt>Format</dt><dd>Digital</dd></div>
+									<div class="dpf-summary__row"><dt>Quantity</dt><dd>1</dd></div>
+									<div class="dpf-summary__row dpf-summary__row--total"><dt>One-time total</dt><dd>$1,000</dd></div>
+								</dl>
+								<dl class="dpf-summary__list dpf-summary__list--platinum">
+									<div class="dpf-summary__row"><dt>Tier</dt><dd>Platinum</dd></div>
+									<div class="dpf-summary__row"><dt>Format</dt><dd>Digital</dd></div>
+									<div class="dpf-summary__row"><dt>Quantity</dt><dd>1</dd></div>
+									<div class="dpf-summary__row dpf-summary__row--total"><dt>One-time total</dt><dd>$1,500</dd></div>
 								</dl>
 								<p class="dpf-summary__disclosure">Fan Cards are one-time purchases only. This total is never billed on a monthly, yearly, or recurring basis.</p>
 							</div>
 
 							<a id="dpf-continue-link" class="btn dpf-continue" aria-disabled="true">Continue to Payment</a>
-							<p class="dpf-continue__note">Payment is not available in this static prototype. Continuing would not confirm, verify, or process any payment.</p>
+							<p class="dpf-continue__note">Continuing would not confirm, verify, or process any payment.</p>
 						</div>
 					</div>
 				</div>

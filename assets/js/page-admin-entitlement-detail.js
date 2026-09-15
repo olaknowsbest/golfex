@@ -22,8 +22,8 @@
 		root.setAttribute(dataAttr, isValid ? requested : '');
 	}
 
-	initDetail('afc-detail', 'data-card', 'card', ['FC-DEMO-001', 'FC-DEMO-002', 'FC-DEMO-003']);
+	initDetail('afc-detail', 'data-card', 'card', ['FC-DEMO-001', 'FC-DEMO-002', 'FC-DEMO-003', 'FC-DEMO-004']);
 	initDetail('amb-detail', 'data-membership', 'membership', ['MB-DEMO-001', 'MB-DEMO-002', 'MB-DEMO-003']);
 	initDetail('adon-detail', 'data-donation', 'donation', ['DN-DEMO-001', 'DN-DEMO-002', 'DN-DEMO-003']);
-	initDetail('acu-detail', 'data-customer', 'customer', ['CU-DEMO-001', 'CU-DEMO-002', 'CU-DEMO-003']);
+	initDetail('acu-detail', 'data-customer', 'customer', ['CU-DEMO-001', 'CU-DEMO-002', 'CU-DEMO-003', 'CU-DEMO-004', 'CU-DEMO-005']);
 })();
